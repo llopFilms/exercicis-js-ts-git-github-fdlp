@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.2 - Exercici 8</title>
+</head>
+<body>
+    <!--L’usuari introdueix un nombre per teclat i el programa crida a un mètode que ha de mostrar la successió de Fibonacci.
+    Exemple: si l’usuari introdueix el 10 el resultat ha de ser: 0,1,1,2,3,5,8,13,21,34.-->
+
+<h3>Successió de Fibonacci: per x = 0,1,(n-1)+(n-2), ...</h3>
+<br/><br/>
+
+<label for="num" >Introdueix un número: </label><br/><br/>
+<input type="number" id="num" maxlength= "4" size="10" />
+<br/><br/>
+<input type="button" onClick="validacio()" value="Successió Fibonacci"/>
+<br/><br/>
+<p id="resultat"><p></p>
+    <script>
+        "use strict";
+
+        //Funció auxiliar
+        function fibonacci(num){
+
+
+            let i, j, suma = 0, ultim = 1, penultim = 0, successio = "0, 1, ";
+
+            for (i=0; i<num-2; i++) {
+
+                suma = ultim + penultim;
+                         
+                successio += suma+ " ,"; 
+                penultim = ultim;
+                ultim = suma;
+            }
+           
+            let successio2 = successio.substring(0, successio.length-2);
+            return successio2;
+            
+        }
+
+       
+        //Funció principal
+        function main(num){
+            
+            //Sortida de dades
+            
+            let resultat = fibonacci(num);
+           
+            document.getElementById("resultat").innerHTML = "La successió de Fibonnacci pel número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>.";
+
+           
+        }
+
+
+        //Funció validació
+        function validacio(){
+          
+            let validacio = true;
+            let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
+         
+            num = parseInt(document.getElementById("num").value);
+          
+            if (isNaN(num) || num =="" || num <=0) {
+                validacio = false;
+                document.getElementById("num").value = "";
+            }
+           
+            if (validacio) {
+                main(num);
+
+            } else {
+                alert(msgError);  
+            }
+                  
+        }
+    </script>
+
+</body>
+</html>

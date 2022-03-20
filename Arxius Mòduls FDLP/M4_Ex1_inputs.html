@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 4 - Exercici 1</title>
+</head>
+<body>
+	<!--Modifica l’exercici 1 del mòdul 3. Un cop introduïdes les dades, el programa ha de mostrar el següent per pantalla:
+	- Si l’usuari té 18 anys o més: “Nom Cognom, ets MAJOR d’edat” 
+	- Si l’usuari és menor de 18 anys: “Nom Cognom, ets MENOR d’edat”.-->
+	<h2>Introducció de dades usuari:</h2>
+
+	<p id= "Usuari"></p>
+		
+		<script>	
+
+			//Captació de les dades
+			let nom = prompt ("Nom usuari:","Escriu aquí el teu nom");
+			let cognom = prompt ("Cognom usuari:","Escriu aquí el teu cognom");
+			let edat = Number(prompt ("Edat usuari:","Escriu aquí la teva edat"));
+
+			//Condicional ternari i sortida de resultats a id d'HTML
+			let majoredat = (edat >= 18) ? "ets <strong>MAJOR d'edat</strong> =)." : "ets <strong>MENOR d'edat</strong> :(";
+
+			document.getElementById("Usuari").innerHTML = nom+ " "+cognom+", " +majoredat;
+
+		</script>
+	</body>
+</html>

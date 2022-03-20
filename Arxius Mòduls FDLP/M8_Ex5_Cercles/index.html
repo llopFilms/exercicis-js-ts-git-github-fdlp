@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 8 - Exercici 8.5</title>
+</head>
+<!-- Fer una aplicació on l'usuari introdueix les coordenades x, y de dos cercles i els seus respectius radis.
+
+Crear la classe Punt i la classe Cercle: 
+
+Classe Punt: la classe Punt tindrà els atributs posicioX i posicioY. A més, tindrà el constructor parametritzat amb tots els atributs de la classe.
+
+Classe Cercle: la classe Cercle tindrà els atributs centre (un punt) i el radi (distància entre el centre i qualsevol punt de la circumferència. A més, tindrà el constructor amb tots els paràmetres i els següents mètodes:
+
+⦁ distanciaCentres(altreCercle): Retorna la distància entre el centre del cercle actual i el rebut com a paràmetre.
+
+⦁ equals(altreCercle): Retorna true si dos cercles són iguals (si tenen el mateix centre i el mateix radi).
+
+⦁ sonConcentrics(altreCercle): Retorna true si dos cercles són concèntrics (tenen igual centre).
+
+⦁ tenenIgualRadi(altreCercle): Retorna true si dos cercles tenen el mateix radi.
+
+⦁ sonTangents(altreCercle): Retorna true si dos cercles són tangents.
+
+⦁ sonSecants(altreCercle): Retorna true si dos cercles són secants.
+
+⦁ noEsToquen(altreCercle): Retorna true si dos cercles no es toquen.
+Al final l'aplicació mostrarà per pantalla el resultat de fer la crida a tots els mètodes de la classe Cercle.-->
+
+</body>
+
+    <h2>Els 2 cercles</h2>
+    <br>
+    
+    <h4>Cercle #1 - Introduïu les dades:</h4>
+
+        <label for="x1">Coordenada X:</label>
+        <input type="number" id="x1" size="4"/><br><br>
+        <label for="y1">Coordenada Y:</label>
+        <input type="number" id="y1" size="4"/><br><br>
+        <label for="radi1">Radi:</label>
+        <input type="number" id="radi1" size="4"/><br><br>
+       
+    <h4>Cercle #2 - Introduïu les dades:</h4>
+
+        <label for="x2">Coordenada X:</label>
+        <input type="number" id="x2" size="4"/><br><br>
+        <label for="y2">Coordenada Y:</label>
+        <input type="number" id="y2" size="4"/><br><br>
+        <label for="radi2">Radi:</label>
+        <input type="number" id="radi2" size="4"/><br><br>
+
+    <p><button onClick="cercles()">Càlculs dels cercles</button></p>
+    <br>
+
+    <p id="avis" ></p>
+    
+   
+    <script>"use sctrict"</script>
+
+    <script src="./js/classePunt.js"></script> 
+    <script src="./js/classeCercle.js"></script> 
+    <script src="./js/auxiliarsInici.js"></script>
+    <script src="./js/main.js"></script> 
+
+
+</body>
+</html>

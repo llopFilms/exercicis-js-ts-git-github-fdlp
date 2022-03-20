@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 7.1 - Exercici 4</title>
+</head>
+<body>
+	
+	<!--L’usuari ha d’introduir dos números, el programa retornarà “Un dels dos números és negatiu”, només si un dels dos números és negatiu.-->
+
+	<h2>Positiu - Negatiu</h2>
+	<br/>
+	<p>Introdueix 2 números, positius o negatius:</p>
+	
+	<!--Definició de type number i recepció de dades de de id's d'HTML-->
+	<input type ="number" id="caixaNum1" placeholder="Número 1"/>
+	<input type ="number" id="caixaNum2" placeholder="Número 2"/>
+	<br/><br/>
+
+	<input type='button' onClick='positiuNegatiu()' Value='Clica aquí'/>
+	<br/>
+	<p id="resultat"></p>
+	
+	<script>
+	
+		function positiuNegatiu(){
+
+			//Introducció de variables i recepció de dades (es permeten dedcimals)
+			let num1 = Number(document.getElementById("caixaNum1").value);
+			let num2 = Number(document.getElementById("caixaNum2").value);
+			
+			//if d'elaboració dels missatges de sortida a id's d'HTML segons valor final
+			(num1 !=0 && num2 !=0 && num1 * num2 <= 0) ? 
+			document.getElementById("resultat").innerHTML = "Un dels dos números introduïts és negatiu." : 
+			document.getElementById("resultat").innerHTML = "Els dos números introduïts són positius o els dos negatius, o un d'ells és 0.";
+
+		}
+
+	</script>
+	
+</body>
+</html>

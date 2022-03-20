@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.2 - Exercici 7</title>
+</head>
+<body>
+    <!--L’usuari introdueix un any a per teclat i el programa crida a un mètode que indiqui si l’any és de traspàs o no.-->
+
+<h3>Anys de traspàs:</h3>
+<br/><br/>
+
+<label for="num" >Introdueix un any per veure si és de traspàs o no: </label><br/><br/>
+<input type="number" id="any" maxlength= "4" size="8" />
+
+<input type="button" onClick="validacio('any.value')" value="Clica aquí"/>
+<br/><br/>
+<p id="resultat"><p></p>
+    <script>
+        "use strict";
+
+        //Funció auxiliar
+        function anyTraspas(any){
+
+            let traspas ="";
+
+            if (any % 400 == 0){
+
+                traspas = "SÍ";
+
+            }else if (any % 4 == 0 && any % 100 !=0){
+
+                traspas = "SÍ";
+
+            }else
+
+                traspas = "NO";
+
+            return traspas;
+
+         }
+
+       
+        //Funció principal
+        function main(any){
+            
+            //Sortida de dades
+            let resultat = anyTraspas(any);
+           
+            document.getElementById("resultat").innerHTML = "Efectivament, l'any <strong>" +any+ "</strong>, <strong>" +resultat+ "</strong> és de traspàs.";
+
+           
+        }
+
+
+        //Funció validació
+        function validacio(any){
+          
+            let validacio = true;
+            let msgError = "Introdueix les dades correctament, en anys de 4 xifres. \nClica 'D'acord' i torna-les a introduir, sisplau."
+         
+            any = parseInt(document.getElementById("any").value);
+         
+            if (isNaN(any) || any =="" || any <999) {
+                validacio = false;
+                document.getElementById("any").value = "";
+            }
+           
+            if (validacio) {
+                main(any);
+
+            } else {
+                alert(msgError);  
+            }
+                  
+        }
+    </script>
+
+</body>
+</html>

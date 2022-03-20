@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.2 - Exercici 4</title>
+</head>
+<body>
+    <!--Realitzar un programa on l’usuari introdueix un número i el programa crida a un mètode que retorna el factorial del número introduit. El factorial d'un nombre n (enter, no negatiu) és el producte de tots els nombres enters positius inferiors o iguals a n. -->
+
+<h3>Càlcul del factorial: n! = n*1 * ...... * (n-1).</h3>
+<br/><br/>
+
+<label for="num" >Introdueix un número: </label>
+<input type="number" id="num" maxlength= "4" size="4" />
+<br/><br/>
+<input type="button" onClick="validacio()" value="Factor Clic"/>
+<br/><br/>
+<p id="resultat"><p></p>
+    <script>
+        "use strict";
+
+
+        //Funció auxiliar
+        function factorial(num){
+
+            let i, factorial = 1;
+            
+            for (i=num; i>0; i--){
+
+            factorial *= (i);
+            
+            }
+
+            return factorial;
+        }
+
+
+        //Funció principal
+        function main(num){
+            
+            //Sortida de dades
+            let resultat = factorial(num);
+            document.getElementById("resultat").innerHTML = "L'operació factorial del número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>.";
+
+        }
+
+        //Funció validació
+        function validacio(){
+            
+            let validacio = true;
+            let msgError = "Introdueix les dades correctament. Calen números enters no negatius. \nClica 'D'acord' i torna-les a introduir, sisplau."
+         
+            let num = parseInt(document.getElementById("num").value);
+
+            if (isNaN(num) || num =="" || num <=0) {
+                validacio = false;
+                document.getElementById("num").value = "";
+            }
+           
+            if (validacio) {
+                main(num);
+            } else {
+                alert(msgError);  
+            }
+                  
+        }
+    </script>
+
+</body>
+</html>

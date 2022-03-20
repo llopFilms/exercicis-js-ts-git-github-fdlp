@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.3 - Exercici 1</title>
+</head>
+<!--Realitzar un programa que tingui un menú on se li mostraran 4 opcions a l’usuari per pantalla: 1.- Quadrat 2.- Triangle 3.- Rectangle 4.- Cercle
+
+Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa mostri per pantalla l’àrea (el valor) del polígon escollit.-->
+
+<h2>Calculadora d'àrees</h2>
+<br/><br/>
+
+<label for="dada1">Selector de figura:</label>
+<input type="number" id="dada1" maxlength="6" size="6">
+<label for="dada2">Selector de figura:</label>
+<input type="number" id="dada2" maxlength="6" size="6">
+
+<br/><br/><br/>
+<label for="selectorArees">Selector de figura:</label>
+<select name="selectorArees" id="selectorArees" onchange="validacioGral('dada1, dada2')" >
+<br/><br/>
+<option value=""></option>
+<option value="1">Quadrat</option>
+<option value="2">Triangle</option>
+<option value="3">Rectangle</option>
+<option value="4">Cercle</option>
+</select>
+<br/><br/><br/>
+
+
+<p id="resultat" p>
+<body>
+    <script>
+
+        //Funció Quadrat
+        function areaQuadrat(dada1){
+
+        let areaQuadrat = dada1**2;
+        console.log (areaQuadrat);
+        return areaQuadrat;
+        }
+
+        //Funció Triangle
+        function areaTriangle(dada1, dada2){
+
+        let areaTriangle = dada1 * dada2 / 2;
+        return areaTriangle;
+        }
+
+        //Funció Rectangle
+        function areaRectangle(dada1, dada2){
+
+        let areaRectangle = dada1 * dada2;
+        return areaRectangle;
+        }
+
+        //Funció Cercle
+        function areaCercle(dada1){
+
+        let areaCercl = 3.1416 * dada1**2;
+        let areaCercle = areaCercl.toFixed(2);
+        return areaCercle;
+        }
+
+        //Funció main
+        function main(dada1, dada2){
+        
+            let selector = Number(document.getElementById("selectorArees").value);
+            let resultat, figura;
+
+            switch (selector) {
+
+                case 1: resultat = areaQuadrat(dada1);
+                        figura = "quadrat";
+                        break;
+                
+                case 2: resultat = areaTriangle(dada1,dada2);
+                        figura = "trinagle";
+                        break;
+
+                case 3: resultat = areaRectangle(dada1,dada2);
+                        figura = "rectangle";
+                        break;
+
+                case 4: resultat = areaCercle(dada1);
+                        figura = "cercle";
+                        break;
+           }
+           console.log (selector, figura, dada1, dada2, resultat);
+           document.getElementById("resultat").innerHTML = "L'àrea de la figura <strong>" +figura+ "</strong> seleccionada és: <strong>" +resultat+ "</strong>.";
+        }
+
+        //Funció Validació individual
+        function validacioInd(num,id){
+
+            let validacioInd;
+                    
+            //Validació
+            if (isNaN(num) || num =="") {
+                    validacioInd = false;
+                    document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
+                    document.getElementById(id).value = "";
+
+            }else{
+                    validacioInd = true;
+                    document.getElementById(id).style.backgroundColor = "white";
+                
+            }
+            
+            return validacioInd;
+        }
+  
+        //Funció Validació General
+        function validacioGral(num, id){
+
+            //Entrada de dades funció b.
+            let dada1 = Number(document.getElementById("dada1").value);
+            let dada2 = Number(document.getElementById("dada2").value);
+        
+            
+            let msgError = "Les dades introduïdes són incorrectes. \n\nClica OK i torna-les a introduir correctament al quadre vermell. Moltes gràcies."
+            let validacioGral = true;
+            
+            if (validacioGral) {
+                validacioGral = validacioInd(dada1,"dada1");
+            }    
+            if (validacioGral) {
+                validacioGral = validacioInd(dada2,"dada2");
+            }   
+            
+            if (validacioGral) {                 
+                main(dada1, dada2);            
+            }else{
+                alert(msgError);
+            }
+        }
+
+    </script>
+
+    
+</body>
+</html>

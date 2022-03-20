@@ -1,0 +1,92 @@
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercici Mòdul tal, número qual...</title>
+    </head>
+    <body>
+        
+        <!-- Aquí enunciat comentat de l'exercici -->
+
+        <h1>Xuleta bàsica HTML v.1.0</h1>
+        <p>Aquí enunciat per pantalla de l'exercici</p>
+
+        <h4>Aquí els input type</h4>
+       
+        <label for="nomUsuari">Nom usuari (text)</label>
+        <input name="nom usuari" type="text" id="nomUsuari" placeholder="Escriu el que et doni la gana..." >
+        <br><br>
+
+        <label for="numeroUsuari">DNI usuari (número)</label>
+        <input name="DNI usuari" type="number" id="correu" placeholder="Escriu un numerito, de 0 a 150" min="0" max="150">
+        <br><br>
+
+        <label for="productes"><b>Aquí un selector d'opcions</b></label>
+        <select name="productes" id="productes">
+            <option value="Enciam roure">Enciam</option>
+            <option value="EScarola cabells d'àngel">Escarola</option>
+            <option value="Carxofes núvia">Carxofes</option>
+            <option value="Pomes golden">Pomes</option>
+            <option value="Pera primerenca">Peres</option>
+        </select>
+        <br><br>
+
+        <label for="operacions"><b>Aquí un selector ratio</b></label><br><br>
+            <input type="radio" name="operacions" id="suma" value="sumar">
+            <label for="suma">+ Suma</label><br>
+            <input type="radio" name="operacions" id="resta" value="restar">
+            <label for="resta">- Resta</label><br>
+            <input type="radio" name="operacions" id="multi" value="multiplicar">
+            <label for="multi">* Multiplicació</label><br>
+            <input type="radio" name="operacions" id="divi" value="dividir">
+            <label for="divi">/ Divisió</label><br><br>
+
+        <label for=""><b>Aquí un botó generat per input 'type=button'</b></label>
+        <br><br>
+            <input type="button" onClick="funcioX()" value="Dale ahí!"
+
+        <br><br><br>
+        <label for=""><b>Aquí un botó generat per 'button'</b></label><br><br>
+            <button onClick="funcioX()">Dale ahí también!</button>
+
+        </form>
+
+        <h4>Aquí una taula cutre per treure resultats</h4>
+
+        <table border>
+            <caption><b>Prova Taula</b></caption>
+            <tr>
+                <th>Nom</th>
+                <th>Cognom</th>
+                <th>Telèfon</th>
+            </tr>
+            <tr>
+                <td>Pep</td>
+                <td>Gómez</td>
+                <td>625365987</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>López</td>
+                <td>459887456</td>
+            </tr>
+        </table>
+
+        <h1>Títol principal</h1>
+
+        <h2>Títol Article</h2>
+
+        <p><b>Paràgraf: </b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam quisquam tempore impedit odio a pariatur, quae, non, ut quo explicabo quibusdam. Tempora accusantium doloremque error aperiam dolorem labore nisi optio.</p>
+
+        <h3>Aquí els span, per ficar variables per getElementById() darrere un text</h3>
+
+        <p> El resultat de la <b>suma</b> és: <span id="suma"></span></p>
+        <p> El resultat de la <b>resta</b> és: <span id="resta"></span></p>
+        <p> El resultat de la <b>multiplicació</b> és: <span id="multiplicacio"></span></p>
+        <p> El resultat de la <b>divisió</b> és: <span id="divisio"></span></p>
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+     //Funció Validació inidividual
+     function validacioInd(dada, id){
+
+          let validacioInd = false;
+                              
+          if (dada =="" || isNaN(dada) || dada <=0 ) {
+               validacioInd;
+               document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
+               document.getElementById(id).value = "";
+
+          }else{
+               validacioInd = true;
+               document.getElementById(id).style.backgroundColor = "white";
+          
+          }
+          return validacioInd;
+     }

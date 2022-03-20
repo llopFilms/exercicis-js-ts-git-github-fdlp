@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 8 - Exercici 1</title>
+</head>
+<body>
+    <!--Crea una classe en JavaScript anomenada "Ordinador", en un fitxer anomenat ordinador.js. Aquesta classe tindrà com a atributs la marca, el model, el processador, la quantitat de memòria RAM i la capacitat del disc dur. A més del constructor, ha de disposar dels següents mètodes:
+
+    · Mètodes que permetin consultar cadascun dels atributs
+    · Mètodes que permetin modificar el processador, la quantitat de memòria ram i la capacitat del disc dur
+    · Un mètode que rebrà un paràmetre i retornarà un frase que digui:
+    "En aquests moments s'està executant: 'X'" (X és el paràmetre rebut pel mètode i que normalment serà el nom d'un programa)
+    Exemple: "En aquests moments s'està executant: Chrome" 
+    un mètode que retornarà una descripció completa de l'ordinador (toString()).
+
+    En un altre fitxer anomenat main.js, crea la funció crearOrdinadors().Dintre d'aquesta funció, demanarem a l'usuari mitjançant promtps les dades de dos ordinadors. Un cop introduïdes les dades dels dos ordinadors, crida als mètodes de la classe Ordinador per comprovar que funcionen correctament.-->
+
+    <h2>Dades Ordinadors</h2>
+    <p><input type="button" onClick="creaOrdinadors()" value="Creador d'ordinadors"></p>
+    <br><br>
+    <h4>Ordinador 1</h4>
+  
+    <ul>
+        <li><strong>Marca: </strong><span id="marca1"></span></li><br>
+        <li><strong>Model: </strong><span id="model1"></span></li><br>
+        <li><input type="button" onClick="canviarProcessador(1, ordinador1)" value="Canviar"></input><strong> Processador: </strong><span id="processador1"></span></li><br>
+        <li><input type="button" onClick="canviarMemoria(1, ordinador1)" value="Canviar"></input><strong> Memòria: </strong><span id="memoria1"></span></li><br>
+        <li><input type="button" onClick="canviarDiscDur(1, ordinador1)" value="Canviar"></input><strong> Disc Dur: </strong><span id="discDur1"></span></li><br>
+        <li><input type="button" onClick="execPrograma(1, ordinador1)" value="Programa a executar"></li>
+        <small><em><span id="programa1"></span></em></small>
+    </ul>
+    <br>
+    <h4>Ordinador 2</h4>
+    <ul>
+        <li><strong>Marca: </strong><span id="marca2"></span></li><br>
+        <li><strong>Model: </strong><span id="model2"></span></li><br>
+        <li><input type="button" onClick="canviarProcessador(2, ordinador2)" value="Canviar"></input><strong> Processador: </strong><span id="processador2"></span></li><br>
+        <li><input type="button" onClick="canviarMemoria(2, ordinador2)" value="Canviar"></input><strong> Memòria: </strong><span id="memoria2"></span></li><br>
+        <li><input type="button" onClick="canviarDiscDur(2, ordinador2)" value="Canviar"></input><strong> Disc Dur: </strong><span id="discDur2"></span></li><br>
+        <li><input type="button" onClick="execPrograma(2, ordinador2)" value="Programa a executar"></li>
+        <small><em><span id="programa2"></span></em></small>
+    </ul>
+
+    <script>"use Strict"</script>
+    <script src="./js/ordinador.js"></script>
+    <script src="./js/auxiliars_inici.js"></script>
+    <script src="./js/main.js"></script>
+  
+</body>
+</html>

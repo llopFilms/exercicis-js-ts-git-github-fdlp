@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 6 - Exercici 2</title>
+</head>
+<body>
+    <!--Aquest programa calcula l'edat mitjana d'un número de persones introduït per teclat. S'ha de crear una funció que s'encarregui de demanar les edats a l'usuari i de calcular l'edat mitjana.
+    
+        · La funció rebrà per paràmetre el nº de persones a qui ha de demanar l'edat.
+        · L'edat de les persones només serà vàlida si està compresa entre 0 i 120 anys.
+        · La mitjana de les edats introduïdes s'ha de retornar per la funció (return).-->
+
+    <h3>Mitjana d'edat de x persones</h3>
+    <br/><br/> 
+    <p><label for="quantitatEdats">De quantes persones vols calcular la mitjana d'edat?</label>
+    <input type="number" id="quantitatEdats" maxlength= "6" size="6" />
+
+    <br/><br/>
+    <input type="button" onClick="mitjana('numPersones')" value="Clica aquí per començar"/>
+
+    <p id="resultat"><p>
+
+    <script>
+        "use strict"
+
+        //Funció que rep el número de persones, limita l'edat, calcula la mitjana i retorna el resultat
+        function calculMitjana(numPersones){
+
+            let i, sumaEdats = 0, edatIndividual = 0;
+      
+            for (i=1; i<=numPersones; i++){
+
+                edatIndividual = Number(prompt("Edat a introduir " +i+ " de " +numPersones));
+          
+                while (isNaN(edatIndividual) || edatIndividual =="" || edatIndividual<0 || edatIndividual>120){
+                edatIndividual = Number(prompt("Torna a introduïr l'edat. Ha de ser entre 0 i 120 anys. " +i+ " de " +numPersones));
+                }
+
+            sumaEdats += edatIndividual;
+            console.log(sumaEdats,numPersones)
+            }
+
+            return (sumaEdats / numPersones);
+            
+        }
+
+        //Funció que recull número de persones, validant que no sigui <0, ho envia a l'altra funció i recull el resultat per treure-ho per HTML
+        function mitjana(numPersones){
+
+            numPersones = Number(document.getElementById("quantitatEdats").value);
+
+            while (isNaN(numPersones) || numPersones =="" || numPersones <0){
+
+                numPersones = Number(prompt("El nombre de persones ha de ser més gran de 0. Torna aintroduïr-lo, sisplau"));
+                document.getElementById("quantitatEdats").value = numPersones;
+            }
+            
+            let resultat = calculMitjana(numPersones);
+            document.getElementById("resultat").innerHTML = "La mitjana d'edat del grup de " +numPersones+ " persones és de<strong> " +resultat+ " </strong>anys.";
+        }
+
+    </script>
+    
+</body>
+</html>

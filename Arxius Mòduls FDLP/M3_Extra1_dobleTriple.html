@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
+	<title>Mòdul 3 - Exercici Extra 1</title>
+</head>
+<body>
+	<!--Escriu un programa JavaScript que llegeix un nombre i mostra per pantalla el doble i el triple d'aquest número.-->
+	<h2>El doble i el triple!</h2>
+	<br/>
+
+	<input type="number" id="número" placeholder="Escriu aquí el número"/><br/><br/>
+	<input type='button' onClick='calcular()' Value='Clica aquí'/>
+	<br/>
+	<p id="càlcul"></p>
+
+	<script>
+
+		function calcular(){
+
+			//Entrada de dades i conversió a Number
+			let num = Number(document.getElementById("número").value);
+
+			//Generació de variables i càlculs
+			let doble = num * 2;
+			let triple = num * 3;
+
+			//Sortida de dades a id's d'HTML
+			document.getElementById("càlcul").innerHTML = "El resultat doble del número introduït és: <strong>" + doble + "</strong><br/><br/> I el resultat del triple del nombre introduït és: <strong>" +triple+ "</strong>";
+		}
+		
+	</script>
+</body>
+</html>

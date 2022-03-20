@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 7.1 - Exercici 2</title>
+</head>
+<body>
+	
+	<!--Un professor vol calcular les mitges de les notes de tota la classe. Crea una aplicació on l'usuari introduirà un número per pantalla (el número correspon al número de notes que vol introduir) i el programa li demanarà que introdueixi les notes de tots els alumnes.Un cop les notes han sigut introduides, el programa retorna el següent:
+
+	Si la nota mitjana és menor que 5: "La nota mitjana de la classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més".
+
+	Si la nota és inferior a 7: "La nota mitjana de la classe és bona, però els alumnes haurien de millorar el treball personal".
+
+	Per la resta de casos, el missatge ha de ser: "Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat".
+
+	*Les notes han d'estar compreses entre 0 i 10.-->
+
+	<h2>Mitjana de la classe</h2>
+	<br/>
+	<p>Quantes notes vols introduïr?:</p>
+	
+	<!--Entrada de dades limitades a min="1"-->
+	<input type ="number" min="1" id="caixaQuantitatNotes" placeholder=""/>
+	<br/><br/>
+
+	<input type='button' onClick='mitjanaNotes()' Value='Clica per continuar'/>
+	<br/>
+	<p id="nota mitjana classe"></p>
+
+	
+	
+	<script>
+	
+		function mitjanaNotes(){
+
+			//Definició de dades i recepció des d'id d'HTML
+			let i, sumaAcumulada = 0, notaInd, mitjanaClasse;
+			let numNotes = Number(document.getElementById("caixaQuantitatNotes").value);
+			
+			//Loop que demana nota i fa la suma acumulativa, iterant tans cops com número de notes a introduïr hi ha. Avís de nota mal introduïda (>10) i sol·licitud de nova entrada
+			for (i=1; i <= numNotes; i++){
+				
+				notaInd = Number(prompt("Introdueix la nota " +(i)+ " de " +numNotes));
+				while (notaInd <0 || notaInd>10){
+					
+					notaInd = Number(prompt("La nota introduïda ha de ser entre 0 i 10, sisplau. Introdueix la nota " +(i)+ " de " +numNotes+ " de nou."));
+				}
+				sumaAcumulada += notaInd;
+				
+			}
+
+			//Càlcul de la mitjana reduïda a 2 decimals
+			mitjanaClasse = sumaAcumulada / numNotes;
+			mitjanaClasse2dec = mitjanaClasse.toFixed(2);
+			
+			//Elaboració dels missatges de sortida a id's d'HTML segons valor final
+			if (mitjanaClasse < 5){
+				document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és:<strong> " + mitjanaClasse2dec +"</strong>. <br/>La classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més.";
+
+				}else if (mitjanaClasse < 7){
+				document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és:<strong> " + mitjanaClasse2dec + "</strong>.<br/>La nota és bona, però els alumnes haurien de millorar el treball personal.";
+
+					}else 
+					document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és: <strong> " + mitjanaClasse2dec +  "</strong>.<br/>Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat.";
+			
+		}
+
+	</script>
+	
+</body>
+</html>

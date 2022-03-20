@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 6 - Exercici 3</title>
+</head>
+
+    <!--Fes un programa amb 3 funcions. El programa ha de cridar a les 3 funcions e interactuar amb ells de la següent manera:
+
+    a. Crea una funció sense paràmetres i sense retorn que imprimeixi per consola “sóc una funció”. 
+        · Sortida: sóc una funció.
+
+    b. Crea una funció que rebi un array de números com a paràmetre, imprimeixi el número més gran per consola i retorni l’índex de l’array on es troba el número més petit. Crea un array de 5 números i crida a la funció que acabes de crear per imprimir el número més petit de l’array. Sortida (amb aquests números dintre de l’array “8, 12, 5, 22, 6”):
+        · Número més gran 22 (això ho imprimeix el propi mètode)
+        · Número més petit 5  (això ho imprimeix on s'ha fet la crida al mètode) 
+
+    c. Crea una funció que rebi dos números com a paràmetres i retorni un array amb tots els números compresos entre ells.
+    Crida a la funció que acabes de crear amb els dos números que vulguis i imprimeix l’array que et retorna.
+        · Sortida (amb el núm 2 i 10): Els números compresos entre 2 i 10 són: 3, 4, 5, 6, 7, 8, 9.-->
+
+    <h2>Les 3 funcions</h2>
+    <br/>
+    <h4>Introdueix 5 números per la funció b:</h4>
+    <p>
+    <input type="number" id="arrayNum1" maxlength= "6" size="6" />
+    <input type="number" id="arrayNum2" maxlength= "6" size="6" />
+    <input type="number" id="arrayNum3" maxlength= "6" size="6" />
+    <input type="number" id="arrayNum4" maxlength= "6" size="6" />
+    <input type="number" id="arrayNum5" maxlength= "6" size="6" />
+    </p><br/>
+    <h4>Introdueix 2 números per la funció c:</h4>
+    <p>
+    <input type="number" id="numIni" maxlength= "6" size="6" />
+    <input type="number" id="numFin" maxlength= "6" size="6" />
+    </p>
+    <p><br/><br/>
+    <input type="button" onClick="validacioGral()" value="Clica per veure la feina..."/>
+    </p>
+    <h4>La funció a. diu: </h4>
+    <p id="dades funcioConsola" ></p>
+    
+    <h4>La funció b. diu: </h4>
+    <p id="dades funcioArrayMax" ></p>
+    <p id="dades funcioArrayindexMin" ></p>
+    <p id="dades funcioArraynumMin" ></p>
+
+    <h4>La funció c. diu: </h4>
+    <p id="dades arraySerie" ></p>
+    <!-- Mejor si los id son una palabra ünica tipo dadesArraySerie. 
+         Esto te evitará errores y dolores de cabeza -->
+
+</body>
+
+    <script>
+        "use strict"
+        
+        //Funció apartat a.
+        function consola(){
+
+            document.getElementById("dades funcioConsola").innerHTML = "<strong>'Sóc una funció'</strong> i t'ho dic desde la funció de l'apartat a.";
+
+        }
+
+        //Funció apartat b.
+        function array(numsarray){
+             
+            let numMax = numsarray[0];
+            let indexMin = 0;
+            let numMin = numsarray[0];
+            let i, contingut = 0;
+
+            for (i=0; i<numsarray.length; i++){
+
+                contingut = numsarray[i];
+                if (numMax < contingut) {
+                    numMax = contingut;
+                }
+
+                if (numMin > contingut) {
+                    numMin = contingut;
+                    indexMin = i;
+                }
+            }
+            document.getElementById("dades funcioArrayMax").innerHTML = "El número més gran de l'array és, <strong>" + numMax + "</strong> i vinc directament de la funció de l'apartat b.";
+            return indexMin;
+
+        }
+        
+        //Funció apartat c.
+        function numsCompresos(numIni, numFin){
+
+            let numGran, numPetit;
+
+            if (numIni > numFin) {
+
+                numGran = numIni; numPetit = numFin;
+
+            }else{
+
+                numGran = numFin; numPetit = numIni;
+            }
+           
+            let i, interval = (numGran-numPetit-1);
+            let arraySerie = [];
+
+            for (i=0; i<interval; i++){
+                arraySerie.push(numPetit+1+i);
+            }
+            console.log(arraySerie, interval, numIni, numFin);
+            return arraySerie;
+            
+        }
+
+        //Funció principal
+        function main(){
+            
+            //Definició de l'array per paràmetre de la funció apartat b.
+            let numsArray = [];
+            numsArray.push(Number(document.getElementById("arrayNum1").value));
+            numsArray.push(Number(document.getElementById("arrayNum2").value));
+            numsArray.push(Number(document.getElementById("arrayNum3").value));
+            numsArray.push(Number(document.getElementById("arrayNum4").value));
+            numsArray.push(Number(document.getElementById("arrayNum5").value));
+            
+            //Crida funció apartat a.
+            consola();
+
+            //Sortida de dades apartat b.
+            let indexMin2 = array(numsArray);
+            document.getElementById("dades funcioArrayindexMin").innerHTML = "La posició dins l'array del número més petit és <strong>" +indexMin2+ " </strong>i vinc de la funció principal.";
+            document.getElementById("dades funcioArraynumMin").innerHTML = "El número més petit de l'array és el <strong>" + numsArray[indexMin2]+ " </strong>i m'he generat a la funció principal.";
+
+            //Definició de paràmetres per funció apartat c.
+            let numIni = Number(document.getElementById("numIni").value); 
+            let numFin = Number(document.getElementById("numFin").value);
+            
+            //Sortida de dades apartat c.
+            
+            let arraySerie2 = numsCompresos(numIni, numFin);
+            console.log (arraySerie2);
+            document.getElementById("dades arraySerie").innerHTML = "L'array resultant dels números compresos entre " + numIni + " i " + numFin + " és: <strong>" + arraySerie2 + "</strong> i també vinc de la funció principal.";
+
+        }
+
+        //Funció Validació individual
+        function validacioInd(num, id){
+
+            let validacioInd;
+                    
+            //Validació
+            if (isNaN(num) || num =="") {
+                    validacioInd = false;
+                    document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
+                    document.getElementById(id).innerHTML = "";
+            }else{
+                    validacioInd = true;
+                    document.getElementById(id).style.backgroundColor = "white";
+                   
+            }
+            return validacioInd;
+        }
+      
+        //Funció Validació Genral
+        function validacioGral(num, id){
+
+            //Entrada de dades funció b.
+            let arrayNum1 = Number(document.getElementById("arrayNum1").value);
+            let arrayNum2 = Number(document.getElementById("arrayNum2").value);
+            let arrayNum3 = Number(document.getElementById("arrayNum3").value);
+            let arrayNum4 = Number(document.getElementById("arrayNum4").value);
+            let arrayNum5 = Number(document.getElementById("arrayNum5").value);
+            
+            //Entrada dades funció c.
+            let numIni = Number(document.getElementById("numIni").value);
+            let numFin = Number(document.getElementById("numFin").value);
+
+            let msgError = "Les dades introduïdes són incorrectes o inexistents. \n\nClica OK i torna-les a introduir correctament al quadre vermell. Moltes gràcies."
+            let validacioGral = false;
+            
+            if (validacioInd(arrayNum1,"arrayNum1") == true &&
+                validacioInd(arrayNum2,"arrayNum2") == true &&
+                validacioInd(arrayNum3,"arrayNum3") == true &&
+                validacioInd(arrayNum4,"arrayNum4") == true &&
+                validacioInd(arrayNum5,"arrayNum5") == true &&
+                validacioInd(numIni,"numIni") == true &&
+                validacioInd(numFin,"numFin") == true) {
+                
+                validacioGral = true;
+              
+            }
+            if (validacioGral) {                 
+                main();            
+            }else{
+                alert(msgError);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

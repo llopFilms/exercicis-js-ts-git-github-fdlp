@@ -1,0 +1,5 @@
+//Funció escriu dada valor
+     function escriuDadaValue(id,dada){        
+
+          document.getElementById(id).value = dada;
+     }

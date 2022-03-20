@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <titol></titol>
+</head>
+<body>
+     
+     <h3>Bioconstrucció</h3>
+
+     <img id="imatge" src="./img/Gener.jpg" width="400" height="400"/>
+
+     <p id="nom imatge"></p>
+     <p id="descripcio"></p>
+          
+     <input type="button" id="play" onClick="play()" value="Play"/>
+     <input type="button" id="stop" onClick="stop()" value="Stop"/>
+     <br><br>
+     <input type="button" id="enrere" onClick="enrere()" value="Enrere"/>
+     <input type="button" id="endavant"onClick="endavant()" value="Endavant"/>
+     <br><br>
+      
+     <input type="button" id="buscarBoto" onClick="desplegar('dadesBuscar','buscarBoto','Buscar foto')" value="Buscar foto"/>
+     <div id="dadesBuscar" hidden="true">
+
+          <h4>Buscar foto</h4>
+          
+          <label for="nomBuscar">Nom de la foto que vols buscar?</label>
+          <input type="text" id="nomBuscar" size="33"/><br><br>
+
+          <input type="button" onClick="validacioBuscar()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <input type="button" id="afegirBoto" onClick="desplegar('dadesAfegir', 'afegirBoto','Afegir foto')" value="Afegir foto"/>
+     <div id="dadesAfegir" hidden="true">
+          
+          <h4>Afegir foto</h4>
+
+          <label for="1">Foto a afegir (sense .jpg) </label>
+          <input type="text" id="1" size="15"/><br><br>
+          <label for="2">Nom de la foto </label>
+          <input type="text" id="2" size="15"/><br><br>
+          <label for="3">Títol de la foto</label>
+          <input type="text" id="3" size="33"/><br><br>
+          <label for="4">Descripció de la foto</label>
+          <input type="text" id="4" size="33"/><br><br>
+          
+
+          
+          <input type="button" onClick="validacioAfegir()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <input type="button" id="modificarBoto" onClick="desplegar('dadesModificar', 'modificarBoto','Modificar foto')" value="Modificar foto"/>
+     <div id="dadesModificar" hidden="true">
+          
+          <h4>Modificar foto</h4>
+
+          <label for="5">Nova imatge (sense .jpg) </label>
+          <input type="text" id="5" size="20"/><br><br>
+          <label for="6">Nou nom de la foto </label>
+          <input type="text" id="6" size="20"/><br><br>
+          <label for="7">Nou títol de la foto</label>
+          <input type="text" id="7" size="33"/><br><br>
+          <label for="8">Nova descripció de la foto</label>
+          <input type="text" id="8" size="33"/><br><br>
+        
+          <input type="button" onClick="validacioModificar()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <input type="button" id="esborrarBoto" onClick="esborrar()" value="Esborrar foto"/>
+
+     <input type="button" id="sortirBoto" onClick="sortir()" value="Sortir"/>
+
+     <p id="fotosDisponibles"></p>
+     <p id="avís" ></p>
+
+     <script>"use Strict"</script>
+     <script src="./js/classeBioconstruccio.js"></script>
+     <script src="./js/array2.js"> </script>
+     <script src="./js/carousel.js"> </script>
+     <script src="./js/operacionS.js"> </script>
+
+     </script>
+
+</body>
+</html>

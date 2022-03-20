@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 4 - Exercici Extra 2</title>
+</head>
+<body>
+
+	<!--Demana a l'usuari un número entre 0 i 99 i mostra'l escrit en lletres (pots fer-ho en català o castellà).
+	Exemple: 56 (cinquanta-sis) o 56 (cincuenta y seis)-->
+	<h2>Números a lletres</h2>
+	<br/>
+	<p>Pots introduir un número?</p>
+	
+	<!--Generem l'entrada d'un número entre 0 i 99-->
+	<input type="number" min="0" max="99" id="CaixaTextNum">
+
+	<input type='button' onClick='numaText()' Value='A veure com és...'/>
+	<br/>
+	<p id="num_a_Text"></p>
+
+	<script>
+
+		function numaText(){
+
+			//Recollim les dades i convertim a integer per si escriuen amb decimals
+			let num = parseInt(document.getElementById("CaixaTextNum").value);
+			
+			//Definim variables separant desenes de les unitats i definim les variables per generar el text
+			let unitats = num % 10;
+			let desenes = (num-unitats)/10;
+
+			let text_unitats, text_desenes;
+			
+			//switch per generar les unitats
+			switch (unitats){
+
+				case 0: text_unitats = "zero";
+				break;
+				case 1: text_unitats = "u";
+				break;
+				case 2: text_unitats = "dos";
+				break;			
+				case 3: text_unitats = "tres";
+				break;
+				case 4: text_unitats = "quatre";
+				break;
+				case 5: text_unitats = "cinc";
+				break;
+				case 6: text_unitats = "sis";
+				break;
+				case 7: text_unitats = "set";
+				break;
+				case 8: text_unitats = "vuit";
+				break;
+				case 9: text_unitats = "nou";
+				break;
+
+			}
+
+			//switch per generar les desenes
+			switch (desenes){
+
+				case 1: text_desenes = "deu";
+				break;
+				case 2: text_desenes = "vint";
+				break;			
+				case 3: text_desenes = "trenta";
+				break;
+				case 4: text_desenes = "quaranta";
+				break;
+				case 5: text_desenes = "cinquanta";
+				break;
+				case 6: text_desenes = "seixanta";
+				break;
+				case 7: text_desenes = "setanta";
+				break;
+				case 8: text_desenes = "vuitanta";
+				break;
+				case 9: text_desenes = "noranta";
+				break;
+
+				
+			}
+			
+			//if per unir les variables de text i generar el nom del número, i retorn del resultat a l'id d'HTML
+			if (desenes == 0 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_unitats;
+			}
+			
+			if (desenes == 0 && unitats >=1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_unitats;
+			}
+		
+			if (desenes == 1 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 1 && unitats == 1){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: onze";
+			}
+
+			if (desenes == 1 && unitats == 2){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: dotze";
+			}
+
+			if (desenes == 1 && unitats == 3){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: tretze";
+			}
+
+			if (desenes == 1 && unitats == 4){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: catorze";
+			}
+
+			if (desenes == 1 && unitats == 5){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: quinze";
+			}
+
+			if (desenes == 1 && unitats == 6){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: setze";
+			}
+
+			if (desenes == 1 && unitats == 7){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: disset";
+			}
+
+			if (desenes == 1 && unitats == 8){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: divuit";
+			}
+
+			if (desenes == 1 && unitats == 9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: dinou";
+			}
+
+			if (desenes == 2 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 2 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +"-i-"+ text_unitats;
+			}
+
+			if (desenes == 3 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 3 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 4 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 4 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 5 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 5 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 6 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 6 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 7 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 7 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = itats <=9){
+	"El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 8 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 8 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+
+			if (desenes == 9 && unitats == 0){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes;
+			}
+
+			if (desenes == 9 && unitats >= 1 && unitats <=9){
+			document.getElementById("num_a_Text").innerHTML = "El número s'escriu: " + text_desenes +" "+ text_unitats;
+			}
+		
+	}
+			
+	</script>
+</body>
+</html>

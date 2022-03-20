@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mòdul 7.3 - Exercici 7</title>
+</head>
+<body>
+    <!--Un grup d’amics ha quedat per fer una fideuà, els ingredients principals seran: fideus, gambes, i calamars. Saben que per cada quatre persones han d’utilitzar mig quilo de fideus, 400 grams de calamars i 200 grams de gambes. S’ha de fer un programa que demani per pantalla el preu per quilo de cada ingredient i el nombre d’amics que seran per dinar. El programa ha de calcular les quantitats necessàries de cada ingredient, el preu per persona i el preu final de la fideuà-->
+
+    <h2>La fideuà</h2>
+    <br/>
+    <label for="numPersones"><strong>Indiqueu quantes persones vindran:</strong></label>
+    <input type="number" id="1"  size="6">
+    <br/><br/><br/>
+    <label for="preuFideus">Indiqueu el preu per kg dels fideus:</label> 
+    <input type="number" id="2" size="6">
+    <br/><br/>
+    <label for="preuGambes">Indiqueu el preu per kg de les gambes:</label> 
+    <input type="number" id="3" size="6">
+    <br/><br/>
+    <label for="preuCalamars">Indiqueu el preu per kg dels calamars:</label> 
+    <input type="number" id="4" size="6">
+   
+    <br/><br/><br/>
+    <input type="button" onClick="validacio()" value="Clica aquí per calcular el preu per persona"/>
+    <br/><br/>
+
+    <p id="resultat" ></p>
+    <p id="avís" ></p>
+   
+    <script>
+    "use Strict"
+
+     //Funcions auxiliarsLlibreria
+
+     //Funció llegeix dada
+     function llegeixDada(id){
+
+          let dada = document.getElementById(id).value;
+          return dada;
+     }
+
+     //Funció escriu dada
+     function escriuDada(id, dada){        
+
+          document.getElementById(id).innerHTML = dada;
+     }
+     
+     //Funció escriu dada valor
+     function escriuDadaValue(id,dada){        
+
+          document.getElementById(id).value = dada;
+     }
+
+     //Funció dada bona
+     function dadaBona(id){
+          
+          document.getElementById(id).style.background = "white";
+     }
+
+     //Funció dada dolenta
+     function dadaDolenta(id){
+     
+          document.getElementById(id).style.background = "#E6B0AA";
+     }
+
+     //Programa
+
+     //Funció càlcul fideuà
+     function fideua(numPersones, preuFideus, preuGambes, preuCalamars){
+
+          //Funció pes de cada ingredient
+          let pesFideus = 0.5/4 * numPersones;
+          let pesGambes = 200/4 * numPersones;
+          let pesCalamars = 400/4 * numPersones;
+
+          //Preu per persona
+          let preuPersona = pesFideus * preuFideus + pesGambes/1000 * preuGambes + pesCalamars/1000 * preuCalamars;
+
+          //Preu final
+          let preuFideua = preuPersona * numPersones;
+
+          let resultatsFideua = [pesFideus, pesGambes, pesCalamars, preuPersona, preuFideua];
+          return resultatsFideua;
+     }
+
+     //Funció principal
+     function main(numPersones, preuFideus, preuGambes, preuCalamars){
+
+          //Gestió amb funcions
+          let resultatsFideua = fideua(numPersones, preuFideus, preuGambes, preuCalamars);
+       
+          //Resultat final
+          let resultat = "<h3> Càlculs fideuà: </h3><ul><li> El nombre de persones apuntades és <strong>"+numPersones+ "</strong>. <br/></li><li> La quantitat necessària de fideus serà de <strong>" +resultatsFideua[0]+ "</strong> kilos. <br/></li> <li> La quantitat necessària de gambes serà de  <strong>" +resultatsFideua[1]+ "</strong> grams.<br/></li><li> La quantitat necessària de calamars serà de <strong>" +resultatsFideua[2]+ "</strong> grams.<br/></li><li> El preu per persona serà de <strong>" +resultatsFideua[3].toFixed(1)+ "</strong> euros.<br/></li><li> I el cost total de la fideuà serà de <strong>" +resultatsFideua[4].toFixed(1)+ "</strong> euros.</ul>"
+
+          escriuDada("resultat",resultat);
+     }      
+
+     //Funció Validació
+     function validacio(){
+
+          //Esborrar pantalla
+          escriuDada ("avís","");
+          escriuDada ("resultat","");
+
+          //Entrada a paràmetres
+          let numPersones = llegeixDada("1");
+          let preuFideus = llegeixDada("2");
+          let preuGambes = llegeixDada("3");
+          let preuCalamars = llegeixDada("4");
+
+          //Validació
+          let validacio = true;
+        
+          //Validar dades ingredients i convertir a Number
+          for (i=1; i<=4; i++){
+
+               dadaBona(i);
+               contingut = llegeixDada(i);
+               Number(i);
+
+               if (contingut = "" || contingut <=0 || isNaN(contingut)){
+
+                    validacio = false;
+                    dadaDolenta(i);
+                    escriuDadaValue(i, "");
+               }
+          }
+          //Arrodoneix número de convidats
+          numPersones = Math.round(numPersones);
+
+          if (validacio==false){
+               escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
+
+          }else{  
+               main(numPersones, preuFideus, preuGambes, preuCalamars);
+          } 
+     } 
+   </script>
+</body>
+</html>

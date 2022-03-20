@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 4 - Exercici 4</title>
+</head>
+<body>
+	
+	<!--L’usuari introdueix un mes per pantalla i mitjançant un switch amb els 12 mesos de l’any, el programa calcula els dies del mes i mostra el següent: 
+
+	Exemple: Si el número introduït és 1, llavors ha d'aparèixer per pantalla: “El mes de gener té 31 dies”L’usuari introdueix un mes per pantalla i mitjançant un switch amb els 12 mesos de l’any, el programa calcula els dies del mes i mostra el següent: 
+
+	Exemple: Si el número introduït és 1, llavors ha d'aparèixer per pantalla: “El mes de gener té 31 dies”
+
+	Fem un input select-->
+	<h2>Dies que té el mes</h2>
+	<p> Tria una mes de l'1 al 12 de l'any, gràcies </p>
+	<select name="mesos" id="selecció mesos">
+		<option value="0"></option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>	
+	
+	<br><br>
+	<input type='button' onClick='diesMes()' Value='Clica aquí per saber-ho'/>
+	<br/>
+	<p id="tantsDies"></p>
+	
+	<script>
+	
+		function diesMes(){
+
+			//Captació de dades des d'HTML i conversió a Number
+			let mes = Number(document.getElementById("selecció mesos").value);
+				
+			//switch i sortida de dades a id d'HTML
+			switch (mes){
+
+				case 1: mes = "El mes de <strong>Gener</strong> té <strong>31</strong> dies."
+				break;
+				case 2: mes = "El mes de <strong>Febrer</strong> té <strong>28</strong> dies."
+				break;
+				case 3: mes = "El mes de <strong>Març</strong> té <strong>30</strong> dies."
+				break;
+				case 4: mes = "El mes <strong>d'Abril</strong> té <strong>31</strong> dies."
+				break;
+				case 5: mes = "El mes de <strong>Maig</strong> té <strong>30</strong> dies."
+				break;
+				case 6: mes = "El mes de <strong>Juny</strong> té <strong>31</strong> dies."
+				break;
+				case 7: mes = "El mes de <strong>Juliol</strong> té <strong>31</strong> dies."
+				break;
+				case 8: mes = "El mes <strong>d'Agost</strong> té <strong>31</strong> dies."
+				break;
+				case 9: mes = "El mes de <strong>Setembre</strong> té <strong>30</strong> dies."
+				break;
+				case 10: mes = "El mes <strong>d'Octubre</strong> té <strong>31</strong> dies."
+				break;
+				case 11: mes = "El mes de <strong>Novembre</strong> té <strong>30</strong> dies."
+				break;
+				case 12: mes = "El mes de <strong>Desembre</strong> té <strong>31</strong> dies."
+				break;
+			}	
+			document.getElementById("tantsDies").innerHTML = mes;
+			
+		}		
+
+	</script>
+	
+</body>
+</html>

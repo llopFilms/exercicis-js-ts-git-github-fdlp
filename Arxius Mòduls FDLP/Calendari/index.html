@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Carousel</title>
+</head>
+<body>
+     
+     <h2>Calendari 2022</h2>
+
+     <img id="imatge" title="mesos lunars de l'any" src="./img/Gener.jpg" width="400" height="400"/>
+
+     <p id="nom imatge"></p>
+          
+     <input type="button" onClick="enrere()" value="Anterior mes"/>
+     <input type="button" onClick="endavant()" value="Següent mes"/>
+
+     <script>
+
+          document.getElementById("nom imatge").innerHTML = "<strong>Gener</strong>";
+
+          const calendari = ["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre"];
+
+          let posicio = 0;
+
+          //Funcions auxiliars
+          function endavant(){
+
+               posicio++;
+               if (posicio >= calendari.length){
+
+                    posicio = 0;
+               }
+               mostrar();
+          }
+
+          function enrere(){
+
+               posicio--;
+               if (posicio <= 0){
+
+                    posicio = calendari.length-1;
+               }
+               mostrar();
+          }
+
+          function mostrar(){
+
+               let imatge = "./img/" +calendari[posicio]+ ".jpg";
+               document.getElementById("imatge").src = imatge;
+               document.getElementById("nom imatge").innerHTML = "<strong>" +calendari[posicio]+ "</strong>";
+
+          }
+
+
+     </script>
+
+</body>
+</html>

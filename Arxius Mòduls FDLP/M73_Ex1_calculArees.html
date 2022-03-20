@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.3 - Exercici 1</title>
+</head>
+<!--Realitzar un programa que tingui un menú on se li mostraran 4 opcions a l’usuari per pantalla: 1.- Quadrat 2.- Triangle 3.- Rectangle 4.- Cercle
+
+Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa mostri per pantalla l’àrea (el valor) del polígon escollit.-->
+
+<h2>Calculadora d'àrees</h2>
+
+<br/>
+<input type="button" onClick="main()" value="Clica aquí per començar"/>
+<br/><br/>
+<p id="resultat" p>
+
+<body>
+    <script>
+
+        //Funció Quadrat
+        function areaQuadrat(dada1){
+
+            dada1 = Number(prompt ("Introdueix la mida del costat del quadrat."));
+
+            let continuar = validacio (dada1);
+            while (continuar == false){
+
+                dada1 = prompt ("Les dades són incorrectes. Introdueix la mida del costat del quadrat.");
+                if (validacio(dada1) == true) {
+                    continuar = true;
+                }
+            }
+
+            let areaQuadrat = dada1**2;
+            return areaQuadrat;
+        }
+
+        //Funció Triangle
+        function areaTriangle(dada1, dada2){
+
+            dada1 = Number(prompt ("Introdueix la mida de la base del triangle."));
+
+            let continuar = validacio (dada1);
+            while (continuar == false){
+
+                dada1 = prompt ("Les dades són incorrectes. Introdueix la mida de la base del triangle.");
+                if (validacio(dada1) == true) {
+                    continuar = true;
+                }
+            }
+
+            dada2 = Number(prompt ("Introdueix la mida de l'alçada del trinagle."));
+
+            continuar = validacio (dada2);
+            while (continuar == false){
+
+                dada2 = prompt ("Les dades són incorrectes. Introdueix la mida de l'alçada del trinagle.");
+                if (validacio(dada2) == true) {
+                    continuar = true;
+                }
+            }
+
+            let areaTriangle = dada1 * dada2 / 2;
+            return areaTriangle;
+        }
+
+        //Funció Rectangle
+        function areaRectangle(dada1, dada2){
+
+            dada1 = Number(prompt ("Introdueix la mida de la base del rectangle"));
+
+            let continuar = validacio (dada1);
+            while (continuar == false){
+
+                dada1 = prompt ("Les dades són incorrectes. Introdueix la mida de la base del rectangle.");
+                if (validacio(dada1) == true) {
+                    continuar = true;
+                }
+            }
+
+            dada2 = Number(prompt ("Introdueix la mida de l'alçada del rectangle"));
+
+            continuar = validacio (dada2);
+            while (continuar == false){
+
+                dada2 = prompt ("Les dades són incorrectes. Introdueix la mida de l'alçada del rectangle.");
+                if (validacio(dada2) == true) {
+                    continuar = true;
+                }
+            }
+
+            let areaRectangle = dada1 * dada2;
+            return areaRectangle;
+        }
+
+        //Funció Cercle
+        function areaCercle(dada1){
+
+            dada1 = Number(prompt ("Introdueix la mida del radi del cercle"));
+
+            let continuar = validacio (dada1);
+            while (continuar == false){
+
+                dada1 = prompt ("Les dades són incorrectes. Introdueix la mida del radi del cercle");
+                if (validacio(dada1) == true) {
+                    continuar = true;
+                }
+            }
+
+            let areaCercle = (Math.PI * dada1**2).toFixed(2);
+            return areaCercle;
+        }
+
+        //Funció main
+        function main(dada1, dada2){
+        
+            let menu = "Benvingut a la calculadora d'àrees:\n\nSelecciona una figura gomètrica del menú:\n\n 1. Quadrat\n 2. Triangle\n 3. Rectangle\n 4. Cercle\n\n 5. Sortir del programa\n\n"; 
+            
+            let selector = Number(prompt(menu));
+            let resultat, figura;
+                        
+            switch (selector) {
+
+                case 1: resultat = areaQuadrat(dada1);
+                        figura = "quadrat";
+                        document.getElementById("resultat").innerHTML = "L'àrea de la figura <strong>" +figura+ "</strong> seleccionada és: <strong>" +resultat+ "</strong>.";
+                        break;
+                
+                case 2: resultat = areaTriangle(dada1,dada2);
+                        figura = "trinagle";
+                        document.getElementById("resultat").innerHTML = "L'àrea de la figura <strong>" +figura+ "</strong> seleccionada és: <strong>" +resultat+ "</strong>.";
+                        break;
+
+                case 3: resultat = areaRectangle(dada1,dada2);
+                        figura = "rectangle";
+                        document.getElementById("resultat").innerHTML = "L'àrea de la figura <strong>" +figura+ "</strong> seleccionada és: <strong>" +resultat+ "</strong>.";
+                        break;
+
+                case 4: resultat = areaCercle(dada1);
+                        figura = "cercle";
+                        XMLHttpRequestEventTarget
+                        document.getElementById("resultat").innerHTML = "L'àrea de la figura <strong>" +figura+ "</strong> seleccionada és: <strong>" +resultat+ "</strong>.";
+                        break;
+
+                case 5: document.getElementById("resultat").innerHTML = "";
+                        resultat = alert ("Gràcies i bon dia");
+                        break;
+            }
+            
+        }
+
+        //Funció Validació individual
+        function validacio(num){
+
+            let validacio;
+                    
+            //Validació
+            if (isNaN(num) || num =="" || num <=0) {
+                    validacio = false;
+                    
+            }else{
+                    validacio = true;
+                    
+            }
+            return validacio;
+        }
+  
+    </script>
+
+    
+</body>
+</html>

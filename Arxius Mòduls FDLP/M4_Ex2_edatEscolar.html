@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 4 - Exercici 2</title>
+</head>
+<body>
+	<!--Aquest programa li demana l’edat a l’usuari, en funció d’aquesta, mostrarem un dels següents missatges per pantalla:
+
+    · Si té 5 anys o menys: preescolar
+    · Si té entre 6 i 11 anys: primària
+    · Si té entre 12 i 15: ESO
+    · Si té entre 16 i 17: Batxillerat
+    · Si és major d'edat: FP o Universitat -->
+		<h2>Edat escolar</h2>
+	<br/>
+
+	<!--Limitem l'edat entre 1 i 110 anys-->
+	<input type="number" id="edat" min="1" max="110" placeholder="Escriu aquí la teva edat"/><br/><br/>
+	<input type='button' onClick='edatEscolar()' Value='Clica aquí a veure...'/>
+	<br/>
+	<p id="càlcul_edatEscolar"></p>
+
+	<script>
+
+		function edatEscolar(){
+
+			//Captació de dades, conversió a número enter (per si entren decimals)
+			let edat = parseInt(document.getElementById("edat").value);
+		
+			//Condicional segons edat i sortida de resultats a id d'HTML
+			/* if (edat <=5){
+			document.getElementById("càlcul_edatEscolar").innerHTML = "Petitons: Preescolar";
+			
+				}else if (edat >=6 && edat <=11){
+				document.getElementById("càlcul_edatEscolar").innerHTML = "Infantil: Primària";
+				
+					}else if (edat >=12 && edat <=15){
+					document.getElementById("càlcul_edatEscolar").innerHTML = "Aleví: ESO";
+
+						}else if (edat >=16 && edat <=17){
+						document.getElementById("càlcul_edatEscolar").innerHTML = "Junior: Batxillerat";
+
+							}else{
+							document.getElementById("càlcul_edatEscolar").innerHTML = "Sènior: FP o Universitat";
+			} */
+
+			if (edat <=5) document.getElementById("càlcul_edatEscolar").innerHTML = "Petitons: Preescolar";
+			
+			else if (edat >=6 && edat <=11) document.getElementById("càlcul_edatEscolar").innerHTML = "Infantil: Primària";
+				
+			else if (edat >=12 && edat <=15) document.getElementById("càlcul_edatEscolar").innerHTML = "Aleví: ESO";
+
+			else if (edat >=16 && edat <=17) document.getElementById("càlcul_edatEscolar").innerHTML = "Junior: Batxillerat";
+
+			else document.getElementById("càlcul_edatEscolar").innerHTML = "Sènior: FP o Universitat";
+						
+		}
+		
+	</script>
+</body>
+</html>

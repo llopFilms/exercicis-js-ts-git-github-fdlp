@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botiga de mobles</title>
+</head>
+<body>
+
+
+    <script>
+
+        let menu1= "Anem a comprar un armari:\n\n";
+
+        menu1 += "1. Alçada 180cm, amplada 150cm, 2 portes\n";
+        menu1 += "2. Alçada 180cm, amplada 150cm, 2 portes + mirall\n";
+        menu1 += "3. Alçada 180cm, amplada 260cm, 3 portes\n";
+        menu1 += "4. Alçada 180cm, amplada 260cm, 3 portes + mirall\n";
+        menu1 += "5. Sortir\n\n";
+
+        menu1 += "Tria una opció";
+
+        let selMenu1 = 0;
+
+
+        let menu2= "Fusta armari:\n\n";
+        menu2 += "1. Cedre\n";
+        menu2 += "2. Pi\n";
+        menu2 += "3. Noguer\n";
+        menu2 += "4. Roure\n";
+        menu2 += "5. Sortir\n\n";
+        
+        menu2 += "Tria una opció";
+
+        let selMenu2 = 0;    
+        
+        
+        let menu3= "Interior armari\n\n";
+        menu3 += "1. Barra + 4 calaixos grans\n";
+        menu3 += "2. Barra + 8 calaixos grans\n";
+        menu3 += "3. Barra + 2 calaixos + 2 prestatges\n";
+        menu3 += "4. Barra + 4 calaixos + 4 prestatges\n";
+        menu3 += "5. Sortir\n\n";
+        
+        menu3 += "Tria una opció";
+
+        let selMenu3 = 0;    
+        
+        
+        let menu4= "Acabats armari\n\n";
+        menu4 += "1. Vernís acabat brillant\n";
+        menu4 += "2. Vernís acabat mat\n";
+        menu4 += "3. Acabat cera\n";
+        menu4 += "4. Acabat a l'oli\n";
+        menu4 += "5. Sortir\n\n";
+        
+        menu4 += "Tria una opció";
+
+        let selMenu4 = 0;    
+        
+        
+        let menu5 = "Pagament\n\n";
+        menu5 += "1. Pagament en efectiu\n";
+        menu5 += "2. Tarjeta de crèdit\n";
+        menu5 += "3. Finançament 12 mesos\n";
+        menu5 += "4. Finançament 24 mesos\n";
+        menu5 += "5. Sortir\n\n";
+        
+        menu5 += "Tria una opció";
+
+        let selMenu5 = 0;    
+        
+        
+        do {
+
+            selMenu1 = Number(prompt(menu1));
+
+                switch(selMenu1){
+
+                    case 1: alert ("Alçada 180cm, amplada 150cm, 2 portes");
+                    break;
+                    case 2: alert ("Alçada 180cm, amplada 150cm, 2 portes + mirall");
+                    break;
+                    case 3: alert ("Alçada 180cm, amplada 260cm, 3 portes");
+                    break;
+                    case 4: alert ("Alçada 180cm, amplada 260cm, 3 portes + mirall")
+                    break;
+                    case 5: alert ("Gràcies i bon dia!");
+                    break;
+                }
+
+            do {
+
+                selMenu2 = Number(prompt(menu2));
+
+                    switch(selMenu2){
+
+                        case 1: alert ("Cedre");
+                        break;
+                        case 2: alert ("Pi");
+                        break;
+                        case 3: alert ("Noguer");
+                        break;
+                        case 4: alert ("Roure");
+                        break;
+                        case 5: alert ("Gràcies i bon dia!");
+                        break;
+                    }
+
+                do {      
+
+                    selMenu3 = Number(prompt(menu3));
+
+                        switch(selMenu3){
+
+                            case 1: alert ("Barra + 4 calaixos grans");
+                            break;
+                            case 2: alert ("Barra + 8 calaixos grans");
+                            break;
+                            case 3: alert ("Barra + 2 calaixos + 2 prestatges");
+                            break;
+                            case 4: alert ("Barra + 4 calaixos + 4 prestatges");
+                            break;
+                            case 5: alert ("Gràcies i bon dia!");
+                            break;
+                        }
+                          
+                    do {
+
+                        selMenu4 = Number(prompt(menu4));
+
+                            switch(selMenu4){
+
+                                case 1: alert ("Vernís acabat brillant");
+                                break;
+                                case 2: alert ("Vernís acabat mat");
+                                break;
+                                case 3: alert ("Acabat cera");
+                                break;
+                                case 4: alert ("Acabat a l'oli");
+                                break;
+                                case 5: alert ("Gràcies i bon dia!");
+                                break;
+                            }
+                    
+                        do {
+
+                            selMenu5 = Number(prompt(menu5));
+
+                                switch(selMenu5){
+
+                                    case 1: alert ("Pagament en efectiu");
+                                    break;
+                                    case 2: alert ("Tarjeta de crèdit");
+                                    break;
+                                    case 3: alert ("Finançament 12 mesos");
+                                    break;
+                                    case 4: alert ("Finançament 24 mesos");
+                                    break;
+                                    case 5: alert ("Gràcies i bon dia!");
+                                    break;
+                                }
+
+                        } while (selMenu5 != 5);                                
+
+                    } while (selMenu4 != 5);                               
+            
+                } while (selMenu3 != 5);
+
+            } while (selMenu2 != 5);            
+        
+        } while (selMenu1 != 5);
+                
+
+        
+        
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script> 
+
+</body>
+</html>

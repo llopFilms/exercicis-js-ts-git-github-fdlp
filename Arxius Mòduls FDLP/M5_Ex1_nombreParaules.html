@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 5 - Exercici 1</title>
+</head>
+<body>
+	
+	<!--Fer un programa amb una caixa de text i un botó. L’usuari introdueix el nombre de paraules que vol introduir en el camp de text, al fer clic en el botó apareixen tants “prompts” com el nombre de paraules que ha dit l’usuari que volia introduir-->
+
+	<h2>Nombre de paraules</h2>
+	<br/>
+	<p>Introdueix el número  de paraules:</p>
+	<input type="number" id="caixaText" size="6"/><br/><br/>
+
+	<input type='button' onClick='ferArray()' Value='Clica aquí'/>
+	<br/>
+	<p id="arrayFinal"></p>
+
+	<script>
+
+	function ferArray(){
+	
+		//Introducció del número de paraules
+		let numero_par = Math.abs(document.getElementById("caixaText").value);
+
+		//Definició de variables
+		let paraules = [];
+		let paraula;
+		let i;
+
+		//Loop
+		for (i=0; i<numero_par; i++){
+
+			paraula = prompt ("Escriu la paraula 1/" +(i+1));
+			paraules.push(paraula);
+
+		};
+
+		//Sortida array a id d'HTML
+		document.getElementById("arrayFinal").innerHTML = "paraules introduïdes: <strong>" +paraules+ "</strong>";
+
+	}
+
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,4 @@
+     //Funció dada bona
+     function dadaBona(id) {
+            document.getElementById(id).style.background="#E6B0AA";
+     }

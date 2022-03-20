@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mòdul 7.3 - Exercici 5</title>
+</head>
+<body>
+    <!--Comprovar si una frase introduïda per l’usuari està formada només per minúscules, només per majúscules o per minúscules i majúscules-->
+
+    <h2>Anàlisi de cadena de caràcters:</h2>
+    <br/>
+    <label for="cadena"><strong>Introdueix una frase o sèrie de caràcters:</strong></label>
+    <input type="text" id="cadena" placeholder="" size="60">
+    <br/><br/>
+    <input type="button" onClick="validacio()" value="Clica aquí"/>
+    <br/><br/>
+    <p id="resultat"></p>
+    <p id="avís"></p>
+    
+    <script>
+    "use Strict"
+
+        //Funcions auxiliars
+
+        //Funció llegeix dada
+        function llegeixDada(id){
+
+        let dada = document.getElementById(id).value;
+        return dada;
+        }
+
+        //Funció escriu dada en HMTL
+        function escriuDada(id,dada){        
+
+        document.getElementById(id).innerHTML = dada;
+        }
+
+        //Funció dada bona
+        function dadaBona(id){
+
+        document.getElementById(id).style.background = "white";
+        }
+
+        //Funció dada dolenta
+        function dadaDolenta(id){
+
+        document.getElementById(id).style.background = "#E6B0AA";
+        }
+
+
+        //Programa
+   
+        //Funció que mira si són majúscules
+        function maj(cadena){
+
+            let maj, cadenaMaj = cadena.toUpperCase();
+
+            (cadena == cadenaMaj) ? maj = "SÍ" : maj = "NO";
+
+            return maj;
+        }
+
+        //Funció que compta majúscules
+        function numMaj(cadena){
+
+            let i, caracter ="", numMaj = 0, llistaMaj = "AÀÁBCÇDEÈÉFGHJIÍÏJKLMNOÒÓPQRSTUÚWXYZ";
+
+            for (i=0; i<=cadena.length-1; i++) {
+
+                caracter = cadena.charAt(i);
+                if (llistaMaj.includes(caracter)){
+                numMaj++;
+                }
+            }
+            return numMaj;
+        }
+    
+        //Funció que mira sin són minúscules
+        function min(cadena){
+
+            let min, cadenaMin = cadena.toLowerCase();
+
+            (cadena == cadenaMin) ? min = "SÍ" : min = "NO";
+
+            return min;
+        }
+        
+        //Funció que compta minúscules
+        function numMin(cadena){
+
+            let i, caracter ="", numMin = 0, llistaMin = "aàábcçdeèéfghiíïjklmnoòópqrstuúüvwxyz";
+
+            for (i=0; i<=cadena.length-1; i++) {
+
+                caracter = cadena.charAt(i);
+                if (llistaMin.includes(caracter)){
+                numMin++;
+                }
+            }
+            return numMin;
+        }
+
+        //Funció que compta els números
+        function numNum(cadena){
+
+            let i, caracter ="", numNum = 0, llistaNum = "0123456789";
+
+            for (i=0; i<=cadena.length-1; i++) {
+
+                caracter = cadena.charAt(i);
+                if (llistaNum.includes(caracter)){
+                numNum++;
+                }
+            }
+            return numNum;
+        }
+
+        //Funció que mira si hi ha signes de puntuació o espais
+        function buscaPunct(cadena){
+
+            let llistaPunct = ["\.","\,","\;","\:"," "];
+            let i=0, trobaPunct = false;
+
+            while (i<=llistaPunct.length-1 && !trobaPunct){
+
+                if (llistaPunct.includes(llistaPunct[i])){
+                trobaPunct = true;
+                }
+                i++;
+            }
+            (trobaPunct == true) ? trobaPunct = "SÍ" : trobaPunct = "NO";
+            return trobaPunct;
+        }
+
+        //Funció que troba si hi ha símbols
+        function buscaSim(cadena){
+
+            let llistaSim = ["@","#","!","¡","\?","¿","\$","\%","\&","\/","\(","\)","\=","\*","\-","\+","\{","\}","\[","\]","\"","\'","\`","\_"];
+            let i=0, trobaSim = false;
+
+            while (i<=llistaSim.length-1 && !trobaSim){
+
+                if (llistaSim.includes(llistaSim[i])){
+                    trobaSim = true;
+                }
+                i++;
+            }
+            (trobaSim == true) ? trobaSim = "SÍ" : trobaSim = "NO";
+            return trobaSim;
+        
+        }
+
+        //Funció principal
+        function main(cadena){
+
+            //Gestió amb funcions
+            let comptarv = cadena.length;
+            let majv = maj(cadena);
+            let numMajv = numMaj(cadena);
+            let minv = min(cadena);
+            let numMinv = numMin(cadena);
+            let numNumv = numNum(cadena);
+            let buscaPunctv = buscaPunct(cadena);
+            let buscaSimv = buscaSim(cadena);
+            let barreja; 
+            (majv == "NO" && minv == "NO") ? barreja = "SÍ" : barreja = "NO";
+            
+            
+            //Resultat final
+            let resultat = "<h3> L'anàlisi de la cadena de caràcters és el següent: </h3><ul><li> La cadena consta de <strong>"+comptarv+ "</strong> caràcters. <br/></li><li> La cadena <strong>" +majv+ "</strong> està tota en majúscules. <br/></li> <li> A la cadena hi ha <strong>" +numMajv+ "</strong> lletres en majúscula.<br/></li><li> La cadena <strong>" +minv+ "</strong> està tota en minúscules.<br/></li><li> A la cadena hi ha <strong>" +numMinv+ "</strong> lletres en minúscula.<br/></li><li> A la cadena hi ha <strong>" +numNumv+ "</strong> números.<br/></li><li> A la cadena <strong>"+buscaPunctv+ "</strong> s'hi han trobat signes de puntuació o espais.<br/></li><li> A la cadena <strong>"+buscaSimv+ "</strong> s'hi han trobat símbols. <br/></li><li> A la cadena <strong>"+barreja+ "</strong> hi ha una barreja de lletres majúscules i minúscules.</ul>";
+            
+            escriuDada("resultat",resultat);
+        }   
+
+        //Funció Validació
+        function validacio(cadena){
+
+            //Esborra avís
+            escriuDada("avís","");
+            escriuDada("resultat","");
+
+            //Entrada de dades
+            cadena = llegeixDada("cadena");
+            let validacio = false;
+                                
+            if (cadena =="") {
+                    validacio;
+                    dadaDolenta("cadena");
+                    escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
+                                    
+            }else{
+                    validacio = true;
+                    dadaBona("cadena");
+                    main(cadena);
+            }
+            
+        }
+
+   </script>
+</body>
+</html>

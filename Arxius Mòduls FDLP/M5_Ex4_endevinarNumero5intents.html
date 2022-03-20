@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Mòdul 5 - Exercici 4</title>
+</head>
+<body>
+	<!--Has de modificar el programa anterior per afegir una nova funcionalitat: establir un número màxim de 5 intents.
+
+	Si l’usuari encerta el número escollit pel programa abans d'aquests 5 intents, el programa mostra el següent missatge per pantalla: “Enhorabona, el número és X i has necessitat Y intents per encertar-lo”.
+
+	Si no encerta el número abans de 5 intents, el programa mostra per pentalla: "Has utilitzat massa intents! El número és X ".-->
+
+	<h2>Endevina el número</h2>
+	
+	<p>Introdueix un número entre l'<strong>1</strong> i el <strong>10</strong>. <br/>
+	Però només tens 5 intents per encertar-lo:</p>
+	
+	<input type='button' onClick='endevina()' Value='Clica aquí'/>
+	<br/>
+	<p id="resultat"></p>
+
+	<script>
+
+			
+		function endevina(){
+
+			//Introducció de dades
+			let intents=1;
+			let num = Number(prompt ("Introdueix un número. Intent número "+ intents));
+			let numAleatori = Math.ceil((Math.random() * 10));
+			intents++;
+			
+			console.log (numAleatori);
+
+			//Loop
+			while (intents<=5 && num != numAleatori) {
+
+				//Sortida de dades quan no encerta	
+				num = Number(prompt ("No l'has encertat :( Intent número " + intents + " . Torna-ho a intentar...", ""));
+				intents++;
+			}
+
+			//Sortida dades
+			if (intents <5){
+			document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>! I has necessitat <strong>" + intents + "</strong> intents :) !";
+
+			}else{
+			document.getElementById("resultat").innerHTML = "No l'has encertat abans de 5 intents! Él número era<strong> " + numAleatori +"</strong>:( !";
+	
+			}
+			
+
+
+		}
+
+	</script>
+</body>
+</html>

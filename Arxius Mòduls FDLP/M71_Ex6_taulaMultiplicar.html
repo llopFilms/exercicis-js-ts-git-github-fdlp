@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 7.1 - Exercici 6</title>
+</head>
+<body>
+	
+	<!--Taula de multiplicar. L’usuari introduirà un número (del 1 al 10) per pantalla, i utilitzant un bucle, el programa li mostrarà la taula de multiplicar d’aquell número.
+
+	Exemple: 2 x 1 = 2, 2 x 2 = 4, 2 x 3 = 6, ... , 2 x 10 = 20.-->
+
+	<h2>Taules de multiplicar</h2>
+	<br/>
+	<!--Entrada de dades-->
+	<p>Introdueix de quin número vols la taula de multiplicar:</p>
+	<input type="number" id="caixaNum" placeholder="Taula del..."/>
+
+	<input type='button' onClick='taulaMulti()' Value='Aquí ho tens'/>
+	<br/>
+	<p id="taulaDel"></p>
+	
+	<script>
+	
+		function taulaMulti(){
+
+			//Definició de variables i de l'array
+			let i, taula = [];
+			let num = Number(document.getElementById("caixaNum").value);
+			
+			/*Versió amb un array
+			//Loop per omplir l'array de dades
+			for (i=0; i<=10; i++){
+			
+				let resultat = num * i;
+				taula.push(resultat);
+				
+			}
+
+			//Generació de llista de text amb elements HMTL, utilitzant els valors de l'array i extracció de dades a id d'HTML
+			let llista = "<dt>";
+			
+			for (i=0; i<=10; i++) {
+				llista = llista + "<dd>" + num + " x " + i + " = " + taula[i];
+			}*/
+
+
+			//Versió concatenada
+			let llista = "<dt>";
+
+			for (i=0; i<=10; i++) {
+
+				llista = llista + "<dd>" + num + " x " + i + " = " + (num*i);
+					
+			}
+
+			document.getElementById("taulaDel").innerHTML = "<dd><br/><strong>Taula del: " + num + "</strong><br/><br/>" + llista ;
+		}
+		
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tipos de Funcion</title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<br>
+   <p id="parrafo1">Soy el párrafo 1</p>
+   <p id="parrafo2">Soy el párrafo 2</p>
+   <p id="parrafo3">Soy el párrafo 3</p>
+   <p id="parrafo4">Soy el párrafo 4</p>
+   <p id="parrafo5">Soy el párrafo 5</p>
+   </br>
+   
+   <p>
+   <input id="btn1" type="button" onclick='MostrarInnerHTML("parrafo1")' value="Ver InnerHTML parrafo1"/>
+   <input id="btn2" type="button" onclick='MostrarInnerHTML("parrafo2")' value="Ver InnerHTM  parrafo2"/>
+   <input id="btn3" type="button" onclick='MostrarInnerHTML("parrafo3")' value="Ver InnerHTML parrafo3"/>
+   <input id="btn4" type="button" onclick='MostrarInnerHTML("parrafo4")' value="Ver InnerHTML parrafo4"/>
+   <input id="btn5" type="button" onclick='MostrarInnerHTML("parrafo5")' value="Ver InnerHTML parrafo5"/>
+   </p>
+   </br>
+   <p>¿Qué párrafo quieres cambiar? (1-5) <input id="numparrafo" type="number"/></p>
+   <p>¿Qué valor quieres escribir? <input id="valorparrafo" type="text"/></p>
+   <p><input id="btn20" type="button" onclick='llamaCambiarParrafo()' value="Cambiar párrafo"/></p>
+   
+   </br>
+   <p id="mostraMes">Aquí irá el mes</p>
+   <p><input type='button' onClick='mesHoy()' Value='Mes actual' /></p>
+
+   </br>
+   <p><input type='button' onClick='llamaSumar()' Value='Sumar 2 numeros' /></p>
+
+   
+   
+   <script>
+      //Aquesta funció s'invoca amb un esdeveniment (botó). A onclick ja hi ha l'argument de la funció (entre " "). Al codi hi ha el paràmetre de la funció (sense " "). Quan clica al botó, invoca a la funció, que canvia el paràmetre per l'argument i el mostra per id d'HTML. Funció amb paràmetres i sense retorn
+      function MostrarInnerHTML(numParàgraf){
+         alert(document.getElementById(numParàgraf).innerHTML);
+      }
+
+
+      //La funció té els paràmetres parrafo (on després s'adjudicarà el número de paràgraf) i textNou que seà el nou text que s'incrustarà. Té un document.geElementById on es preveu el camí de sortida de x paràgraf assignant un valor nou (value, en aquest cas textNou) en forma del contingut del paràmetre textNou. Funció amb arguments i sense return.
+      function cambiarParrafo(parrafo, textNou){
+         document.getElementById(parrafo).innerHTML=textNou;
+      }
+
+      //Funció que canvia el paràgraf i hi canvia el text invocant a la de dalt. Genera la variable numeroParrafo perquè per id d'HTML hi entri un número de paràgraf. I després la variable contenido per poder aportar el text de la mateixa manera. Quan la funció mare crida la funció filla, la posició de les variables, s'endreça amb la dels paràmetres per la posició qu té en cada cas. I el contingut de les variables va cap a on es demana a través dels id's d'HTML. Funcions amb arguments, variables, i sense return.
+      function llamaCambiarParrafo(){
+         let numeroParrafo = "parrafo" + document.getElementById("numparrafo").value;
+         let contenido = document.getElementById("valorparrafo").value;
+
+         cambiarParrafo(numeroParrafo, contenido);
+      }
+
+
+
+      //Funció sense arguments i amb return. Tria de l'array el mes que s'adequa amb el mes corrent, generat per l'ordinador. I tot seguit, treu el resultat invocant la funció i treient el resultat per pantalla.
+      function mesActual() {
+
+         let meses = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol",
+         "Agost", "Setembre", "Octubre", "Novembre", "Desembre"];
+         
+         let fecha = new Date(); // Imaginaros 08Feb2022, ho genera l'ordinador
+         let mesFecha = fecha.getMonth(); // 1 (comienza a contar en 0), també ho genera l'ordinador
+
+         let mesLetra = meses[mesFecha]; // Gener = 0, Febrer = 1.... 
+         //mes será igual a Febrer
+
+         return mesLetra;
+
+      } 
+      //Funció que invoca l'anterior
+      function mesHoy() {
+         document.getElementById("mostraMes").innerHTML = "Estamos en " + mesActual();
+      }
+
+      //Funció que fa la suma
+      function suma(numero1, numero2){
+         return numero1 + numero2;
+      }
+
+      //Funció que rep els números i que crida l'anterior,rebent per id d'HTML o sortint per id d'HTML també
+      function llamaSumar() {
+         let primerNumero = Number(prompt('Numero 1?',''));
+         let segundoNumero = Number(prompt('Numero 2?',''));
+
+         alert('El resultado de ' + primerNumero + '+' + segundoNumero + ' es ' + suma(primerNumero,segundoNumero));
+
+      }
+
+
+   </script>
+</body>
+</html>

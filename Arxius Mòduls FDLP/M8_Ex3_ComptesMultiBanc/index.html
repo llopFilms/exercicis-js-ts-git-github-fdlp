@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 8 - Exercici 3</title>
+</head>
+
+    <!--Dona't el diagrama de classes de la imatge, programa una aplicació que tingui 5 botons:
+
+    1.- Crear client
+    2.- Eliminar client
+    3.- Crear compta d'un client
+    4.- Ingresar euros en una compta d'un client
+    5.- Retirar euros en una compta d'un client
+
+     A tenir en compte:
+     - El saldo inicial de totes les comptes ha de ser 0€
+     - Al crear un client, no haurà de tenir cap compte "associada"
+     - El diagrama UML mostra les propietats i mètodes mínims que han de tenir les classes, però pots crear-ne més si és necessari.-->
+
+<h2>Comptes bancaris</h2>
+
+     <p id="llista" ></p>
+
+     <label for="dniInici">Introduïu número DNI: </label>
+     <input type="text" id="dniInici"/>
+     <input type="button" onClick="validacioDni()" value="Iniciar"/>
+     
+     <br><br>
+     <input type="button" id="crearClient" onClick="desplegar('dadesCrearClient','crearClient','Crear Client')" value="Crear Client" disabled="true"/>
+
+     <input type="button" id="eliminarClient" onClick="eliminarClient()" value="Eliminar Client" disabled="true"/>
+
+     <input type="button" id="crearCompte" onClick="crearCompte()" value="Crear compte" disabled="true"/>
+
+     <input type="button" id="veureCompte" onClick="mostrarComptes()" value="Veure comptes" disabled="true"/>
+
+     <input type="button" id="eliminarCompte" onClick="eliminarCompte()" value="Eliminar compte" disabled="true"/>
+
+     <input type="button" id="ingressar" onClick="ingressar()" value="Ingressar €" disabled="true"/>
+
+      <input type="button" id="retirar" onClick="retirar()" value="Retirar €" disabled="true"/>
+
+     <input type="button" onClick="sortir()" value="Sortir del programa"/>
+
+     <div id="dadesCrearClient" hidden="true">
+          
+          <h4>Nou client - Introduïu les dades:</h4>
+
+          <label for="dniCrear">Número DNI</label>
+          <input type="text" id="dniCrear" size="12"/><br><br>
+          <label for="nomCrear">Nom</label>
+          <input type="text" id="nomCrear" size="12"/><br><br>
+          <label for="cognomCrear">Cognom</label>
+          <input type="text" id="cognomCrear" size="12"/><br><br>
+                             
+          <input type="button" onClick="crearClient()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <p id="avis" ></p>
+
+     <div id="numCompteEliminar" hidden="true">
+          
+          <h4>Indiqueu número de compte a eliminar:</h4>
+
+          <label for="numCompteEliminar">Compte: #</label>
+          <input type="number" id="numCompteEli" size="4"/><br><br>
+                                      
+          <input type="button" onClick="eliminarCompte2()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <div id="numCompteIngressar" hidden="true">
+          
+          <h4>Indiqueu número de compte a ingressar €:</h4>
+
+          <label for="numCompteIngres">Compte: #</label>
+          <input type="number" id="numCompteIngres" size="4"/><br><br>
+          <label for="quantitatIngres">Quantitat: €</label>
+          <input type="number" id="quantitatIngres" size="4"/><br><br>
+                                      
+          <input type="button" onClick="ingressar2()" value="Continuar"/>
+          <br><br>
+     </div>
+
+     <div id="numCompteRetirar" hidden="true">
+          
+          <h4>Indiqueu número de compte a retirar €:</h4>
+
+          <label for="numCompteRetir">Compte: #</label>
+          <input type="number" id="numCompteRetir" size="4"/><br><br>
+          <label for="quantitatIngres">Quantitat: €</label>
+          <input type="number" id="quantitatRetir" size="4"/><br><br>
+                                      
+          <input type="button" onClick="retirar2()" value="Continuar"/>
+          <br><br>
+     </div>
+     <br>
+
+     
+     
+     <script>"use Strict"</script>
+     <script src="./js/classeClient.js"></script>
+     <script src="./js/classeCompte.js"></script>
+     <script src="./js/arrayClients.js" ></script>
+     <script src="./js/auxiliarsInici.js"></script>
+     <script src="./js/validacioDni.js" ></script>
+     <script src="./js/main.js"></script>
+</body>
+</html>

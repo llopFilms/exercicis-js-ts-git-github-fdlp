@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 4 - Exercici 5</title>
+</head>
+<body>
+	<!--Fer un programa que demani dos números i un operador(+,-,*,/).
+	Al final, el programa ha d'imprimir per pantalla el resultat de fer l’operació que contingui la variable operador.-->
+
+	<h2>Calculadora</h2>
+
+	<P>Introdueix 2 números:</P>
+	
+	<!--Fem 2 entrades de number-->
+	<input type="number" id="caixaNum1" placeholder="Escriu un primer número"/><br/><br/>
+	<input type="number" id="caixaNum2" placeholder="Escriu un segon número"/><br/><br/>
+
+	<P>Selecciona una operació:</P>
+
+	<!--Fem un selector d'operacions amb un radio, la selecció dóna valor True-->
+	<input type="radio" id="suma" name="operacions">
+	<label for="suma">+ Suma</label><br>
+	<input type="radio" id="resta" name="operacions">
+	<label for="resta">- Resta</label><br>
+	<input type="radio" id="multiplicació" name="operacions">
+	<label for="multiplicació">* Multiplicació</label><br>
+	<input type="radio" id="divisió" name="operacions">
+	<label for="suma">/ Divisió</label><br><br>
+
+	<input type='button' onClick='càlculs()' Value='Go Calculator!'/>
+	<br/>
+	<p id="resultatCàlcul"></p>
+	
+	<script>
+	
+		function càlculs(){
+
+			//Captació de variables de d'HTML i conversió a number
+			let num1 = Number(document.getElementById("caixaNum1").value);
+			let num2 = Number(document.getElementById("caixaNum2").value);
+
+			//Captació de valor boooleà: 1 serà True i 3 seran False
+			let suma = document.getElementById("suma").checked;
+			let resta = document.getElementById("resta").checked;
+			let multiplicacio = document.getElementById("multiplicació").checked;
+			let divisió = document.getElementById("divisió").checked;
+			
+			let resultat;
+
+			//else if que, segons el valor, True selecciona operació i genera el resultat
+			/* if (suma == true){
+				resultat = num1 + num2;
+
+				}else if (resta == true){
+				resultat = num1 - num2;	
+
+					}else if (multiplicació == true){
+					resultat = num1 * num2;
+
+						}else
+						resultat = num1 / num2; */
+
+			if (suma) resultat = num1 + num2;
+			else if (resta) resultat = num1 - num2;
+			else if (multiplicacio) resultat = num1 * num2;
+			else resultat = num1 / num2;
+
+			//if que alerta que el 2on número introduit és 0 i no es potmfer la divisió
+			if (num2 == 0) alert ("la divisió no es pot relitzar perquè el 2on número és 0.");				
+					
+			document.getElementById("resultatCàlcul").innerHTML = "El resultat de la operació és: <strong>" +resultat+"</strong>";
+			
+		}		
+
+	</script>
+	
+</body>
+</html>

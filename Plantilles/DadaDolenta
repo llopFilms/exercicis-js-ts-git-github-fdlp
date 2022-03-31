@@ -1,0 +1,5 @@
+	//Funció dada dolenta
+	function dadaDolenta(id) {
+
+	document.getElementById(id).style.background="#E6B0AA";
+	}

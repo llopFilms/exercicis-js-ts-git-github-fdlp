@@ -13,8 +13,7 @@
 
 	<h2>Suma de valors</h2>
 	<br/>
-	<p>Introdueix dos números enters:</p>
-	<p>(el primer < que el segon)</p>
+	<p>Introdueix dos números enters entre 1 i 20:</p>
 	<br/>
 
 	<input type="number" id="caixaNum1" placeholder=""/><br/><br/>
@@ -28,37 +27,50 @@
 
 	function ferSuma(){
 
-
 		"use strict"; // Obliguem a definir les variables
 
 		//Introducció del número de paraules
-		let numDesde = Number(document.getElementById("caixaNum1").value);
-		let numFins = Number(document.getElementById("caixaNum2").value);
+		let num1 = Number(document.getElementById("caixaNum1").value);
+		let num2 = Number(document.getElementById("caixaNum2").value);
+		
+		let numValid = ((num1 < 1 || num1 > 20) || (num2 < 1 || num2 > 20)) ? false : true;
+		
+		if (!numValid) {
 
-		//Definició de variables
-		let contingut = numDesde;
-		let suma = numDesde;
-		let i;
+			alert ("Escriviu números vàlids");
 
-		//Loop: es comença des del 1er número + 1 (perquè no es repeteixi) i fins a = el 2on, perquè l'agafi i pari el loop. Contingut serveix per fer la llista i suma per afegir el total al final
-		for (i=numDesde+1; i<=numFins; i++){
+		} else {
+		
+			let min = (num1 < num2) ? num1 : num2; 
+			let max = (num1 < num2) ? num2 : num1;
+		
+			let contingut = num1;
+			let suma = num1;
+			let i;
 
-			contingut += " + " + i;
-			suma += i;
+			//Loop: es comença des del 1er número + 1 (perquè no es repeteixi) i fins a = el 2on, perquè l'agafi i pari el loop. Contingut serveix per fer la llista i suma per afegir el total al final
+			for (i=min+1; i<=max; i++){
 
-			/*contingut =  contingut + " + " + i;
-			suma = suma + i;*/
+				contingut += " + " + i;
+				suma += i;
+			}
+			//Ajuntem: contingut = contingut + " = " + suma;
+			contingut += " = " + suma;
+			//Sortida array a id d'HTML
+			document.getElementById("concatena_suma").innerHTML = "<strong>" + contingut;
+			
+			/* //auxiliar per fer max i min
+				let aux;
 
-		};	
+			if (num1 > num2){
 
-		//Ajuntem: contingut = contingut + " = " + suma;
-		contingut += " = " + suma;
-
-		//Sortida array a id d'HTML
-		document.getElementById("concatena_suma").innerHTML = "<strong>" + contingut;
-
+				aux = num2;
+				num2 = num1;
+				num1 = aux;
+			} */
+		
+		}
 	}
-
 	</script>
 
 </body>

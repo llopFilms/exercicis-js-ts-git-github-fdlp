@@ -21,22 +21,26 @@
 	<P>Selecciona una operació:</P>
 
 	<!--Fem un selector d'operacions amb un radio, la selecció dóna valor True-->
-	<input type="radio" id="suma" name="operacions">
-	<label for="suma">+ Suma</label><br>
-	<input type="radio" id="resta" name="operacions">
-	<label for="resta">- Resta</label><br>
-	<input type="radio" id="multiplicació" name="operacions">
-	<label for="multiplicació">* Multiplicació</label><br>
-	<input type="radio" id="divisió" name="operacions">
-	<label for="suma">/ Divisió</label><br><br>
+	<fieldset>
+		<legend>Calculadora</legend>
+		<input type="radio" id="suma" name="operacions">
+		<label for="suma">+ Suma</label><br>
+		<input type="radio" id="resta" name="operacions">
+		<label for="resta">- Resta</label><br>
+		<input type="radio" id="multiplicació" name="operacions">
+		<label for="multiplicació">* Multiplicació</label><br>
+		<input type="radio" id="divisió" name="operacions">
+		<label for="suma">/ Divisió</label><br><br>
 
-	<input type='button' onClick='càlculs()' Value='Go Calculator!'/>
+		<input type='button' onClick='calculs()' Value='Go Calculator!'/>
+		<p id="resultatCalcul"></p>
+	</fieldset>
+
 	<br/>
-	<p id="resultatCàlcul"></p>
-	
+		
 	<script>
 	
-		function càlculs(){
+		function calculs(){
 
 			//Captació de variables de d'HTML i conversió a number
 			let num1 = Number(document.getElementById("caixaNum1").value);
@@ -50,19 +54,6 @@
 			
 			let resultat;
 
-			//else if que, segons el valor, True selecciona operació i genera el resultat
-			/* if (suma == true){
-				resultat = num1 + num2;
-
-				}else if (resta == true){
-				resultat = num1 - num2;	
-
-					}else if (multiplicació == true){
-					resultat = num1 * num2;
-
-						}else
-						resultat = num1 / num2; */
-
 			if (suma) resultat = num1 + num2;
 			else if (resta) resultat = num1 - num2;
 			else if (multiplicacio) resultat = num1 * num2;
@@ -71,7 +62,7 @@
 			//if que alerta que el 2on número introduit és 0 i no es potmfer la divisió
 			if (num2 == 0) alert ("la divisió no es pot relitzar perquè el 2on número és 0.");				
 					
-			document.getElementById("resultatCàlcul").innerHTML = "El resultat de la operació és: <strong>" +resultat+"</strong>";
+			document.getElementById("resultatCalcul").innerHTML = "El resultat de la operació és: <strong>" +resultat+"</strong>";
 			
 		}		
 

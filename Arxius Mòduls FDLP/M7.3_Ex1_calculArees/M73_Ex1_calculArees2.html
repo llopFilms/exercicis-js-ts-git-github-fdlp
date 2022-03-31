@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mòdul 7.3 - Exercici 1</title>
+</head>
+<!--Realitzar un programa que tingui un menú on se li mostraran 4 opcions a l’usuari per pantalla: 1.- Quadrat 2.- Triangle 3.- Rectangle 4.- Cercle
+
+Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa mostri per pantalla l’àrea (el valor) del polígon escollit.-->
+
+    <h2>Calculadora d'àrees</h2>
+    <br>
+
+    <fieldset>
+        <legend><b>Selector de polígons</b></legend>
+        <br>
+        <input type="radio" id="quadrat" value="quadrat" name="poligons">
+        <label for="quadrat">Quadrat</label><br>
+        <input type="radio" id="triangle" value="triangle" name="poligons">
+        <label for="trinagle">Triangle</label><br>
+        <input type="radio" id="rectangle" value="rectangle" name="poligons">
+        <label for="rectangle">Rectangle</label><br>
+        <input type="radio" id="cercle" value="cercle" name="poligons">
+        <label for="cercle">Cercle</label><br>
+
+        <br>
+        <button id="boto" onclick="main()">Processar càlcul</button>
+    </fieldset>
+    <br><br>
+
+    <div id="areaQuadrat" hidden="true">
+        <fieldset>
+            <legend><b>Càlcul àrea quadrat</b></legend>
+            <br>
+            <label for="costat">Introdueix valor del costat: <input type="number" id="costat" size="4"></label><br><br>
+            <button onClick="areaQuadrat()">Calcular</button>
+            <p id="resultat1"></p>
+        </fieldset>
+    </div>
+
+    <div id="areaTriangle" hidden="true">
+        <fieldset>
+            <legend><b>Càlcul àrea triangle</b></legend>
+            <br>
+            <label for="baseT">Introdueix valor de la base: <input type="number" id="baseT" size="4"></label><br><br>
+            <label for="alturaT">Introdueix valor de l'altura: <input type="number" id="alturaT" size="4"></label><br><br>
+            <button onclick="areaTriangle()">Calcular</button>
+            <p id="resultat2"></p>
+        </fieldset>
+    </div>
+
+    <div id="areaRectangle" hidden="true">
+        <fieldset>
+            <legend><b>Càlcul àrea rectangle</b></legend>
+            <br>
+            <label for="baseR">Introdueix valor de la base: <input type="number" id="baseR" size="4"></label><br><br>
+            <label for="alturaR">Introdueix valor de l'altura: <input type="number" id="alturaR" size="4"></label><br><br>
+            <button onclick="areaRectangle()">Calcular</button>
+            <p id="resultat3"></p>
+        </fieldset>
+    </div>
+
+    <div id="areaCercle" hidden="true">
+        <fieldset>
+            <legend><b>Càlcul àrea cercle</b></legend>
+            <br>
+            <label for="radi">Introdueix valor del radi: <input type="number" id="radi" size="4"></label><br><br>
+            <button onclick="areaCercle()">Calcular</button>
+            <p id="resultat4"></p>
+        </fieldset>
+    </div>
+
+    <script src="./js/auxiliarsInici.js"></script>
+    <script src="./js/calculs.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

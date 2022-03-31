@@ -22,23 +22,21 @@
 	<script>
 	
 		function beca(){
-
 			
 			//Declaració de variables
 			let becats = [];
-			let beques = 1;
+			let beques = 0;
 			let comptador = 5;
 			
-			while (beques <= 5){
+			while (beques <5){
 
-			//Selecció amb un while. Captació de dadesi comptador
+				//Selecció amb un while. Captació de dadesi comptador
+				document.getElementById("disponibilitat").innerHTML = "Beques disponibles: " + comptador;
 
-			document.getElementById("disponibilitat").innerHTML = "Beques disponibles: " + comptador;
-
-			let nom = prompt ("Nom i Cognom:","Escriu aquí el teu nom");
-			let edat = Number(prompt ("Ens pots indicar la teva edat","edat"));
-			let títolUni = (prompt ("Tens titulació Universitària?:","Sí/No"));
-			let atur = (prompt ("Estàs en situació d'atur?:","Sí/No"));
+				let nom = prompt ("Nom i Cognom:","Escriu aquí el teu nom");
+				let edat = Number(prompt ("Ens pots indicar la teva edat","edat"));
+				let títolUni = (prompt ("Tens titulació Universitària?:","Sí/No"));
+				let atur = (prompt ("Estàs en situació d'atur?:","Sí/No"));
 
 				//else if per seleccionar els casos possibles
 				if (edat >= 18 && títolUni == "Sí" || títolUni == "sí" || títolUni == "S" || títolUni == "s"){
@@ -48,15 +46,15 @@
 				comptador--;
 				document.getElementById("disponibilitat").innerHTML = "Beques disponibles: " + comptador;
 				
-					}else if (atur == "Sí" || atur == "sí" || atur == "S" || atur == "s"){
-					alert ("Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. Felicitats!");
-					becats.push(nom);
-					beques++;
-					comptador--;
+				}else if (atur == "Sí" || atur == "sí" || atur == "S" || atur == "s"){
+				alert ("Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. Felicitats!");
+				becats.push(nom);
+				beques++;
+				comptador--;
 					
-						}else
-					 	alert ("Ho sentim però no compleixes els requisits per accedir a una beca. Ho sentim!");
-
+				}else{
+				alert ("Ho sentim però no compleixes els requisits per accedir a una beca. Ho sentim!");
+				}
 			}	
 
 			alert ("Beques concedides! Tot seguit apareix la llista");
@@ -69,13 +67,10 @@
 			}
 			llista += "</ul>";
 		
-			document.getElementById("selecció").innerHTML = "\nLlista de becats :\n" + llista;
-
+			document.getElementById("selecció").innerHTML = "Llista de becats:" + llista;
 		
 		}
-		
 
 	</script>
-	
 </body>
 </html>

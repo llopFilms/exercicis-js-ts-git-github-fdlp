@@ -35,6 +35,7 @@
 	
 	<input type='button' onClick='càlculZodíac()' Value='Clica aquí per veure el teu signe...'/>
 	<br/>
+        
 	<p id="càlcul_zodíac"></p>
 
 	<script>
@@ -44,7 +45,8 @@
 			//Captació de dades i conversió a Number
 			let dia = Number(document.getElementById("dia de naixement").value);
 			let mes = Number(document.getElementById("mes de naixement").value);
-			
+                        
+                        
 			switch (mes){
 
                 case 1 : (dia >=20) ?
@@ -96,7 +98,7 @@
                         document.getElementById("càlcul_zodíac").innerHTML= ("Ets Sagitari");
                         break;
                 
-            }
+        }
 		
 
 		}

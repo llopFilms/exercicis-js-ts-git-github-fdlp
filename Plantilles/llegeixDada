@@ -1,6 +1,6 @@
      //Funció llegeix dada
-     function llegeixDada(id)
-            {
-            let dada_ = ocument.getElementById(id).value;
-            return dada_;
-            }
+     function llegeixDada(id) {
+
+          let dada = document.getElementById(id).value;
+          return dada;
+     }

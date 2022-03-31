@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mòdul 4 - Exercici 6</title>
+	</head>
+	<body>
+    <!--Fer un programa que demani a l’usuari quin dia i quin mes va néixer, amb aquesta informació el programa mostra per pantalla, de quin signe del zodíac és.
+
+    Àries-Aries (21.03 — 19.04)
+    Taure-Tauro (20.04 — 20.05)
+    Bessons-Géminis (21.05 — 20.06)
+    Cranc-Cáncer (21.06 — 22.07)
+    LLeó-Leo (23.07 — 22.08)
+    Verge-Virgo (23.08 — 22.09)
+    Balança-Libra (23.09 — 22.10)
+    Escorpi-Escorpio (23.10 — 21.11)
+    Sagitario-Sagitario (22.11 — 21.12)
+    Capricorn-Capricornio (22.12 — 19.01)
+    Aquari-Acuario (20.01 — 18.02)
+    Peixos-Piscis (19.02 — 20.03)-->
+
+    <h2>Signes del Zodíac</h2>
+    <hr>
+    <p><b>Pots indicar el teu dia i mes de naixement?</b></p>
+    
+    <input type="date" id="data"/>
+    
+    <input type="button" onClick="calculZodiac()" value="Clica aquí per veure el teu signe..."/>
+    <br/>
+    
+    <p id="calcul_zodiac"></p>
+
+    <script>
+
+    function calculZodiac(){
+            
+        let data = document.getElementById("data").value;
+        let dia = Number(data.substring(8, 10));
+        let mes = Number(data.substring(5, 7));
+
+        console.log(data, mes, dia);
+
+        switch (mes) {
+            case 1:
+                dia >= 20 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Aquari") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Capricorn");
+                break;
+            case 2:
+                dia >= 19 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Peixos")	: 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Aquari");
+                break;
+            case 3:
+                dia >= 21 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Àries") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Peixos");
+                break;
+            case 4:
+                dia >= 20 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Taure") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Àries");
+                break;
+            case 5:
+                dia >= 21 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Bessons") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Taure");
+                break;
+            case 6:
+                dia >= 21 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Cranc") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Bessons");
+                break;
+            case 7:
+                dia >= 23 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Lleó") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Cranc");
+                break;
+            case 8:
+                dia >= 23 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Verge") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Lleó");
+                break;
+            case 9:
+                dia >= 23 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Balança") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Verge");
+                break;
+            case 10:
+                dia >= 23 ? (document.getElementById("calcul_zodiac").innerHTML = "Et Escorpí") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Balança");
+                break;
+            case 11:
+                dia >= 22 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Sagitari") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Escorpí");
+                break;
+            case 12:
+                dia >= 22 ? (document.getElementById("calcul_zodiac").innerHTML = "Ets Capricorn") : 
+                (document.getElementById("calcul_zodiac").innerHTML = "Ets Sagitari");
+                break;
+            }
+        }
+    </script>
+	</body>
+</html>

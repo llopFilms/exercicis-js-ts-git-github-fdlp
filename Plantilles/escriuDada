@@ -1,5 +1,5 @@
-     //Funció escriu dada
-     function escriuDada (id,dada)
-          {                      
-          document.getElementById(id).innerHTML = dada;
-          }
+	//Funció escriu dada
+	function escriuDada(id,dada) {  
+							
+		document.getElementById(id).innerHTML = dada;
+	}

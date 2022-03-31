@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mòdul 5 - Exercici 1</title>
 </head>
-<body>
+<ul>
 	
 	<!--Fer un programa amb una caixa de text i un botó. L’usuari introdueix el nombre de paraules que vol introduir en el camp de text, al fer clic en el botó apareixen tants “prompts” com el nombre de paraules que ha dit l’usuari que volia introduir-->
 
@@ -16,9 +16,11 @@
 	<input type="number" id="caixaText" size="6"/><br/><br/>
 
 	<input type='button' onClick='ferArray()' Value='Clica aquí'/>
-	<br/>
-	<p id="arrayFinal"></p>
+	<br><br>
 
+	<ul type="square" id="arrayFinal">
+
+	</ul>
 	<script>
 
 	function ferArray(){
@@ -28,20 +30,27 @@
 
 		//Definició de variables
 		let paraules = [];
+		let llista ="";
 		let paraula;
 		let i;
 
 		//Loop
+		/* for (i=0; i<numero_par; i++){
+
+			paraula = prompt ("Escriu la paraula " + (i+1) +"/"+ numero_par);
+			paraules.push(paraula);
+		};
+ */
 		for (i=0; i<numero_par; i++){
 
-			paraula = prompt ("Escriu la paraula 1/" +(i+1));
+			paraula = prompt ("Escriu la paraula "+ (i+1) +"/"+ numero_par);
 			paraules.push(paraula);
-
-		};
-
+			llista += "<li>" +paraules[i]+ "</li>";
+		}
 		//Sortida array a id d'HTML
-		document.getElementById("arrayFinal").innerHTML = "paraules introduïdes: <strong>" +paraules+ "</strong>";
+		document.getElementById("arrayFinal").innerHTML = "<b>Paraules introduïdes en array:</b> " +paraules+ "<br><br><b>Paraules introduïdes en llista: </b><br>" +llista;
 
+		
 	}
 
 	</script>

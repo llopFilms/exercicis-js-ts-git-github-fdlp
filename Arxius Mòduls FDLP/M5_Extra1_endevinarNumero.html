@@ -22,61 +22,58 @@
 
 	<p id="ComptadorIntents"></p>
 	<p id="NúmerosTriats"></p>
+	<p id="resultat"></p>
 
 	<script>
 	
 			//Delcaració de variables i generació número aleatori
-			let num=0;
 			let numAleatori = Math.floor(Math.random() * (500 - 1)) + 1;
-			let numsTriats = [], intents=0, resultat="";
-		
+			let num = 0, numsTriats ="", numsTriats2, intents = 0, resultat = "";
+			console.log(numAleatori);
 			//Loop While
-			while (num !== numAleatori){
+			do {
 
 				//Entrada número
 				num = parseInt(prompt("Introdueix un número entre 1 i 500"));
-                resultat = num - numAleatori;
-				
+
                 while (num > 500){ 
 
-                    num = parseInt(prompt("Hem quedat que no més gran de 500.... Introdueix un altre número:"));
-
+                    num = parseInt(prompt("Hem quedat que no més gran de 500... Introdueix un altre número:"));
                 }
 
+				resultat = num - numAleatori;
 				// Sortida de dades comptador i números triats a id d'HTML
 				intents++;
-				numsTriats.push(num);
-				document.getElementById("ComptadorIntents").innerHTML = "Número d'intents = " + intents;
-				document.getElementById("NúmerosTriats").innerHTML = "Números triats = " + numsTriats;
+				numsTriats += num + ", ";
+				numsTriats2 = numsTriats.substring(0, numsTriats.length-2);
+				console.log(numsTriats, numsTriats2);
+				document.getElementById("ComptadorIntents").innerHTML = "Número d'intents = " +intents;
+				document.getElementById("NúmerosTriats").innerHTML = "Números triats = " +numsTriats2+ ".";
 				
     			//Selector else if de casos d'aproximació i avís de superació
 				if (resultat <-50){
-					alert("Fred, fred: el teu número és almenys 50 números més més gran.");
+				alert("Fred, fred: el teu número és almenys 50 números més més gran.");
 					
-					}else if (resultat >50){
-					alert("Fred, fred: el teu número és 50 números més petit.");
-					
-					}else if (resultat >=-50 && resultat <=-15){
-					alert("Tebi, Tebi: el teu número és més gran, però no gaire.");
-					
-					}else if (resultat <=50 && resultat >=15){
-					alert("Tebi, Tebi: el teu número és més petit, però no gaire.");
-					
-					}else if (resultat >-15 && resultat <=-1){
-					alert("Calent, calent: el teu número és més gran, però estàs a prop.");
-					
-					}else if (resultat <15 && resultat >=1){
-					alert("Calent, calent: el teu número és més petit, però estàs a prop.");
+				}else if (resultat >50){
+				alert("Fred, fred: el teu número és 50 números més petit.");
+				
+				}else if (resultat >=-50 && resultat <=-15){
+				alert("Tebi, Tebi: el teu número és més gran, però no gaire.");
+				
+				}else if (resultat <=50 && resultat >=15){
+				alert("Tebi, Tebi: el teu número és més petit, però no gaire.");
+				
+				}else if (resultat >-15 && resultat <=-1){
+				alert("Calent, calent: el teu número és més gran, però estàs a prop.");
+				
+				}else if (resultat <15 && resultat >=1){
+				alert("Calent, calent: el teu número és més petit, però estàs a prop.");
 
-                    }else   
-                    ;
-					
+				}else   
+				document.getElementById("resultat").innerHTML = "Molt bé! L'has encertat, era el <b>" + numAleatori + "</b>!!";
 
-			} 
-			
-			//Alerta final
-			alert ("Molt bé!. L'has encertat, era el " + numAleatori + " !!");
-
+			} while (num !== numAleatori)
+									
 	</script>
 	
 </body>

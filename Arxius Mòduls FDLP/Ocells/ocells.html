@@ -1,0 +1,84 @@
+<HTML>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {font-family: ubuntu}
+		h1 {color: rgb(3, 75, 15);}
+		select {padding-left: 1em; padding-top:1em; margin-right: 3em; border: 4px solid rgb(50, 110, 9); width: 15em;}
+		select:focus{ outline: none;}
+	</style>
+    <title>Ocells</title>
+</head>
+<body>
+    <h1>Ocells</h1>
+	
+    <h3>Seleccioneu l'ocell:</h3>
+		<select id="ocells" size="7" onchange="mostrar()">
+			<option value="./img/gaig.jpeg">Gaig</option> 
+			<option value="./img/mallerenga.jpeg">Mallerenga</option>
+			<option value="./img/oriol.jpeg">Oriol</option>
+			<option value="./img/pitroig.jpeg">Pitroig</option>
+			<option value="./img/puput.jpeg">Puput</option>
+		</select>
+		<img  id="imatge" src="./img/gaig.jpeg" width="200"/>
+		<br>
+		<hr>
+		<input type="button" id="play" onClick="play()" value="Play"/>
+		<input type="button" id="stop" onClick="stop()" value="Stop"/>
+		<br><br>
+		<button onclick="self.close()">Sortir</button>
+
+    <script>
+
+		let i = 0;
+		const arrayFotos = ["./img/gaig.jpeg", "./img/mallerenga.jpeg", "./img/oriol.jpeg", "./img/pitroig.jpeg", "./img/puput.jpeg"];
+		
+
+		function mostrar(){
+
+			let imatge = document.getElementById("ocells").value;
+			document.getElementById("imatge").src = imatge;
+
+		}
+
+		function carousel(){
+
+			let imatgeC = arrayFotos[i];
+			document.getElementById("imatge").src = imatgeC;
+
+		}
+
+		function endavant(){
+
+			i++;
+			if (i >= arrayFotos.length){
+
+				i = 0;
+			}
+			carousel();
+		
+		}
+
+		 //Reproductor
+		const INTERVAL_MS = 1600;
+
+		function play(){
+
+			interval = setInterval(endavant, INTERVAL_MS);
+			document.getElementById("play").style.display = "none";
+			document.getElementById("stop").style.display = "inline";
+		}
+
+		function stop(){
+
+			clearInterval(interval);
+			document.getElementById("stop").style.display = "none";
+			document.getElementById("play").style.display = "inline";
+
+		}
+
+    </script>
+</body>
+</html>

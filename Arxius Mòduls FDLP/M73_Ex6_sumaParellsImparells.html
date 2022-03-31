@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mòdul 7.3 - Exercici 6</title>
+     <title>Mòdul 7.3 - Exercici 6</title>
 </head>
 <body>
      <!--Donat un array de números, el programa ha de mostrar la suma de tots els números parells i la suma de tots els números imparells.-->
@@ -28,10 +28,10 @@
      <br/><br/>
 
      <p id="avís" ></p>
-   
-   
-    <script>
-    "use Strict"
+
+
+     <script>
+     "use Strict"
 
      //Funcions auxiliarsLlibreria
 
@@ -68,10 +68,10 @@
 
 
      //Programa
-    
+
      //Funció de suma dels parells
      function sumaParells(array){
-        
+
           let i, element = "", sumaPar = 0;
 
           for (i=0; i<=array.length-1; i++) {
@@ -105,16 +105,15 @@
      //Funció principal
      function main(serie){
 
-                  
+
           //Creació array
           let array = serie.split(",");
      
           //Gestió amb funcions
           let parells = document.getElementById("parells").checked;
           let resultat;
-       
+
           (parells == true) ? resultat = sumaParells(array) : resultat = sumaImparells(array);
-          console.log(array, parells, resultat);
 
           //Sortida de resultats
           //Resultat final
@@ -153,6 +152,6 @@
 
      }
 
-   </script>
+     </script>
 </body>
 </html>

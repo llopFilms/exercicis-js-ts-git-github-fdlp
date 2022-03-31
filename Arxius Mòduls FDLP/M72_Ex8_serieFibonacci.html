@@ -25,57 +25,49 @@
         //Funció auxiliar
         function fibonacci(num){
 
-
             let i, j, suma = 0, ultim = 1, penultim = 0, successio = "0, 1, ";
 
             for (i=0; i<num-2; i++) {
 
                 suma = ultim + penultim;
-                         
-                successio += suma+ " ,"; 
+                successio += (i!=num-3) ? suma+ " ," : suma+ "."; 
                 penultim = ultim;
                 ultim = suma;
             }
-           
-            let successio2 = successio.substring(0, successio.length-2);
-            return successio2;
-            
+            return successio;   
         }
 
-       
         //Funció principal
         function main(num){
             
             //Sortida de dades
             
             let resultat = fibonacci(num);
-           
-            document.getElementById("resultat").innerHTML = "La successió de Fibonnacci pel número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>.";
 
-           
+            document.getElementById("resultat").innerHTML = "La successió de Fibonnacci pel número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>";
+
         }
-
 
         //Funció validació
         function validacio(){
-          
+
             let validacio = true;
             let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
-         
+
             num = parseInt(document.getElementById("num").value);
-          
+
             if (isNaN(num) || num =="" || num <=0) {
                 validacio = false;
                 document.getElementById("num").value = "";
             }
-           
+
             if (validacio) {
                 main(num);
 
             } else {
                 alert(msgError);  
             }
-                  
+
         }
     </script>
 

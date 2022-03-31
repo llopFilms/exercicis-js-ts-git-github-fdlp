@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Mòdul 5 - Exercici 4</title>
+</head>
+<body>
+	<!--Has de modificar el programa anterior per afegir una nova funcionalitat: establir un número màxim de 5 intents.
+
+	Si l’usuari encerta el número escollit pel programa abans d'aquests 5 intents, el programa mostra el següent missatge per pantalla: “Enhorabona, el número és X i has necessitat Y intents per encertar-lo”.
+
+	Si no encerta el número abans de 5 intents, el programa mostra per pentalla: "Has utilitzat massa intents! El número és X ".-->
+
+	<h2>Endevina el número</h2>
+	
+	<p>Introdueix un número entre l'<strong>1</strong> i el <strong>10</strong>. <br/>
+	Però només tens 5 intents per encertar-lo:</p>
+	
+    <p>Número d'intents: <b><span id="intents"></span></b></p>
+    <p>Introdueix un número: <input type="number" id="num" size="2" onchange="endevina()"/></p>
+	<!-- <input type='button' onClick='endevina()' Value='Clica aquí'/> -->
+	<br/>
+	<p id="resultat"></p>
+
+	<script>
+
+        let numAleatori = Math.ceil((Math.random() * 10));
+		console.log (numAleatori);
+
+        let intents = 0;
+        document.getElementById("intents").innerHTML = intents;
+
+		function endevina(){
+
+			//Introducció de dades
+			let num = Number(document.getElementById("num").value);
+			intents = intents +1;
+            document.getElementById("intents").innerHTML = intents;
+			
+			//Loop
+			if (num != numAleatori && intents <5) {
+
+				//Sortida de dades quan no encerta	
+				alert ("No l'has encertat. Intent número " +intents+ ". Torna-ho a intentar.");
+
+			}else if (num == numAleatori && intents <5){
+
+                document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>! I has necessitat <strong>" +intents+ "</strong> intents!";
+
+            }else{
+                
+                document.getElementById("resultat").innerHTML = "No l'has encertat en menys de 5 intents!"; 
+		    }
+        }
+
+	</script>
+</body>
+</html>

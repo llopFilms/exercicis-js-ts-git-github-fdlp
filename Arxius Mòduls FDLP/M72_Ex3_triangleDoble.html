@@ -46,7 +46,6 @@ També, a poder ser, no utilitzis cap mètode com repeat() o substring() de la c
     <script>
         "use strict";
 
-       
         //Funció auxiliar construcció triangle
         function ferTriangle(numFiles){
 
@@ -82,7 +81,6 @@ També, a poder ser, no utilitzis cap mètode com repeat() o substring() de la c
                 fila = "";
 
             }
-
             //Retorn a funció princial
             return triangleInv;
 
@@ -102,7 +100,7 @@ També, a poder ser, no utilitzis cap mètode com repeat() o substring() de la c
             
             let validacio = true;
             let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
-         
+
             numFiles = Number(document.getElementById("numFiles").value);
 
             if (isNaN(numFiles) || numFiles =="" || numFiles <=0) {
@@ -115,8 +113,8 @@ També, a poder ser, no utilitzis cap mètode com repeat() o substring() de la c
             } else {
                 alert(msgError);  
             }
-                  
-         }
+
+        }
     </script>
 
 </body>

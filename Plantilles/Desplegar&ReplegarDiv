@@ -1,0 +1,12 @@
+     //Funció desplegar div
+     function desplegarDiv(idDiv) {
+
+          document.getElementById(idDiv).style.display = "block";
+     }
+
+     //Funció replegar div
+     function replegarDiv(idDiv) {
+
+          document.getElementById(idDiv).style.display = "none";
+          
+     }

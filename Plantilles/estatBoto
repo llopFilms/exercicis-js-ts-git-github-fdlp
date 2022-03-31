@@ -1,0 +1,5 @@
+     //Funció habilitar/deshabilitar botó
+     function estatBoto(id, estat) {
+
+          document.getElementById(id).disabled = estat;
+     }

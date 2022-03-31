@@ -24,39 +24,31 @@
 	<p id="resultat"></p>
 
 	<script>
-
 			
 		function endevina(){
 
 			//Introducció de dades
-			let intents=1;
-			let num = Number(prompt ("Introdueix un número. Intent número "+ intents));
+			let intents = 1;
+			let num = "";
 			let numAleatori = Math.ceil((Math.random() * 10));
-			intents++;
-			
 			console.log (numAleatori);
 
 			//Loop
-			while (intents<=5 && num != numAleatori) {
+			do {
+				num = Number(prompt ("Introdueix un número. Intent número "+ intents));
 
-				//Sortida de dades quan no encerta	
-				num = Number(prompt ("No l'has encertat :( Intent número " + intents + " . Torna-ho a intentar...", ""));
+				if (num != numAleatori){
+				alert ("No l'has encertat :( Intent número " +intents+ ". Torna-ho a intentar...", "");
 				intents++;
-			}
+				}
+			} while (intents<=5 && num != numAleatori) 
 
 			//Sortida dades
-			if (intents <5){
-			document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>! I has necessitat <strong>" + intents + "</strong> intents :) !";
+			if (num == numAleatori) document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>! I has necessitat <strong>" +intents+ "</strong> intents :) !";
 
-			}else{
-			document.getElementById("resultat").innerHTML = "No l'has encertat abans de 5 intents! Él número era<strong> " + numAleatori +"</strong>:( !";
-	
-			}
-			
-
-
+			else document.getElementById("resultat").innerHTML = "No l'has encertat"; 
 		}
 
-	</script>
+		</script>
 </body>
 </html>

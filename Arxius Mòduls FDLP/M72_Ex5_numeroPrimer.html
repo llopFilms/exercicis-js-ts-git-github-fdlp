@@ -26,18 +26,15 @@
         function calcPrimer(num){
 
             let i=2, primer = true;
-                                    
-            while (primer && i < num) {
 
+            while (primer == true && i < num) {
                 if (num % i == 0)
                 primer = false;
                 i++;
-                   
             }
-            
+
             return primer;
         }    
-
 
         //Funció principal
         function main(num){
@@ -49,7 +46,7 @@
                 document.getElementById("resultat").innerHTML = "El número introduït, que és el <strong>" +num+ "</strong>, <strong> SÍ </strong> és primer.";
 
             }else{
-                 document.getElementById("resultat").innerHTML = "El número introduït, que és el <strong>" +num+ "</strong>, <strong> NO </strong> és primer.";  
+                document.getElementById("resultat").innerHTML = "El número introduït, que és el <strong>" +num+ "</strong>, <strong> NO </strong> és primer.";  
 
             }
 
@@ -60,7 +57,7 @@
             
             let validacio = true;
             let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
-         
+
             let num = Number(document.getElementById("num").value);
 
             if (isNaN(num) || num =="" || num <=0) {
@@ -68,7 +65,7 @@
                 document.getElementById("num").value = "";
 
             }
-           
+
             if (validacio) {
                 main(num);
 
@@ -76,7 +73,7 @@
                 alert(msgError); 
 
             }
-                  
+
         }
     </script>
 

@@ -35,14 +35,14 @@
 			if (divisor < 2 || divisor > 7){
 			alert ("Sisplau que el divisor estigui comprès entre 2 i 7, gràcies");
 						
-				//if que calcula que el dividend sigui divisible, i per tant múltiple del divisor. Cal que el residu sigui 0 (%)
-				}else if (dividend % divisor == 0){
-				document.getElementById("càlcul_divisió").innerHTML = "<strong>Molt bé!.</strong> El dividend és múltiple del divisor. Felcitats! =)";
+			//if que calcula que el dividend sigui divisible, i per tant múltiple del divisor. Cal que el residu sigui 0 (%)
+			}else if (dividend % divisor == 0){
+			document.getElementById("càlcul_divisió").innerHTML = "<strong>Molt bé!.</strong> El dividend és múltiple del divisor. Felcitats! =)";
 
-					//L'alternativa només pot ser que no són múltiples
-					}else
-					document.getElementById("càlcul_divisió").innerHTML = "<strong>Oh vaja...</strong>El dividend <strong>NO</strong> és múltiple del divisor. Ho sentim :(";
-				
+			//L'alternativa només pot ser que no són múltiples
+			}else{
+			document.getElementById("càlcul_divisió").innerHTML = "<strong>Oh vaja...</strong>El dividend <strong>NO</strong> és múltiple del divisor. Ho sentim :(";
+			}	
 		}
 		
 	</script>

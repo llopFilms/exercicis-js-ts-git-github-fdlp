@@ -50,7 +50,7 @@ function f12(){
     let i, j;
     let llista = "\n\n";
     let llista2 = "";
-         
+
     //Llista per cònsola
     for (let i=0; i<agenda.length; i++) {
 
@@ -142,7 +142,7 @@ function f13(){
     let llista3 = "\n\n";
 
     for (i=0; i<agenda.length; i++) {
-       
+
         if (f331 == agenda[i].categoria) {
             llista3 += agenda[i].categoria+ ": (sense saber índex)\n\n";
 
@@ -159,7 +159,7 @@ function f13(){
     escriuDada ("resultat", llista + llista2);
     console.table(f13);
     console.log(f131, indexCancel, llista3);
-   
+
 }
 
 function f21(){
@@ -173,7 +173,7 @@ function f21(){
     let f21 = prompt ("Qué buscas?:", "Bomberos");
     let resultat = "";
     let i=0; let j; 
-             
+
         while (i<agenda.length) {
         j=0;    
             while (j<agenda[i].contactos.length) {

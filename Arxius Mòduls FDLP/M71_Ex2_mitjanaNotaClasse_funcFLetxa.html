@@ -28,44 +28,53 @@
 
 	<input type='button' onClick='mitjanaNotes()' Value='Clica per continuar'/>
 	<br/>
-	<p id="nota mitjana classe"></p>
+	<p id="notaMitjanaClasse"></p>
 
-	
-	
 	<script>
 	
 		function mitjanaNotes(){
 
 			//Definició de dades i recepció des d'id d'HTML
-			let i, sumaAcumulada = 0, notaInd, mitjanaClasse;
+			let i, sumaAcumulada = 0, notaInd;
 			let numNotes = Number(document.getElementById("caixaQuantitatNotes").value);
 			
 			//Loop que demana nota i fa la suma acumulativa, iterant tans cops com número de notes a introduïr hi ha. Avís de nota mal introduïda (>10) i sol·licitud de nova entrada
-			for (i=1; i <= numNotes; i++){
+			for (i=0; i<numNotes; i++){
 				
-				notaInd = Number(prompt("Introdueix la nota " +(i)+ " de " +numNotes));
-				while (notaInd <0 || notaInd>10){
-					
-					notaInd = Number(prompt("La nota introduïda ha de ser entre 0 i 10, sisplau. Introdueix la nota " +(i)+ " de " +numNotes+ " de nou."));
+				notaInd = Number(prompt("Introdueix la nota " +(i+1)+ " de " +numNotes));
+				
+				while (notaInd <0 || notaInd >10){
+						
+					notaInd = Number(prompt("La nota introduïda ha de ser entre 0 i 10, sisplau. Introdueix la nota " +(i+1)+ " de " +numNotes+ " de nou."));
 				}
 				sumaAcumulada += notaInd;
-				
+			}	
+
+			let mitjanaClasse = calculMitja(sumaAcumulada, numNotes);
+			let missatge = ferMissatge(mitjanaClasse);
+			document.getElementById("notaMitjanaClasse").innerHTML = "La mitjana de la classe és:<b> " +mitjanaClasse+ ".</b> " +missatge;
+			
+		}
+
+		//Càlcul de la mitjana reduïda a 2 decimals
+		const calculMitja = (sumaAcumulada, numNotes) => mitjanaClasse = (sumaAcumulada / numNotes).toFixed(2);
+		
+		//Elaboració dels missatges de sortida a id's d'HTML segons valor final
+		function ferMissatge (mitjanaClasse) {
+
+			let missatge;
+			if (mitjanaClasse < 5){
+			missatge = "La classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més.";
+
+			}else if (mitjanaClasse < 7){
+			Missatge = "La nota és bona, però els alumnes haurien de millorar el treball personal.";
+
+			}else{
+			missatge = "Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat.";
 			}
 
-			//Càlcul de la mitjana reduïda a 2 decimals
-			mitjanaClasse = sumaAcumulada / numNotes;
-			mitjanaClasse2dec = mitjanaClasse.toFixed(2);
-			
-			//Elaboració dels missatges de sortida a id's d'HTML segons valor final
-			if (mitjanaClasse < 5){
-				document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és:<strong> " + mitjanaClasse2dec +"</strong>. <br/>La classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més.";
+			return missatge;
 
-				}else if (mitjanaClasse < 7){
-				document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és:<strong> " + mitjanaClasse2dec + "</strong>.<br/>La nota és bona, però els alumnes haurien de millorar el treball personal.";
-
-					}else 
-					document.getElementById("nota mitjana classe").innerHTML = "La mitjana de la classe és: <strong> " + mitjanaClasse2dec +  "</strong>.<br/>Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat.";
-			
 		}
 
 	</script>

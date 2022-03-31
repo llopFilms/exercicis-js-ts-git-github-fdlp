@@ -44,21 +44,17 @@
 			let mida = document.getElementById("caixaNum").value;
 			
 			//Declaració de variables
-			let i, string, fila, quadMag;
+			let i, fila = "", quadMag = "";
 
 			//'Impressió' de línies horitzontals
-			string = ""
 			for (i=0; i<mida; i++){
-
-				string += " " + char;
+				fila += " " + char;
 			
 			}
 			
 			//'Impressió' de línies verticals
-			quadMag = "";
 			for (i=0; i<mida; i++){
-
-				quadMag += "<br/><br/>" + string;
+				quadMag += "<br/><br/>" + fila;
 
 			}
 			

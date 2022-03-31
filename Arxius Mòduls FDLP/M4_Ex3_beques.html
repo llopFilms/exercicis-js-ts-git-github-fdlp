@@ -15,29 +15,29 @@
 	<p>Introdueix les teves dades:</p>
 	<!--Entrada de dades-->
 	<p>Ets major d'edat?</p>
-	<select name="select" id="caixaTextMajorEdat"><br/><br/>
-	<option></option>
-	<option value="edat">Sí</option>
-	<option value="edat">No</option>
-	</select>
+		<select name="select" id="caixaTextMajorEdat"><br/><br/>
+			<option></option>
+			<option value="edat">Sí</option>
+			<option value="edat">No</option>
+		</select>
 	<br/>
 	<p>Tens titulació universitària?</p>
-	<select name="select" id="caixaTextTítolUni"><br/><br/>
-	<option></option>
-	<option value="Sí">Sí</option>
-	<option value="No">No</option>
-	</select>
+		<select name="select" id="caixaTextTítolUni"><br/><br/>
+			<option></option>
+			<option value="Sí">Sí</option>
+			<option value="No">No</option>
+		</select>
 	<br/>
 	<p>Estàs en situació d'atur?</p>
-	<select name="select" id="caixaTextAtur" ><br/><br/>
-	<option></option>
-	<option value="Sí">Sí</option>
-	<option value="No">No</option>
-	</select>
+		<select name="select" id="caixaTextAtur" ><br/><br/>
+			<option></option>
+			<option value="Sí">Sí</option>
+			<option value="No">No</option>
+		</select>
 	<br/><br/>
-	<input type='button' onClick='beca()' Value='Clica per continuar'/>
-	<br/>
-	<p id="selecció"></p>
+		<input type='button' onClick='beca()' Value='Clica per continuar'/>
+		<br/>
+		<p id="selecció"></p>
 	
 	<script>
 	
@@ -48,31 +48,15 @@
 			let títolUni = document.getElementById("caixaTextTítolUni").value;
 			let atur = document.getElementById("caixaTextAtur").value;
 			
-			console.log(majorEdat, títolUni, atur)
+			if (majorEdat == "Sí" && títolUni == "Sí") 
+				document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que ets major d'edat i tens titulació universitària. Felicitats!";
 
-			//else if per seleccionar els casos possibles
-			/* if (majorEdat == "Sí" && títolUni == "Sí"){
-			document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que ets major d'edat i tens titulació universitària. Felicitats!";
-
-				}else if (atur == "Sí"){
+			else if (atur == "Sí") 
 				document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. Felicitats!";
 
-					}else if (majorEdat == "No" || títolUni == "No" || atur == "No"){
-					document.getElementById("selecció").innerHTML = "Ho sentim però no compleixes els requisits per accedir a una beca. Ho sentim!";
-						//alert per si no escriuen bé Sí o No
-						}else 
-						alert ("Sisplau respon amb un Sí o amb un No");
-			 */
-
-			if (majorEdat == "Sí" && títolUni == "Sí") document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que ets major d'edat i tens titulació universitària. Felicitats!";
-
-			else if (atur == "Sí") document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. Felicitats!";
-
-			else if (majorEdat == "No" || títolUni == "No" || atur == "No") document.getElementById("selecció").innerHTML = "Ho sentim però no compleixes els requisits per accedir a una beca. Ho sentim!";
-			
-			//alert per si no escriuen bé Sí o No
-			else alert ("Sisplau respon amb un Sí o amb un No");
-			
+			else 
+				document.getElementById("selecció").innerHTML = "Ho sentim però no compleixes els requisits per accedir a una beca.";
+						
 		}
 		
 

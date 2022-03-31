@@ -32,8 +32,8 @@
 			let num = Number(document.getElementById("caixaNum").value);
 
 			//Correció si entra el número 0 i sol·lictud de reintroducció
-			if (num == 0){
-				num = Number(prompt("Has d'introduïr un número diferent del 0"));
+			while (isNaN(num) || num == 0 || num == ""){
+				num = Number(prompt("Escriviu un número correctament"));
 				document.getElementById("caixaNum").value = num;
 			}
 			

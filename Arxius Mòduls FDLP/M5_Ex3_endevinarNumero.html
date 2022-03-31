@@ -19,29 +19,26 @@
 	<p id="resultat"></p>
 
 	<script>
-
 			
-		function endevina(){
+	function endevina(){
 
-			//Introducció de dades
-			let num = Number(prompt ("Introdueix un número."));
-			let numAleatori = Math.ceil((Math.random() * 10));
-						
-			console.log (numAleatori);
+		//Introducció de dades
+		let num = "";
+		let numAleatori = Math.ceil((Math.random() * 10));
+					
+		console.log (numAleatori);
+		//Loop
+		do {
+			num = Number(prompt ("Introdueix un número."));
 
-			//Loop
-			while (num != numAleatori) {
-
-				//Sortida de dades quan no encerta	
-				num = Number(prompt ("No l'has encertat :(  Torna-ho a intentar...", ""));
-				
+			if (num != numAleatori){
+			alert ("No l'has encertat :(  Torna-ho a intentar...");
 			}
-
-			//Sortida dades
-			document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>!";
-
-		}
-		
+		} while (num != numAleatori)
+		//Sortida dades
+		document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>!";
+	}
+	
 
 	</script>
 </body>

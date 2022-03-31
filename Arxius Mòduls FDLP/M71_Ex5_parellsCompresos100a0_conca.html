@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mòdul 7.1 - Exercici 5</title>
+</head>
+<body>
+	
+	<!--Mostra per pantalla els nombres parells compresos entre el 100 i el 0 en ordre descendent.-->
+
+	<h3>Sèries de números</h3>
+	<br/>
+    <label for="caixaNumInicial">Número inici sèrie </label>
+    <input type="number" id="caixaNumInicial" maxlength= "6" size="6"/>
+    <br/><br/>
+    <label for="caixaNumFinal">Número final sèrie </label>
+    <input type="number" id="caixaNumFinal" maxlength= "6" size="6"/>
+    <br/><br/>
+    <label for="caixaNumIncrement">Increment </label>
+    <input type="number" id="caixaNumIncrement" maxlength= "6" size="6"/>
+    <br/><br/>
+	<input type="button" onClick="ascendent()" value="Sèrie ascendent"/>
+	<br/><br/>
+    <input type="button" onClick="descendent()" value="Sèrie descendent"/>
+	<br/><br/>
+	<p id="resultat"></p>
+	
+	<script>
+	
+		function ascendent(){
+
+
+			//Definició de variables
+            let numIni = Number(document.getElementById("caixaNumInicial").value);
+            let numFin = Number(document.getElementById("caixaNumFinal").value);
+            let numInc = Number(document.getElementById("caixaNumIncrement").value);
+            let i;
+
+			min = (numIni < numFin) ? numIni : numFin;
+            max = (numIni < numFin) ? numFin : numIni;		
+            console.log(numIni, numFin);
+            document.getElementById("caixaNumInicial").value = numIni;
+            document.getElementById("caixaNumFinal").value = numFin;
+			
+
+			//Creació llista
+            llista = min;
+			for (i=min; i<max; i+=numInc){
+								
+				llista += ", " + (i+numInc);
+
+			}
+			numIni = 0; numFin = 0;
+			//Sortida de dades cap a id d'HTML
+			document.getElementById("resultat").innerHTML = "La sèrie sol·licitada és: <strong>" +llista+ ".";
+			
+		}
+
+		function descendent(){
+
+
+			//Definició de variables
+            let numIni = Number(document.getElementById("caixaNumInicial").value);
+            let numFin = Number(document.getElementById("caixaNumFinal").value);
+            let numInc = Number(document.getElementById("caixaNumIncrement").value);
+            let i;
+
+            max = (numIni > numFin) ? numIni : numFin;
+            min = (numIni > numFin) ? numFin : numIni;
+            console.log(numIni, numFin);
+            document.getElementById("caixaNumInicial").value = numIni;
+            document.getElementById("caixaNumFinal").value = numFin;
+
+			//Creació llista
+            llista = max;
+			for (i=max; i>min; i-=numInc){
+								
+				llista += ", " + (i-numInc);
+
+			}
+			numIni = 0; numFin = 0;
+			//Sortida de dades cap a id d'HTML
+			document.getElementById("resultat").innerHTML = "La sèrie sol·licitada és: <strong>" +llista+ ".";
+			
+		}
+
+
+	</script>
+	
+</body>
+</html>

@@ -21,50 +21,47 @@
     <script>
         "use strict";
 
-
         //Funció auxiliar
         function factorial(num){
 
-            let i, factorial = 1;
-            
-            for (i=num; i>0; i--){
+            let i, factorial = 1, serieFactorial = "";
+            for (i=1; i<=num; i++){
 
-            factorial *= (i);
-            
+                factorial *= i;
+                serieFactorial += (i!=num) ? i+ " * " : i;
             }
-
-            return factorial;
+            let calcul = serieFactorial+ " = " +factorial;
+            return calcul;
         }
-
 
         //Funció principal
         function main(num){
-            
+
             //Sortida de dades
-            let resultat = factorial(num);
-            document.getElementById("resultat").innerHTML = "L'operació factorial del número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>.";
+            let resultat =  factorial(num);
+            document.getElementById("resultat").innerHTML = "L'operació factorial del número <strong>" +num+ "</strong> és: <strong>" +resultat+ "</strong>";
 
         }
 
         //Funció validació
         function validacio(){
-            
+
             let validacio = true;
             let msgError = "Introdueix les dades correctament. Calen números enters no negatius. \nClica 'D'acord' i torna-les a introduir, sisplau."
-         
+
             let num = parseInt(document.getElementById("num").value);
 
             if (isNaN(num) || num =="" || num <=0) {
                 validacio = false;
                 document.getElementById("num").value = "";
             }
-           
+    
             if (validacio) {
                 main(num);
             } else {
                 alert(msgError);  
             }
-                  
+
         }
     </script>
 

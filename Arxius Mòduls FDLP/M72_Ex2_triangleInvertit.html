@@ -29,7 +29,7 @@ El nombre de línies formades per “*” vindrà donat per un número que l’u
 <label for="numFiles" >Introdueix el número de files: </label>
 <input type="number" id="numFiles" maxlength= "4" size="4" />
 <br/><br/>
-<input type="button" onClick="validacio('numFiles.value')" value="Clica aquí..."/>
+<input type="button" onClick="validacio()" value="Clica aquí..."/>
 <br/><br/>
 <p id="resultat"><p></p>
 
@@ -67,12 +67,12 @@ El nombre de línies formades per “*” vindrà donat per un número que l’u
         }
 
         //Funció validació
-        function validacio(numFiles){
+        function validacio(){
             
             let validacio = true;
             let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
          
-            numFiles = Number(document.getElementById("numFiles").value);
+            let numFiles = Number(document.getElementById("numFiles").value);
 
             if (isNaN(numFiles) || numFiles =="" || numFiles <=0) {
                 validacio = false;

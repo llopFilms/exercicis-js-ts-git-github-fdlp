@@ -1,20 +1,19 @@
-//Funció Validació
+     //Funció Validació en cascada
      function validacio(){
 
           //Esborrar pantalla
-          escriuDada ("avís","");
+          escriuDada ("avis","");
           escriuDada ("resultat","");
 
           //Entrada dades
-          let numPersones = llegeixDada("1");
-          let preuFideus = llegeixDada("2");
-          let preuGambes = llegeixDada("3");
-          let preuCalamars = llegeixDada("4");
+          let dada1 = llegeixDada("1");
+          let dada2 = llegeixDada("2");
+          let dada3 = llegeixDada("3");
+          let dada4 = llegeixDada("4");
 
           //Validació
           let validacio = true;
         
-          //Validar dades ingredients i convertir a Number
           for (i=1; i<=4; i++){
 
                dadaBona(i);
@@ -22,7 +21,6 @@
                Number(i);
 
                if (contiungut = "" || contingut <=0 || isNaN(contingut)){
-
                     validacio = false;
                     dadaDolenta(i);
                }
@@ -34,6 +32,6 @@
                escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
 
           }else{  
-               main(numPersones, preuFideus, preuGambes, preuCalamars);
+               main();
           } 
      } 

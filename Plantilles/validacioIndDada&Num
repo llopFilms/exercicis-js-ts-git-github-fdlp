@@ -1,0 +1,34 @@
+     //Funció Validació individual per número
+     function validacionumInd(num, id){
+
+          let validacioInd = false;
+                              
+          if (num =="" || isNaN(num) || num <=0) {
+               validacioInd;
+               document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
+               
+          }else{
+               validacioInd = true;
+               document.getElementById(id).style.backgroundColor = "white";
+               document.getElementById(id).value = num;
+          }
+          return validacioInd;
+     }
+
+     //Funció Validació inidividual per dada
+     function validacioInd(dada, id){
+
+          let validacioInd = false;
+                              
+          if (dada =="") {
+               validacioInd;
+               document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
+                         
+          }else{
+               validacioInd = true;
+               document.getElementById(id).style.backgroundColor = "white";
+               document.getElementById(id).value = dada;
+          }
+          return validacioInd;
+
+     }

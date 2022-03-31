@@ -1,0 +1,44 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mòdul 7.3 - Exercici 7</title>
+</head>
+<body>
+    <!--Un grup d’amics ha quedat per fer una fideuà, els ingredients principals seran: fideus, gambes, i calamars. Saben que per cada quatre persones han d’utilitzar mig quilo de fideus, 400 grams de calamars i 200 grams de gambes. S’ha de fer un programa que demani per pantalla el preu per quilo de cada ingredient i el nombre d’amics que seran per dinar. El programa ha de calcular les quantitats necessàries de cada ingredient, el preu per persona i el preu final de la fideuà-->
+
+    <h2>La fideuà</h2>
+    <br/>
+    <label for="numPersones"><strong>Indiqueu quantes persones vindran:</strong></label>
+    <input type="number" id="1"  size="6">
+    <br/><br/>
+
+    <fieldset>
+        <legend><b>Preu dels ingredients</b></legend><br>
+        <label for="preuFideus">Indiqueu el preu per kg dels fideus:</label> 
+        <input type="number" id="2" size="6">
+        <br/><br/>
+        <label for="preuGambes">Indiqueu el preu per kg de les gambes:</label> 
+        <input type="number" id="3" size="6">
+        <br/><br/>
+        <label for="preuCalamars">Indiqueu el preu per kg dels calamars:</label> 
+        <input type="number" id="4" size="6">
+    </fieldset>    
+    <br/>
+
+    <input type="button" onClick="validacio()" value="Clica aquí per calcular el preu per persona"/>
+    <br/><br/>
+
+    <p id="resultat" ></p>
+    <p id="avís" ></p>
+
+    <script>"use Strict"</script>
+    <script src="./js/auxiliarsInici.js"></script>
+    <script src="./js/operacions.js"></script>
+    <script src="./js/main.js"></script>

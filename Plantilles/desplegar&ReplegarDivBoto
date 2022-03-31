@@ -1,0 +1,23 @@
+     //Funció desplegar div i deshabilitar botó
+     function desplegarDivBoto(idDiv,quiDemana,valueBoto){
+
+          let valueId = document.getElementById(quiDemana).value;   
+          
+          if (valueId == valueBoto){
+               document.getElementById(idDiv).style.display = "block";
+               document.getElementById(quiDemana).value = "-";  
+               escriuDada("avis","");
+
+          }else{
+               document.getElementById(idDiv).style.display = "none";
+               document.getElementById(quiDemana).value = valueBoto;
+          }
+     }
+
+     //Funció replegar div i habilitar Botó
+     function replegarDivBoto(idDiv,quiDemana,valueBoto) {
+
+          document.getElementById(idDiv).style.display = "none";
+          document.getElementById(quiDemana).value = valueBoto;
+
+     }

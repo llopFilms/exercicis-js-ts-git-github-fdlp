@@ -40,41 +40,39 @@
 
             return traspas;
 
-         }
+        }
 
-       
         //Funció principal
         function main(any){
             
             //Sortida de dades
             let resultat = anyTraspas(any);
-           
+
             document.getElementById("resultat").innerHTML = "Efectivament, l'any <strong>" +any+ "</strong>, <strong>" +resultat+ "</strong> és de traspàs.";
 
-           
         }
 
 
         //Funció validació
         function validacio(any){
-          
+
             let validacio = true;
             let msgError = "Introdueix les dades correctament, en anys de 4 xifres. \nClica 'D'acord' i torna-les a introduir, sisplau."
-         
+
             any = parseInt(document.getElementById("any").value);
-         
+
             if (isNaN(any) || any =="" || any <999) {
                 validacio = false;
                 document.getElementById("any").value = "";
             }
-           
+
             if (validacio) {
                 main(any);
 
             } else {
                 alert(msgError);  
             }
-                  
+
         }
     </script>
 

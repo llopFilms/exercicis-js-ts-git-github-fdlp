@@ -69,7 +69,7 @@
             let numMax = numsarray[0];
             let indexMin = 0;
             let numMin = numsarray[0];
-            let i, contingut = 0;
+            let i, contingut;
 
             for (i=0; i<numsarray.length; i++){
 
@@ -95,11 +95,12 @@
 
             if (numIni > numFin) {
 
-                numGran = numIni; numPetit = numFin;
-
+                numGran = numIni;
+                numPetit = numFin;
             }else{
 
-                numGran = numFin; numPetit = numIni;
+                numGran = numFin;
+                numPetit = numIni;
             }
     
             let i, interval = (numGran-numPetit-1);
@@ -108,7 +109,6 @@
             for (i=0; i<interval; i++){
                 arraySerie.push(numPetit+1+i);
             }
-            console.log(arraySerie, interval, numIni, numFin);
             return arraySerie;
             
         }
@@ -130,17 +130,16 @@
             //Sortida de dades apartat b.
             let indexMin2 = array(numsArray);
             document.getElementById("dades funcioArrayindexMin").innerHTML = "La posició dins l'array del número més petit és <strong>" +indexMin2+ " </strong>i vinc de la funció principal.";
-            document.getElementById("dades funcioArraynumMin").innerHTML = "El número més petit de l'array és el <strong>" + numsArray[indexMin2]+ " </strong>i m'he generat a la funció principal.";
+            document.getElementById("dades funcioArraynumMin").innerHTML = "El número més petit de l'array és el <strong>" +numsArray[indexMin2]+ " </strong>i m'he generat a la funció principal.";
 
             //Definició de paràmetres per funció apartat c.
             let numIni = Number(document.getElementById("numIni").value); 
             let numFin = Number(document.getElementById("numFin").value);
             
             //Sortida de dades apartat c.
-            
             let arraySerie2 = numsCompresos(numIni, numFin);
-          
-            document.getElementById("dades arraySerie").innerHTML = "L'array resultant dels números compresos entre " + numIni + " i " + numFin + " és: <strong>" + arraySerie2 + "</strong> i també vinc de la funció principal.";
+
+            document.getElementById("dades arraySerie").innerHTML = "L'array resultant dels números compresos entre " +numIni+ " i " +numFin+ " és: <strong>" +arraySerie2+ "</strong> i també vinc de la funció principal.";
 
         }
 
@@ -158,13 +157,13 @@
             }else{
                     validacioInd = true;
                     document.getElementById(id).style.backgroundColor = "white";
-                   
+
             }
             return validacioInd;
         }
-      
+
         //Funció Validació Genral
-        function validacioGral(num, id){
+        function validacioGral(){
 
             //Entrada de dades funció b.
             let arrayNum1 = Number(document.getElementById("arrayNum1").value);
@@ -202,12 +201,6 @@
                 validacioGral = validacioInd(numFin,"numFin");
             } 
 
-            /*if (-1>= numIni - numFin <=1){  
-                alert ("El número final i l'inicial són iguals o només estan separats per 1. \n\nModifica'ls perquè siguin diferents o separats per 2 o més.");
-                document.getElementById("numIni").style.backgroundColor = "#E6B0AA"; 
-                document.getElementById("numFin").style.backgroundColor = "#E6B0AA"; 
-                
-            } */
             if (validacioGral) {                 
                 main();            
             }else{

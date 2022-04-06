@@ -46,7 +46,7 @@ function recollirDivBotons() {
     recollirDivBoto("dadesAltaCinema","altaCinema","Alta Cinema");
     recollirDivBoto("dadesEliminarEdifici","eliminarEdifici","Eliminar Edifici");
     recollirDivBoto("dadesVeureEdifici","veureEdifici","Veure Edifici");
-  
+
 }
 
 function altaHotel() {
@@ -68,7 +68,7 @@ function altaHotel() {
     let numPlantes = llegeixDada("numPlantesHotel");
     continuar = validacionumIndPrompt(numPlantes,"numPlantesHotel");
     while (continuar == false) {
-       
+
         numPlantes = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(numPlantes,"numPlantesHotel");
         if (validacionumIndPrompt(numPlantes,"numPlantesHotel") == true){
@@ -92,7 +92,7 @@ function altaHotel() {
     let numHabitacions = llegeixDada("numHabitacions");
     continuar = validacionumIndPrompt(numHabitacions,"numHabitacions");
     while (continuar == false) {
-       
+    
         numHabitacions = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(numHabitacions,"numHabitacions");
         if (validacionumIndPrompt(numHabitacions,"numHabitacions") == true){
@@ -103,7 +103,7 @@ function altaHotel() {
 
     let nouHotel = new Hotel(nom, numPlantes, superficie, numHabitacions);
     arrayEdificis.push(nouHotel);
- 
+
     escriuDada("avis", "Registre de <b>nou Hotel</b> amb el nom <b>"+nom+"</b> registrat satisfactòriament.");
 
     llistaEdificis();
@@ -134,7 +134,7 @@ function altaCinema() {
     let numPlantes = llegeixDada("numPlantesCinema");
     continuar = validacionumIndPrompt(numPlantes,"numPlantesCinema");
     while (continuar == false) {
-       
+
         numPlantes = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(numPlantes,"numPlantesCinema");
         if (validacionumIndPrompt(numPlantes,"numPlantesCinema") == true){
@@ -158,7 +158,7 @@ function altaCinema() {
     let aforament = llegeixDada("aforament");
     continuar = validacionumIndPrompt(aforament,"aforament");
     while (continuar == false) {
-       
+
         aforament = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(aforament,"aforament");
         if (validacionumIndPrompt(aforament,"aforament") == true){
@@ -169,7 +169,7 @@ function altaCinema() {
 
     let nouCinema = new Cinema(nom, numPlantes, superficie, aforament);
     arrayEdificis.push(nouCinema);
- 
+
     escriuDada("avis", "Registre de <b>nou Cinema</b> amb el nom <b>"+nom+"</b> registrat satisfactòriament.");
 
     llistaEdificis();
@@ -198,7 +198,7 @@ function altaHospital() {
     let numPlantes = llegeixDada("numPlantesHospital");
     continuar = validacionumIndPrompt(numPlantes,"numPlantesHospital");
     while (continuar == false) {
-       
+
         numPlantes = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(numPlantes,"numPlantesHospital");
         if (validacionumIndPrompt(numPlantes,"numPlantesHospital") == true){
@@ -222,7 +222,7 @@ function altaHospital() {
     let numPacients = llegeixDada("numPacients");
     continuar = validacionumIndPrompt(numPacients,"numPacients");
     while (continuar == false) {
-       
+
         numPacients = prompt ("Introduïu un número vàlid:");
         validacionumIndPrompt(numPacients,"numPacients");
         if (validacionumIndPrompt(numPacients,"numPacients") == true){
@@ -233,7 +233,7 @@ function altaHospital() {
 
     let nouHospital = new Hospital(nom, numPlantes, superficie, numPacients);
     arrayEdificis.push(nouHospital);
- 
+
     escriuDada("avis", "Registre de <b>nou Hospital</b> amb el nom <b>"+nom+"</b> registrat satisfactòriament.");
 
     llistaEdificis();
@@ -252,7 +252,7 @@ function eliminarEdifici() {
     let nomEdifici = llegeixDada("nomEdificiEliminar");
     let continuar = validacioIndPrompt(nomEdifici,"nomEdificiEliminar");
     while (continuar == false) {
-       
+    
         nomEdifici = prompt ("Introduïu un nom vàlid:");
         validacioIndPrompt(nomEdifici,"nomEdificiEliminar");
         if (validacioIndPrompt(nomEdifici,"nomEdificiEliminar") == true){
@@ -295,7 +295,7 @@ function veureCinema(registrat) {
     let numEspectadors = prompt ("Introduïu el número d'espectadors de la sessió");
     let continuar = false;
     while (numEspectadors =="" || isNaN(numEspectadors) || numEspectadors <0) {
-       
+
         numEspectadors = prompt ("Introduïu un número vàlid:");
         
         if (numEspectadors =="" || isNaN(numEspectadors) || numEspectadors <=0) {
@@ -307,7 +307,7 @@ function veureCinema(registrat) {
     let preuEntrada = prompt ("Introduïu el preu d'entrada de la sessió");
     continuar = false;
     while (preuEntrada =="" || isNaN(preuEntrada) || preuEntrada <0) {
-       
+
         preuEntrada = prompt ("Introduïu un número vàlid:");
         
         if (preuEntrada =="" || isNaN(preuEntrada) || preuEntrada <=0) {
@@ -328,7 +328,7 @@ function veureEdifici() {
     let nomEdifici = llegeixDada("nomEdificiVeure");
     let continuar = validacioIndPrompt(nomEdifici,"nomEdificiVeure");
     while (continuar == false) {
-       
+
         nomEdifici = prompt ("Introduïu un nom vàlid:");
         validacioIndPrompt(nomEdifici,"nomEdificiVeure");
         if (validacioIndPrompt(nomEdifici,"nomEdificiVeure") == true){
@@ -336,8 +336,8 @@ function veureEdifici() {
             continuar = true;
         }
     }
-    console.log(continuar);
-   if (arrayEdificis.some(element => element.nom === nomEdifici)){
+    
+    if (arrayEdificis.some(element => element.nom === nomEdifici)){
 
         let registrat = arrayEdificis.find(element => element.nom === nomEdifici);
         let registratIndex = arrayEdificis.indexOf(registrat);
@@ -353,7 +353,7 @@ function veureEdifici() {
 
             case "hospital": escriuDada("avis", registrat.toString() + registrat.calcularCostVigilancia() + registrat.netejar() + registrat.repartirDinar());
             break;
-         
+
         }
 
     }else{

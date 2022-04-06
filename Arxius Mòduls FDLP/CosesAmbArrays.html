@@ -7,7 +7,7 @@
 	<title>Coses amb arrays</title>
 </head>
 	<body>
-		<h3>Array's dancing</h3>
+		<h3>Array's dance</h3>
 		
 		<p><input type='button' onClick='cosesArrays()' Value='Clica per començar'/></p>
 		<br/>
@@ -19,7 +19,18 @@
 		<p id="resultat6"></p>
 		<p id="resultat7"></p>
 		<p id="resultat8"></p>
-
+		<p id="resultat9"></p>
+		<p id="resultat91"></p>
+		<hr>
+		<h3>I ara, alternatives...</h3>
+		<p id="resultat10"></p>
+		<p id="resultat11"></p>
+		<p id="resultat12"></p>
+		<p id="resultat13"></p>
+		<hr>
+		<h3>CharAt() i includes()</h3>
+		<p id="resultat14"></p>
+		<p id="resultat15"></p>
 		<script>
 
 			function cosesArrays(){
@@ -31,30 +42,77 @@
 			
 			//Construïm l'array i el remenem
 			let nouArray = text.split();
-			document.getElementById("resultat1").innerHTML = "I aquest és l'array que hem creat separat per paraules, <strong>split()</strong>: " + nouArray;
+
+			document.getElementById("resultat1").innerHTML = "Aquest és l'array que hem creat separat per paraules, <b>split()</b>: " + nouArray;
 						
 			let nouArray2 = text.split(" ");
-			document.getElementById("resultat2").innerHTML = `I aquest és l'array que hem creat separat per comes, <strong>split(" ")</strong>: ` + nouArray2;
+
+			document.getElementById("resultat2").innerHTML = `I aquest és l'array que hem creat separat per comes, <b>split(" ")</b>: ` + nouArray2;
 			
 			let nouArray3 = text.split("");
-			document.getElementById("resultat3").innerHTML = `I aquest és l'array que hem creat separat per caràcters, <strong>split ("")</strong>: ` + nouArray3;
+
+			document.getElementById("resultat3").innerHTML = `I aquest és l'array que hem creat separat per caràcters, <b>split ("")</b>: ` + nouArray3;
 			
 			let nouArray4 = nouArray3.reverse();
-			document.getElementById("resultat4").innerHTML = "I ara el posem a l'inrevés, <strong>reverse()</strong>: " + nouArray4;
+
+			document.getElementById("resultat4").innerHTML = "I ara el posem a l'inrevés, <b>reverse()</b>: " + nouArray4;
 			
 			let nouArray5 = nouArray4.sort();
-			document.getElementById("resultat5").innerHTML = "I ara ordenat segons la taula ASCII, <strong>sort()</strong>: " + nouArray5;
+
+			document.getElementById("resultat5").innerHTML = "I ara ordenat segons la taula ASCII, <b>sort()</b>: " + nouArray5;
 			
 			let text2 = nouArray.join();
-			document.getElementById("resultat6").innerHTML = "I ara tot com a string, de nou, <strong>join()</strong>: " + text2;
+
+			document.getElementById("resultat6").innerHTML = "I ara tot com a string, de nou, <b>join()</b>: " + text2;
 			
 			let textUp = text2.toUpperCase();
-			document.getElementById("resultat7").innerHTML = "I ara tot en majúscules, <strong>toUpperCase()</strong>: " + textUp;
+
+			document.getElementById("resultat7").innerHTML = "I ara com a string tot en majúscules, <b>toUpperCase()</b>: " + textUp;
 			
 			let textLo = text2.toLowerCase();
-			document.getElementById("resultat8").innerHTML = "I ara tot en minúscula, <strong>toLowerCase()</strong>: " + textLo;
-		}
 
+			document.getElementById("resultat8").innerHTML = "I ara com a string tot en minúscula, <b>toLowerCase()</b>: " + textLo;
+
+			let arraynou = text.toUpperCase().split("").reverse().join("");
+			document.getElementById("resultat9").innerHTML = "I ara tot en una sola acció, upperCase, string-->array, reverse, i array-->string: <b>toUpperCase+split+reverse+join:</b> " +arraynou;
+
+			let arraynou2 = arraynou.split("").reverse().join("").toLowerCase();
+
+			document.getElementById("resultat91").innerHTML = "I ara tot en una sola acció tornem al principi, string-->array, reverse altre cop, array-->string i toLowerCase: <b>split+reverse+join+toLowerCase:</b> " +arraynou2;
+
+			//Alternatives
+			let arraySplit = Array.from(text);
+
+			document.getElementById("resultat10").innerHTML = "Ara, array creat amb <b>Array.from</b>: " +arraySplit;
+
+			//Amb spread operator
+			let arraySplit2 = [...text];
+			
+			document.getElementById("resultat11").innerHTML = "Ara, array creat amb <b>spread operator</b>: " +arraySplit2;
+
+			//Executar una funció dins de la conversió a array afegint número d'índex
+			let arraySplit3 = Array.from(text, (element, index) => element + "-" + index);
+
+			document.getElementById("resultat12").innerHTML = "Ara, array creat amb <b>Array.from</b> i afegint número d'índex: " +arraySplit3;
+
+			//Amb el traidicional loop for of
+			let i, arrayPush = [];
+			for (i of text){
+				arrayPush.push(i);
+			}
+
+			document.getElementById("resultat13").innerHTML = "Ara, array creat amb <b>loop for of i push()</b>: " +arrayPush;
+
+			//charAt() diu quin caacter hi ha a la posició sol·licitatdav 8
+
+			caracter = text.charAt(8);
+
+			document.getElementById("resultat14").innerHTML = "Ara, <b>charAt()</b> ens diu quin caràcter hi ha a una posició sol·licitatda, i li hem demanat posició 8. I ens diu: <b>" +caracter;
+
+            lletraA = text.includes("a")
+
+            document.getElementById("resultat15").innerHTML = "Ara, <b>includes()</b> ens diu si hi ha a la cadena algun caràcter en concret, i li hem demanat la lletra 'a'. I ens diu que: <b>" +lletraA;
+			}
 		</script>
 	</body>	
 </html>

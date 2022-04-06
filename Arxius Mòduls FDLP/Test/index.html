@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <hr>
+    <div>
+        <h3>Pregunta <span id="numPregunta"></span></h3>
+        <br>
+        <fieldset>
+            <legend id="enunciat"></legend>
+            <br>
+            <label for="opcio1"><input type="radio" id="opcio1" value="opcio1" name="seleccio" onChange="resposta()"><span id="opcio01"></span></label><br><br>
+            <label for="opcio2"><input type="radio" id="opcio2" value="opcio2" name="seleccio" onChange="resposta()"><span id="opcio02"></span></label><br><br>
+            <label for="opcio3"><input type="radio" id="opcio3" value="opcio3" name="seleccio" onChange="resposta()"><span id="opcio03"></span></label><br><br>
+            <label for="opcio4"><input type="radio" id="opcio4" value="opcio4" name="seleccio" onChange="resposta()"><span id="opcio04"></span></label><br><br>
+
+            <button Onclick="anterior()">Anterior</button>
+            <button Onclick="seguent()">Següent</button>
+
+            <p id="avis"></p>
+        </fieldset>
+            <p id="finalTest"></p>
+    </div>
+
+    <script>"use strict"</script>
+    <script src="./js/classePregunta.js"></script>
+    <script src="./js/classeResposta.js"></script>
+    <script src="./js/arrayMuntatge.js"></script>
+    <!-- <script src="./js/arrayPreguntesObj.js"></script> -->
+    <script src="./js/auxiliarsInici.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

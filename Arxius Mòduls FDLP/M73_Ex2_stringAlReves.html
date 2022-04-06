@@ -27,35 +27,35 @@
      //Funcions auxiliarsLlibreria
 
      //Funció llegeix dada
-     function llegeixDada(id){
+    function llegeixDada(id){
 
-          let dada = document.getElementById(id).value;
-          return dada;
-     }
+        let dada = document.getElementById(id).value;
+        return dada;
+    }
 
      //Funció escriu dada valor
-     function escriuDadaValue(id,dada){        
+    function escriuDadaValue(id,dada){        
 
-          document.getElementById(id).value = dada;
-     }
+        document.getElementById(id).value = dada;
+    }
 
      //Funció escriu dada en HMTL
-     function escriuDada(id,dada){        
+    function escriuDada(id,dada){        
 
-          document.getElementById(id).innerHTML = dada;
-     }
+        document.getElementById(id).innerHTML = dada;
+    }
 
      //Funció dada bona
-     function dadaBona(id){
+    function dadaBona(id){
 
-          document.getElementById(id).style.background = "white";
-     }
+        document.getElementById(id).style.background = "white";
+    }
 
      //Funció dada dolenta
-     function dadaDolenta(id){
+    function dadaDolenta(id){
 
-          document.getElementById(id).style.background = "#E6B0AA";
-     }
+        document.getElementById(id).style.background = "#E6B0AA";
+    }
 
 
      //Programa
@@ -63,13 +63,12 @@
     function giraCadena(cadena){
 
         let i, cadenaReves = "";
-        
         for (i=cadena.length-1; i>=0; i--){
 
-            cadenaReves += cadena.charAt(i);
+            cadenaReves += cadena[i];
         }
         return cadenaReves;
- 
+
     }
 
     //Funció principal
@@ -111,6 +110,6 @@
 
     }
 
-   </script>
+    </script>
 </body>
 </html>

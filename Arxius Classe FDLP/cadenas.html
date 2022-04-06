@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
          <meta charset='utf-8'>
          <title>CADENAS</title>
          <style>em {color:teal;} input[type=text] {font-size: 105%; font-weight: bold;color:teal;}</style>
-    <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
-    <body style="margin-left:10em; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+   <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+   <body style="margin-left:10em; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       <!--Esto es HTML-->
       <h1>Analizar funciones jugando con cadenas de texto</h1>
       <hr>
@@ -47,9 +47,10 @@
          }
 
          function contarPalabras(cadena) {
-            /*let array = cadena.split(" ");
-            let palabras = array.length;*/
-            let espacio = " ";
+
+            let numParaules = cadena.split(" ").length;
+            
+            /* let espacio = " ";
             let numeroPalabras = 1;
             let letra;
             let largo = cadena.length;
@@ -57,9 +58,9 @@
                letra=cadena.charAt(i);
                if (espacio.includes(letra)) {
                   numeroPalabras++;
-               }
-            }
-            document.getElementById("mensaje").innerHTML = "La cadena tiene <em>" + numeroPalabras + "</em> palabras";
+               } 
+            }*/
+            document.getElementById("mensaje").innerHTML = "La cadena tiene <em>" + numParaules + "</em> palabras";
 
          }
             
@@ -72,19 +73,22 @@
          }
 
          function reves(cadena){
-            let letra;
+            let lletra, i;
             let cadenaReves ="";
-            let largo = cadena.length;
-            for (let i=0; i<=largo; i++) {
-               letra=cadena.charAt(cadena.length-i);
-               cadenaReves += letra;
-            }
+
+            cadenaReves = cadena.split("").reverse().join("");
+            
+            /* for (i=0; i<=cadena.length; i++) {
+               lletra=cadena.charAt(cadena.length-i);
+               cadenaReves += lletra;
+            } */
+
             return cadenaReves;
          }
 
          function main() {
                let cadena = document.getElementById("frase").value;  
-                
+
                if (document.getElementById("1").checked) {
                   contarVocales(cadena);
 

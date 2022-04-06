@@ -58,14 +58,12 @@
             document.getElementById(id).style.background = "#E6B0AA";
         }
 
-
         //Programa
 
         //Funció que neteja de la frase. Frase a Minúscula i treu accents, puntuació i espais
-        function filtre(frase){
+        function filtre(fraseAFiltrar){
             
-            let fraseNeta = frase;
-
+            let fraseNeta = fraseAFiltrar;
             fraseNeta = fraseNeta.toLowerCase();
             
             fraseNeta = fraseNeta.replace(/à/g, "a");
@@ -89,39 +87,38 @@
         }   
 
         //Funció que gira el text i el compara amb l'original
-        function compara(frase){
+        function compara(fraseAComparar){
 
-            let i, fraseNetaRev = "", compara;
-            let fraseNeta = filtre(frase);
+            let fraseComp = filtre(fraseAComparar);
+            let i, fraseCompRev = "", compara;
+            
+            for (i=fraseComp.length-1; i>=0; i--) {
 
-            for (i=fraseNeta.length-1; i>=0; i--) {
-
-                fraseNetaRev += fraseNeta.charAt(i);
+                fraseCompRev += fraseComp[i];
             }
 
-            (fraseNeta == fraseNetaRev) ? compara = true : compara = false;
+            (fraseComp == fraseCompRev) ? compara = true : compara = false;
             return compara;
 
         }
 
         //Funció principal
-        function main(frase){
+        function main(fraseValida){
 
             //Gestió amb funcions
-            filtre(frase);            
-            let fraseCompara = compara(frase);
+            let fraseCompara = compara(fraseValida);
 
             //Resultat final
-            let resultatok = "La frase '<strong>"+frase+"'</strong>, <strong> SÍ</strong> que és un palíndrom.";
-            let resultatko = "La frase '<strong>"+frase+"'</strong>, <strong> NO</strong> que és un palíndrom.";
+            let resultatok = "La frase '<strong>"+fraseValida+"'</strong>, <strong> SÍ</strong> que és un palíndrom.";
+            let resultatko = "La frase '<strong>"+fraseValida+"'</strong>, <strong> NO</strong> que és un palíndrom.";
 
             if (fraseCompara == true){
                 escriuDada("resultat",resultatok);
-                escriuDada("frase", frase);
+                escriuDada("frase", fraseValida);
 
             }else{
                 escriuDada("resultat", resultatko);
-                escriuDada("frase", frase)
+                escriuDada("frase", fraseValida)
                 
             }
         }
@@ -153,6 +150,6 @@
 
         } 
 
-   </script>
+    </script>
 </body>
 </html>

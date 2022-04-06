@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,109 +26,108 @@
     <script>
     "use Strict"
 
-          //Funcions auxiliarsLlibreria
+        //Funcions auxiliarsLlibreria
 
-          //Funció llegeix dada
-          function llegeixDada(id){
+        //Funció llegeix dada
+        function llegeixDada(id){
 
-               let dada = document.getElementById(id).value;
-               return dada;
-          }
+            let dada = document.getElementById(id).value;
+            return dada;
+        }
 
-          //Funció escriu dada valor
-          function escriuDadaValue(id,dada){        
+        //Funció escriu dada valor
+        function escriuDadaValue(id,dada){        
 
-               document.getElementById(id).value = dada;
-          }
+            document.getElementById(id).value = dada;
+        }
 
-          //Funció escriu dada en HMTL
-          function escriuDada(id,dada){        
+        //Funció escriu dada en HMTL
+        function escriuDada(id,dada){        
 
-               document.getElementById(id).innerHTML = dada;
-          }
+            document.getElementById(id).innerHTML = dada;
+        }
 
-          //Funció dada bona
-          function dadaBona(id){
+        //Funció dada bona
+        function dadaBona(id){
 
-               document.getElementById(id).style.background = "white";
-          }
+            document.getElementById(id).style.background = "white";
+        }
 
-          //Funció dada dolenta
-          function dadaDolenta(id){
+        //Funció dada dolenta
+        function dadaDolenta(id){
 
-               document.getElementById(id).style.background = "#E6B0AA";
-          }
+            document.getElementById(id).style.background = "#E6B0AA";
+        }
 
 
-          //Programa
-          function check(numDni,lletra){
-               
-               //Recerca de la lletra teòrica calculada amb el residu
-               let llista = "TRWAGMYFPDXBNJZSQVHLCKE";
-               let residu = numDni % 23;
-               let checkLletra = llista.charAt(residu);
+        //Programa
+        function check(numDni){
 
-               return checkLletra;
+		//Recerca de la lletra teòrica calculada amb el residu
+            let llista = "TRWAGMYFPDXBNJZSQVHLCKE";
+            let residu = numDni % 23;
+            let checkLletra = llista.charAt(residu);
 
-          }
-          
-          function main(numDni,lletra,dni){
+            return checkLletra;
 
-               //Crida a funció, return i sortida de dades
-               let checkLletra = check(numDni,lletra);
+        }
 
-               let resultatok = "El document de DNI que heu introduit número <strong>" +dni+ "</strong> que incorpora la lletra <strong>"+lletra+"<strong>,</strong> SÍ</strong> que és un número de DNI correcte.";
-               let resultatko = "El document de DNI que heu introduit número <strong>" +dni+ "</strong> que incorpora la lletra <strong>"+lletra+"<strong>,</strong> NO</strong> és un número de DNI correcte. La lletra que hauria de tenir és la <strong>" +checkLletra+"</strong>.";
-               
-               if (checkLletra == lletra){
-                    escriuDada("resultat", resultatok);
-                    escriuDada("avís", "");
-               
-               }else{
-                    escriuDada("resultat", resultatko);
-                    escriuDada("avís", "");
-                    
-               }
-          }
-     
-          //Funció Validació
-          function validacio() {
-          
-               //Esborra pantalla
-               escriuDada("resultat","");
-               escriuDada("avís","");
-               
-               //Recepció número complert DNI
-               let dni = llegeixDada("num");
-               
-               //Separació lletra, número i posar a majúscula
-               numDni = dni.substring(0, dni.length-1);
-               lletra = dni.substring(dni.length-1);
-               lletra = lletra.toUpperCase();
+        function main(numDni,lletra,dni){
 
-               //Estat inicial validació i gestió de dades
-               let numDniMida = numDni.length;
-               let lletraMida = lletra.length;
-               let llista = "TRWAGMYFPDXBNJZSQVHLCKE";
-               console.log(numDni);
-               //Validació
-               let validacio = false;
-               
-               if (numDni =="" || isNaN(numDni) || 0<= numDni > 99999999 || numDniMida !==8 || lletra =="" || !llista.includes(lletra) || !isNaN(lletra) || lletraMida !==1){
+            //Crida a funció, return i sortida de dades
+            let checkLletra = check(numDni,lletra);
 
-                    validacio;
-                    dadaDolenta("num");
-                    escriuDadaValue("num","");
-                    escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
-                                                                               
-               }else{
-                    validacio = true;
-                    dadaBona("num");
-                    main(numDni,lletra,dni);
-               }
-               
-          }
+            let resultatok = "El document de DNI que heu introduit número <strong>" +dni+ "</strong> que incorpora la lletra <strong>"+lletra+"<strong>,</strong> SÍ</strong> que és un número de DNI correcte.";
+            let resultatko = "El document de DNI que heu introduit número <strong>" +dni+ "</strong> que incorpora la lletra <strong>"+lletra+"<strong>,</strong> NO</strong> és un número de DNI correcte. La lletra que hauria de tenir és la <strong>" +checkLletra+"</strong>.";
 
-   </script>
+            if (checkLletra == lletra){
+                escriuDada("resultat", resultatok);
+                escriuDada("avís", "");
+
+            }else{
+                escriuDada("resultat", resultatko);
+                escriuDada("avís", "");
+            }
+        }
+
+        //Funció Validació
+        function validacio() {
+
+            //Esborra pantalla
+            escriuDada("resultat","");
+            escriuDada("avís","");
+
+			//Recepció número complert DNI
+            let dni = llegeixDada("num");
+
+            //Separació lletra, número i posar a majúscula
+            numDni = dni.substring(0, dni.length-1);
+            lletra = dni.substring(dni.length-1);
+            lletra = lletra.toUpperCase();
+
+            //Estat inicial validació i gestió de dades
+            let numDniMida = numDni.length;
+            let lletraMida = lletra.length;
+            let llista = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+			//Validació
+            let validacio = false;
+
+			if (numDni =="" || isNaN(numDni) || 0<= numDni > 99999999 || numDniMida !==8 || lletra =="" || !llista.includes(lletra) || !isNaN(lletra) || lletraMida !==1){
+
+				validacio;
+				dadaDolenta("num");
+				escriuDadaValue("num","");
+				escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
+
+            }else{
+				validacio = true;
+				dadaBona("num");
+				main(numDni,lletra,dni);
+            }
+
+        }
+		
+	</script>
 </body>
 </html>

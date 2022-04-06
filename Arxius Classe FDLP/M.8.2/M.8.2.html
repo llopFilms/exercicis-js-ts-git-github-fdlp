@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+        <title>Exercici M.8.2</title>
+
+        <style>   
+
+        body {line-height : 25px; font-family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"; margin-left:10em; font-weight:normal;}     
+        
+        #divNomHotel {background-color:rgb(236, 228, 105); display: none;}
+        #divNouHotel {background-color:rgb(236, 228, 105); display: none;}
+        #divVeureHotel {background-color:rgb(236, 228, 105); display: none;}
+        #divEliminarHotel {background-color:rgb(236, 228, 105); display: none;}
+        #divModificarHotel {background-color:rgb(236, 228, 105); display: none;}
+        #divControlsModificar {display: none;}
+
+       .nav { padding: .375rem .75rem;
+              border-radius: .25rem;
+              background-color: #007bff;
+              color: #fff;
+              transition: background-color .15s ease-in-out;}
+        .nav:hover {background-color: #0069d9;   }
+
+        </style>
+     
+    </head>
+
+    <body>
+
+      <div id="divMenu">
+        <input type="button" class="nav" value="Comentari" onClick="botoComentari()">
+        <input type="button" class="nav" value="ALTA D'HOTELS" onClick="botoAltaHotel()">
+        <input type="button" class="nav" value="MODIFICAR DADES HOTEL" onClick="botoModificarHotel()">
+        <input type="button" class="nav" value="VEURE DADES HOTEL" onClick="botoVeureHotel()">
+        <input type="button" class="nav" value="ELIMINAR HOTEL" onClick="botoEliminarHotel()">
+        <input type="button" class="nav" value="LLISTA D'HOTELS" onClick="botoLlista()">
+        <input type="button" class="nav" value="SORTIR" onClick="botoSortir()">
+      </div>
+
+ 
+      <div id="divInterficie">
+        <br>
+
+      <div id="divNomHotel">
+        Nom de l'hotel: 
+        <input type="text" id="caixa1">  
+        <input type="button" id="botoContinuar" value="Continuar" onClick="botoContinuar()">
+      </div>
+
+      <!-- aquest boto es exclusiu per donar d'alta un nou hotel -->
+      <div id="divNouHotel">
+         Nom de l'hotel a afegir: 
+        <input type="text" id="caixaNouHotel">  
+        <input type="button" id="botoNouHotel" value="Afegeix" onClick="botoNouHotel()">
+      </div>
+
+      <!-- aquest boto es exclusiu per veure un hotel especific-->
+      <div id="divVeureHotel">
+        Selecciona l'hotel que vols veure: 
+        <input type="text" id="caixaVeureHotel">  
+        <input type="button" id="botoNouHotel" value="Visualitza" onClick="botoVeureH()">
+      </div>
+
+      <!-- aquest boto es exclusiu per eliminar un hotel especific-->
+      <div id="divEliminarHotel">
+        Selecciona l'hotel que vols eliminar: 
+        <input type="text" id="caixaEliminarHotel">  
+        <input type="button" id="botoEliminarHotel" value="Elimina" onClick="botoEliminaH()">
+      </div>
+
+      <!-- aquest boto es exclusiu per eliminar un hotel especific-->
+      <div id="divModificarHotel">
+        Selecciona l'hotel que vols modificar 
+        <input type="text" id="caixaModificarHotel">  
+        <input type="button" id="botoModificarHotel" value="Modificar" onClick="botoModificaH()">
+      </div>
+      
+      <!-- aquest div posa els controls per modificar les dades d'un hotel -->
+
+      <div id="divControlsModificar">
+
+        <p> Nom de l'hotel: <span id="spanNom"> </span> </p>
+        <p> <input type="button" id="botoModCambres" value="Canviar" onclick="modificarCambres()"> Nombre de cambres: <span id="spanNCambres"></span> </p>
+        <p> <input type="button" id="botoModPlantes" value="Canviar" onclick="modificarPlantes()"> Nombre de plantes: <span id="spanNPlantes"></span> </p>
+        <p> <input type="button" id="botoModSuperficie" value="Canviar" onclick="modificarSuperficie()"> Superfície <span id="spanSuperficie"></span> </p>
+
+      </div>
+
+      <div id="divMissatges">
+
+      </div>
+
+      </div>
+ 
+      <!------------------------ SCRIPTS ---------------------------->
+      
+      <script>"use script"</script>
+      <script src="funcionsAuxiliars.js"></script>
+      <script src="classe_Hotel.js"></script>
+      <script src="main.js"></script>
+      
+    </body>
+
+</html>

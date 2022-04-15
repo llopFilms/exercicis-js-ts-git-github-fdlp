@@ -7,14 +7,14 @@
         let casa = bioconstruccio.find (casa => casa.nom === nom);
 
         let index = bioconstruccio.indexOf(casa);
-   
+
         if (index >= 0 ){
-   
-             posicio = index;
-             mostrar();
+
+            posicio = index;
+            mostrar();
         }else{
-   
-             alert ("La casa " +nom+ ", no existeix");
+
+            alert ("La casa " +nom+ ", no existeix");
         }
         mostrar();
     }
@@ -89,7 +89,7 @@
                 
             }
         }
-       
+    
         if (validacio == false){
             escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
 
@@ -105,7 +105,7 @@
         let nom = bioconstruccio[posicio].nom;
         let titol = bioconstruccio[posicio].titol;
         let descripcio = bioconstruccio[posicio].descripcio;
-   
+
         imatge = llegeixDada("5");
         imatge += ".jpg";
         nom = llegeixDada("6");
@@ -114,16 +114,16 @@
         (console.log(bioconstruccio));
 
         let modificat = {
-   
-             imatge     : imatge,
-             nom        : nom,
-             titol      : titol,
-             descripcio : descripcio
+
+            imatge     : imatge,
+            nom        : nom,
+            titol      : titol,
+            descripcio : descripcio
         }
-   
+
         bioconstruccio.splice(posicio, 1, modificat);
         mostrar();
-   
+
     }
 
     function validacioModificar(){
@@ -152,7 +152,7 @@
                 escriuDadaValue(i, "");
             }
         }
-       
+
         if (validacio == false){
             escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
 
@@ -168,23 +168,20 @@
 
         if (confirmar){
 
-          bioconstruccio.splice(posicio, 1);
-          mostrar();
+            bioconstruccio.splice(posicio, 1);
+            mostrar();
         }
 
         posicio = indexEsborrar-1;
         mostrar();
-
     }
 
     function sortir(){
 
         document.getElementById("nom imatge").innerHTML = "<strong>Gràcies per la teva visita</strong>";
         document.getElementById("descripcio").innerHTML = "A reveure i fins aviat!";
-   
-        document.getElementById("imatge").src = RUTA + "índex.jpeg";
-   
-   
-   }
 
-   
+        document.getElementById("imatge").src = RUTA + "índex.jpeg";
+    }
+
+

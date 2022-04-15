@@ -42,7 +42,9 @@ function omplirRespostes() {
 /* //Funcions que volem que es carreguin primer
 window.onload = function() {
     
-    crearTest();
-    console.table(arrayPreguntes);
+omplirTest();
+omplirRespostes()
+console.table(arrayPreguntes);
+console.table(arrayRespostes);
 
 } */

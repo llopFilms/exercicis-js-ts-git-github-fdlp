@@ -11,7 +11,7 @@
           
                document.getElementById("imatge").src = imatge;
                document.getElementById("imatge").title = titol;
-               document.getElementById("nom imatge").innerHTML = "<strong>" +nom+ "</strong>";
+               document.getElementById("nomImatge").innerHTML = "<strong>" +nom+ "</strong>";
                document.getElementById("descripcio").innerHTML = descripcio;
 
           }

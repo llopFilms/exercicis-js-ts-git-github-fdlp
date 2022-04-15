@@ -125,7 +125,7 @@ function seguent(){
     posicio = 0;
     
     mostrarPregunta();
-    console.log("posicio :"+posicio);
+    console.log("posicio: "+posicio);
 }
 
 function anterior(){
@@ -136,6 +136,7 @@ function anterior(){
     posicio = arrayPreguntes.length-1;
 
     mostrarPregunta();
-    console.log("posicio :"+posicio);
+    console.log("posicio:"+posicio);
 }
+
 

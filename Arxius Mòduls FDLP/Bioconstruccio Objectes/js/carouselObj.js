@@ -4,8 +4,8 @@
      //Funció llegeix dada
      function llegeixDada(id){
 
-         let dada = document.getElementById(id).value;
-         return dada;
+          let dada = document.getElementById(id).value;
+          return dada;
      }
 
      //Funció escriu dada valor

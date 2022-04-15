@@ -103,7 +103,7 @@ function creaOrdinadors() {
 
 //Funcions de canvi d'atributs amb els getters i setters
 function canviarProcessador(num, ordinador) {
-   
+
     let tipProcessador = ordinador.getProcessador();
     let nouProcessador = prompt ("Introdueix nou processador: ", tipProcessador);
     ordinador.setProcessador(nouProcessador);
@@ -117,16 +117,16 @@ function canviarMemoria(num, ordinador) {
     let nouMemoria = prompt ("Introdueix nova dada memòria: ", tipMemoria);
     ordinador.setMemoria(nouMemoria);
     escriuDada("memoria" +num, ordinador.getMemoria());
-     
+
 }
 
 function canviarDiscDur(num, ordinador) {
-   
+
     let tipDiscDur = ordinador.getDiscDur();
     let nouDiscDur = prompt ("Introdueix nova dada de Disc Dur: ", tipDiscDur);
     ordinador.setDiscDur(nouDiscDur);
     escriuDada("discDur" +num, ordinador.getDiscDur());
-     
+
 }
 
 //Funció d'execució de programa extern amb prompt i suggeriment de text

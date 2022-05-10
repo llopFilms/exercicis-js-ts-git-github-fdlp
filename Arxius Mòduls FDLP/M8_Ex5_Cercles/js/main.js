@@ -14,17 +14,17 @@ function cercles() {
     let centre1 = new Punt (x1, y1);
     let centre2 = new Punt (x2, y2);
     
-    let cercle = new Cercle(centre1, radi1);
-    let altreCercle = new Cercle(centre2, radi2);
+    let cercle1 = new Cercle(centre1, radi1);
+    let cercle2 = new Cercle(centre2, radi2);
 
-    let resultat = "<b>Resultats dels càlculs:</b><ul><br>";
-    resultat += "<li>" +cercle.distanciaCentres(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.iguals(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.concentrics(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.igualRadi(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.tangents(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.secants(altreCercle)+ "</li><br>";
-    resultat += "<li>" +cercle.noEsToquen(altreCercle)+ "</li></ul>";
+    let resultat = "<b>Resultats dels càlculs:<ul><br>";
+    resultat += "<li>La distància entre el cercle actual i el rebut és de </b>" +cercle1.distanciaCentres(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.iguals(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.concentrics(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.igualRadi(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.tangents(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.secants(cercle2)+ "</li><br>";
+    resultat += "<li>" +cercle1.noEsToquen(cercle2)+ "</li></ul>";
     
     escriuDada("avis", resultat);
 }

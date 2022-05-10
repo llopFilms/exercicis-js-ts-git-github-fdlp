@@ -17,12 +17,11 @@
         
             let dniInici = llegeixDada("dniInici");
             let misstageError = "<b>Dades incorrectes. Introduïu un número de DNI correcte.</b>";
-           
+
             //Separació lletra, número i posar a majúscula
             let numDni = dniInici.substring(0, dniInici.length-1);
             let lletra = dniInici.substring(dniInici.length-1);
             lletra = lletra.toUpperCase();
-          
 
             //Estat inicial validació i gestió de dades
             let numDniMida = numDni.length;

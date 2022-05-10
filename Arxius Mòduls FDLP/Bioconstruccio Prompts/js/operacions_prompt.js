@@ -5,7 +5,7 @@ function afegir(){
      let nom = prompt("Escriu el nom de la foto");
      let titol = prompt("Escriu el titol");
      let descripcio = prompt("Escriu la descripcio");
-    
+
      let afegit = {
 
           imatge     : imatge,

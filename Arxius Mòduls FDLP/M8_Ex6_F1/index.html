@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerxcici 5 - Mòdul 8</title>
+</head>
+<body>
+    <h1>Escuderies F1</h1>
+
+    <details>
+        <summary><b>Dades F1:</b></summary>
+        <p id="llista"></p>
+    </details>
+    <hr>
+
+    <button id="escuderies" onclick="">Veure Escuderies</button>
+    <button id="cotxes" onclick="">Veure Cotxes</button>
+    <button id="altaPilot" onclick="">Alta Pilot</button>
+    <button id="veurePilot" onclick="">Veure Pilot</button>
+    <button id="baixaPilot" onclick="">Baixa Pilot</button>
+    <button id="altaMecanic" onclick="">Alta Mecànic</button>
+    <button id="veureMecanic" onclick="">Veure Mecànic</button>
+    <button id="baixaMecanic" onclick="">Baixa Mecanic</button>
+    <button id="sortir" onclick="">Sortir del Programa</button>
+    <p id="pEscuderia"></p>
+    <br><br>
+
+    <fieldset id="escuderies">
+        <legend>Escuderies</legend>
+        <input type="radio" name="escuderies" id="1">
+        <label for="1">Alfa Romeo</label><br>
+        <input type="radio" name="escuderies" id="2">
+        <label for="2">Alpha Tauri</label><br>
+        <input type="radio" name="escuderies" id="3">
+        <label for="3">Alpine F1 Team</label><br>
+        <br><button onclick="mostrarEscuderia()">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="cotxes">
+        <legend>Cotxes</legend>
+        <input type="radio" name="cotxes" id="1">
+        <label for="1">Alfa Romeo C41 - #77</label><br>
+        <input type="radio" name="cotxes" id="2">
+        <label for="2">Alfa Romeo C41 - #24</label><br>
+        <input type="radio" name="cotxes" id="3">
+        <label for="3">Alfa Tauri AT03 - #10</label><br>
+        <input type="radio" name="cotxes" id="4">
+        <label for="4">Alfa Tauri AT03 - #22</label><br>
+        <input type="radio" name="cotxes" id="5">
+        <label for="5">Alpine A521 - #31</label><br>
+        <input type="radio" name="cotxes" id="6">
+        <label for="6">Alpine A521 - #14</label><br>
+        <br><button onclick="mostrarCotxes()">Continuar</button>
+        <p id="pCotxes"></p>
+    </fieldset>
+    <br>
+
+    <fieldset id="altaPilot">
+        <legend>Alta Pilot</legend>
+        <span>Nom <input type="text" id="nomPilot"></span><br><br>
+        <span>Cogom <input type="text" id="cognomPilot"></span><br><br>
+        <span>Edat <input type="text" id="edatPilot"></span><br><br>
+        <span>Antiguitat <input type="text" id="antiguitatPilot"></span><br><br>
+        <span>Alçada <input type="text" id="alçadaPilot"></span><br><br>
+        <span>Pes <input type="text" id="pesPilot"></span><br><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="veurePilot">
+        <legend>Veure pilot</legend>
+        <input type="radio" name="veurePilot" id="7">
+        <label for="7">Valtteri Bottas</label><br>
+        <input type="radio" name="veurePilot" id="8">
+        <label for="8">Guanyu Zhou</label><br>
+        <input type="radio" name="veurePilot" id="9">
+        <label for="9">Pierre Gasly</label><br>
+        <input type="radio" name="veurePilot" id="10">
+        <label for="10">Yuki Tsunoda</label><br>
+        <input type="radio" name="veurePilot" id="11">
+        <label for="11">Guanyu Zhou</label><br>
+        <input type="radio" name="veurePilot" id="12">
+        <label for="12">Esteban Ocon</label><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="baixaPilot">
+        <legend>Esborar pilot</legend>
+        <input type="radio" name="baixaPilot" id="13">
+        <label for="13">Valtteri Bottas</label><br>
+        <input type="radio" name="baixaPilot" id="14">
+        <label for="14">Guanyu Zhou</label><br>
+        <input type="radio" name="baixaPilot" id="15">
+        <label for="15">Pierre Gasly</label><br>
+        <input type="radio" name="baixaPilot" id="16">
+        <label for="16">Yuki Tsunoda</label><br>
+        <input type="radio" name="baixaPilot" id="17">
+        <label for="17">Guanyu Zhou</label><br>
+        <input type="radio" name="baixaPilot" id="18">
+        <label for="18">Esteban Ocon</label><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="altaMecanic">
+        <legend>Alta Mecànic</legend>
+        <span>Nom <input type="text" id="nomPilot"></span><br><br>
+        <span>Cogom <input type="text" id="cognomPilot"></span><br><br>
+        <span>Edat <input type="text" id="edatPilot"></span><br><br>
+        <span>Antiguitat <input type="text" id="antiguitatPilot"></span><br><br>
+        <span>Estudis Superiors
+            <label for="si">Sí</label>
+            <input type="radio" id="si">
+            <label for="no">No</label>
+            <input type="radio" id="no"></span><br><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="veureMecanic">
+        <legend>Veure mecànic</legend>
+        <input type="radio" name="veurePilot" id="19">
+        <label for="19">Andrea Piccini</label><br>
+        <input type="radio" name="veurePilot" id="20">
+        <label for="20">Jaime Melo Jr</label><br>
+        <input type="radio" name="veurePilot" id="21">
+        <label for="21">Justin Wilson</label><br>
+        <input type="radio" name="veurePilot" id="22">
+        <label for="22">Bas Leinders</label><br>
+        <input type="radio" name="veurePilot" id="23">
+        <label for="23">Fabrizio Gollin</label><br>
+        <input type="radio" name="veurePilot" id="24">
+        <label for="24">Kristian Kolby</label><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <fieldset id="baiaMecanic">
+        <legend>Baixa mecànic</legend>
+        <input type="radio" name="veurePilot" id="25">
+        <label for="25">Andrea Piccini</label><br>
+        <input type="radio" name="veurePilot" id="26">
+        <label for="26">Jaime Melo Jr</label><br>
+        <input type="radio" name="veurePilot" id="27">
+        <label for="27">Justin Wilson</label><br>
+        <input type="radio" name="veurePilot" id="28">
+        <label for="28">Bas Leinders</label><br>
+        <input type="radio" name="veurePilot" id="29">
+        <label for="29">Fabrizio Gollin</label><br>
+        <input type="radio" name="veurePilot" id="30">
+        <label for="30">Kristian Kolby</label><br>
+        <br><button onclick="">Continuar</button>
+    </fieldset>
+    <br>
+
+    <script>"use strict"</script>
+    <script src="./js/auxiliarsInici.js"></script>
+    <script src="./js/arrayF1.js"></script>
+    <script src="./js/classeTreballador.js"></script>
+    <script src="./js/classeCotxe.js"></script>
+    <script src="./js/classeEscuderia.js"></script>
+    <script src="./js/classeMecanic.js"></script>
+    <script src="./js/classePilot.js"></script>
+    <script src="./js/main.js"></script>
+</body> 
+</html>

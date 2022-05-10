@@ -1,21 +1,27 @@
 
     //Programa operacions
+    function replegarDivs() {
+
+        replegarDiv("dadesBuscar");
+        replegarDiv("dadesAfegir");
+        replegarDiv("dadesModificar");
+    }
 
     function buscar(){
 
         let nom = llegeixDada("nomBuscar");
         let casa = casaBio.find (casa => casa.nom === nom);
-
         let index = casaBio.indexOf(casa);
-   
+
         if (index >= 0 ){
-   
-             posicio = index;
-             mostrar();
+
+            posicio = index;
+            mostrar();
         }else{
-   
-             alert ("La casa " +nom+ ", no existeix");
+
+            alert ("La casa " +nom+ ", no existeix");
         }
+        replegarDivs();
         mostrar();
     }
 
@@ -58,6 +64,7 @@
         casaBio.splice((posicio+1), 0, afegit);
         posicio += 1;
 
+        replegarDivs();
         mostrar();
     }
 
@@ -65,10 +72,6 @@
 
         //Esborrar pantalla
         escriuDada ("avís","");
-
-        let nom = llegeixDada("1");
-        let titol = llegeixDada("2");
-        let descripcio = llegeixDada("3");
 
         //Validació
         let validacio = true;
@@ -87,7 +90,7 @@
                 
             }
         }
-       
+    
         if (validacio == false){
             escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
 
@@ -103,7 +106,7 @@
         let nom = casaBio[posicio].nom;
         let titol = casaBio[posicio].titol;
         let descripcio = casaBio[posicio].descripcio;
-   
+
         let imatgeRuta = llegeixDada("buscador2");
         imatge = imatgeRuta.substring(imatgeRuta.length-9);
 
@@ -116,19 +119,16 @@
         
         let modificat = new Bioconstruccio(imatge, nom, titol, descripcio);
         casaBio.splice(posicio, 1, modificat);
-                    
+            
+        replegarDivs();
         mostrar();
-   
+
     }
 
     function validacioModificar(){
 
         //Esborrar pantalla
         escriuDada ("avís","");
-
-        let nom = llegeixDada("4");
-        let titol = llegeixDada("5");
-        let descripcio = llegeixDada("6");
 
         //Validació
         let validacio = true;
@@ -146,7 +146,7 @@
                 escriuDadaValue(i, "");
             }
         }
-       
+
         if (validacio == false){
             escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
 
@@ -162,18 +162,19 @@
 
         if (confirmar){
 
-          casaBio.splice(posicio, 1);
-          mostrar();
+            casaBio.splice(posicio, 1);
+            mostrar();
         }
 
         posicio = indexEsborrar-1;
+        replegarDivs();
         mostrar();
 
     }
 
     function sortir(){
 
-        document.getElementById("nom imatge").innerHTML = "<strong>Gràcies per la teva visita</strong>";
+        document.getElementById("nomImatge").innerHTML = "<strong>Gràcies per la teva visita</strong>";
         document.getElementById("descripcio").innerHTML = "A reveure i fins aviat!";
         document.getElementById("imatge").src = RUTA + "índex.jpeg";
         document.getElementById("stop").style.display = "none";
@@ -187,15 +188,17 @@
         document.getElementById("sortirBoto").style.display = "none";
         clearInterval(interval);
     }
-   
+
     //Reproductor
     const INTERVAL_MS = 1600;
 
     function play(){
 
         interval = setInterval(endavant, INTERVAL_MS);
-        document.getElementById("play").style.display = "none";
-        document.getElementById("stop").style.display = "inline";
+        /* document.getElementById("play").style.display = "none";
+        document.getElementById("stop").style.display = "inline"; */
+        document.getElementById("play").disabled = true;
+        document.getElementById("stop").disabled = false;
         document.getElementById("endavant").disabled = true;
         document.getElementById("enrere").disabled = true;
         document.getElementById("buscarBoto").style.display = "none";
@@ -205,10 +208,13 @@
         document.getElementById("fotosDisponibles").style.display = "none";
     }
 
-    function stop(){
+    function estop(){
 
-        document.getElementById("stop").style.display = "none";
-        document.getElementById("play").style.display = "inline";
+        clearInterval(interval);
+        /* document.getElementById("stop").style.display = "none";
+        document.getElementById("play").style.display = "inline"; */
+        document.getElementById("stop").disabled = true;
+        document.getElementById("play").disabled = false;
         document.getElementById("endavant").disabled = false;
         document.getElementById("enrere").disabled = false;
         document.getElementById("buscarBoto").style.display = "inline";
@@ -216,7 +222,7 @@
         document.getElementById("modificarBoto").style.display = "inline";
         document.getElementById("esborrarBoto").style.display = "inline";
         document.getElementById("fotosDisponibles").style.display = "block";
-        clearInterval(interval);
+
     }
 
     

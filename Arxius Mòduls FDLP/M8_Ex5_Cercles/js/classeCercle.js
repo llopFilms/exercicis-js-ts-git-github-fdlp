@@ -4,62 +4,69 @@ class Cercle {
 
     constructor (centre, radi) {
 
-        this.centre = centre;
-        this.radi = radi;
+        this._centre = centre;
+        this._radi = radi;
     }
 
-    distanciaCentres(altreCercle) {
+    get centre() { return this._centre; }
+    get radi() { return this._radi; }
 
-        let distancia = Math.sqrt(Math.pow((altreCercle.centre.x-this.centre.x),2) + Math.pow((altreCercle.centre.y-this.centre.y),2)).toFixed(2);
+    distanciaCentres(cercle2) {
 
-        return "La distància entre el cercle actual i el rebut és de <b>" +distancia+ "</b>.";
+        let distancia = Math.hypot((cercle2.centre.x-this.centre.x),(cercle2.centre.y-this.centre.y)).toFixed(2);
+        
+        /* Math.sqrt(Math.pow((cercle2.centre.x-this.centre.x),2) + Math.pow((cercle2.centre.y-this.centre.y),2)).toFixed(2); */
+        console.log (distancia);
 
+        return distancia;
     }
 
-    iguals(altreCercle){
+    iguals(cercle2){
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let iguals = (distancia = 0 && this.radi == altreCercle.radi) ? "Els dos cercles <b>són iguals</b>." : "Els dos cercles <b>NO són iguals</b>.";
+        let distancia = this.distanciaCentres(cercle2);
+        let iguals = (distancia == 0 && this.radi == cercle2.radi) ? "Els dos cercles <b>són iguals</b>." : "Els dos cercles <b>NO són iguals</b>.";
+        console.log(this.radi, cercle2.radi, distancia);
+        console.log(distancia == 0 && this.radi == cercle2.radi);
 
         return iguals;
     }
- 
-    concentrics(altreCercle) {
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let concentrics = (distancia == 0 && this.radi !== altreCercle.radi) ?  "Els cercles <b>són concèntrics</b>." : "Els cercles <b>NO són concèntrics</b>.";
+    concentrics(cercle2) {
+
+        let distancia = this.distanciaCentres(cercle2);
+        let concentrics = (distancia == 0 && this._radi != cercle2.radi) ?  "Els cercles <b>són concèntrics</b>." : "Els cercles <b>NO són concèntrics</b>.";
 
         return concentrics;
     }
 
-    igualRadi(altreCercle){
+    igualRadi(cercle2){
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let igualRadi = (distancia !== 0 && this.radi == altreCercle.radi) ? "Els cercles <b>tenen el mateix radi</b>" : "Els cercles <b>NO tenen el mateix radi</b>.";
+        let distancia = this.distanciaCentres(cercle2);
+        let igualRadi = (this._radi == cercle2.radi) ? "Els cercles <b>tenen el mateix radi</b>" : "Els cercles <b>NO tenen el mateix radi</b>.";
 
         return igualRadi;
     }
 
-    tangents(altreCercle){
+    tangents(cercle2){
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let tangents = (distancia = (this.radi + altreCercle.radi)) ? "Els cercles <b>són tangents</b>." : "Els cercles <b>NO ón tangents</b>.";
+        let distancia = this.distanciaCentres(cercle2);
+        let tangents = (distancia == (this._radi + cercle2.radi)) ? "Els cercles <b>són tangents</b>." : "Els cercles <b>NO són tangents</b>.";
 
         return tangents;
     }
 
-    secants(altreCercle){
+    secants(cercle2){
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let secants = (distancia < (this.radi + altreCercle.radi)) ? "Els cercles <b>són secants</b>." : "Els cercles <b>NO són secants</b>.";
+        let distancia = this.distanciaCentres(cercle2);
+        let secants = (distancia > (this._radi + cercle2.radi)) ? "Els cercles <b>són secants</b>." : "Els cercles <b>NO són secants</b>.";
 
         return secants;
     }
     
-    noEsToquen(altreCercle) {
+    noEsToquen(cercle2) {
 
-        let distancia = this.distanciaCentres(altreCercle);
-        let noEsToquen = (distancia > (this.radi + altreCercle.radi)) ? "Els cercles <b>NO es toquen</b>." : "Els cercles <b>SÍ que es toquen</b>.";
+        let distancia = this.distanciaCentres(cercle2);
+        let noEsToquen = (distancia > (this._radi + cercle2.radi)) ? "Els cercles <b>NO es toquen</b>." : "Els cercles <b>SÍ que es toquen</b>.";
 
         return noEsToquen;
     }

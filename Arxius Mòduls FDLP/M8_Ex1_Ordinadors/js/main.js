@@ -69,11 +69,11 @@ function creaObjOrdinador(num, tipMarca, tipModel, tipProcessador, tipMemoria, t
 //Funció llistar ordindador
 function llistaOrdinador(num, ordinador) {
 
-    escriuDada("marca" +num, ordinador.getMarca());
-    escriuDada("model" +num, ordinador.getModel());
-    escriuDada("processador" +num, ordinador.getProcessador());
-    escriuDada("memoria" +num, ordinador.getMemoria());
-    escriuDada("discDur" +num, ordinador.getDiscDur());
+    escriuDada("marca" +num, ordinador.marca);
+    escriuDada("model" +num, ordinador.model);
+    escriuDada("processador" +num, ordinador.processador);
+    escriuDada("memoria" +num, ordinador.memoria);
+    escriuDada("discDur" +num, ordinador.discDur);
 
 }
 
@@ -82,7 +82,7 @@ function creaOrdinador1() {
 
     ordinador1 = creaObjOrdinador(1,"Toshiba", "Avalon", "Intel Core i8", "32GB", "1TB");
     llistaOrdinador(1, ordinador1);
-    alert ("S'ha creat l'ordinador número 1: " +ordinador1.toString());
+    alert ("S'ha creat l'ordinador número 1: " +ordinador1);
 
 }
 
@@ -90,7 +90,7 @@ function creaOrdinador2() {
 
     ordinador2 = creaObjOrdinador(2, "Asus", "Volator", "Intel Core i7", "64GB", "750GB" );
     llistaOrdinador(2, ordinador2);
-    alert ("S'ha creat l'ordinador número 2: " +ordinador2.toString());
+    alert ("S'ha creat l'ordinador número 2: " +ordinador2);
 
 }
 
@@ -104,28 +104,28 @@ function creaOrdinadors() {
 //Funcions de canvi d'atributs amb els getters i setters
 function canviarProcessador(num, ordinador) {
 
-    let tipProcessador = ordinador.getProcessador();
+    let tipProcessador = ordinador.processador;
     let nouProcessador = prompt ("Introdueix nou processador: ", tipProcessador);
-    ordinador.setProcessador(nouProcessador);
-    escriuDada("processador" +num, ordinador.getProcessador());
+    ordinador.processador = nouProcessador;
+    escriuDada("processador" +num, ordinador.processador);
 
 }
 
 function canviarMemoria(num, ordinador) {
     
-    let tipMemoria = ordinador.getMemoria();
+    let tipMemoria = ordinador.memoria;
     let nouMemoria = prompt ("Introdueix nova dada memòria: ", tipMemoria);
-    ordinador.setMemoria(nouMemoria);
-    escriuDada("memoria" +num, ordinador.getMemoria());
+    ordinador.memoria = nouMemoria;
+    escriuDada("memoria" +num, ordinador.memoria);
 
 }
 
 function canviarDiscDur(num, ordinador) {
 
-    let tipDiscDur = ordinador.getDiscDur();
+    let tipDiscDur = ordinador.discDur;
     let nouDiscDur = prompt ("Introdueix nova dada de Disc Dur: ", tipDiscDur);
-    ordinador.setDiscDur(nouDiscDur);
-    escriuDada("discDur" +num, ordinador.getDiscDur());
+    ordinador.discDur = nouDiscDur;
+    escriuDada("discDur" +num, ordinador.discDur);
 
 }
 

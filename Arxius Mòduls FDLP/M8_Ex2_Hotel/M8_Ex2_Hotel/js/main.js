@@ -8,7 +8,7 @@ function llistaHotels() {
 
     let i, llista;
     
-    llista = "<small><b>Hotels registrats:</b><br><ul>";
+    llista = "<small><b>Hotels registrats:</b><ul>";
     for (i=0; i<arrayHotels.length; i++) {
 
         llista += "<li>" +arrayHotels[i].nom+ "</li>";
@@ -52,7 +52,7 @@ function botonsCreat() {
 function crearHotel() {
 
     escriuDada("avis","");
-          
+
     let nom = llegeixDada("nomModificar");
     let numHabitacions = llegeixDada("1");
     let numPisos = llegeixDada("2");
@@ -61,7 +61,7 @@ function crearHotel() {
     let nouHotel = new Hotel(nom, numHabitacions, numPisos, superficie);
     arrayHotels.push(nouHotel);
     
-    escriuDada ("avis","S'ha registrat amb èxit el nou hotel <b>"+nouHotel.nom+ "</b>" +nouHotel.toString());
+    escriuDada ("avis","S'ha registrat amb èxit el nou hotel <b>"+nouHotel.nom+ "</b>" +nouHotel);
 
     document.getElementById("dadesCrear").style.display = "none";
     document.getElementById("crearHotelBoto").value = "Crear Hotel";
@@ -92,7 +92,7 @@ function validacioCrearHotel() {
     }
     
     if (validacioNum == true) {
-       
+
         crearHotel();
     }else{
 
@@ -123,7 +123,7 @@ function veureHotel() {
     escriuDada("avis","");
     let registrat = arrayHotels[posicio];
 
-    escriuDada("avis", "L'hotel <b>" +registrat.nom+ "</b> té les següents característiques :" +registrat.toString()+ "<br>" +registrat.calcularManteniment());
+    escriuDada("avis", "L'hotel <b>" +registrat.nom+ "</b> té les següents característiques :" +registrat+ "<br>" +registrat.calcularManteniment());
 
 }    
 
@@ -133,12 +133,12 @@ function modificarHotel() {
     escriuDadaValue("nomInici", "");
     let registrat = arrayHotels[posicio];
     
-    registrat.setNom(llegeixDada("nomModificar"));
-    registrat.setHabitacions(llegeixDada("4"));
-    registrat.setPisos(llegeixDada("5"));
-    registrat.setSuperficie(llegeixDada("6"));
+    registrat.nom = llegeixDada("nomModificar");
+    registrat.habitacions = llegeixDada("4"); 
+    registrat.pisos = llegeixDada("5");
+    registrat.superficie = llegeixDada("6");
 
-    escriuDada("avis", "L'hotel <b>" +registrat.nom+ "</b> té les següents noves característiques :" +registrat.toString());
+    escriuDada("avis", "L'hotel <b>" +registrat.nom+ "</b> té les següents noves característiques:" +registrat);
 
     document.getElementById("dadesModificar").style.display = "none";
     document.getElementById("modificarHotelBoto").value = "Modificar Hotel";
@@ -181,7 +181,7 @@ function validacioModificarHotel() {
     }
     
     if (validacioNom == true && validacioNum == true) {
-       
+
         modificarHotel();
     }else{
 
@@ -217,7 +217,6 @@ function inici() {
 
     let nomInici = llegeixDada("nomInici");
     
-    let continuar = false;
     while (nomInici == ""){
 
         dadaDolenta("nomInici");
@@ -225,14 +224,14 @@ function inici() {
         nomInici = prompt ("Introduïu un nom d'hotel");
 
         if(nomInici !== ""){
-            continuar = true;
+            
             escriuDadaValue("nomInici", nomInici);
             dadaBona("nomInici");
             escriuDada("avis", "");
         }    
     }
-              
-    let registrat = arrayHotels.find(registrat => registrat.nom == nomInici);
+
+    let registrat = arrayHotels.find(element => element.nom == nomInici);
     let indexHotel = arrayHotels.indexOf(registrat);
     
     if (indexHotel ==-1){

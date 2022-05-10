@@ -5,18 +5,14 @@ class Cinema extends Edifici {
     constructor (nom, numPlantes, superficie, aforament) {
 
         super (nom, numPlantes, superficie);
-        this.aforament = aforament;
+        this._aforament = aforament;
     }
 
-    getClasse() {
-
-        return "cinema";
-
-    }
+    get classe() {return "cinema";}
 
     calcularCostVigilancia() {
 
-        let numVigilants = Math.ceil(this.superficie/3000);
+        let numVigilants = Math.ceil(this._superficie / 3000);
         let costMensual = numVigilants * 1300;
 
         let missatge = "Càlculs vigilància:<br><ul>";
@@ -43,22 +39,22 @@ class Cinema extends Edifici {
 
     toString() {
         
-        let missatge = "Dades cinema<b> "+this.nom+":</b><br><ul>";
-        missatge += "<li>Superfície:<b> "+this.superficie+" </b>m<super>2</super>.</li>";
-        missatge += "<li>Número de plantes:<b> " +this.numPlantes+ " </b>plantes.";
-        missatge += "<li>Aforament:<b> " +this.aforament+ " </b>espectadors.</li></ul>"
+        let missatge = "Dades cinema<b> "+this._nom+":</b><br><ul>";
+        missatge += "<li>Superfície:<b> "+this._superficie+" </b>m<super>2</super>.</li>";
+        missatge += "<li>Número de plantes:<b> " +this._numPlantes+ " </b>plantes.";
+        missatge += "<li>Aforament:<b> " +this._aforament+ " </b>espectadors.</li></ul>"
 
         return missatge;
-          
     }
 
+    toString2() {
 
+        let missatge = "Dades cinema<b> "+this._nom+":</b> ";
+        missatge += "Superfície:<b> "+this._superficie+" </b>m<super>2</super>.";
+        missatge += "Número de plantes:<b> " +this._numPlantes+ " </b>plantes.";
+        missatge += "Aforament:<b> " +this._aforament+ " </b>espectadors."
 
-
-
-
-
-
-
+        return missatge;
+    }
 
 }

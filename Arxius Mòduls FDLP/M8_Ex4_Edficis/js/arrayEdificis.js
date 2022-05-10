@@ -38,13 +38,6 @@ function omplirEdificis() {
     afegirCinema ("Cinema Renoir Lynch", 3, 16000, 320);
 
     //Return per avisar que hem acabat
-    return "Dades dels edifics carregats amb èxit!";
+    return console.log("Dades dels edifics carregats amb èxit!");
 
-}
-
-//Funcions que volem que es carreguin primer
-window.onload = function() {
-    
-    console.log(omplirEdificis());
-    llistaEdificis();
 }

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mòdul 8 - Exercici 3</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Mòdul 8 - Exercici 3</title>
 </head>
 
-    <!--Dona't el diagrama de classes de la imatge, programa una aplicació que tingui 5 botons:
+     <!--Dona't el diagrama de classes de la imatge, programa una aplicació que tingui 5 botons:
 
-    1.- Crear client
-    2.- Eliminar client
-    3.- Crear compta d'un client
-    4.- Ingresar euros en una compta d'un client
-    5.- Retirar euros en una compta d'un client
+     1.- Crear client
+     2.- Eliminar client
+     3.- Crear compta d'un client
+     4.- Ingresar euros en una compta d'un client
+     5.- Retirar euros en una compta d'un client
 
      A tenir en compte:
      - El saldo inicial de totes les comptes ha de ser 0€
@@ -29,23 +29,23 @@
      <input type="button" onClick="validacioDni()" value="Iniciar"/>
      
      <br><br>
-     <input type="button" id="crearClient" onClick="desplegar('dadesCrearClient','crearClient','Crear Client')" value="Crear Client" disabled="true"/>
+     <input type="button" id="crearClient" onClick="desplegar('dadesCrearClient','crearClient','Crear Client')" value="Crear Client" disabled/>
 
-     <input type="button" id="eliminarClient" onClick="eliminarClient()" value="Eliminar Client" disabled="true"/>
+     <input type="button" id="eliminarClient" onClick="eliminarClient()" value="Eliminar Client" disabled/>
 
-     <input type="button" id="crearCompte" onClick="crearCompte()" value="Crear compte" disabled="true"/>
+     <input type="button" id="crearCompte" onClick="crearCompte()" value="Crear compte" disabled/>
 
-     <input type="button" id="veureCompte" onClick="mostrarComptes()" value="Veure comptes" disabled="true"/>
+     <input type="button" id="veureCompte" onClick="mostrarComptes()" value="Veure comptes" disabled/>
 
-     <input type="button" id="eliminarCompte" onClick="eliminarCompte()" value="Eliminar compte" disabled="true"/>
+     <input type="button" id="eliminarCompte" onClick="eliminarCompte()" value="Eliminar compte" disabled/>
 
-     <input type="button" id="ingressar" onClick="ingressar()" value="Ingressar €" disabled="true"/>
+     <input type="button" id="ingressar" onClick="ingressar()" value="Ingressar €" disabled/>
 
-      <input type="button" id="retirar" onClick="retirar()" value="Retirar €" disabled="true"/>
+     <input type="button" id="retirar" onClick="retirar()" value="Retirar €" disabled/>
 
      <input type="button" onClick="sortir()" value="Sortir del programa"/>
 
-     <div id="dadesCrearClient" hidden="true">
+     <div id="dadesCrearClient" hidden>
           
           <h4>Nou client - Introduïu les dades:</h4>
 
@@ -55,25 +55,23 @@
           <input type="text" id="nomCrear" size="12"/><br><br>
           <label for="cognomCrear">Cognom</label>
           <input type="text" id="cognomCrear" size="12"/><br><br>
-                             
+
           <input type="button" onClick="crearClient()" value="Continuar"/>
           <br><br>
      </div>
 
-     <p id="avis" ></p>
-
-     <div id="numCompteEliminar" hidden="true">
+     <div id="numCompteEliminar" hidden>
           
           <h4>Indiqueu número de compte a eliminar:</h4>
 
           <label for="numCompteEliminar">Compte: #</label>
           <input type="number" id="numCompteEli" size="4"/><br><br>
-                                      
+
           <input type="button" onClick="eliminarCompte2()" value="Continuar"/>
           <br><br>
      </div>
 
-     <div id="numCompteIngressar" hidden="true">
+     <div id="numCompteIngressar" hidden>
           
           <h4>Indiqueu número de compte a ingressar €:</h4>
 
@@ -81,12 +79,12 @@
           <input type="number" id="numCompteIngres" size="4"/><br><br>
           <label for="quantitatIngres">Quantitat: €</label>
           <input type="number" id="quantitatIngres" size="4"/><br><br>
-                                      
+
           <input type="button" onClick="ingressar2()" value="Continuar"/>
           <br><br>
      </div>
 
-     <div id="numCompteRetirar" hidden="true">
+     <div id="numCompteRetirar" hidden>
           
           <h4>Indiqueu número de compte a retirar €:</h4>
 
@@ -94,14 +92,13 @@
           <input type="number" id="numCompteRetir" size="4"/><br><br>
           <label for="quantitatIngres">Quantitat: €</label>
           <input type="number" id="quantitatRetir" size="4"/><br><br>
-                                      
+
           <input type="button" onClick="retirar2()" value="Continuar"/>
           <br><br>
      </div>
-     <br>
+     
+     <p id="avis" ></p>
 
-     
-     
      <script>"use Strict"</script>
      <script src="./js/classeClient.js"></script>
      <script src="./js/classeCompte.js"></script>

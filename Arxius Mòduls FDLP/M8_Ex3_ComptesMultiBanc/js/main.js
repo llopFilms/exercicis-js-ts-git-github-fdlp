@@ -1,5 +1,5 @@
 
-
+omplirBanc();
 let posicio = 0;
 console.table(arrayClients);
 console.table(arrayComptes);
@@ -11,18 +11,20 @@ function llistaBanc() {
     llista = "<small><b>Clients registrats, #compte i saldo:</b><br><ul>";
     for (i=0; i<arrayClients.length; i++) {
 
-        llista += "<li><b>" +arrayClients[i].getNom()+ " " + arrayClients[i].getCognom()+ ":</b> ";
+        llista += "<li><b>" +arrayClients[i].nom+ " " + arrayClients[i].cognom+ ":</b> ";
 
         for (j=0; j<arrayClients[i].comptes.length; j++) {
 
-            llista += "#"+arrayClients[i].comptes[j].numCompte+ ", " + arrayClients[i].comptes[j].saldo+ "€.</li>";
+            llista += " #"+arrayClients[i].comptes[j].numCompte+ ", " + arrayClients[i].comptes[j].saldo+ "€.";
         }
     }
-    llista += "</ul></small>";
+    llista += "</li></ul></small>";
 
     escriuDada ("llista", llista);
     
 }
+
+llistaBanc();
 
 function esborrarCamps() {
 
@@ -86,32 +88,22 @@ function crearClient() {
     let dni = llegeixDada("dniCrear");
 
     let nom = llegeixDada("nomCrear");
-    let continuar = validacioIndPrompt(nom, "nomCrear");
-    while (continuar == false) {
+    while (validacioIndPrompt(nom, "nomCrear") == false) {
 
         nom = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nom, "nomCrear");
-        if (validacioIndPrompt(nom, "nomCrear") == true) {
-
-            continuar = true;
-        };
+        validacioIndPrompt(nom, "nomCrear");        
     }
 
     let cognom = llegeixDada("cognomCrear");
-    continuar = validacioIndPrompt(cognom, "cognomCrear");
-    while (continuar == false) {
-       
+    while (validacioIndPrompt(cognom, "cognomCrear") == false) {
+
         cognom = prompt ("Introduïu un cognom vàlid:");
         validacioIndPrompt(cognom, "cognomCrear");
-        if (validacioIndPrompt(cognom, "cognomCrear") == true){
-
-            continuar = true;
-        }
     }
 
     let nouClient = new Client(dni, nom, cognom);
     arrayClients.push(nouClient);
- 
+
     escriuDada("avis", "Registre de client a nom de <b>"+nom+" "+cognom+"</b> registrat satisfactòriament. Ara podeu crear un <b>número de compte</b>.");
     recollirDivBoto("dadesCrearClient","crearClient","Crear Client");
     esborrarCamps();
@@ -129,10 +121,11 @@ function eliminarClient() {
     esborrarCamps();
 
     let registrat = arrayClients[posicio];
-    confirm ("Esteu segurs que voleu esborrar el client " +registrat.getNom()+ " " +registrat.getCognom()+ "?");
-       
+    confirm ("Esteu segurs que voleu esborrar el client " +registrat.nom+ " " +registrat.cognom+ "?");
+
     let i=0; let condicio = false;
-    let llista = "El client <b>" +registrat.getNom()+ " " +registrat.getCognom()+ "</b> té comptes amb <b>saldo positiu.</b><ul>"; 
+
+    let llista = "El client <b>" +registrat.nom+ " " +registrat.cognom+ "</b> té comptes amb <b>saldo positiu.</b><ul>"; 
     while (i<registrat.comptes.length) {
 
         if (registrat.comptes[i].saldo >0) {
@@ -144,7 +137,7 @@ function eliminarClient() {
     }
     llista += "</ul>Sisplau, deixeu els comptes indicats amb <b>saldo 0€.</b>";
 
-     if (condicio == true){
+    if (condicio == true){
 
         escriuDada("avis", llista);
         botonsGestions();
@@ -153,7 +146,7 @@ function eliminarClient() {
     }else{
 
         arrayClients.splice(posicio, 1);
-        escriuDada("avis", "El client <b>" +registrat.getNom()+ " " +registrat.getCognom()+ "</b> ha estat eliminat satisfactòriament.");
+        escriuDada("avis", "El client <b>" +registrat.nom+ " " +registrat.cognom+ "</b> ha estat eliminat satisfactòriament.");
         botonsCrearClient();
     }
     
@@ -173,8 +166,6 @@ function crearCompte() {
     let registrat = arrayClients[posicio];
     
     let numCompteNou = Math.floor((Math.random()*100)+ 1);
-    let i;
-
     while (arrayComptes.includes(numCompteNou)) {
 
         numCompteNou = Math.floor((Math.random()*100)+ 1);
@@ -183,15 +174,15 @@ function crearCompte() {
     
     let nouCompte = new Compte (numCompteNou, 0);
     registrat.comptes.push(nouCompte);
-   
+
     let indexCompteNou = registrat.comptes.findIndex(element => element.numCompte === numCompteNou);
 
-    escriuDada("avis", "Nou compte corrent número <b>#" +registrat.comptes[indexCompteNou].numCompte+ "</b>, creat a nom de <b>"+registrat.getNom()+ " " +registrat.getCognom()+ "</b>. Disposa d'un saldo incial de: <b>" +registrat.comptes[indexCompteNou].saldo+ " €.");
+    escriuDada("avis", "Nou compte corrent número <b>#" +registrat.comptes[indexCompteNou].numCompte+ "</b>, creat a nom de <b>"+registrat.nom+ " " +registrat.cognom+ "</b>. Disposa d'un saldo incial de: <b>" +registrat.comptes[indexCompteNou].saldo+ " €.");
     
     botonsGestions();
     llistaBanc();
     posicio = posicio;
-
+    
 }
 
 function mostrarComptes() {
@@ -202,22 +193,18 @@ function mostrarComptes() {
 
     let registrat = arrayClients[posicio];
     
-    let i=0, llistaComptes;
-    let dniClient = registrat.dni;
+    let i=0;
+    let llistaComptes = "Sr./Sra. <b>" +registrat.nom+ " " +registrat.cognom+ ", </b>disposeu dels següents comptes:<ul>";
+        while (i<registrat.comptes.length) {
 
-    llistaComptes = "Sr./Sra. <b>"+registrat.getNom()+ " " +registrat.getCognom()+ ", </b>disposeu dels següents comptes:<ul>";
-    while (i<registrat.comptes.length) {
-
-        if (dniClient == registrat.dni) {
-
-            llistaComptes += "<li><b>Número de compte i saldo</b>: " +registrat.comptes[i].toString()+ "</li>";
+                llistaComptes += "<li><b>Número de compte i saldo</b>: " +registrat.comptes[i]+ "</li>";
+                i++;
         }
-    i++;
-    }
     llistaComptes += "</ul>";
+    console.table(arrayComptes);
 
     escriuDada ("avis", llistaComptes);
-  
+
 }   
 
 function eliminarCompte () {
@@ -228,7 +215,7 @@ function eliminarCompte () {
     mostrarComptes();
     escriuDadaValue("numCompteEli", mostrarComptes());
     document.getElementById("numCompteEliminar").style.display = "block";
-  
+
 }   
     
 function eliminarCompte2() {
@@ -236,9 +223,8 @@ function eliminarCompte2() {
     let registrat = arrayClients[posicio];
 
     let numCompteEliminar = Number(llegeixDada("numCompteEli"));
-    let r = registrat.comptes.some(element => element.numCompte === numCompteEliminar);
     let continuar = validacionumIndPrompt(numCompteEliminar,"numCompteEli");
-    while (continuar == false || r == false) {
+    while (continuar == false) {
 
         numCompteEliminar = Number(prompt ("Introduïu un número de compte vàlid:"));
 
@@ -246,20 +232,24 @@ function eliminarCompte2() {
 
             continuar = true;
         }
-        r = registrat.comptes.some(element => element.numCompte === numCompteEliminar);
-    }
-    
-    confirm ("Esteu segurs que voleu eliminar el compte #" +numCompteEliminar+" ?");
+    }    
     
     let indexNumCompteEliminar = registrat.comptes.findIndex (element => element.numCompte === numCompteEliminar);
-       
-    if (registrat.comptes[indexNumCompteEliminar].saldo !=0){
 
-        escriuDada("avis","El saldo dels compte <b>#" +numCompteEliminar+ ", NO</b> és <b>0€</b>. Buideu el compte primer.");
-    }else{
+    if (indexNumCompteEliminar !=-1) {    
     
-        registrat.comptes.splice(indexNumCompteEliminar, 1);
-        escriuDada ("avis", "El compte número <b>#" +numCompteEliminar+ "</b> ha estat eliminat satisfactòriament.");
+        if (registrat.comptes[indexNumCompteEliminar].saldo !=0){
+
+            escriuDada("avis","El saldo dels compte <b>#" +numCompteEliminar+ ", NO</b> és <b>0€</b>. Buideu el compte primer.");
+        }else{
+        
+            confirm ("Esteu segurs que voleu eliminar el compte #" +numCompteEliminar+" ?");
+            registrat.comptes.splice(indexNumCompteEliminar, 1);
+            escriuDada ("avis", "El compte número <b>#" +numCompteEliminar+ "</b> ha estat eliminat satisfactòriament.");
+        }
+
+    }else{
+        escriuDada("avis","<b>Aquest compte no existeix</b>");
     }
 
     recollir("numCompteEliminar");
@@ -284,22 +274,17 @@ function ingressar2(){
     let registrat = arrayClients[posicio];
     
     let numCompteIngres = Number(llegeixDada("numCompteIngres"));
-    let r = registrat.comptes.some(element => element.numCompte === numCompteIngres);
     let continuar = validacionumIndPrompt(numCompteIngres,"numCompteIngres");
-    while (continuar == false || r == false) {
+    while (continuar == false) {
 
         numCompteIngres = Number(prompt ("Introduïu un número de compte vàlid:"));
-       
+
         if (validacionumIndPrompt(numCompteIngres,"numCompteIngres")) {
 
             continuar = true;
         }
-        r = registrat.comptes.some(element => element.numCompte === numCompteIngres);
     }
     
-    
-    let indexNumCompteIngres = registrat.comptes.findIndex (element => element.numCompte === numCompteIngres);
-    console.log( numCompteIngres, continuar, indexNumCompteIngres);
     let quantitat = Number(llegeixDada("quantitatIngres"));
     continuar = validacionumIndPrompt(quantitat,"quantitatIngres");
     while (continuar == false) {
@@ -310,9 +295,19 @@ function ingressar2(){
             continuar = true;
         }
     }
-    let saldo = registrat.comptes[indexNumCompteIngres].ingres(quantitat);
-        
-    escriuDada("avis", "La quantitat <b>" +quantitat+ " €</b> s'ha ingressat satisfactòriament al compte <b>#" +numCompteIngres+ "</b>. El saldo disponible és de<b> " +saldo+ "€. </b>");
+
+    let indexNumCompteIngres = registrat.comptes.findIndex (element => element.numCompte === numCompteIngres);
+    let saldo;
+
+    if (indexNumCompteIngres !=-1) {
+    
+        saldo = registrat.comptes[indexNumCompteIngres].ingres(quantitat);
+    
+        escriuDada("avis", "La quantitat <b>" +quantitat+ " €</b> s'ha ingressat satisfactòriament al compte <b>#" +numCompteIngres+ "</b>. El saldo disponible és de<b> " +saldo+ "€. </b>");
+
+    }else{
+        escriuDada("avis","<b>Aquest compte no existeix</b>");
+    }
 
     recollir("numCompteIngressar");
     esborrarCamps();
@@ -335,22 +330,18 @@ function retirar(){
 function retirar2(){
 
     let registrat = arrayClients[posicio];
- 
+
     let numCompteRetir = Number(llegeixDada("numCompteRetir"));
-    let r = registrat.comptes.some(element => element.numCompte === numCompteRetir);
     let continuar = validacionumIndPrompt(numCompteRetir, "numCompteRetir");
-    while (continuar == false || r == false) {
+    while (continuar == false) {
 
         numCompteRetir = Number(prompt ("Introduïu un número de compte vàlid:"));
         if (validacionumIndPrompt(numCompteRetir, "numCompteRetir") == true) {
 
-           continuar = true;
+            continuar = true;
             
         }
-        r = registrat.comptes.some(element => element.numCompte === numCompteRetir);
     }
-    
-    let indexNumCompteRetir = registrat.comptes.findIndex (element => element.numCompte === numCompteRetir);
     
     let quantitat = Number(llegeixDada("quantitatRetir"));
     continuar = validacionumIndPrompt(quantitat, "quantitatRetir");
@@ -363,9 +354,18 @@ function retirar2(){
         }
     }
 
-    let saldo = registrat.comptes[indexNumCompteRetir].retirada(quantitat);
+    let indexNumCompteRetir = registrat.comptes.findIndex (element => element.numCompte === numCompteRetir);
+    let saldo;
+
+    if (indexNumCompteRetir !=-1){
     
-    escriuDada("avis", "La quantitat <b>" +quantitat+ " €</b> s'ha retirat satisfactòriament del compte <b>#" +numCompteRetir+ "</b>. El saldo disponible és de<b> " +saldo+ "€. </b>");
+        saldo = registrat.comptes[indexNumCompteRetir].retirada(quantitat);
+    
+        escriuDada("avis", "La quantitat <b>" +quantitat+ " €</b> s'ha retirat satisfactòriament del compte <b>#" +numCompteRetir+ "</b>. El saldo disponible és de<b> " +saldo+ "€. </b>");
+
+    }else{
+        escriuDada("avis","<b>Aquest compte no existeix</b>");
+    }
 
     recollir("numCompteRetirar");
     esborrarCamps();
@@ -392,13 +392,13 @@ function inici(){
     let lletra = dniInici.substring(dniInici.length-1);
     lletra = lletra.toUpperCase();
     dniInici = numDni+lletra;
-     
+
     let registrat = arrayClients.find(element => element.dni == dniInici);
     let indexClient = arrayClients.indexOf(registrat);
     
     if (indexClient !== -1) {
 
-        escriuDada("avis", "El DNI número <b>" +dniInici+ " </b> està registrat amb les següents dades: <br>" +registrat.toString()+ ". <br><br><b>Cliqueu a l'opció que desitgeu.<b>");
+        escriuDada("avis", "El DNI número <b>" +dniInici+ " </b> està registrat amb les següents dades: <br>" +registrat+ ". <br><br><b>Cliqueu a l'opció que desitgeu.<b>");
         escriuDadaValue("dniCrear", dniInici);
         botonsGestions();
 
@@ -408,6 +408,6 @@ function inici(){
         escriuDadaValue("dniCrear", dniInici);
         botonsCrearClient();
     }
-  
+
 }
 

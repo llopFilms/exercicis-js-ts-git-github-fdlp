@@ -3,27 +3,27 @@
 class Client {
 
     constructor(dni, nom, cognom) {
-        this.dni = dni;
-        this.nom = nom;
-        this.cognom = cognom;
+        this._dni = dni;
+        this._nom = nom;
+        this._cognom = cognom;
         this.comptes = [];
 
     }
 
     //Getters
-    getDni() { return this.dni; }
-    getNom() { return this.nom; }
-    getCognom() { return this.cognom; }
+    get dni() { return this._dni; }
+    get nom() { return this._nom; }
+    get cognom() { return this._cognom; }
 
     //Setters
-    setDni() { this.dni = dni; }
-    setNom() { this.nom = nom; }
-    setCognom() { this.cognom = cognom; }
+    set dni(dni) { this._dni = dni; }
+    set nom(nom) { this._nom = nom; }
+    set cognom(cognom) { this._cognom = cognom; }
 
     toString() { 
 
         let resultat="";
-        resultat += "<b>"+this.nom+ " " +this.cognom+ "</b><small> (DNI número: " +this.dni+ ")</small>";
+        resultat += "<b>"+this._nom+ " " +this._cognom+ "</b><small> (DNI número: " +this._dni+ ")</small>";
 
         return resultat;
         

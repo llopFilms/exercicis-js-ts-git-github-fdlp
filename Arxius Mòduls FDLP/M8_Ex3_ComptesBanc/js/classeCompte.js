@@ -12,7 +12,7 @@ class Compte {
 
     //Mètodes gestió
     ingres(quantitat) {
-         
+
         this.saldo += quantitat;
         return this.saldo;
     

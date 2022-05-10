@@ -16,13 +16,19 @@
      <p id="descripcio"></p>
           
      <input type="button" id="play" onClick="play()" value="Play"/>
-     <input type="button" id="stop" onClick="stop()" value="Stop"/>
+     <input type="button" id="stop" onClick="estop()" value="Stop"/>
      <br><br>
      <input type="button" id="enrere" onClick="enrere()" value="Enrere"/>
      <input type="button" id="endavant"onClick="endavant()" value="Endavant"/>
      <br><br>
-      
-     <input type="button" id="buscarBoto" onClick="desplegar('dadesBuscar','buscarBoto','Buscar foto')" value="Buscar foto"/>
+     
+     <input type="button" id="buscarBoto" onClick="desplegarDivBoto('dadesBuscar','buscarBoto','Buscar foto')" value="Buscar foto"/>
+     <input type="button" id="afegirBoto" onClick="desplegarDivBoto('dadesAfegir', 'afegirBoto','Afegir foto')" value="Afegir foto"/>
+     <input type="button" id="modificarBoto" onClick="desplegarDivBoto('dadesModificar', 'modificarBoto','Modificar foto')" value="Modificar foto"/>
+     <input type="button" id="esborrarBoto" onClick="esborrar()" value="Esborrar foto"/>
+     <input type="button" id="sortirBoto" onClick="sortir()" value="Sortir"/>
+
+
      <div id="dadesBuscar" hidden="true">
 
           <h4>Buscar foto</h4>
@@ -34,7 +40,6 @@
           <br><br>
      </div>
 
-     <input type="button" id="afegirBoto" onClick="desplegar('dadesAfegir', 'afegirBoto','Afegir foto')" value="Afegir foto"/>
      <div id="dadesAfegir" hidden="true">
           
           <h4>Afegir foto</h4>
@@ -52,7 +57,6 @@
           <br><br>
      </div>
 
-     <input type="button" id="modificarBoto" onClick="desplegar('dadesModificar', 'modificarBoto','Modificar foto')" value="Modificar foto"/>
      <div id="dadesModificar" hidden="true">
           
           <h4>Modificar foto</h4>
@@ -65,14 +69,10 @@
           <input type="text" id="5" size="33"/><br><br>
           <label for="6">Nova descripció de la foto</label>
           <input type="text" id="6" size="33"/><br><br>
-        
+
           <input type="button" onClick="validacioModificar()" value="Continuar"/>
           <br><br>
      </div>
-
-     <input type="button" id="esborrarBoto" onClick="esborrar()" value="Esborrar foto"/>
-
-     <input type="button" id="sortirBoto" onClick="sortir()" value="Sortir"/>
 
      <p id="avís" ></p>
 

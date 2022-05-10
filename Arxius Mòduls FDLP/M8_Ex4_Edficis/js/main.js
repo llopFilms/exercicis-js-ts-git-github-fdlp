@@ -1,24 +1,27 @@
 
 
 let posicio = 0;
+omplirEdificis();
 console.table(arrayEdificis);
 
 function llistaEdificis() {
 
-    let i, j, llista;
+    let i, llista;
     
     llista = "<small><b>Edificis registrats, plantes, superfície:</b><br><ul>";
     for (i=0; i<arrayEdificis.length; i++) {
 
-        llista += "<li><b>" +arrayEdificis[i].getNom()+ "</b>: " + arrayEdificis[i].getNumPlantes()+ " plantes, " +arrayEdificis[i].getSuperficie()+ " m<sup>2</sup>.";
+        llista += "<li><small>" +arrayEdificis[i].toString2()+ "</small></li>";
 
     }
-    llista += "</ul></small>";
+    llista += "</ul>";
 
     escriuDada ("llista", llista);
     return llista;
     
 }
+
+llistaEdificis();
 
 function esborrarCamps() {
 
@@ -36,7 +39,9 @@ function esborrarCamps() {
     escriuDadaValue("numPlantesCinema", "");
     escriuDadaValue("superficieCinema", "");
     escriuDadaValue("aforament", "");
-    
+
+    escriuDadaValue("nomEdificiEliminar", "");
+    escriuDadaValue("nomEdificiVeure", "");
 }
 
 function recollirDivBotons() {
@@ -54,51 +59,31 @@ function altaHotel() {
     escriuDada("avis","");
     
     let nom = llegeixDada("nomHotel");
-    let continuar = validacioIndPrompt(nom,"nomHotel");
-    while (continuar == false) {
+    while (!validacioInd(nom,"nomHotel")) {
 
         nom = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nom,"nomHotel");
-        if (validacioIndPrompt(nom,"nomHotel") == true) {
-
-            continuar = true;
-        };
+        validacioInd(nom,"nomHotel");
     }
 
     let numPlantes = llegeixDada("numPlantesHotel");
-    continuar = validacionumIndPrompt(numPlantes,"numPlantesHotel");
-    while (continuar == false) {
+    while (!validacionumIndNum(numPlantes,"numPlantesHotel")) {
 
         numPlantes = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(numPlantes,"numPlantesHotel");
-        if (validacionumIndPrompt(numPlantes,"numPlantesHotel") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(numPlantes,"numPlantesHotel");
     }
 
     let superficie  = llegeixDada("superficieHotel");
-    continuar = validacionumIndPrompt(superficie,"superficieHotel");
-    while (continuar == false) {
+    while (!validacionumIndNum(superficie,"superficieHotel")) {
 
         superficie = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(superficie,"superficieHotel");
-        if (validacionumIndPrompt(superficie,"superficieHotel") == true) {
-
-            continuar = true;
-        };
+        validacionumIndNum(superficie,"superficieHotel");
     }
 
     let numHabitacions = llegeixDada("numHabitacions");
-    continuar = validacionumIndPrompt(numHabitacions,"numHabitacions");
-    while (continuar == false) {
+    while (!validacionumIndNum(numHabitacions,"numHabitacions")) {
     
         numHabitacions = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(numHabitacions,"numHabitacions");
-        if (validacionumIndPrompt(numHabitacions,"numHabitacions") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(numHabitacions,"numHabitacions");
     }
 
     let nouHotel = new Hotel(nom, numPlantes, superficie, numHabitacions);
@@ -120,51 +105,31 @@ function altaCinema() {
     
 
     let nom = llegeixDada("nomCinema");
-    let continuar = validacioIndPrompt(nom,"nomCinema");
-    while (continuar == false) {
+    while (!validacioInd(nom,"nomCinema")) {
 
         nom = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nom,"nomCinema");
-        if (validacioIndPrompt(nom,"nomCinema") == true) {
-
-            continuar = true;
-        };
+        validacioInd(nom,"nomCinema");
     }
 
     let numPlantes = llegeixDada("numPlantesCinema");
-    continuar = validacionumIndPrompt(numPlantes,"numPlantesCinema");
-    while (continuar == false) {
+    while (!validacionumIndNum(numPlantes,"numPlantesCinema")) {
 
         numPlantes = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(numPlantes,"numPlantesCinema");
-        if (validacionumIndPrompt(numPlantes,"numPlantesCinema") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(numPlantes,"numPlantesCinema");
     }
 
     let superficie  = llegeixDada("superficieCinema");
-    continuar = validacionumIndPrompt(superficie,"superficieCinema");
-    while (continuar == false) {
+    while (!validacionumIndNum(superficie,"superficieCinema")) {
 
         superficie = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(superficie,"superficieCinema");
-        if (validacionumIndPrompt(superficie,"superficieCinema") == true) {
-
-            continuar = true;
-        };
+        validacionumIndNum(superficie,"superficieCinema");
     }
 
     let aforament = llegeixDada("aforament");
-    continuar = validacionumIndPrompt(aforament,"aforament");
-    while (continuar == false) {
+    while (!validacionumIndNum(aforament,"aforament")) {
 
         aforament = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(aforament,"aforament");
-        if (validacionumIndPrompt(aforament,"aforament") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(aforament,"aforament");
     }
 
     let nouCinema = new Cinema(nom, numPlantes, superficie, aforament);
@@ -184,51 +149,31 @@ function altaHospital() {
     escriuDada("avis","");
     
     let nom = llegeixDada("nomHospital");
-    let continuar = validacioIndPrompt(nom,"nomHospital");
-    while (continuar == false) {
+    while (!validacioInd(nom,"nomHospital")) {
 
         nom = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nom,"nomHospital");
-        if (validacioIndPrompt(nom,"nomHospital") == true) {
-
-            continuar = true;
-        };
+        validacioInd(nom,"nomHospital");
     }
 
     let numPlantes = llegeixDada("numPlantesHospital");
-    continuar = validacionumIndPrompt(numPlantes,"numPlantesHospital");
-    while (continuar == false) {
+    while (!validacionumIndNum(numPlantes,"numPlantesHospital")) {
 
         numPlantes = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(numPlantes,"numPlantesHospital");
-        if (validacionumIndPrompt(numPlantes,"numPlantesHospital") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(numPlantes,"numPlantesHospital");
     }
 
     let superficie  = llegeixDada("superficieHospital");
-    continuar = validacionumIndPrompt(superficie,"superficieHospital");
-    while (continuar == false) {
+    while (!validacionumIndNum(superficie,"superficieHospital")) {
 
         superficie = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(superficie,"superficieHospital");
-        if (validacionumIndPrompt(superficie,"superficieHospital") == true) {
-
-            continuar = true;
-        };
+        validacionumIndNum(superficie,"superficieHospital");
     }
 
     let numPacients = llegeixDada("numPacients");
-    continuar = validacionumIndPrompt(numPacients,"numPacients");
-    while (continuar == false) {
+    while (validacionumIndNum(numPacients,"numPacients")) {
 
         numPacients = prompt ("Introduïu un número vàlid:");
-        validacionumIndPrompt(numPacients,"numPacients");
-        if (validacionumIndPrompt(numPacients,"numPacients") == true){
-
-            continuar = true;
-        }
+        validacionumIndNum(numPacients,"numPacients");
     }
 
     let nouHospital = new Hospital(nom, numPlantes, superficie, numPacients);
@@ -250,25 +195,18 @@ function eliminarEdifici() {
     esborrarCamps();
 
     let nomEdifici = llegeixDada("nomEdificiEliminar");
-    let continuar = validacioIndPrompt(nomEdifici,"nomEdificiEliminar");
-    while (continuar == false) {
-    
+    while (!validacioInd(nomEdifici,"nomEdificiEliminar")) {
         nomEdifici = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nomEdifici,"nomEdificiEliminar");
-        if (validacioIndPrompt(nomEdifici,"nomEdificiEliminar") == true){
-
-            continuar = true;
-        }
+        validacioInd(nomEdifici,"nomEdificiEliminar");
     }
-    
-    if (arrayEdificis.some(element => element.nom === nomEdifici)){
-        
-        let registrat = arrayEdificis.find(element => element.nom === nomEdifici);
-        let registratIndex = arrayEdificis.indexOf(registrat);
+    let registratIndex = arrayEdificis.findIndex(element => element.nom == nomEdifici);
 
-        let nomEdificiEsborrar = registrat.getNom();
-        let confirma = confirm ("Esteu segurs que bvoleu esborrar l'edifici "
-        +registrat.getNom()+ "?");
+    if (registratIndex != -1) {
+        
+        let registrat = arrayEdificis[registratIndex];
+        let nomEdificiEsborrar = registrat.nom;
+        let confirma = confirm("Esteu segurs que voleu esborrar l'edifici "
+        +registrat.nom+ "?");
     
         if (confirma == true);{
     
@@ -293,27 +231,15 @@ function eliminarEdifici() {
 function veureCinema(registrat) {
 
     let numEspectadors = prompt ("Introduïu el número d'espectadors de la sessió");
-    let continuar = false;
     while (numEspectadors =="" || isNaN(numEspectadors) || numEspectadors <0) {
 
         numEspectadors = prompt ("Introduïu un número vàlid:");
-        
-        if (numEspectadors =="" || isNaN(numEspectadors) || numEspectadors <=0) {
-
-            continuar = true;
-        }
     }
 
     let preuEntrada = prompt ("Introduïu el preu d'entrada de la sessió");
-    continuar = false;
     while (preuEntrada =="" || isNaN(preuEntrada) || preuEntrada <0) {
 
         preuEntrada = prompt ("Introduïu un número vàlid:");
-        
-        if (preuEntrada =="" || isNaN(preuEntrada) || preuEntrada <=0) {
-
-            continuar = true;
-        }
     }
 
     return registrat.projectarSessio(numEspectadors, preuEntrada);
@@ -326,32 +252,28 @@ function veureEdifici() {
     esborrarCamps();
 
     let nomEdifici = llegeixDada("nomEdificiVeure");
-    let continuar = validacioIndPrompt(nomEdifici,"nomEdificiVeure");
-    while (continuar == false) {
+    while (!validacioInd(nomEdifici,"nomEdificiVeure")) {
 
         nomEdifici = prompt ("Introduïu un nom vàlid:");
-        validacioIndPrompt(nomEdifici,"nomEdificiVeure");
-        if (validacioIndPrompt(nomEdifici,"nomEdificiVeure") == true){
-
-            continuar = true;
-        }
+        validacioInd(nomEdifici,"nomEdificiVeure");        
     }
     
-    if (arrayEdificis.some(element => element.nom === nomEdifici)){
+    let registratIndex = arrayEdificis.findIndex(element => element.nom === nomEdifici)
 
-        let registrat = arrayEdificis.find(element => element.nom === nomEdifici);
-        let registratIndex = arrayEdificis.indexOf(registrat);
-        let classe = arrayEdificis[registratIndex].getClasse();
+    if (registratIndex != -1){
+
+        let registrat = arrayEdificis[registratIndex];
+        let classe = arrayEdificis[registratIndex].classe;
 
         switch (classe) {
 
-            case "hotel": escriuDada("avis", registrat.toString() + registrat.calcularCostVigilancia() + registrat.netejar() + registrat.serveiHabitacions());
+            case "hotel": escriuDada("avis", registrat + registrat.calcularCostVigilancia() + registrat.netejar() + registrat.serveiHabitacions());
             break;
 
-            case "cinema": escriuDada("avis", veureCinema(registrat) + "<br><br>"+ registrat.toString() + registrat.calcularCostVigilancia()) + registrat.netejar();
+            case "cinema": escriuDada("avis", veureCinema(registrat) + "<br><br>"+ registrat + registrat.calcularCostVigilancia()) + registrat.netejar();
             break;
 
-            case "hospital": escriuDada("avis", registrat.toString() + registrat.calcularCostVigilancia() + registrat.netejar() + registrat.repartirDinar());
+            case "hospital": escriuDada("avis", registrat + registrat.calcularCostVigilancia() + registrat.netejar() + registrat.repartirDinar());
             break;
 
         }

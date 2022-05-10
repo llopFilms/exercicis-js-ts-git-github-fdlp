@@ -5,36 +5,37 @@ class Compte {
     //Creem classe Compte
     constructor (numCompte, saldo) {
 
-        this.numCompte = numCompte;
-        this.saldo = saldo;
+        this._numCompte = numCompte;
+        this._saldo = saldo;
 
     }
 
+    // Getters
+    get numCompte() { return this._numCompte; }
+    get saldo() { return this._saldo; }
+
     //Mètodes gestió
     ingres(quantitat) {
-         
-        this.saldo += quantitat;
-        return this.saldo;
-    
+
+        this._saldo += quantitat;
+        return this._saldo;
     }
     
     retirada(quantitat) {
 
-        if (quantitat > this.saldo) {
+        if (quantitat > this._saldo) {
             alert ("No hi ha saldo suficient");
 
         }else{
-            this.saldo -= quantitat;
-            return this.saldo
+            this._saldo -= quantitat;
+            return this._saldo
         }
-
     }
 
     //Funció toString
     toString() {
 
-        let resultat="";
-        resultat += "#"+this.numCompte+ " ==> " +this.saldo+ " €";
+        let resultat= "#"+this._numCompte+ " ==> " +this._saldo+ " €";
 
         return resultat;
     }

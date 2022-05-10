@@ -32,20 +32,19 @@ L'aplicació ha de ser capaç de donar d'alta, mostrar i eliminar edificis. Al c
     
     <p id="llista" ></p>
 
-
     <input type="button" id="altaHotel" onClick="desplegar('dadesAltaHotel','altaHotel','Alta Hotel')" value="Alta Hotel" />
 
     <input type="button" id="altaCinema" onClick="desplegar('dadesAltaCinema','altaCinema','Alta Cinema')" value="Alta Cinema" />
 
     <input type="button" id="altaHospital" onClick="desplegar('dadesAltaHospital','altaHospital','Alta Hospital')" value="Alta Hospital" />
+
     <input type="button" id="eliminarEdifici" onClick="desplegar('dadesEliminarEdifici','eliminarEdifici','Eliminar Edifici')" value="Eliminar Edifici" />
 
     <input type="button" id="veureEdifici" onClick="desplegar('dadesVeureEdifici','veureEdifici','Veure Edifici')" value="Veure Edifici" />
 
     <input type="button" onClick="sortir()" value="Sortir del programa"/>
 
-    <div id="dadesAltaHotel" hidden="true">
-            
+    <div id="dadesAltaHotel" hidden>            
         <h4>Alta Hotel - Introduïu les dades:</h4>
 
         <label for="nomHotel">Nom Hotel:</label>
@@ -58,11 +57,9 @@ L'aplicació ha de ser capaç de donar d'alta, mostrar i eliminar edificis. Al c
         <input type="number" id="numHabitacions" size="6"/><br><br>
                         
         <input type="button" onClick="altaHotel()" value="Continuar"/>
-
     </div>
 
-    <div id="dadesAltaCinema" hidden="true">
-            
+    <div id="dadesAltaCinema" hidden>            
         <h4>Alta Cinema - Introduïu les dades:</h4>
 
         <label for="nomCinema">Nom Cinema:</label>
@@ -75,12 +72,10 @@ L'aplicació ha de ser capaç de donar d'alta, mostrar i eliminar edificis. Al c
         <input type="number" id="aforament" size="6"/><br><br>
                         
         <input type="button" onClick="altaCinema()" value="Continuar"/>
-
     </div>
 
     
-    <div id="dadesAltaHospital" hidden="true">
-            
+    <div id="dadesAltaHospital" hidden>            
         <h4>Alta Hospital - Introduïu les dades:</h4>
 
         <label for="nomHospital">Nom Hospital:</label>
@@ -93,29 +88,24 @@ L'aplicació ha de ser capaç de donar d'alta, mostrar i eliminar edificis. Al c
         <input type="number" id="numPacients" size="6"/><br><br>
                         
         <input type="button" onClick="altaHospital()" value="Continuar"/>
-
     </div>
 
-    <div id="dadesEliminarEdifici" hidden="true">
-            
+    <div id="dadesEliminarEdifici" hidden>            
         <h4>Elimina Edifici - Introduïu les dades:</h4>
 
         <label for="nomEdificiEliminar">Nom de l'edifici a eliminar:</label>
         <input type="text" id="nomEdificiEliminar" size="20"/><br><br>
                                 
         <input type="button" onClick="eliminarEdifici()" value="Continuar"/>
-
     </div>
 
-    <div id="dadesVeureEdifici" hidden="true">
-            
+    <div id="dadesVeureEdifici" hidden>            
         <h4>Veure Edifici - Introduïu les dades:</h4>
 
         <label for="nomEdificiVeure">Nom de l'edifici a consultar:</label>
         <input type="text" id="nomEdificiVeure" size="20"/><br><br>
                                 
         <input type="button" onClick="veureEdifici()" value="Continuar"/>
-
     </div>
 
     <br><br>

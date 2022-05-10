@@ -246,7 +246,7 @@ function retirar(){
     let quantitat = Number(prompt("Quina quantitat vols retirar?"));
     let saldo = registrat.comptes[0].retirada(quantitat);
     escriuDada("avis", "La quantitat <b>" +quantitat+ " €</b> s'ha retirat satisfactòriament. El saldo disponble és de<b> "+saldo+ "€ </b>.");
- 
+
     llistaBanc();
     posicio = posicio;
 
@@ -268,7 +268,7 @@ function inici(){
     let lletra = dniInici.substring(dniInici.length-1);
     lletra = lletra.toUpperCase();
     dniInici = numDni+lletra;
-     
+    
     let registrat = arrayClients.find(element => element.dni == dniInici);
     let indexClient = arrayClients.indexOf(registrat);
     console.log(registrat,indexClient);
@@ -285,6 +285,6 @@ function inici(){
         escriuDadaValue("dniCrear", dniInici);
         botonsCrear();
     }
-  
+
 }
 

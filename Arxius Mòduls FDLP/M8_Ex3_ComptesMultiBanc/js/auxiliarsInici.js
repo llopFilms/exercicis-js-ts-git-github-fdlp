@@ -7,13 +7,13 @@
           let dada = document.getElementById(id).value;
           return dada;
      }
- 
+
      //Funció escriu dada valor
      function escriuDadaValue(id,dada){        
- 
+
           document.getElementById(id).value = dada;
      }
- 
+
      //Funció escriu dada en HMTL
      function escriuDada(id,dada){        
 
@@ -60,7 +60,7 @@
      function recollir(idDiv) {
 
           document.getElementById(idDiv).style.display = "none";
-      
+
      }
 
      //Funció habilitar botó

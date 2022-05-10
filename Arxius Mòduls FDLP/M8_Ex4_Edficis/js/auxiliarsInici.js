@@ -7,13 +7,13 @@
           let dada = document.getElementById(id).value;
           return dada;
      }
- 
+
      //Funció escriu dada valor
      function escriuDadaValue(id,dada){        
- 
+
           document.getElementById(id).value = dada;
      }
- 
+
      //Funció escriu dada en HMTL
      function escriuDada(id,dada){        
 
@@ -60,7 +60,7 @@
      function recollir(idDiv) {
 
           document.getElementById(idDiv).style.display = "none";
-      
+
      }
 
      //Funció habilitar botó
@@ -69,60 +69,25 @@
           document.getElementById(id).disabled = estat;
      }
 
-     //Funció Validació inidividual
-     function validacionumIndPrompt(dada, id){
+     //Funció Validació inidividual num
+     function validacionumIndNum(num, id){
 
           let validacioInd = false;
                               
-          if (dada =="" || isNaN(dada) || dada <=0) {
+          if (num =="" || isNaN(num) || num <=0) {
                validacioInd;
                document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
                
-
           }else{
                validacioInd = true;
                document.getElementById(id).style.backgroundColor = "white";
-               document.getElementById(id).value = dada;
+               document.getElementById(id).value = num;
           }
           return validacioInd;
      }
 
-     //Funció Validació inidividual prompt
-     function validacioIndPrompt(dada, id){
-
-          let validacioInd = false;
-                              
-          if (dada =="") {
-               validacioInd;
-               document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
-                         
-          }else{
-               validacioInd = true;
-               document.getElementById(id).style.backgroundColor = "white";
-               document.getElementById(id).value = dada;
-          }
-          return validacioInd;
-
-     }
-
-     //Funció Validació inidividual prompt
-     function validacioIndPrompt(dada, id){
-
-          let validacioInd = false;
-                              
-          if (dada =="") {
-               validacioInd;
-               document.getElementById(id).style.backgroundColor = "#E6B0AA"; 
-                         
-          }else{
-               validacioInd = true;
-               document.getElementById(id).style.backgroundColor = "white";
-               document.getElementById(id).value = dada;
-          }
-          return validacioInd;
-
-     }//Funció Validació inidividual prompt
-     function validacioIndPrompt(dada, id){
+     //Funció Validació inidividual
+     function validacioInd(dada, id){
 
           let validacioInd = false;
                               

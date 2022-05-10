@@ -1,12 +1,12 @@
 
 
 function f11(){
-  
+
     //Llista de l'agenda sencera
     let llista = "\n\n";
     let llista2 = "";
     let i, j;
-       
+
     //Llista per cònsola
     for (let i=0; i<agenda.length; i++) {
 
@@ -38,7 +38,7 @@ function f11(){
     escriuDada ("resultat",llista2);
     console.table(agenda);
     console.log(llista);
-   
+
 }
 //Buscar les dades del contacte 'Emergencia Médicas'
 function f12(){
@@ -122,7 +122,7 @@ function f13(){
     let llista2 = "";
 
     for (i=0; i<agenda.length; i++) {
-       
+
         if (f231 == agenda[i].categoria) {
             llista2 += "<b>" +agenda[i].categoria+ ":</b> (sense saber índex categoria)<br><br><ul>";
 
@@ -206,7 +206,7 @@ function f21(){
     let f221 = f121;
     let resultat3 = "";
     i=0; j; 
-             
+
         while (i<agenda.length) {
         j=0;    
             while (j<agenda[i].contactos.length) {
@@ -230,7 +230,7 @@ function f21(){
 
     escriuDada ("resultat",resultat3 + bombers);
     console.table(bombers);
-    cnosole.log(resultat, resultat2);
+    console.log(resultat, resultat2);
     
 }
 
@@ -246,7 +246,7 @@ function f22(){
     let f22 = 'Cruz Roja';
     let resultat = "";
     let i=0; let j; 
-             
+
         while (i<agenda.length) {
         j=0;    
             while (j<agenda[i].contactos.length) {
@@ -263,7 +263,7 @@ function f22(){
     //For a String
     let f122 = 'Cruz Roja';
     let resultat2 = "\n\n";
-   
+
         for (i=0; i<agenda.length; i++) {
         
             for (j=0; j<agenda[i].contactos.length; j++) {
@@ -279,7 +279,7 @@ function f22(){
     let f222 = 'Cruz Roja';
     let resultat3 = "";
     i=0; j; 
-             
+
         while (i<agenda.length) {
         j=0;
             while (j<agenda[i].contactos.length) {
@@ -313,7 +313,7 @@ function f23(){
     let f23 = 'Mastercard';
     let resultat = "";
     let i=0; let j; 
-             
+
         while (i<agenda.length) {
         j=0;   
             while (j<agenda[i].contactos.length) {
@@ -347,7 +347,7 @@ function f23(){
     let f223 = 'Mastercard';
     let resultat3 = "";
     i=0;
-             
+
         while (i<agenda.length) {
         j=0;    
             while (j<agenda[i].contactos.length) {

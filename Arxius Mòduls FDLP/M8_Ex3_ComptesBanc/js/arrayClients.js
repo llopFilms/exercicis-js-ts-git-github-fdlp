@@ -15,7 +15,7 @@ function adjudicarDades(numCompte,saldo,i) {
         
     let nouCompte = new Compte (numCompte, saldo);
     arrayClients[i].comptes.push(nouCompte);
-      
+
 }
 
 function omplirBanc() {

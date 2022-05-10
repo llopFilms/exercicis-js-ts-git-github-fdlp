@@ -4,25 +4,22 @@ class Edifici {
 
     constructor(nom, numPlantes, superficie) {
 
-        this.nom = nom;
-        this.numPlantes = numPlantes;
-        this.superficie = superficie;
-
+        this._nom = nom;
+        this._numPlantes = numPlantes;
+        this._superficie = superficie;
     }
 
     //Getters
-
-    getNom() { return this.nom; }
-    getNumPlantes() { return this.numPlantes; }
-    getSuperficie() { return this.superficie; }
+    get nom() { return this._nom; }
+    get numPlantes() { return this._numPlantes; }
+    get superficie() { return this._superficie; }
 
     //Mètodes
-
     netejar() {
 
-        let temps = this.superficie/5 + 0.5*this.numPlantes;
-        let hores = parseInt((this.superficie/5 + 0.5*this.numPlantes)/60); 
-        let minuts = (this.superficie/5 + 0.5*this.numPlantes)%60;
+        let temps = this._superficie / 5 + 0.5 * this._numPlantes;
+        let hores = parseInt(temps / 60); 
+        let minuts = hores % 60;
         
         let costMensual = (temps*30).toFixed(2);
         let missatge = "Càlculs neteja:<br><ul>";
@@ -30,7 +27,5 @@ class Edifici {
         missatge += "<li>Cost mensual: <b>"+costMensual+" </b>€.</li></ul>"
 
         return missatge;
-
     }
-
 }

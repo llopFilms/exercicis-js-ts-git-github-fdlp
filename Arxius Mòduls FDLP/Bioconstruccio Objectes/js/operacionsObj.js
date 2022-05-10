@@ -5,7 +5,6 @@
 
         let nom = llegeixDada("nomBuscar");
         let casa = bioconstruccio.find (casa => casa.nom === nom);
-
         let index = bioconstruccio.indexOf(casa);
 
         if (index >= 0 ){
@@ -67,11 +66,6 @@
         //Esborrar pantalla
         escriuDada ("avís","");
 
-        let imatge = llegeixDada("1") + ".jpg";
-        let nom = llegeixDada("2");
-        let titol = llegeixDada("3");
-        let descripcio = llegeixDada("4");
-
         //Validació
         let validacio = true;
         
@@ -111,7 +105,6 @@
         nom = llegeixDada("6");
         titol = llegeixDada("7");
         descripcio = llegeixDada("8");
-        (console.log(bioconstruccio));
 
         let modificat = {
 
@@ -130,11 +123,6 @@
 
         //Esborrar pantalla
         escriuDada ("avís","");
-
-        let imatge = llegeixDada("5") + ".jpg";
-        let nom = llegeixDada("6");
-        let titol = llegeixDada("7");
-        let descripcio = llegeixDada("8");
 
         //Validació
         let validacio = true;

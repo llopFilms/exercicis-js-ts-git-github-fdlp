@@ -5,7 +5,7 @@
     casaBio [0] = new Bioconstruccio("Casa1.jpg","Casa 1","Bioconstrucció","Escala accés primer pis amb graons de fusta");
     
     casaBio [1] = new Bioconstruccio("Casa2.jpg","Casa 2","Bioconstrucció","Detall passamà escala");
-   
+
     casaBio [2]= new Bioconstruccio("Casa3.jpg","Casa 3","Bioconstrucció","Sala d'estar excepcional");
 
     casaBio [3] = new Bioconstruccio("Casa4.jpg","Casa 4","Bioconstrucció","Dormitori lluminós d'estiu"

@@ -16,7 +16,7 @@ function adjudicarDades(numCompte,saldo,i) {
         
     let nouCompte = new Compte (numCompte, saldo);
     arrayClients[i].comptes.push(nouCompte);
-      
+
 }
 
 function omplirBanc() {
@@ -29,20 +29,12 @@ function omplirBanc() {
 
     
     //Introduïm números de compte i saldos
-    adjudicarDades(arrayComptes[0], 0, 0);
-    adjudicarDades(arrayComptes[1], 0, 1);
-    adjudicarDades(arrayComptes[2], 0, 2);
-    adjudicarDades(arrayComptes[3], 0, 3);
+    adjudicarDades(arrayComptes[0], 2200, 0);
+    adjudicarDades(arrayComptes[1], 850, 1);
+    adjudicarDades(arrayComptes[2], 1200, 2);
+    adjudicarDades(arrayComptes[3], 3200, 3);
 
     //Return per avisar que hem acabat
-    return "Dades dels clients del banc carregats amb èxit!"
+    return console.log("Dades dels clients del banc carregats amb èxit!");   
 
-}
-
-//Funcions que volem que es carreguin primer
-window.onload = function() {
-    
-    console.log(omplirBanc());
-    llistaBanc();
-    
 }

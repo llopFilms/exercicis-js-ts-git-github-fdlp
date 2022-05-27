@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mòdul 4 - Exercici 3</title>
 </head>
-<body>
+<br>
 	
 	<!--Una escola d’idiomes concedeix beques a futurs estudiants si compleixen una sèrie de requisits.	A l'alumne se li assigna una beca si és major d’edat i si té un títol universitari. O també se li assigna una beca si l’alumne està a l’atur. El programa demana les tres dades per pantalla i en finalitzar mostra si l’alumne té la beca o no.-->
 
@@ -14,53 +14,53 @@
 	<br/>
 	<p>Introdueix les teves dades:</p>
 	<!--Entrada de dades-->
-	<p>Ets major d'edat?</p>
-		<select name="select" id="caixaTextMajorEdat"><br/><br/>
+		<label for="CaixaTextMajorEdat">Ets major d'edat?</label>
+		<select name="select" id="caixaTextMajorEdat">
 			<option></option>
-			<option value="edat">Sí</option>
-			<option value="edat">No</option>
+			<option value="si">Sí</option>
+			<option value="no">No</option>
 		</select>
-	<br/>
-	<p>Tens titulació universitària?</p>
+	<br/></br>
+		<label for="caixaTextTítolUni">Tens titulació universitària?</label>
 		<select name="select" id="caixaTextTítolUni"><br/><br/>
 			<option></option>
-			<option value="Sí">Sí</option>
-			<option value="No">No</option>
+			<option value="si">Sí</option>
+			<option value="no">No</option>
 		</select>
-	<br/>
-	<p>Estàs en situació d'atur?</p>
+	<br/></br>
+		<label for="caixaTextAtur">Estàs a l'atur?</label>
 		<select name="select" id="caixaTextAtur" ><br/><br/>
 			<option></option>
-			<option value="Sí">Sí</option>
-			<option value="No">No</option>
+			<option value="si">Sí</option>
+			<option value="no">No</option>
 		</select>
 	<br/><br/>
 		<input type='button' onClick='beca()' Value='Clica per continuar'/>
 		<br/>
 		<p id="selecció"></p>
-	
+
 	<script>
-	
+
 		function beca(){
 
 			//Captació de dades i declaraciómde variables
 			let majorEdat = document.getElementById("caixaTextMajorEdat").value;
 			let títolUni = document.getElementById("caixaTextTítolUni").value;
 			let atur = document.getElementById("caixaTextAtur").value;
-			
-			if (majorEdat == "Sí" && títolUni == "Sí") 
+
+			if (majorEdat == "si" && títolUni == "si")
 				document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que ets major d'edat i tens titulació universitària. Felicitats!";
 
-			else if (atur == "Sí") 
+			else if (atur == "si")
 				document.getElementById("selecció").innerHTML = "Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. Felicitats!";
 
-			else 
+			else
 				document.getElementById("selecció").innerHTML = "Ho sentim però no compleixes els requisits per accedir a una beca.";
 						
 		}
-		
+
 
 	</script>
-	
+
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrousel Peliculas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+    <style>
+        .flecha{
+            width: 24px;
+            height: 24px;
+            border: 3px;
+        }
+        img{
+            display:block;
+            margin:auto;
+            width: 350px;
+            height: 500px;
+        }
+        .cuerpo {
+            margin-left: 100px;
+        }
+        .titulo {
+            color: rgb(123, 104, 7);
+            font-family: Allerta Stencil, Arial, Helvetica, sans-serif;
+            font-size:xxx-large;
+            text-align: center;
+        }
+        .descrip {
+            color: rgb(0, 0, 0);
+            width: 800px;
+            border: 1px transparent;
+            background-color: rgb(201, 163, 233);
+            padding: 10px;
+        }
+        .resultado {
+            font-size: x-large;
+            font-weight: 900;
+            font-family: Oxygen, Arial, Helvetica, sans-serif;
+        } 
+        .button {
+            background-color: rgb(71, 70, 6); 
+            border: none;
+            color: white;
+            padding: 7px 16px;
+            text-align: center;
+            font-size: 16px;
+            border-radius:10px;
+            outline:none;
+        }
+        .nombre{
+            text-align: center;
+        }
+        .test{
+            text-align: center;
+            font-size: xx-large;
+            font-family:Oxygen, Arial, Helvetica, sans-serif;
+        }
+        .sinopsis{
+            margin:auto;
+            width: 550px;
+            height: 110px;
+            font-size: large;
+        }
+        .agregar{
+            text-align: center;
+        }
+    
+        </style>
+    </style>
+</head>
+<div class="cuerpo">
+    <h1 class="titulo">Carrousel Peliculas</h1>
+
+    <div class="agregar"><p><button onclick="agregar()">Agregar película</button></p></div>
+    <div class="agregar"><p><button onclick="buscar()">Buscar película</button></p></div>
+    <div class="agregar"><p><button onclick="eliminar()">Eliminar película</button></p></div>
+    <div class="agregar"><p><button onclick="editar()">Editar película</button></p></div>
+    <img id="imagen" title="Peliculas" alt="2001.jpg" src="./img/2001.jpg"/>
+    <br>
+    <br>
+    <div class="test">
+        <p id="descrip" class="sinopsis"></p>
+        <br>
+        <p><span id="nombreImagen" class="espacio"></span></p>
+        <p><button onclick="retrocede()"><img src="./icons/flechaizquierda.png" title="retrocede" class="flecha"/></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="avanza()"><img src="./icons/flechaderecha.png" title="avanza" class="flecha"/></button></p>
+    </p></div>
+    <script src="./js/imagenes.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

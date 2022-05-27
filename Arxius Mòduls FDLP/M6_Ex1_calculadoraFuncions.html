@@ -17,7 +17,7 @@
 	<!--Fem 2 entrades de number-->
 	<input type="number" id="caixaNum1" placeholder="Escriu un primer número"/><br/><br/>
 	<input type="number" id="caixaNum2" placeholder="Escriu un segon número"/><br/><br/>
-	
+
 	<!--Fem un selector d'operacions amb un radio, la selecció dóna valor del text a 'value'-->
 
     <fieldset>
@@ -65,26 +65,26 @@
         //Funció 'main'
 		function calculs(){
 
-		//Captació de variables de d'HTML i conversió a number
-		let num1 = Number(document.getElementById("caixaNum1").value);
-		let num2 = Number(document.getElementById("caixaNum2").value);
+		    //Captació de variables de d'HTML i conversió a number
+            let num1 = Number(document.getElementById("caixaNum1").value);
+            let num2 = Number(document.getElementById("caixaNum2").value);
 
-        while (isNaN(num1) || num1 =="" || num1 <=0){
-            num1 = Number(prompt("Has deixat sense introduïr el número primer. Torna a introduïr-lo, sisplau"));
-            document.getElementById("caixaNum1").value = num1;
-        }
-        
-        while (isNaN(num2) || num2 =="" || num2 <=0){
-            num2 = Number(prompt("Has deixat sense introduïr el número segon. Torna a introduïr-lo, sisplau"));
-            document.getElementById("caixaNum2").value = num2;
-        }
+            while (isNaN(num1) || num1 =="" || num1 <=0){
+                num1 = Number(prompt("Has deixat sense introduïr el número primer. Torna a introduïr-lo, sisplau"));
+                document.getElementById("caixaNum1").value = num1;
+            }
 
-        let operacio = document.getElementById("seleccioOperacions").value;
-        console.log(operacio);
-        let resultat = "";
-            
+            while (isNaN(num2) || num2 =="" || num2 <=0){
+                num2 = Number(prompt("Has deixat sense introduïr el número segon. Torna a introduïr-lo, sisplau"));
+                document.getElementById("caixaNum2").value = num2;
+            }
 
-        //Switch de selecció i sortida de resultats 
+            let operacio = document.getElementById("seleccioOperacions").value;
+            console.log(operacio);
+            let resultat = "";
+
+
+            //Switch de selecció i sortida de resultats
             switch (operacio){
 
                 case "suma":
@@ -109,12 +109,12 @@
 
             }
 
-        //Sortida de resultat a id d'HTML
-        document.getElementById("resultatCàlcul").innerHTML = "El resultat de l'operació  de <strong>"+operacio+"</strong> de "+num1+" i "+num2+" és <strong>" +resultat+ "</strong>.";
+            //Sortida de resultat a id d'HTML
+            document.getElementById("resultatCàlcul").innerHTML = "El resultat de l'operació  de <strong>"+operacio+"</strong> de "+num1+" i "+num2+" és <strong>" +resultat+ "</strong>.";
 
         }
 
 	</script>
-	
+
 </body>
 </html>

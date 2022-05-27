@@ -44,7 +44,7 @@
 			let mida = document.getElementById("caixaNum").value;
 			
 			//Declaració de variables
-			let i, j, string = "", fila = "", quadMag = "";
+			let i, j, fila = "", quadMag = "";
 
 			//'Impressió' de línies horitzontals
 			for (i=0; i<mida; i++){
@@ -52,14 +52,11 @@
                 for (j=0; j<mida; j++){
                     fila += " " +char;
                 }
-				quadMag += "<br/><br/>" +fila;
+				quadMag += fila+ "<br/><br/>";
                 fila = "";
 			}
-			
-
 			//'Impressió' de línies verticals
-			
-			
+						
 			//Sortida de dades cap a id d'HTML
 			document.getElementById("impressió").innerHTML = quadMag;
 			

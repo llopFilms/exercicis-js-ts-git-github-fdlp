@@ -27,9 +27,9 @@
 		<label for="suma">+ Suma</label><br>
 		<input type="radio" id="resta" name="operacions">
 		<label for="resta">- Resta</label><br>
-		<input type="radio" id="multiplicació" name="operacions">
-		<label for="multiplicació">* Multiplicació</label><br>
-		<input type="radio" id="divisió" name="operacions">
+		<input type="radio" id="multiplicacio" name="operacions">
+		<label for="multiplicacio">* Multiplicació</label><br>
+		<input type="radio" id="divisio" name="operacions">
 		<label for="suma">/ Divisió</label><br><br>
 
 		<input type='button' onClick='calculs()' Value='Go Calculator!'/>
@@ -37,9 +37,9 @@
 	</fieldset>
 
 	<br/>
-		
+
 	<script>
-	
+
 		function calculs(){
 
 			//Captació de variables de d'HTML i conversió a number
@@ -47,26 +47,26 @@
 			let num2 = Number(document.getElementById("caixaNum2").value);
 
 			//Captació de valor boooleà: 1 serà True i 3 seran False
-			let suma = document.getElementById("suma").checked;
-			let resta = document.getElementById("resta").checked;
-			let multiplicacio = document.getElementById("multiplicació").checked;
-			let divisió = document.getElementById("divisió").checked;
-			
+			let sumas = document.getElementById("suma").checked;
+			let restar = document.getElementById("resta").checked;
+			let multiplicaciom = document.getElementById("multiplicacio").checked;
+			let divisiod = document.getElementById("divisio").checked;
+
 			let resultat;
 
-			if (suma) resultat = num1 + num2;
-			else if (resta) resultat = num1 - num2;
-			else if (multiplicacio) resultat = num1 * num2;
+			if (sumas == true) resultat = num1 + num2;
+			else if (restar == true) resultat = num1 - num2;
+			else if (multiplicaciom == true) resultat = num1 * num2;
 			else resultat = num1 / num2;
 
 			//if que alerta que el 2on número introduit és 0 i no es potmfer la divisió
-			if (num2 == 0) alert ("la divisió no es pot relitzar perquè el 2on número és 0.");				
-					
-			document.getElementById("resultatCalcul").innerHTML = "El resultat de la operació és: <strong>" +resultat+"</strong>";
-			
-		}		
+			if (num2 == 0) alert ("la divisió no es pot relitzar perquè el 2on número és 0.");
+
+			document.getElementById("resultatCalcul").innerHTML = "El resultat de la operació és: <b>" +resultat+"</b>";
+
+		}
 
 	</script>
-	
+
 </body>
 </html>

@@ -18,7 +18,7 @@
 
 	<p id="disponibilitat"></p>
 	<p id="selecció"></p>
-	
+
 	<script>
 	
 		function beca(){
@@ -61,12 +61,12 @@
 
 			// Enviament dels valors de les dades als id's d'HTML fent un loop for per fer una llista
 			let llista = "<ul>", i;
-			
+
 			for (i=0; i<5; i++) {
 				llista += "<li>" + becats[i];
 			}
 			llista += "</ul>";
-		
+
 			document.getElementById("selecció").innerHTML = "Llista de becats:" + llista;
 		
 		}

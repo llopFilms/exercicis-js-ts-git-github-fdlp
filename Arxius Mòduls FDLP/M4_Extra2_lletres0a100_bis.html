@@ -18,7 +18,7 @@
 
 		<input type="button" onClick="numaText()" value="A veure com és..." />
 		<br />
-		<p id="num_a_Text"></p>
+		<p id="numaText"></p>
 
 		<script>
 			function numaText() {
@@ -38,6 +38,7 @@
 
                     case 0:
                         text_unitats = "zero";
+						break;
 					case 1:
 						text_unitats = "u";
 						break;
@@ -99,169 +100,57 @@
 				}
 
 				//if per unir les variables de text i generar el nom del número, i retorn del resultat a l'id d'HTML
-				if (desenes == 0 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_unitats;
+				let numText;
+
+				if (desenes == 0 && unitats >= 0 && unitats <= 9) {
+					numText = "El número s'escriu: " + text_unitats;
 				}
 
-				if (desenes == 0 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_unitats;
-				}
-
-				if (desenes == 1 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
+				if (desenes >= 1 && desenes <= 9 && unitats == 0) {
+					numText = "El número s'escriu: " + text_desenes;
 				}
 
 				if (desenes == 1 && unitats == 1) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: onze";
+					numText = "El número s'escriu: onze";
 				}
 
 				if (desenes == 1 && unitats == 2) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: dotze";
+					numText = "El número s'escriu: dotze";
 				}
 
 				if (desenes == 1 && unitats == 3) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: tretze";
+					numText = "El número s'escriu: tretze";
 				}
 
 				if (desenes == 1 && unitats == 4) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: catorze";
+					numText = "El número s'escriu: catorze";
 				}
 
 				if (desenes == 1 && unitats == 5) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: quinze";
+					numText = "El número s'escriu: quinze";
 				}
 
 				if (desenes == 1 && unitats == 6) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: setze";
+					numText = "El número s'escriu: setze";
 				}
 
 				if (desenes == 1 && unitats == 7) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: disset";
+					numText = "El número s'escriu: disset";
 				}
 
-				if (desenes == 1 && unitats == 8) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: divuit";
+				if (desenes == 1 && unitats >= 8 && unitats <=9) {
+					numText = "El número s'escriu: di"+text_unitats;
 				}
 
-				if (desenes == 1 && unitats == 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: dinou";
+				if (desenes ==2 && unitats >= 1 && unitats <= 9) {
+					numText = "El número s'escriu: " +text_desenes+	"-i-" +text_unitats;
 				}
 
-				if (desenes == 2 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
+				if (desenes >= 3 && desenes <=9 && unitats >= 1 && unitats <= 9) {
+					numText = "El número s'escriu: " +text_desenes+	"-" +text_unitats;
 				}
 
-				if (desenes == 2 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						"-i-" +
-						text_unitats;
-				}
-
-				if (desenes == 3 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 3 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 4 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 4 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 5 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 5 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 6 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 6 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 7 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 7 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 8 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 8 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
-
-				if (desenes == 9 && unitats == 0) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " + text_desenes;
-				}
-
-				if (desenes == 9 && unitats >= 1 && unitats <= 9) {
-					document.getElementById("num_a_Text").innerHTML =
-						"El número s'escriu: " +
-						text_desenes +
-						" " +
-						text_unitats;
-				}
+				document.getElementById("numaText").innerHTML = numText;
 			}
 		</script>
 	</body>

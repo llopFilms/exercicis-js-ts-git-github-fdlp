@@ -22,7 +22,7 @@
 	<input type='button' onClick='conversorTemp()' Value='Clica per convertir a Farenheit'/>
 	<br/>
 	<p id="conversió"></p>
-	
+
 	<script>
 	
 		function conversorTemp(){
@@ -31,14 +31,14 @@
 			let celsius = Number(document.getElementById("caixaTemp").value);
 			
 			//Si a la fórmula: (32 °C × 9 / 5) + 32 = 89,6 °F, vol dir que 32 °C = 89,6 °F. Creem una constant i la relació és:
-			const conversió = (celsius * 9/5) + 32;
-			let farenheit = conversió;
+			const CONVERSIO = (celsius * 9/5) + 32;
+			let farenheit = CONVERSIO;
 
 			//Sortida de dades
 			document.getElementById("conversió").innerHTML = "Els <strong>" +celsius+ "</strong> graus Celsius que has introduit equivalen a <strong>" +farenheit+ "</strong> graus Farenheit.";
 
 
-			
+
 
 
 

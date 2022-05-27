@@ -18,6 +18,8 @@
 	<h2>Dies que té el mes</h2>
 	<p> Tria una mes de l'any, gràcies </p>
 
+		<input type="text" id="numMes"/>
+
 		<select name="mesos" id="selecció mesos">
 			<option value="Gener">Gener</option>
 			<option value="Febrer">Febrer</option>
@@ -31,21 +33,21 @@
 			<option value="Octubre">Octubre</option>
 			<option value="Novembre">Novembre</option>
 			<option value="Desembre">Desembre</option>
-		</select>	
-	
+		</select>
+
 	<br><br>
 		<input type='button' onClick='diesMes()' Value='Clica aquí per saber-ho'/>
 		<br/>
 		<p id="tantsDies"></p>
-	
+
 	<script>
-	
+
 		function diesMes(){
 
 			//Captació de dades des d'HTML i conversió a Number
 			let mes = document.getElementById("selecció mesos").value;
-			let dies = 0;
-				
+			let dies;
+
 			//switch i sortida de dades a id d'HTML
 			switch (mes){
 
@@ -70,11 +72,12 @@
 				case "Novembre":
 					dies = 30;
 				break;
-				
-			}	
+
+			}
+
 			document.getElementById("tantsDies").innerHTML = "El mes de <b>" +mes+ "</b> té <b>" +dies+ "</b> dies.";
-			
-		}		
+
+		}
 
 	</script>
 	

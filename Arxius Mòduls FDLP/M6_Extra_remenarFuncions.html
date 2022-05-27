@@ -102,13 +102,14 @@
                 numGran = numFin;
                 numPetit = numIni;
             }
-    
+            console.log(numGran, numPetit);
             let i, interval = (numGran-numPetit-1);
             let arraySerie = [];
 
             for (i=0; i<interval; i++){
                 arraySerie.push(numPetit+1+i);
             }
+            console.log(arraySerie);
             return arraySerie;
             
         }

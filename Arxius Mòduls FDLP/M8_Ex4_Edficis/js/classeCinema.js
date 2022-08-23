@@ -24,7 +24,7 @@ class Cinema extends Edifici {
 
     projectarSessio(numEspectadors, preuEntrada) {
 
-        let recaptacio = (numEspectadors * preuEntrada).toFixed(2);;
+        let recaptacio = (numEspectadors * preuEntrada).toFixed(2);
         let missatge1 = "L'aforament és inferior al número d'espectadors."
         let missatge2 = "S'han recaptat <b>"+recaptacio+" </b>€."
     

@@ -17,11 +17,11 @@
     <br/><br/><br/>
 
     <input type="radio" id="parells" name="selector">
-    <label for="selector">Suma dels números parells dins de l'array:</label> 
+    <label for="selector">Suma dels números parells dins de l'array:</label>
     <input type="text" id="sumParells" size="8">
     <br/><br/>
     <input type="radio" id="imparells" name="selector">
-    <label for="selector">Suma dels números imparells dins de l'array:</label> 
+    <label for="selector">Suma dels números imparells dins de l'array:</label>
     <input type="text" id="sumImparells" size="8">
     <br/><br/><br/>
     <input type="button" onClick="validacio()" value="Clica aquí"/>
@@ -43,13 +43,13 @@
     }
     
     //Funció escriu dada valor
-    function escriuDadaValue(id,dada){        
+    function escriuDadaValue(id,dada){
 
         document.getElementById(id).value = dada;
     }
 
     //Funció escriu dada en HMTL
-    function escriuDada(id,dada){        
+    function escriuDada(id,dada){
 
         document.getElementById(id).innerHTML = dada;
     }
@@ -74,7 +74,7 @@
 
         let i, element = "", sumaPar = 0, sumaImp = 0;
 
-        for (i=0; i<=array.length-1; i++) {
+        for (i=0; i<array.length; i++) {
 
             element = Number(array[i]);
 
@@ -107,8 +107,8 @@
         }else{
             escriuDadaValue("sumParells", "");
             escriuDadaValue("sumImparells", resultat);
-        } 
-    }      
+        }
+    }
 
      //Funció Validació
     function validacio(){

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Telefon {
+
+			constructor (marca) {
+
+					this.marca = marca;
+			}
+
+			anunci() {
+
+				return `Ha arribat el telèfon model: ${this.marca}`;
+			}
+		}
+
+		class Model extends Telefon{
+
+			constructor (marca, model) {
+
+				super (marca);
+				this.model = model;
+			}
+
+			anunciComplert() {
+
+				return `${super.anunci()}. I és el model: ${this.model}`;
+			}
+		}
+
+		let nouTelèfon = new Model("Google", "pixel");
+		console.log(nouTelèfon.anunciComplert());
+
+		class Rectangle{
+			constructor (x,y){
+				this.x = x;
+				this.y = y;
+			}
+
+			static area (a, b){
+				return a * b;
+			}
+
+			static perimetre (a, b) {
+				return 2*a + 2*b;
+			}
+		}
+
+		//let rectangle1 = new Rectangle;
+		console.log("No cal instanciar res");
+		console.log(Rectangle.area(2,3));
+		console.log(Rectangle.perimetre(2,3));
+	</script>
+
+
+</body>
+</html>

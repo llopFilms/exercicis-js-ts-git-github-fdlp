@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const cat = ["bcn", "tgn", "llei", "gir"];
+		const [b, t, l ,g] = cat;
+
+		console.log(b);
+		console.log(t);
+		console.log(l);
+		console.log(g);
+		
+		const [cc, ba = "Merida"] = ["Cáceres"];
+
+		console.log(cc);
+		console.log(ba);
+
+		const varis = { p: 11, q: true, r:"Hola" };
+		const {p,q,r} = varis;
+
+		console.log(p);
+		console.log(q);
+		console.log(r);
+
+		const { p: primer, q: segon, r: tercer } = varis;
+
+		console.log(primer);
+		console.log(segon);
+		console.log(tercer);
+
+		let x, y;
+		({x, y} = {x:3, y:4});
+
+		console.log(x);
+		console.log(y);
+
+		({x: aa, y: bb} = {x:3, y:4});
+
+		console.log(aa);
+		console.log(bb);
+
+		
+	</script>
+</body>
+</html>

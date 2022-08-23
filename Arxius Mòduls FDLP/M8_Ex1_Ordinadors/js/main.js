@@ -1,69 +1,45 @@
 
 
 //Variables globals
-let ordinador1 = new Ordinador();
-let ordinador2 = new Ordinador();
+let ordinador1;
+let ordinador2;
 
 //Funció creació objecte ordinador + validació
 function creaObjOrdinador(num, tipMarca, tipModel, tipProcessador, tipMemoria, tipDiscDur) {
     
-    let continuar = false;
-
     let marca = prompt("Introdueix la marca de l'ordinador "+num+": ", tipMarca);
-    continuar = validacioIndPr(marca);
-    while (continuar == false){
-        marca = prompt ("Les dades són incorrectes. Torna a introduir-les");
     
-        if (validacioIndPr(marca) == true) {
-        continuar = true;
-        }
+    while (validacioIndPr(marca) == false){
+        marca = prompt ("Les dades són incorrectes. Torna a introduir-les");
     }
 
     let model = prompt("Introdueix el model de l'ordinador "+num+": ", tipModel);
-    continuar = validacioIndPr(model);
-    while (continuar == false){
-        model = prompt ("Les dades són incorrectes. Torna a introduir-les");
     
-        if (validacioIndPr(model) == true) {
-        continuar = true;
-        }
+    while (validacioIndPr(model) == false){
+        model = prompt ("Les dades són incorrectes. Torna a introduir-les");
     }
 
     let processador = prompt("Introdueix el processador de l'ordinador "+num+": ",tipProcessador);
-    continuar = validacioIndPr(processador);
-    while (continuar == false){
-        processador = prompt ("Les dades són incorrectes. Torna a introduir-les");
     
-        if (validacioIndPr(processador) == true) {
-        continuar = true;
-        }
+    while (validacioIndPr(processador) == false){
+        processador = prompt ("Les dades són incorrectes. Torna a introduir-les");
     }
     
     let memoria = prompt("Introdueix la capacitat de memòria de l'ordinador "+num+" :", tipMemoria);
-    continuar = validacioIndPr(memoria);
-    while (continuar == false){
-        memoria = prompt ("Les dades són incorrectes. Torna a introduir-les");
     
-        if (validacioIndPr(memoria) == true) {
-        continuar = true;
-        }
+    while (validacioIndPr(memoria) == false){
+        memoria = prompt ("Les dades són incorrectes. Torna a introduir-les");
     }
 
-
     let discDur = prompt("Introdueix la capacitat de Disc Dur de l'ordinador "+num+" : ", tipDiscDur);
-    continuar = validacioIndPr(discDur);
-    while (continuar == false){
-        discDur = prompt ("Les dades són incorrectes. Torna a introduir-les");
     
-        if (validacioIndPr(discDur) == true) {
-        continuar = true;
-        }
+    while (validacioIndPr(discDur) == false){
+        discDur = prompt ("Les dades són incorrectes. Torna a introduir-les");
     }
 
     let nouOrdinador = new Ordinador(marca, model, processador, memoria, discDur);
 
     return nouOrdinador;
-    
 }
 
 //Funció llistar ordindador
@@ -134,6 +110,6 @@ function execPrograma(num, ordinador) {
 
     let parPrograma = "Visual Code Studio"
     let programa = prompt ("quin programa voleu executar a l'ordinador "+num+"?", parPrograma);
-    escriuDada("programa" +num, ordinador.execPrograma(programa));
+    escriuDada("programa" +num, ordinador.programaExec(programa));
 
 }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let codisPostals = new Map ([[49, "Zamora"],[37, "Salamanca"],[47, "Valladolid"]]);
+		let matriculas = new Map([["ZA", "Zamora"],["SA", "Salamanca"],["VA", "Valladolid"]]);
+
+		// propietats
+		console.log(codisPostals.size);
+
+		//mètodes
+		console.log(codisPostals.get(49));
+		console.log(codisPostals.set(47, "Pucela"));
+		console.log(codisPostals.get(47));
+		console.log(matriculas.has("ZA"));
+		console.log(matriculas.delete("ZA"));
+		console.log(matriculas);
+		console.log(matriculas.has("ZA"));
+		console.log(codisPostals);
+		codisPostals.clear();
+		console.log(`La mida de codis Postals és: ${codisPostals.size}`);
+
+		//iteradors
+		let amics = new Map([["Pep", 44],["Ramon", 37],["David", 56]]);
+		
+		let itClaus = amics.keys();
+		console.log(itClaus.next().value);
+		console.log(itClaus.next().value);
+		console.log(itClaus.next().value);
+		console.log(itClaus.next().value);
+
+		let itValors = amics.values();
+		console.log(itValors.next().value);
+
+		let itParells = amics.entries();
+		console.log(itParells.next().value);
+
+		let provincies = new Set( ["Palencia", "Burgos", "Soria", "Burgos"]);
+		let numeros = new Set ( [1, 2, 3, 5, 5, 5, 7, 8, 2, 1, 1, 37] );
+		let barreja = new Set( ["Palencia", "ET", "Mikasa", 3, 5, 7]	);
+
+		//propietats
+		console.log(`Províncies no repe: ${provincies.size}`);
+		console.log(provincies);
+		console.log(`Ǹúmeros no repe: ${numeros.size}`);
+		console.log(numeros);
+
+		//mètodes
+		console.log(`Hi ha un 2? ${numeros.has(2)}`);
+		console.log(`Hi ha un 4? ${numeros.has(4)}`);
+		numeros.delete(2);
+		console.log(`Hi ha un 2? ${numeros.has(2)}`);
+		provincies.add("Segovia");
+		provincies.add("Burgos");
+		console.log(`Províncies no repe: ${provincies.size}`);
+		
+		console.log(`Barreja no repe: ${barreja.size}`);
+		let codis = {34: "Spain", 33: "Français"};
+		barreja.add(codis);
+		barreja.add({34: "Spain", 33: "Français"});
+		console.table(barreja);
+		console.log(barreja.size);
+
+		let itClaus2 = provincies.keys();
+		console.log(itClaus2.next().value);
+
+		let itValors2 = provincies.values();
+		console.log(itValors2.next().value);
+
+		let itParells2 = provincies.entries();
+		console.log(itParells2.next().value);
+
+		barreja.clear();
+		console.log(`Mida Set barreja: ${barreja.size}`);
+
+		/* class Usuari {
+
+	constructor(nom, edat, feina){
+
+			this.nom = nom;
+			this.edat = edat;
+			this.feina = feina;
+
+			console.log("Objecte Ususari creat");
+	}
+
+	salutacio(missatge) {
+		return missatge;
+	}
+
+	mostrarInfo() {
+		return `
+		Ǹom: ${this.nom}
+		Edat: ${this.edat}
+		Feina: ${this.feina}
+		`;
+	}
+}
+
+const jordi2 = new Usuari ("Jordi", 46, "desenvolupador web");
+console.log(jordi2.salutacio("Hola des de Usuari2"));
+console.log(jordi2.mostrarInfo());
+
+class Estudiant extends Usuari {
+
+	constructor(nom, edat, feina, carrera){
+
+			super(nom, edat, feina);
+			this.carrera = carrera;
+
+			console.log("Objecte Estudiant creat");
+	}
+
+		mostrarInfoCarrera() {
+		return `Carrera: ${this.carrera}
+		`;
+	}
+}
+
+const ramon = new Estudiant ("Ramon", 44, "consultor", "telecos");
+console.log(ramon);
+console.log(ramon.mostrarInfo() + ramon.mostrarInfoCarrera());
+
+ */
+
+	//array
+		const preus = [100, 200, 500];
+		let valor;
+		for (valor of preus) {
+			console.log(`Preus sense IVA ${valor}`);
+			valor *= 1.21;
+			console.log(`Preus amb IVA ${valor}`);
+		};
+
+		//cadena
+		const cadena = "Hola gent";
+		let lletra;
+		for (lletra of cadena) {
+			console.log(lletra);
+		}
+
+		//map
+		const matricules = new Map ([["ZA", "Zamora"], ["SA", "Salamanca"], ["VA", "Valladolid"]]);
+		for (let matricula of matricules) {
+			console.log(matricula);
+		};
+
+		for (let [matricula, provincia] of matricules){
+			console.log(`${matricula} de la província de ${provincia}`);
+		}
+
+		//Set
+		const daus = new Set ([1,3,2,4,6,5,5,3,2]);
+		for (let tirada of daus) {
+			console.log(tirada);
+		}
+		
+		</script>
+</body>
+</html>

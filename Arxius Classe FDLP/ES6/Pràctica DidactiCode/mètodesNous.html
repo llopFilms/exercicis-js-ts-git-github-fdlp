@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		const cadena = "Hola a tothom";
+
+		console.log("startswith(): ",cadena.startsWith("H"));
+		console.log(cadena.startsWith("o", 1));
+
+		console.log("endswith(): ",cadena.endsWith("m"));
+		console.log("endswith(): ",cadena.endsWith("o", 2));
+
+		console.log("includes(): ",cadena.includes("Hola"));
+
+		console.log("repeat(): ",cadena.repeat(2));
+
+
+		const numero = 127;
+		console.log(numero);
+		console.log(Number.isInteger(numero));
+
+		const numero1 = 127.5;
+		console.log(Number.isInteger(numero1));
+
+		const numero2 = "244pop";
+		console.log(numero2);
+		console.log(isNaN(numero2));
+
+		const numero3 = 244;
+		console.log(numero3);
+		console.log(isNaN(numero3));
+
+		const numero4 = 244.75;
+		console.log(parseInt(numero4));
+		console.log(Math.trunc(numero4));
+		console.log(Math.floor(numero4));
+		console.log(Math.ceil(numero4));
+
+		const numero5 = -244.75;
+		console.log(Math.ceil(numero5));
+
+		const numero6 = 0, numero7 = -0, numero8 = NaN;
+		console.log(Math.sign(numero5));
+		console.log(Math.sign(numero6));
+		console.log(Math.sign(numero7));
+		console.log(Math.sign(numero8));
+
+		const array = [1, 2, NaN, 7];
+
+		console.log(array.findIndex(element => isNaN(element)));
+		console.log(array.findIndex(element => element > 5));
+
+		console.log(array.find(element => isNaN(element)));
+		console.log(array.find(element => element > 5));
+
+		const array2 = new Array(5).fill(7);
+		console.log(array2)
+
+		const array3 = new Array(1, 2, 3, 4, 5, 6, 7);
+		/* array3.fill("buit", 3, 5);
+		console.log(array3); */
+
+		console.log("Iteradors");
+		console.log(Object.keys(array3));
+		console.log(Object.values(array3));
+		console.log(Object.entries(array3));
+
+		const array6 = [1,2,3,,, 4,5,6,7];
+		console.log(array6);
+	</script>
+</body>
+</html>

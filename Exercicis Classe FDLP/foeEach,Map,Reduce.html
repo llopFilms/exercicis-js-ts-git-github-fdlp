@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    const facturas =[
+
+        {
+            precio: 23,
+            cantidad: 1
+
+        },
+        {
+            precio: 24,
+            cantidad: 6
+
+        },
+        {
+            precio: 26,
+            cantidad: 4
+
+        },
+        {
+            precio: 33,
+            cantidad: 8
+
+        },
+    ]
+
+const IVA = 1.21;
+
+const totalFactura = facturas.map(i => i.precio * i.cantidad * IVA);
+console.log("map1");
+console.table(totalFactura);
+
+totalFactura.forEach(i => (i.toFixed(1)));
+console.log("forEach");
+console.table(totalFactura);
+
+const totalFactura2 = totalFactura.map(i => +(i.toFixed(1)));
+console.log("map2");
+console.table(totalFactura2);
+
+const total = +(totalFactura2.reduce((a, b) => a + b).toFixed(2));
+console.log("reduce : "+total+ " tipus: "+typeof(total));
+
+const total2 = +(facturas.map(i => i.precio * i.cantidad * IVA).reduce((a, b) => a + b).toFixed(2));
+console.log("map3+reduce: "+total2 + " tipus: "+(typeof total2));
+
+
+    </script>
+
+
+</body>
+</html>

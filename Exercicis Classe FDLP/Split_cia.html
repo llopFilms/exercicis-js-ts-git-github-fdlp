@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="avis0"></p>
+    <p id="avis1"></p>
+    <p id="avis2"></p>
+    <p id="avis3"></p>
+    <p id="avis4"></p>
+    <p id="avis5"></p>
+    <p id="avis6"></p>
+    <p id="avis7"></p>
+    <p id="avis8"></p>
+    <p id="avis9"></p>
+    <p id="avis10"></p>
+    <script>
+
+        //Funció escriu dada (o com no esciure document... mai més)
+        function escriuDada(id,dada) {  
+							
+            document.getElementById(id).innerHTML = dada;
+        }
+
+        //Donada una cadena
+        escriuDada("avis0", "<b>Donada un string de text: let cadena = 'patata; ceba; tomàquet'</b>");
+        let cadena = "patata; ceba; tomàquet";
+
+        //Convertir en array les paraules de la cadena, i quan troba un ; fica un nou element i treu el ; (afegit entre ,)
+        let arraySplit1 = cadena.split (";");
+        escriuDada("avis1", "<small>Convertir en array les paraules de la cadena, i quan troba un ; fica un nou element i treu el ; (element afegit entre ,). </small><br><b>arraySplit1: </b>"+arraySplit1);
+
+        //Convertir en array caràcter per caràcter
+        //Amb split
+        let arraySplit2= cadena.split ("");
+        escriuDada("avis2", "<small>Convertir en array caràcter per caràcter (elements afegits entre ,).</small><br><b>arraySplit2: </b>"+arraySplit2);
+        console.log("arraySplit2: ",arraySplit2);
+
+        //Amb array.from
+        let arraySplit3 = Array.from(cadena);
+        console.log("arraySplit3: ",arraySplit3);
+
+        //Amb spread operator
+        let arraySplit4 = [...cadena];
+        console.log("arraySplit4: ",arraySplit4);
+
+        //Executar una funció dins de la conversió a array afegint número d'índex
+        let arraySplit5 = Array.from(cadena, (element, index) => element + "-" + index);
+        console.log("arraySplit5: ",arraySplit5);
+
+        let nums = 0123456;
+        let arraySplit6 = Array.from(nums, (element) => element *2);
+        console.log("arraySplit6: ",arraySplit6);
+
+        //Amb el traidicional loop for of
+        let i, array = [];
+        for (i of cadena){
+            array.push(i);
+        }
+        console.log("array: ",array);
+    </script>
+</body>
+</html>

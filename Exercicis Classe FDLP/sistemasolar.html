@@ -1,0 +1,53 @@
+<HTML>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {font-family: Roboto, Verdana, 'Segoe UI', Tahoma, Helvetica; margin: 0 auto; padding: 2em 15em 5em 5em;}
+		h1 {color: deeppink;}
+		hr {width: 100%;  border-bottom: deeppink; }
+		/* https://www.mclibre.org/consultar/htmlcss/css/css-hr.html */
+		select {padding-left: 1em; padding-top:1em; margin-right: 3em; border: 1px solid #eee; width: 20em;}
+		select:focus{ outline: none;}
+	</style>
+     <title>Sistema Solar</title>
+</head>
+<body>
+      <h1>El Sistema Solar</h1>
+	<button onclick="alert('Programado por:\n\Rita de la Torre')"> Acerca de Sistema Solar</button>
+	<button onclick="self.close()">Terminar</button>
+	<hr>
+      <h3>Seleccione el astro deseado</h3>
+		<select id="astros" size="14" onchange="mostrar()">
+			<option value="img\sol.jpg">Sol</option> 
+			<option value="img\mercurio.jpg">Mercurio</option>
+			<option value="img\venus.jpg">Venus</option> 
+			<option value="img\tierra.jpg">La Tierra</option>
+			<option value="img\marte.jpg">Marte</option>
+			<option value="img\asteroide.jpg">Asteroides</option>
+			<option value="img\jupiter.jpg">Jupiter</option>
+			<option value="img\saturno.jpg">Saturno</option> 
+			<option value="img\meteorito.jpg">Meteorito</option>
+			<option value="img\neptuno.jpg">Neptuno</option> 
+			<option value="img\urano.jpg">Urano</option> 
+			<option value="img\pluton.jpg">Plutón</option> 
+			<option value="img\nave.jpg">Nave Espacial</option>
+		</select>
+		<img src="img\sol.jpg" id="imgAstro" width="225" height="225">
+		<br>
+		<hr>
+		<p>Sobre el 
+		<a target="_blank" href="https://lenguajejs.com/javascript/dom/seleccionar-elementos-dom/">DOM</a>
+		 ( HTML Document Object Model )</p>
+
+     <script>
+		function mostrar(){
+			let imagen = document.getElementById('astros').value;
+			document.getElementById('imgAstro').src = imagen;
+
+
+		}
+    </script>
+</body>
+</html>

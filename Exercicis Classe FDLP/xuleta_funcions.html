@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<body lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica funcions</title>
+</head>
+    <body>
+        <p><b>Fins ara, s'ha fet tot amb 1 sola funció sense retorn i sense paràmetres cridada amb un onclick. A partir d'aquí, el lío...</b></p><hr>
+
+        <p><b>Funció sense retorn i amb paràmetres</b></p>
+
+        <p id="paragraf1">Sóc el paràgraf 1</p>
+        <p id="paragraf2">Sóc el paràgraf 2</p>
+        <p id="paragraf3">Sóc el paràgraf 3</p>
+        <p id="paragraf4">Sóc el paràgraf 4</p>
+        <p id="paragraf5">Sóc el paràgraf 5</p>
+
+        <br>
+        <p><b><small>Aquests botons criden a la funció primera, sense retorn i amb paràmetres veureParagraf(idParagraf), i amb l'id' com a paràmetre</small></b></p>
+
+        <button id="boto1" onclick="veureParagraf('paragraf1')">Veure contingut paràgraf 1</button>
+        <button id="boto2" onclick="veureParagraf('paragraf2')">Veure contingut paràgraf 2</button>
+        <button id="boto3" onclick="veureParagraf('paragraf3')">Veure contingut paràgraf 3</button>
+        <button id="boto4" onclick="veureParagraf('paragraf4')">Veure contingut paràgraf 4</button>
+        <button id="boto5" onclick="veureParagraf('paragraf5')">Veure contingut paràgraf 5</button>
+
+        
+        <hr>
+        <p><b>Funció sense retorn i sense paràmetres que crida a una funció sense retorn i amb paràmetres</b></p>
+        <p>Quin paràgraf vols canviar? de l'1 al 5, escriu el seu id <span><input type="number" id="numP" placeholder="Escriu el número de 'id'..."></span></p>
+
+        <p>Què vols canviar? escriu un text <span><input type="text" id="textNou" placeholder="Escriu el text nou..."></span></p>
+
+        <br>
+        <p><b><small>Aquest botó crida a la funció primera, sense retorn i sense paràmetres buscarParagraf(), i aquesta crida a l'altra funció, sense retorn i amb paràmetres editarParagraf(numeroParagraf, textCanvis)</small></b></p>
+        <button id="botoP" onclick="buscarParagraf()">Canviar contingut paràgraf</button>
+
+        <hr>
+
+        <p><b>Funció sense retorn i sense paràmetres que crida a una funció amb retorn i sense paràmetres</b></p>
+        
+        <br>
+        <p><b><small>Aquest botó crida a la funció primera, sense retorn i sense paràmetres veureMesAvui(), i aquesta crida a l'altra funció, amb retorn i sense paràmetres buscarMesAvui()</small></b></p>
+        <button id="botoMes" onclick="veureMesAvui()">Mes que som ara</button>
+        <p id="avisMes"></p>
+        <hr>
+        
+
+        <p><b>Funció sense retorn i sense paràmetres que crida a una funció amb retorn i amb paràmetres</b></p>
+
+        <br>
+        <p>Número 1 <input type="number" id="num1"></p>
+        <p>Número 2 <input type="number" id="num2"></p>
+
+        <p><b><small>Aquest botó crida a la funció primera, sense retorn i sense paràmetres cridarSuma(), i aquesta crida a l'altra funció, amb retorn i amb paràmetres suma(numero1, numero2)</small></b></p>
+        <button id="botoSuma" onClick="cridarSuma()">Suma dels números</button>
+
+        <p id="avisSuma"></p>
+
+        <script>
+            "use strict"
+
+
+        //Funció sense retorn i amb paràmetres
+
+        function veureParagraf(idParagraf){
+
+            let contingut = document.getElementById(idParagraf).innerHTML;
+            console.log("El valor que he rebut a través del paràmetre idParagraf és: " +idParagraf+ ".\nI el que hem ficat a la variable contingut és: " +contingut+ ".");
+            alert ("El text de " +idParagraf+ " és: " +contingut+ ". I el meu 'id' l'han fet servir com a paràmetre.");
+        }
+
+
+        //Funció sense retorn i sense paràmetres que crida a una funció sense retorn i amb paràmetres
+
+        function editarParagraf(numParr, textParr){
+
+            //let numParr
+            //let textParr
+
+            console.log("ENTRANT A FUNCIÓ editarParagraf() --> Número de Paràgraf: numParr = " +numParr+ ". Text a canviar: textParr = " +textParr);
+            document.getElementById(numParr).innerHTML = textParr;
+        }
+
+        function buscarParagraf(){
+
+            let numeroParagraf = "paragraf" + document.getElementById("numP").value;
+            let textCanvis = document.getElementById("textNou").value;
+
+            console.log("SORTINT DE FUNCIÓ buscarParagraf() --> Número de Paràgraf: numeroParagraf = " +numeroParagraf+ ". Text a canviar: textCanvis = " +textCanvis);
+
+            editarParagraf(numeroParagraf, textCanvis);
+        }
+
+
+        //Funció sense retorn i sense paràmetres que cirda a una funció amb retorn i sense paràmetres
+
+        function buscarMesAvui(){
+
+            let data = new Date();
+            let numMes = data.getMonth();
+            console.log("Número de mes generat per l'ordinador dins de la funció buscarMesAvui(). numMes = " +numMes);
+
+            const mesos = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Setembre", "Octubre", "Novembre", "Desembre"];
+            let mesAvui = mesos[numMes];
+            console.log("Nom del mes buscat a dins de l'array de la funció buscarMesAvui(): mesAvui = " +mesAvui);
+            
+            console.log("RETURN SORTINT DE FUNCIÓ buscarMesAvui() cap a verueMesAvui() --> " +mesAvui);
+            return mesAvui;
+        }
+
+        function veureMesAvui(){
+
+            document.getElementById("avisMes").innerHTML = "Estem al mes de <b>" + buscarMesAvui();
+
+            console.log("RETURN ARRIBANT A FUNCIÓ verueMesAvui() des de buscarMesAvui() --> Març" );
+        }
+
+
+        //Funció sense retorn i paràmetres que crida a una funció amb retorn i paràmetres
+
+        function suma(numeroU, numeroDos){
+
+            console.log("ENTRANT A FUNCIÓ suma() des de cridarSuma() --> numeroU = "+numeroU+ " numeroDos = " +numeroDos);
+
+            let sumanumeros = numeroU + numeroDos;
+            console.log("RETURN SORTINT DE FUNCIÓ suma() cap a cridarSuma()--> " +(numeroU + numeroDos));
+            return sumanumeros;
+        }
+            
+        function cridarSuma(){
+
+            let numero1 = Number(document.getElementById("num1").value);
+            let numero2 = Number(document.getElementById("num2").value);
+            
+            
+            let resultat = suma(numero1, numero2);
+            console.log("SORTINT DE FUNCIÓ cridarSuma() cap a suma() --> numero1 = "+ numero1+ " numero2 = " +numero2);
+
+            console.log("RETURN ARRIBANT A FUNCIÓ cridarSuma() des de suma() (ficat a la variable 'resultat') --> resultat = " +resultat);
+            document.getElementById("avisSuma").innerHTML = "La suma és :<b> " +resultat;
+        }
+
+        
+        </script>
+    </body>
+</html>

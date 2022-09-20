@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://icanhazdadjoke.com/", {
+        headers: { Accept: "application/json" },
+      })
+        .then((resposta) => resposta.json())
+        .then((resposta) => console.log(resposta))
+        .catch((error) => console.log(error));
+
+      const rebreAcudit = async () => {
+        try {
+          const resposta = await fetch("https://icanhazdadjoke.com/", {
+            headers: {
+              Accept: "application/json",
+            },
+          });
+          const dades = await resposta.json();
+          console.log(dades);
+        } catch (err) {
+          console.log(err.message);
+        }
+      };
+      rebreAcudit();
+    </script>
+  </body>
+</html>

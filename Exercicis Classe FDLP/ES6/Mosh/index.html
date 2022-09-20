@@ -1,468 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<script>
-
-		"use strict";
-
-		function sayHello() {
-
-				for (var i = 0; i < 5; i++) {
-					console.log("i dins ",i);
-			}
-			console.log("i fora ", i);
-		}
-		sayHello();
-
-		function sayHello2() {
-
-				for (let i = 0; i < 5; i++) {
-					console.log("i dins ",i);
-			}
-			//console.log("i fora ", i);
-		}
-		sayHello2();
-
-		const x = 2;
-		//x = 4;
-		console.log(x);
-
-		const person = {
-
-			name: "Jordi",
-			cognom: "Llop",
-			caminar() { console.log("mètode caminar de person: Xino-xano!"); },
-			parlar() { console.log("mètode parlar de person: Hola nois!"); }
-		};
-
-		person.parlar();
-		person.caminar();
-		const nom = person.name;
-		console.log("person.name: ",nom);
-
-		person.name = "Ramon";
-		console.log("varaiable nom: ",nom);
-		console.log("nou person.name: ",person.name);
-
-		const propietatX = "name";
-		person[propietatX] = "Pep";
-
-		console.log(person);
-
-		const person2 = {
-			
-			name: "Mosh",
-			walk() {
-				console.log(this);
-			}
-		};
-		person2.walk();
-
-		const walk = person2.walk;
-		const walkBind = person2.walk.bind(person2);
-		walk();
-		walkBind();
-
-		const square = function(number) {
-			return numer ** 2;
-		}
-
-		const square2 = number => number ** 2;
-		console.log(square2(5));
-
-		const jobs = [
-			{ id: 1, isActive: true },
-			{ id: 2, isActive: true },
-			{ id: 3, isActive: false }
-		];
-
-		const activeJobs = jobs.filter(function(job) {
-			return job.isActive;
-		});
-		console.log(activeJobs);
-
-		const activeJobs2 = jobs.filter((job) => !job.isActive);
-		console.log(activeJobs2);
-
-		const animal = {
-			
-			bordar() { 		
-				setTimeout(() => { console.log("Guau!", this); }, 1200);
-			}
-		};
-		//animal.bordar();
-		//const prova = animal.bordar();
-		//console.log(prova);
-
-		const colors = ["vermell", "blau", "groc"];
-		const items = colors.map(element => `<li>${element}</li>`);
-		console.log(items);
-
-		const address = {
-
-			street: "Gran Via",
-			city: "San Francisco",
-			country: "CA"
-		}
-
-		const street2 = address.street;
-		const city2 = address.city;
-		const country2 = address.country;		
-		console.log(street2, city2, country2);
-
-		const {street, city, country} = address;
-		console.log(street, city, country);
-
-		const {street:street3, city:city3, country:country3} = address;
-		console.log(street3, city3, country);
-
-		const first = [1, 2, 3];
-		const second = [4, 5, 6];
-
-		const combined = first.concat(second);
-		console.log(combined);
-
-		const combined2 = ["c4", ...first, "a2", ...second, "b3"];
-		console.log(combined2);
-		
-		const clone = [...first];
-		console.log(first, clone);
-		
-		const third = {name: "Mosh"};
-		const forth = {job: "instructor"};
-
-		const combined3 = {...third, ...forth, location: "Australia"};
-		console.log(combined3);
-
-		const clone2 = {...combined3};
-		console.log(combined3);
-
-		const num6 = [1, 2, 3, 4, 5, 6, 7, 8];
-		const [primer2, segon2, , quart, , sise, , vuite] = num6;
-		console.log(primer2, segon2, quart, sise, vuite);
-
-		class Persona {
-
-			constructor (name) {
-
-				this._name = name;
-			}
-
-			get name () { return this._name; }
-
-			talk() {
-				return ("talk de la classe super");
-			}
-		}
-
-		const personeta = new Persona("Ramon");
-		console.log(personeta.name);
-		console.log(personeta.talk());
-
-		class Teacher extends Persona {
-
-			constructor(name, degree) {
-
-				super(name);
-				this._degree = degree;
-			}
-
-			get degree () { return this._degree; }
-
-			teach() {
-				return ("teach de la classe heredada");
-			}
-			
-			explain() {
-				return (`Sóc un teacher i puc ${super.talk()} i puc ${this.teach()} i puc explain`);
-			}
-		}
-
-		const profe = new Teacher("Pep", "WebDev");
-		console.log("Objecte profe ",profe);
-		console.log(`${profe.name} can ${profe.talk()}`);
-		console.log(`${profe.name} can ${profe.teach()}`);
-		console.log(`Sóc en ${profe.name}. ${profe.explain()}`);
-
-		class Person {
-
-			constructor(name) {
-				this.name = name
-			}
-
-			hello() {
-				return 'Hello, I am ' + this.name + '.'
-			}
-		}
-
-		class Actor extends Person {
-
-			hello() {
-				return super.hello() + ' I am an actor.'
-			}
-		}
-
-		var tomCruise = new Actor('Tom Cruise')
-		console.log(tomCruise.hello());
-
-		const a = [1, 2, 7];
-
-		const g = a.reduce((actual, previ) => actual + previ);
-		console.log(g);
-		const h = a.sort((actual, previ) => actual + previ);
-		console.log(h);
-
-		const b = ["hola", "com", "esteu"];
-
-		const c = b.reduce((actual, previ) => actual + "-" + previ);
-		console.log("reduce: ",c);
-		const c2 = b.join("-");
-		console.log("join: ",c2);
-		
-		const d = b.sort();
-		console.log(d);
-		
-		const num = [1, 2, 3, 4, 5];
-		let [primer, segon, ...laResta] = num;
-		console.log(primer, segon, laResta);
-		console.log(primer, segon, ...laResta);
-
-		const e = (a, b, c, d, e) => {
-
-			console.log(...num);
-			return a+b+c+d+e;
-		}
-		console.log(e(...num));
-		
-		const f = (...a) => {
-
-			console.log(a);
-			let sum = 0;
-			for (let i = 0; i < a.length; i++){
-				sum += a[i];
-			}
-			return sum
-		}
-		console.log(f(...num));
-
-		const o = (a) => {
-
-			console.log(a);
-			let sum = 0;
-			for (let i = 0; i < a.length; i++){
-
-				let veure = a[i];
-				if (a[i] != ",") sum += Number(a[i]);
-			}
-			return sum
-		}
-		console.log(o(num));
-		
-		const num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5;
-		const p = (...nums) => {
-
-			console.log(nums);
-			let sum = 0;
-			for (let i = 0; i < nums.length; i++){
-				sum += nums[i];
-			}
-			return sum
-		}
-		console.log(p(num1, num2,	num3, num4, num5));
-
-		const q = (a) => {
-
-			console.log(a);
-			let sum = 0;
-			for (let i = 0; i < a.length; i++){
-
-				let veure = a[i];
-				if (a[i] == ",") continue;
-				sum += Number(a[i]);
-			}
-			return sum
-		}
-		console.log(q(num));
-
-		const something = "Y";
-		const xy = {something: something};
-
-		const anything = "Z";
-		const xx = {anything};
-
-		console.log(xx, xy)
-
-		for (const v of ['a', 'b', 'c']) {
-			console.log(v);
-		}
-
-		//get the index as well, using `entries()`
-		for (const [i, v] of ['a', 'b', 'c'].entries()) {
-			console.log(i, v);
-		}
-
-		const v = ['a', 'b', 'c'];
-		console.log(Object.entries(v));
-
-		const serie = ["c", "d", "e", "f", "g", "h"];
-
-		let llista = "";
-		for (const element of serie) {
-
-				llista += 
-				`element--> ${element}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      function sayHello() {
+        for (var i = 0; i < 5; i++) {
+          console.log("i dins ", i);
+        }
+        console.log("i fora ", i);
+      }
+      sayHello();
+
+      function sayHello2() {
+        for (let i = 0; i < 5; i++) {
+          console.log("i dins ", i);
+        }
+        //console.log("i fora ", i);
+      }
+      sayHello2();
+
+      const x = 2;
+      //x = 4;
+      console.log(x);
+
+      const person = {
+        name: "Jordi",
+        cognom: "Llop",
+        caminar() {
+          console.log("mètode caminar de person: Xino-xano!");
+        },
+        parlar() {
+          console.log("mètode parlar de person: Hola nois!");
+        },
+      };
+
+      person.parlar();
+      person.caminar();
+      const nom = person.name;
+      console.log("person.name: ", nom);
+
+      person.name = "Ramon";
+      console.log("varaiable nom: ", nom);
+      console.log("nou person.name: ", person.name);
+
+      const propietatX = "name";
+      person[propietatX] = "Pep";
+
+      console.log(person);
+
+      const person2 = {
+        name: "Mosh",
+        walk() {
+          console.log(this);
+        },
+      };
+      person2.walk();
+
+      const walk = person2.walk;
+      const walkBind = person2.walk.bind(person2);
+      walk();
+      walkBind();
+
+      const square = function (number) {
+        return numer ** 2;
+      };
+
+      const square2 = (number) => number ** 2;
+      console.log(square2(5));
+
+      const jobs = [
+        { id: 1, isActive: true },
+        { id: 2, isActive: true },
+        { id: 3, isActive: false },
+      ];
+
+      const activeJobs = jobs.filter(function (job) {
+        return job.isActive;
+      });
+      console.log(activeJobs);
+
+      const activeJobs2 = jobs.filter((job) => !job.isActive);
+      console.log(activeJobs2);
+
+      const animal = {
+        bordar() {
+          setTimeout(() => {
+            console.log("Guau!", this);
+          }, 1200);
+        },
+      };
+      //animal.bordar();
+      //const prova = animal.bordar();
+      //console.log(prova);
+
+      const colors = ["vermell", "blau", "groc"];
+      const items = colors.map((element) => `<li>${element}</li>`);
+      console.log(items);
+
+      const address = {
+        street: "Gran Via",
+        city: "San Francisco",
+        country: "CA",
+      };
+
+      const street2 = address.street;
+      const city2 = address.city;
+      const country2 = address.country;
+      console.log(street2, city2, country2);
+
+      const { street, city, country } = address;
+      console.log(street, city, country);
+
+      const { street: street3, city: city3, country: country3 } = address;
+      console.log(street3, city3, country);
+
+      const first = [1, 2, 3];
+      const second = [4, 5, 6];
+
+      const combined = first.concat(second);
+      console.log(combined);
+
+      const combined2 = ["c4", ...first, "a2", ...second, "b3"];
+      console.log(combined2);
+
+      const clone = [...first];
+      console.log(first, clone);
+
+      const third = { name: "Mosh" };
+      const forth = { job: "instructor" };
+
+      const combined3 = { ...third, ...forth, location: "Australia" };
+      console.log(combined3);
+
+      const clone2 = { ...combined3 };
+      console.log(combined3);
+
+      const num6 = [1, 2, 3, 4, 5, 6, 7, 8];
+      const [primer2, segon2, , quart, , sise, , vuite] = num6;
+      console.log(primer2, segon2, quart, sise, vuite);
+
+      class Persona {
+        constructor(name) {
+          this._name = name;
+        }
+
+        get name() {
+          return this._name;
+        }
+
+        talk() {
+          return "talk de la classe super";
+        }
+      }
+
+      const personeta = new Persona("Ramon");
+      console.log(personeta.name);
+      console.log(personeta.talk());
+
+      class Teacher extends Persona {
+        constructor(name, degree) {
+          super(name);
+          this._degree = degree;
+        }
+
+        get degree() {
+          return this._degree;
+        }
+
+        teach() {
+          return "teach de la classe heredada";
+        }
+
+        explain() {
+          return `Sóc un teacher i puc ${super.talk()} i puc ${this.teach()} i puc explain`;
+        }
+      }
+
+      const profe = new Teacher("Pep", "WebDev");
+      console.log("Objecte profe ", profe);
+      console.log(`${profe.name} can ${profe.talk()}`);
+      console.log(`${profe.name} can ${profe.teach()}`);
+      console.log(`Sóc en ${profe.name}. ${profe.explain()}`);
+
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        hello() {
+          return "Hello, I am " + this.name + ".";
+        }
+      }
+
+      class Actor extends Person {
+        hello() {
+          return super.hello() + " I am an actor.";
+        }
+      }
+
+      var tomCruise = new Actor("Tom Cruise");
+      console.log(tomCruise.hello());
+
+      const a = [1, 2, 7];
+
+      const g = a.reduce((actual, previ) => actual + previ);
+      console.log(g);
+      const h = a.sort((actual, previ) => actual + previ);
+      console.log(h);
+
+      const b = ["hola", "com", "esteu"];
+
+      const c = b.reduce((actual, previ) => actual + "-" + previ);
+      console.log("reduce: ", c);
+      const c2 = b.join("-");
+      console.log("join: ", c2);
+
+      const d = b.sort();
+      console.log(d);
+
+      const num = [1, 2, 3, 4, 5];
+      let [primer, segon, ...laResta] = num;
+      console.log(primer, segon, laResta);
+      console.log(primer, segon, ...laResta);
+
+      const e = (a, b, c, d, e) => {
+        console.log(...num);
+        return a + b + c + d + e;
+      };
+      console.log(e(...num));
+
+      const f = (...a) => {
+        console.log(a);
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+          sum += a[i];
+        }
+        return sum;
+      };
+      console.log(f(...num));
+
+      const o = (a) => {
+        console.log(a);
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+          let veure = a[i];
+          if (a[i] != ",") sum += Number(a[i]);
+        }
+        return sum;
+      };
+      console.log(o(num));
+
+      const num1 = 1,
+        num2 = 2,
+        num3 = 3,
+        num4 = 4,
+        num5 = 5;
+      const p = (...nums) => {
+        console.log(nums);
+        let sum = 0;
+        for (let i = 0; i < nums.length; i++) {
+          sum += nums[i];
+        }
+        return sum;
+      };
+      console.log(p(num1, num2, num3, num4, num5));
+
+      const q = (a) => {
+        console.log(a);
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+          let veure = a[i];
+          if (a[i] == ",") continue;
+          sum += Number(a[i]);
+        }
+        return sum;
+      };
+      console.log(q(num));
+
+      const something = "Y";
+      const xy = { something: something };
+
+      const anything = "Z";
+      const xx = { anything };
+
+      console.log(xx, xy);
+
+      for (const v of ["a", "b", "c"]) {
+        console.log(v);
+      }
+
+      //get the index as well, using `entries()`
+      for (const [i, v] of ["a", "b", "c"].entries()) {
+        console.log(i, v);
+      }
+
+      const v = ["a", "b", "c"];
+      console.log(Object.entries(v));
+
+      const serie = ["c", "d", "e", "f", "g", "h"];
+
+      let llista = "";
+      for (const element of serie) {
+        llista += `element--> ${element}
 `;
-		}
-		console.log(llista);
+      }
+      console.log(llista);
 
-		let llista2 = "";
-		for (const [index, element] of serie.entries()) {
-
-				llista2 +=
-				`index ${index} --> element ${element}
+      let llista2 = "";
+      for (const [index, element] of serie.entries()) {
+        llista2 += `index ${index} --> element ${element}
 `;
-				console.log(index, element);
-		}
-		console.log(llista2);
-		
+        console.log(index, element);
+      }
+      console.log(llista2);
 
-		let llista3 = "", element, index;
-		for (let i = 0; i < serie.length; i++) {
-
-				index = i, element = serie[i];
-				llista3 +=
-				`index ${index} --> element ${element}
+      let llista3 = "",
+        element,
+        index;
+      for (let i = 0; i < serie.length; i++) {
+        (index = i), (element = serie[i]);
+        llista3 += `index ${index} --> element ${element}
 `;
-				console.log(index, element);
-		}
-		console.log(llista3);
+        console.log(index, element);
+      }
+      console.log(llista3);
 
+      const e2 = "abc";
+      const e3 = Array.from(e2, (element, index) => `${index}-${element}`);
+      console.log(e3);
+      const e4 = Array.from(e2, (element, index) => index + "-" + element);
+      console.log(e4);
+      const e5 = Array.from(e2);
+      console.log(e5);
 
-		const e2 = "abc";
-		const e3 = Array.from(e2, (element, index) => `${index}-${element}`);
-		console.log(e3);
-		const e4 = Array.from(e2, (element, index) => index+ "-" +element);
-		console.log(e4);
-		const e5 = Array.from(e2);
-		console.log(e5);
+      const e6 = Array.of(e2);
+      console.log(e6);
+      const e7 = [e2];
+      console.log(e7);
+      const e8 = Array.of("abc");
+      console.log(e8);
 
-		const e6 = Array.of(e2);
-		console.log(e6);
-		const e7 = [e2];
-		console.log(e7);
-		const e8 = Array.of("abc");
-		console.log(e8);
+      const e9 = Array.of("a b c");
+      console.log(e9);
+      const e10 = Array.from("a b c");
+      console.log(e10);
+      const e11 = [...e2];
+      console.log(e11);
+      const e12 = "a b c";
+      const e13 = [...e12];
+      console.log(e13);
 
-		const e9 = Array.of("a b c");
-		console.log(e9);
-		const e10 = Array.from("a b c");
-		console.log(e10);
-		const e11 = [...e2];
-		console.log(e11);
-		const e12 = "a b c";
-		const e13 = [...e12];
-		console.log(e13);
+      const car = {
+        brand: "Ford",
+        model: "Fiesta",
+        start: () => "Started: ",
+        goTo: function (destinacio) {
+          return `El ${this.brand} ${this.model} va a ${destinacio}. `;
+        },
+        fuel(combustible) {
+          return `Té prou ${combustible}?`;
+        },
+      };
+      console.log(
+        car.start() + car.goTo("el carrer Mallorca") + car.fuel("qasolina"),
+      );
 
-		const car = {
-			brand: 'Ford',
-			model: 'Fiesta',
-			start: () => 'Started: ',
-			goTo: function (destinacio) { return (`El ${this.brand} ${this.model} va a ${destinacio}. `); },
-			fuel(combustible) { return `Té prou ${combustible}?`; }
-		}
-		console.log(car.start()+car.goTo("el carrer Mallorca")+car.fuel("qasolina"));
+      const me = `{ "name": "Flavio", "age": 35 }`;
+      const dataMe = JSON.parse(me);
+      console.log(dataMe);
 
-		const me = `{ "name": "Flavio", "age": 35 }`;
-		const dataMe = JSON.parse(me);
-		console.log(dataMe);
+      const data2 = { name: "Flavio", age: 35 };
+      const me2 = JSON.stringify(data2);
+      console.log(me2);
 
-		const data2 = { name: "Flavio", age: 35 };
-		const me2 = JSON.stringify(data2);
-		console.log(me2);
+      const amics = [
+        {
+          nom: "Ramon",
+          cognom: "Garcia",
+          edat: 45,
+        },
+        {
+          nom: "Pere",
+          cognom: "Pérez",
+          edat: 33,
+        },
+        {
+          nom: "Andreu",
+          cognom: "Gonzàlez",
+          edat: 16,
+        },
+      ];
 
-		const amics = [
+      console.log("amics[0] ", amics[0]);
+      console.log("amics.at(0)", amics.at(0));
+      console.log("amics.length-1: ", amics[amics.length - 1]);
+      console.log("amics.at(-1): ", amics.at(-1));
 
-			{
-				nom: "Ramon",
-				cognom: "Garcia",
-				edat: 45
-			},
-			{
-				nom: "Pere",
-				cognom: "Pérez",
-				edat: 33
-			},
-			{
-				nom: "Andreu",
-				cognom: "Gonzàlez",
-				edat: 16
-			}
-		];
+      // find retorna objecte
+      const registrat = amics.find((element) => element.nom === "Ramon");
+      console.log("amics.find: ", registrat);
+      const registrats = amics.find(
+        (element) => element.nom === "Andreu" || element.nom === "Pere",
+      );
+      console.log("amics.find2: ", registrats);
 
-		console.log("amics[0] ",amics[0]);
-		console.log("amics.at(0)" ,amics.at(0));
-		console.log("amics.length-1: ",amics[amics.length-1]);
-		console.log("amics.at(-1): ",amics.at(-1));
-		
-		// find retorna objecte
-		const registrat = amics.find(element => element.nom === "Ramon");
-		console.log("amics.find: ",registrat);
-		const registrats = amics.find(element => element.nom === "Andreu" || element.nom === "Pere");
-		console.log("amics.find2: ",registrats);
-		
-		// findIndex retorna index
-		const registrat2 = amics.findIndex(element => element.nom === "Ramon");
-		console.log("amics.findIndex: ",registrat2);
-		// reduce retorna valor
-		const sumaEdats = amics.reduce((acc, curr) => acc + curr.edat, 0);
-		console.log("amics.reduce: ",sumaEdats);
+      // findIndex retorna index
+      const registrat2 = amics.findIndex((element) => element.nom === "Ramon");
+      console.log("amics.findIndex: ", registrat2);
+      // reduce retorna valor
+      const sumaEdats = amics.reduce((acc, curr) => acc + curr.edat, 0);
+      console.log("amics.reduce: ", sumaEdats);
 
-		// map retorna array i en fa un de nou
-		const noms = amics.map(element => element.nom);
-		console.log("amics.map: ",noms);
-		const millorsAmics2 = amics.map(element => element.nom === "Ramon" || element.nom === "Pere");
-		console.log("amics.map2: ",millorsAmics2);
+      // map retorna array i en fa un de nou
+      const noms = amics.map((element) => element.nom);
+      console.log("amics.map: ", noms);
+      const millorsAmics2 = amics.map(
+        (element) => element.nom === "Ramon" || element.nom === "Pere",
+      );
+      console.log("amics.map2: ", millorsAmics2);
 
-		// filter retorna un array i en fa un de nou
-		const majorsEdat = amics.filter(element => element.edat > 18);
-		console.log("amics.filter: ",majorsEdat);
-		const millorsAmics = amics.filter(element => element.nom === "Ramon" || element.nom === "Pere");
-		console.log("amics.filter2: ",millorsAmics);
+      // filter retorna un array i en fa un de nou
+      const majorsEdat = amics.filter((element) => element.edat > 18);
+      console.log("amics.filter: ", majorsEdat);
+      const millorsAmics = amics.filter(
+        (element) => element.nom === "Ramon" || element.nom === "Pere",
+      );
+      console.log("amics.filter2: ", millorsAmics);
 
-		// sort regtorna un array i en fa un array de nou
-		const alfabetic = amics.sort((a, b) => a.nom > b.nom);
-		console.log("amics.sort per nom: ",alfabetic);
-		const edats = amics.sort((a, b) => a.edat - b.edat);
-		console.log("amics.sort per edat: ",edats);
+      // sort regtorna un array i en fa un array de nou
+      const alfabetic = amics.sort((a, b) => a.nom > b.nom);
+      console.log("amics.sort per nom: ", alfabetic);
+      const edats = amics.sort((a, b) => a.edat - b.edat);
+      console.log("amics.sort per edat: ", edats);
 
-		// every retorna true o false si tots passen el test o no
-		const seleccio = amics.every(element => element.edat > 15);
-		console.log("amics.every: ",seleccio);
+      // every retorna true o false si tots passen el test o no
+      const seleccio = amics.every((element) => element.edat > 15);
+      console.log("amics.every: ", seleccio);
 
-		// 
+      //
 
-		function additionCalculator(a, b) {
+      function additionCalculator(a, b) {
+        return a + b;
+      }
 
-			return a + b;
-		}
+      function additionCalculatorTester() {
+        if (additionCalculator(4, 6) === 10) {
+          console.log("✅ Test Passed");
+        } else {
+          console.error("❌ Test Failed");
+        }
+      }
+      additionCalculatorTester();
+      // Per escriure codis Unicode: Ctrl+Shift+u + número del caràcter
 
-		function additionCalculatorTester() {
-			if (additionCalculator(4, 6) === 10) {
-				console.log("✅ Test Passed");
-			} else {
-				console.error("❌ Test Failed");
-			}
-		}
-		additionCalculatorTester();
-		// Per escriure codis Unicode: Ctrl+Shift+u + número del caràcter
+      let str = "javascript està guapo";
+      const charCount = (str, char) => str.split(char).length - 1;
+      console.log(charCount(str, "a"));
 
+      fetch("https://icanhazdadjoke.com/", {
+        headers: { Accept: "application/json" },
+      })
+        .then((resposta) => resposta.json())
+        .then((resposta) => console.log(resposta))
+        .catch((error) => console.log(error));
 
-	</script>
-</body>
+      const rebreAcudit = async () => {
+        try {
+          const resposta = await fetch("https://icanhazdadjoke.com/", {
+            headers: {
+              Accept: "application/json",
+            },
+          });
+          const dades = await resposta.json();
+          console.log(dades);
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
+      rebreAcudit();
+    </script>
+  </body>
 </html>

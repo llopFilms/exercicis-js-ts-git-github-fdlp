@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API REST - 1</title>
+  </head>
+  <body>
+    <div id="elements"></div>
+    <div id="elements2"></div>
+    <script>
+      /*  const obj = '{"name":"John", "age":30, "city":"New York"}';
+      console.log(obj);
+      const obj2 = JSON.parse(obj);
+      console.log(obj2);
+
+      const text = '["Ford", "BMW", "Audi", "Fiat"]';
+      const myArr = JSON.parse(text);
+      console.log(text, myArr);
+
+      let xmlhttp = new XMLHttpRequest();
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      let sortida = "";
+      let result = "";
+
+      function myFunction(array) {
+        for (let i=0; i<array.length; i++) {
+          sortida += array[i].title + "<br>";  
+          console.log(array[i].title);
+        }
+        return sortida;
+      }
+      
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let myArr = JSON.parse(this.responseText);
+          console.log(myArr);
+          myFunction(myArr);
+          document.getElementById("elements").innerHTML = sortida;
+        }
+      }
+      xmlhttp.open('GET', url, true);
+      xmlhttp.send();
+      console.log(xmlhttp); */
+
+      /* let xmlhttp = new XMLHttpRequest();
+      let url = "https://jsonplaceholder.typicode.com/posts/1/comments";
+      let sortida = "";
+      let result = ""; */
+
+      /*  function myFunction(array) {
+        for (let i = 0; i < array.length; i++) {
+          sortida += array[i].id+ " - " +array[i].email+ "<br>" ;
+          console.log(array[i].id+ " - " +array[i].email);
+        }
+        return sortida;
+      } */
+
+      /*  xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let myArr = JSON.parse(this.responseText);
+          console.log(myArr);
+          myFunction(myArr);
+          document.getElementById("elements").innerHTML = sortida;
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+      console.log(xmlhttp); */
+
+      const exercici = async () => {
+        try {
+          const resposta = await fetch(
+            "https://jsonplaceholder.typicode.com/posts/1/comments",
+          );
+          const dades = await resposta.json();
+          console.log("Dades", dades);
+          console.log(dades[1].email);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      exercici();
+
+      const exercici2 = () => {
+        fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
+          .then((resposta) => resposta.json())
+          .then((dades) => console.log("Dades", dades))
+          .then((dades) => console.log(dades[1].email))
+          .catch((err) => console.log("Error amics...", err));
+      };
+      exercici2();
+    </script>
+  </body>
+</html>

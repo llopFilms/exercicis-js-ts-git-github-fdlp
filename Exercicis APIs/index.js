@@ -74,3 +74,12 @@ const getJoke = async () => {
     console.log(error);
   }
 }
+
+fetch("https://pokeapi.co/api/v2/pokemon/175/")
+  .then((data) => {
+    return data.json();
+  })
+  .then((pokemon) => {
+    console.log(pokemon);
+  })
+  .catch((error) => console.log(error.message));

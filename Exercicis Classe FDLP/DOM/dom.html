@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <!-- This is a comment node! -->
+
+  <h1>The Element Object</h1>
+  <h2>The childNodes Property</h2>
+  <p>Whitespace between elements are text nodes. Comments are also nodes.</p>
+
+  <p>The body element's child nodes are:</p>
+  <p id="demo"></p>
+
+  <script>
+    const nodeList = document.body.childNodes;
+    console.log(nodeList);
+
+    let text = "";
+    for (let i = 0; i < nodeList.length; i++) {
+      text += nodeList[i].nodeName + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  </script>
+  <h1>The Element Object</h1>
+  <h2>The children Property</h2>
+
+  <p>The tag names of the body's children are:</p>
+  <p id="demo2"></p>
+
+  <script>
+    const collection = document.body.children;
+    console.log(collection);
+    let text2 = "";
+    for (let i = 0; i < collection.length; i++) {
+      text2 += collection[i].tagName + "<br>";
+    }
+    document.getElementById("demo2").innerHTML = text2;
+  </script>
+  <h1>The Element Object</h1>
+  <h2>The nextElementSibling Property</h2>
+
+  <ul>
+    <li id="item1">Coffee (first item)</li>
+    <li id="item2">Tea (second item)</li>
+  </ul>
+
+  <p>The HTML content of the next sibling of the first list item has the text:</p>
+  <p id="demo3"></p>
+
+  <script>
+    let text3 = document.getElementById("item1").nextElementSibling;
+    console.log(text3);
+    document.getElementById("demo3").innerHTML = text3;
+  </script>
+</body>
+
+</html>

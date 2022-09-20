@@ -13,11 +13,10 @@
 <script>
 
 let i=0;
-
 for (i=0; i<5; i++) {
 
     if (i==3) {
-        alert ("'i' és 3, ara, però a dins del for encara");
+        alert ("'i' és 3, ara, però a dins del for encara i passem i=5");
         i=5;
     }
 
@@ -25,7 +24,8 @@ for (i=0; i<5; i++) {
         alert("'i' encara no és 3, i estic dins del for");
     }
 }
-alert("he acabat el for, i ara 'i' sí que és 3");
+alert("he acabat el for, i ara i és 6 perquè encara faltava i++");
+console.log(i);
 
 </script>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    .container {
+      display: flex;
+      flex-flow: wrap;
+      gap: 1rem;
+    }
+
+    .pokemon {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+
+<body>
+  <div class="container"></div>
+  <script>
+    const url = 'https://pokeapi.co/api/v2/pokemon/';
+    const container = document.querySelector(".container");
+
+    for (let i = 1; i <= 400; i++) {
+      fetch(url+i)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          const element = document.createElement("div");
+          element.classList.add("pokemon");
+          container.appendChild(element);
+          element.innerHTML = `
+          <p>Nom: <b>${data.name}</b></p>
+          <p>Ordre: <b>${data.order}</b></p>
+          <img src='${data.sprites.front_default}'/>
+          `;
+        })
+        .catch(error => console.log(error));
+    }
+  </script>
+</body>
+</html>

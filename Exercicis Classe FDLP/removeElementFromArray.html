@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arrayOfLetters = ["a", "b", "c", "d", "e", "f"];
+    const arrayOfLettersSense1 = arrayOfLetters.slice(1);
+    console.log(arrayOfLettersSense1);
+    const arrayOfLettersNomés1 = arrayOfLetters.slice(0, 1);
+    console.log(arrayOfLettersNomés1);
+    const arrayOfLettersSenseUltim = arrayOfLetters.slice(0, -1);
+    console.log(arrayOfLettersSenseUltim);
+
+    const arraySense2 = arrayOfLetters.slice(0, 1).concat(arrayOfLetters.slice(2));
+    console.log(arraySense2);
+    const arraySense2Bis = [...arrayOfLetters.slice(0, 1),...arrayOfLetters.slice(2)];
+    console.log(arraySense2Bis);
+    arrayOfLetters.splice(1, 1);
+    console.log(arrayOfLetters);
+
+    arrayOfLetters[1] = "b";
+    const arraySenseC = arrayOfLetters.filter(element => element != "c");
+    console.log(arraySenseC);
+
+    const arrayOfFruits = ['olive', 'apricot', 'cherry', 'peach', 'plum', 'mango'];
+    [ ,...arrayOfFruitsSense1] = arrayOfFruits;
+    console.log(arrayOfFruits);
+    console.log(arrayOfFruitsSense1);
+
+    [a, ...arrayOfFruitsSense1] = arrayOfFruits;
+    console.log(arrayOfFruits);
+    console.log(arrayOfFruitsSense1);
+    console.log(a);
+
+    [b, c,[...arrayOfFruits2], d,...arrayOfFruits3] = arrayOfFruits;
+    console.log(arrayOfFruits);
+    console.log(arrayOfFruits2, arrayOfFruits3);
+    console.log(b, c, d);
+
+    [e, f,...arrayOfFruits4] = arrayOfFruits;
+    console.log(arrayOfFruits);
+    const arrayOfFruitsAmb2i3 = arrayOfFruits.splice(3, 2, "poma", "pera");
+    console.log(arrayOfFruitsAmb2i3);
+    console.log(arrayOfFruits);
+    console.log(arrayOfFruits4);
+    console.log(e, f);
+
+  
+    const arrayOfNumbers = [1, 2, 3, 4, 5];
+
+    const arrayOfNumbersSenseUltim = arrayOfNumbers.pop();
+    console.log(arrayOfNumbersSenseUltim);
+    console.log(arrayOfNumbers);
+
+    const arrayOfNumbersSensePrimer = arrayOfNumbers.shift();
+    console.log(arrayOfNumbersSensePrimer);
+    console.log(arrayOfNumbers);
+
+    const arrayOfNumbersSense3 = arrayOfNumbers.splice(1, 1);
+    console.log(arrayOfNumbersSense3);
+    console.log(arrayOfNumbers);
+
+    
+
+  </script>
+</body>
+</html> 

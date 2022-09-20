@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 123432345456567667;
+        let numPrecision = +num.toPrecision(3);
+        console.log(numPrecision);
+
+      function precise(x) {
+        return +x.toPrecision(4);
+      }
+      console.log(precise(123.456));
+      console.log(precise(0.004));
+      console.log(precise(1.23e5));
+      console.log(+1234.5.toPrecision(2));
+
+      let num2 = 1.234543;
+      let numToFixed2 = +num2.toFixed(2);
+      console.log(numToFixed2);
+
+      let num3 = "1.234543 sdsds sdsd dsd";
+      console.log(parseFloat(num3));
+      console.log(parseInt(num3));
+      console.log(isNaN(num3));
+
+      let num4 = 2.122222;
+      let decimals = +String(num4).split(".")[1];
+      console.log(decimals);
+      if (decimals.length < 4) throw new Error ("Número invàlid");
+      else {
+      let num5 = +num4.toFixed(4);
+      console.log(num5);
+      }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,30 +1,1042 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document fcc</title>
-</head>
+  </head>
 
-<p id="serieNumParells"></p>
-<body>
+  <p id="serieNumParells"></p>
+
+  <body>
     <script>
-
-let numero = 9; let resultat =""; let caracter = "X";
-let cont = numero * numero;
-    let i;
-    if (numero >= 1){
+      let numero = 9;
+      let resultat = "";
+      let caracter = "X";
+      let cont = numero * numero;
+      let i;
+      if (numero >= 1) {
         console.log(cont);
-        for (i = 1; i <= cont; i++){
-            resultat += " " + caracter;
-            if(i % numero == 0){
-                resultat += "\n";
-            }
+        for (i = 1; i <= cont; i++) {
+          resultat += " " + caracter;
+          if (i % numero == 0) {
+            resultat += "\n";
+          }
         }
-    }
-console.log(resultat);
+      }
+      console.log(resultat);
+
+      function filteredArray(arr, elem) {
+        let newArr = [];
+        let i, j;
+        for (i = 0; i < arr.length; i++) {
+          for (j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] == elem) newArr.push(arr[i][j]);
+          }
+        }
+        return newArr;
+      }
+      console.log(
+        filteredArray(
+          [
+            [3, 2, 3],
+            [1, 6, 3],
+            [3, 13, 26],
+            [19, 3, 9],
+          ],
+          3,
+        ),
+      );
+
+      function filteredArray2(arr, elem) {
+        let newArr = [];
+        let i, j;
+        for (i = 0; i < arr.length; i++) {
+          for (j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] != elem) newArr.push(arr[i][j]);
+          }
+        }
+        return newArr;
+      }
+      console.log(
+        filteredArray2(
+          [
+            [3, 2, 3],
+            [1, 6, 3],
+            [3, 13, 26],
+            [19, 3, 9],
+          ],
+          3,
+        ),
+      );
+
+      function filteredArray3(arr, elem) {
+        let newArr = [];
+        let i,
+          j,
+          tres = 0;
+        for (i = 0; i < arr.length; i++) {
+          for (j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] == elem) tres++;
+          }
+          if (tres == 0) newArr.push(arr[i]);
+          tres = 0;
+        }
+        return newArr;
+      }
+      console.log(
+        filteredArray3(
+          [
+            [3, 2, 3],
+            [1, 6, 3],
+            [3, 13, 26],
+            [19, 3, 9],
+          ],
+          9,
+        ),
+      );
+
+      function filteredArray4(arr, elem) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].indexOf(elem) == -1) newArr.push(arr[i]);
+        }
+        return newArr;
+      }
+      console.log(
+        filteredArray4(
+          [
+            [3, 2, 3],
+            [1, 6, 3],
+            [3, 13, 26],
+            [19, 3, 9],
+          ],
+          9,
+        ),
+      );
+
+      const users = {
+        Alan: {
+          online: false,
+        },
+        Jeff: {
+          online: true,
+        },
+        Sarah: {
+          online: false,
+        },
+      };
+
+      function countOnline(usersObj) {
+        // Only change code below this line
+        let usersTrue = 0;
+        for (let user in usersObj) {
+          if (usersObj[user].online == true) usersTrue++;
+        }
+        return usersTrue;
+        // Only change code above this line
+      }
+      console.log(countOnline(users));
+
+      function findLongestWordLength(str) {
+        let arrStr = str.split(" ");
+        let elementLlarg = 0;
+        for (let i = 0; i < arrStr.length; i++) {
+          if (arrStr[i].length > elementLlarg) elementLlarg = arrStr[i].length;
+        }
+        return elementLlarg;
+      }
+      console.log(
+        findLongestWordLength("The quick brown fox jumped over the lazy dog"),
+      );
+
+      function findLongestWordLength2(str) {
+        return Math.max(...str.split(" ").map((element) => element.length));
+      }
+      console.log(
+        findLongestWordLength2("The quick brown fox jumped over the lazy dog"),
+      );
+
+      function findLongestWordLength3(s) {
+        return s
+          .split(" ")
+          .reduce((longest, word) => Math.max(longest, word.length), 0);
+      }
+      console.log(
+        findLongestWordLength3("The quick brown fox jumped over the lazy dog"),
+      );
+
+      function largestOfFour(arr) {
+        const result = arr.map((element) =>
+          element.reduce((previ, actual) => Math.max(previ, actual)),
+        );
+        console.log(result);
+        return result;
+      }
+
+      largestOfFour([
+        [4, 5, 1, 3],
+        [13, 27, 18, 26],
+        [32, 35, 37, 39],
+        [1000, 1001, 857, 1],
+      ]);
+
+      function largestOfFour2(arr) {
+        const result = arr.map(
+          (element) => element.sort((previ, actual) => previ < actual)[0],
+        );
+        console.log(result);
+        return result;
+      }
+
+      largestOfFour2([
+        [4, 5, 1, 3],
+        [13, 27, 18, 26],
+        [32, 35, 37, 39],
+        [1000, 1001, 857, 1],
+      ]);
+
+      function largestOfFour3(arr) {
+        const result = arr.map((group) =>
+          group.reduce((prev, current) => (current > prev ? current : prev)),
+        );
+        console.log(result);
+      }
+      largestOfFour3([
+        [4, 5, 1, 3],
+        [13, 27, 18, 26],
+        [32, 35, 37, 39],
+        [1000, 1001, 857, 1],
+      ]);
+
+      function largestOfFour4(arr) {
+        let i,
+          j,
+          max,
+          element = 0;
+        const result = [];
+        for (i = 0; i < arr.length; i++) {
+          for (j = 0; j < arr[i].length; j++) {
+            arr[i][j] > element ? (element = arr[i][j]) : null;
+          }
+          result.push(element);
+        }
+        console.log(result);
+      }
+      largestOfFour4([
+        [4, 5, 1, 3],
+        [13, 27, 18, 26],
+        [32, 35, 37, 39],
+        [1000, 1001, 857, 1],
+      ]);
+
+      function confirmEnding(str, target) {
+        let mida = target.length;
+        let ultima = str.slice(str.length - mida);
+        console.log(ultima);
+        if (ultima == target) return true;
+        return false;
+      }
+      console.log(confirmEnding("Bastian", "n"));
+
+      function confirmEnding2(str, target) {
+        return str.endsWith(target);
+      }
+      console.log(confirmEnding2("Bastian", "n"));
+
+      function confirmEnding3(str, target) {
+        return str.slice(-target.length) == target;
+      }
+      console.log(confirmEnding3("Bastian", "n"));
+
+      function confirmEnding4(str, target) {
+        return str.substring(str.length - target.length) == target;
+      }
+      console.log(confirmEnding4("Bastian", "n"));
+
+      function titleCase(str) {
+        return str
+          .split(" ")
+          .map(
+            (str) =>
+              str.substring(0, 1).toUpperCase() +
+              str.substring(1).toLowerCase(),
+          )
+          .join(" ");
+      }
+      titleCase("I'm a little tea pot");
+
+      function frankenSplice(arr1, arr2, n) {
+        arr1.splice(n, 0, ...arr2);
+        console.log(arr1);
+        return arr1;
+      }
+      frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+      function frankenSplice2(arr1, arr2, n) {
+        const arr3 = [...arr2];
+        arr3.splice(n, 0, ...arr1);
+        console.log(arr3);
+        return arr3;
+      }
+      frankenSplice2([1, 2], ["a", "b"], 1);
+
+      function bouncer(arr) {
+        let arr2 = [];
+        for (let element of arr) {
+          if (Boolean(element) == true) {
+            console.log(Boolean(element));
+            arr2.push(element);
+          }
+        }
+        console.log(arr2);
+        return arr2;
+      }
+      bouncer([7, "ate", "", false, 9]);
+
+      function bouncer2(arr) {
+        return arr.filter((element) => Boolean(element) == true);
+      }
+      bouncer2([7, "ate", "", false, 9]);
+
+      function getIndexToIns(arr, num) {
+        const copia = arr.map((element) => element);
+        console.log("Còpia", copia);
+        const ordre = arr.sort((previ, actual) => previ - actual);
+        console.log("Ordre", ordre);
+        let indexs = ordre.findIndex((element) => element >= num);
+        if (indexs == -1) indexs = arr.length;
+        console.log("Índex", indexs);
+        return indexs;
+      }
+      getIndexToIns([10, 20, 30, 40, 50], 30);
+
+      function getIndexToIns2(arr, num) {
+        let index = arr
+          .sort((previ, actual) => previ - actual)
+          .findIndex((element) => element >= num);
+        if (index == -1) index = arr.length;
+        return index;
+      }
+      console.log("Índex", getIndexToIns2([10, 20, 30, 40, 50], 30));
+
+      function getIndexToIns3(arr, num) {
+        return arr
+          .concat(num)
+          .sort((a, b) => a - b)
+          .indexOf(num);
+      }
+      console.log("Índex", getIndexToIns3([10, 20, 30, 40, 50], 30));
+
+      function getIndexToIns4(arr, num) {
+        const ordre = arr.sort((a, b) => a - b);
+        console.log(ordre);
+        let index = 0;
+        for (let i = 0; i < ordre.length; i++) {
+          let element = ordre[i];
+          if (element >= num) {
+            index = i;
+            i = ordre.length;
+          } else index = ordre.length;
+        }
+        return index;
+      }
+      console.log("Índex", getIndexToIns4([10, 20, 30, 200, 40, 50], 25));
+
+      function mutation(arr) {
+        const model = arr[1].toLowerCase();
+        const mira = arr[0].toLowerCase();
+        console.log(model, mira);
+
+        let arrt = [];
+
+        let j, trobat;
+        for (let i = 0; i < model.length; i++) {
+          j = 0;
+          trobat = false;
+          while (j < mira.length && trobat == false) {
+            if (mira[j] === model[i]) {
+              arrt.push(true);
+              trobat = true;
+            }
+            j++;
+          }
+          if (trobat == false) arrt.push(false);
+        }
+        console.log(arrt);
+        const result = arrt.some((element) => element == false) ? false : true;
+        console.log(result);
+        return result;
+      }
+      mutation(["hello", "hey"]);
+
+      function mutation2(arr) {
+        const model = [...arr[1].toLowerCase()];
+        const mira = [...arr[0].toLowerCase()];
+        console.log(model, mira);
+
+        const result = model.map((element) => {
+          return mira.forEach((elemento, index) => {
+            if (elemento === element) {
+              console.log(true, index);
+              return true;
+            } else {
+              console.log(false, index);
+              return false;
+            }
+          });
+        });
+        console.log(result);
+        //return result;
+      }
+      mutation2(["hello", "hey"]);
+
+      function mutation3(arr) {
+        const model = [...arr[1].toLowerCase()];
+        const mira = [...arr[0].toLowerCase()];
+        console.log(model, mira);
+
+        const result = model
+          .map((element) =>
+            mira.reduce(
+              (previ, actual) => (previ += actual == element ? 1 : 0),
+              0,
+            ),
+          )
+          .every((element) => element != 0);
+        console.log(result);
+        return result;
+      }
+      mutation3(["hello", "hey"]);
+
+      /*   function mutation4(arr) {
+                          const model = arr[1].toLowerCase();
+                          const mira = arr[0].toLowerCase();
+                          console.log(model, mira);
+
+                          const resultat = mira.filter((element) => element == model.element);
+                          console.log(resultat);
+                        }
+                        mutation4(["hello", "hey"]); */
+
+      function chunkArrayInGroups(arr, size) {
+        let vegades = parseInt(arr.length / size);
+        let element,
+          result = [];
+
+        for (let i = 0; i <= vegades; i++) {
+          if (arr.length >= size) {
+            element = arr.splice(0, size);
+            console.log(element);
+            result.push(element);
+            console.log(result);
+          } else if (arr.length > 0) {
+            element = [...arr];
+            console.log(element);
+            result.push(element);
+            console.log(result);
+          } else {
+          }
+        }
+        console.log(result);
+        return result;
+      }
+      chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
+
+      function chunkArrayInGroups2(arr, size) {
+        let result = [],
+          temp = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (i % size != size - 1) {
+            temp.push(arr[i]);
+            console.log(temp);
+          } else {
+            temp.push(arr[i]);
+            result.push(temp);
+            temp = [];
+          }
+        }
+        if (temp.length != 0) result.push(temp);
+        console.log(result);
+        return result;
+      }
+      chunkArrayInGroups2(["a", "b", "c", "d"], 2);
+
+      const watchList = [
+        {
+          Title: "Inception",
+          Year: "2010",
+          Rated: "PG-13",
+          Released: "16 Jul 2010",
+          Runtime: "148 min",
+          Genre: "Action, Adventure, Crime",
+          Director: "Christopher Nolan",
+          Writer: "Christopher Nolan",
+          Actors:
+            "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
+          Plot: "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+          Language: "English, Japanese, French",
+          Country: "USA, UK",
+          Awards: "Won 4 Oscars. Another 143 wins & 198 nominations.",
+          Poster:
+            "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+          Metascore: "74",
+          imdbRating: "8.8",
+          imdbVotes: "1,446,708",
+          imdbID: "tt1375666",
+          Type: "movie",
+          Response: "True",
+        },
+        {
+          Title: "Interstellar",
+          Year: "2014",
+          Rated: "PG-13",
+          Released: "07 Nov 2014",
+          Runtime: "169 min",
+          Genre: "Adventure, Drama, Sci-Fi",
+          Director: "Christopher Nolan",
+          Writer: "Jonathan Nolan, Christopher Nolan",
+          Actors:
+            "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+          Plot: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+          Language: "English",
+          Country: "USA, UK",
+          Awards: "Won 1 Oscar. Another 39 wins & 132 nominations.",
+          Poster:
+            "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
+          Metascore: "74",
+          imdbRating: "8.6",
+          imdbVotes: "910,366",
+          imdbID: "tt0816692",
+          Type: "movie",
+          Response: "True",
+        },
+        {
+          Title: "The Dark Knight",
+          Year: "2008",
+          Rated: "PG-13",
+          Released: "18 Jul 2008",
+          Runtime: "152 min",
+          Genre: "Action, Adventure, Crime",
+          Director: "Christopher Nolan",
+          Writer:
+            "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+          Actors: "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+          Plot: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+          Language: "English, Mandarin",
+          Country: "USA, UK",
+          Awards: "Won 2 Oscars. Another 146 wins & 142 nominations.",
+          Poster:
+            "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+          Metascore: "82",
+          imdbRating: "9.0",
+          imdbVotes: "1,652,832",
+          imdbID: "tt0468569",
+          Type: "movie",
+          Response: "True",
+        },
+        {
+          Title: "Batman Begins",
+          Year: "2005",
+          Rated: "PG-13",
+          Released: "15 Jun 2005",
+          Runtime: "140 min",
+          Genre: "Action, Adventure",
+          Director: "Christopher Nolan",
+          Writer:
+            "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+          Actors: "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+          Plot: "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+          Language: "English, Urdu, Mandarin",
+          Country: "USA, UK",
+          Awards: "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
+          Poster:
+            "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
+          Metascore: "70",
+          imdbRating: "8.3",
+          imdbVotes: "972,584",
+          imdbID: "tt0372784",
+          Type: "movie",
+          Response: "True",
+        },
+        {
+          Title: "Avatar",
+          Year: "2009",
+          Rated: "PG-13",
+          Released: "18 Dec 2009",
+          Runtime: "162 min",
+          Genre: "Action, Adventure, Fantasy",
+          Director: "James Cameron",
+          Writer: "James Cameron",
+          Actors:
+            "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+          Plot: "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+          Language: "English, Spanish",
+          Country: "USA, UK",
+          Awards: "Won 3 Oscars. Another 80 wins & 121 nominations.",
+          Poster:
+            "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+          Metascore: "83",
+          imdbRating: "7.9",
+          imdbVotes: "876,575",
+          imdbID: "tt0499549",
+          Type: "movie",
+          Response: "True",
+        },
+      ];
+
+      const ratings = watchList.map((element) => ({
+        title: element.Title,
+        rating: element.imdbRating,
+      }));
+      console.table(ratings);
+
+      const filteredList = watchList
+        .filter((element) => element.imdbRating >= 8)
+        .map((element) => ({
+          title: element.Title,
+          rating: element.imdbRating,
+        }));
+      console.table(filteredList);
+
+      function sliceArray(anim, beginSlice, endSlice) {
+        return anim.slice(beginSlice, endSlice);
+      }
+      const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+      sliceArray(inputAnim, 1, 3);
+
+      function nonMutatingConcat(original, attach) {
+        return original.concat(attach); //[...original, ...attach];
+      }
+
+      const first = [1, 2, 3];
+      const second = [4, 5];
+      console.log(nonMutatingConcat(first, second));
+
+      function getRating(watchList) {
+        let averageRating =
+          watchList
+            .filter((element) => element.Director === "Christopher Nolan")
+            .map((element) => Number(element.imdbRating))
+            .reduce((previ, actual) => previ + actual) /
+          watchList.filter(
+            (element) => element.Director === "Christopher Nolan",
+          ).length;
+
+        return averageRating;
+      }
+      console.log(getRating(watchList));
+
+      const squareList = (arr) => {
+        return arr
+          .filter((element) => Math.sign(element) != -1 && element % 1 == 0)
+          .map((element) => Math.pow(element, 2));
+      };
+      const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+      console.log(squaredIntegers);
+
+      function alphabeticalOrder(arr) {
+        return arr.sort((acc, curr) => acc < curr);
+      }
+      console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"]));
+
+      function alphabeticalOrder2(arr) {
+        return arr.sort((acc, curr) => {
+          if (acc > curr) return 1;
+          if (acc < curr) return -1;
+          return 0;
+        });
+      }
+      console.log(alphabeticalOrder2(["a", "d", "c", "a", "z", "g"]));
+
+      const points = [40, 100, 1, 5, 25, 10];
+      points.sort((a, b) => b - a);
+      console.log(points);
+
+      points.sort((acc, curr) => {
+        if (acc > curr) return 1;
+        if (acc < curr) return -1;
+        return 0;
+      });
+      console.log(points);
+
+      const globalArray = [5, 6, 3, 2, 9];
+
+      function nonMutatingSort(arr) {
+        return arr.slice().sort((a, b) => a - b);
+      }
+      const result = nonMutatingSort(globalArray);
+      console.log(globalArray);
+      console.log(result);
+
+      function splitify(str) {
+        return str.split(/\W/);
+      }
+      console.log(splitify("Hello World,I-am code"));
+
+      function splitify2(str) {
+        return str.split(/[,-\s]/);
+      }
+      console.log(splitify2("Hello World,I-am code"));
+
+      const sentensify = (str) => str.split(/\W/).join(" ");
+      console.log(sentensify("May-the-force-be-with-you"));
+
+      function sumAll(arr) {
+        const min = Math.min(...arr);
+        const max = Math.max(...arr);
+        let sum = 0;
+        for (let i = min; i <= max; i++) {
+          sum += i;
+        }
+
+        console.log(result, sum);
+        return sum;
+      }
+      sumAll([50, 10]);
+
+      function sumAll2(arr) {
+        let result = arr
+          .map((element) => element)
+          .sort((previ, actual) => previ > actual);
+        console.log(result, arr);
+        let sum = result[0],
+          element = result[0],
+          ultim = result[1],
+          arr2 = [result[0]];
+        for (let i = 0; i < arr2.length; i++) {
+          if (element < ultim) {
+            element = arr2[i] + 1;
+            sum += element;
+            arr2.splice(i + 1, 0, element);
+          }
+        }
+        result = arr2.reduce((previ, actual) => previ + actual, 0);
+        console.log(arr2, result);
+        return result;
+      }
+      sumAll2([50, 10]);
+
+      function sumAll3(arr) {
+        let result = arr
+          .map((element) => element)
+          .sort((previ, actual) => previ > actual)
+          .map((element, index, arr) => {
+            let ultim = arr[1],
+              arr2 = [arr[0]];
+            for (let i = 0; i < arr2.length; i++) {
+              if (element < ultim) {
+                element = arr2[i] + 1;
+                arr2.splice(i + 1, 0, element);
+              }
+            }
+            console.log(arr2);
+            return arr2;
+          })[0]
+          .reduce((previ, actual) => previ + actual, 0);
+        console.log(result);
+        console.log(arr);
+        return result;
+      }
+      sumAll3([50, 10]);
+
+      function diffArray(arr1, arr2) {
+        const newArr = [];
+        let i,
+          j,
+          trobat = false;
+        let arrA = [],
+          arrB = [];
+
+        if (arr1.length >= arr2.length) {
+          arrA = arr1;
+          arrB = arr2;
+        } else {
+          arrA = arr2;
+          arrB = arr1;
+        }
+        console.log(arrA);
+        console.log(arrB);
+        let elA;
+        let elB;
+
+        for (i = 0; i < arrA.length; i++) {
+          (j = 0), (elA = arrA[i]);
+          while (j < arrB.length && trobat == false) {
+            elB = arrB[j];
+            if (elA == elB) trobat = true;
+            j++;
+          }
+          if (trobat == false) newArr.push(elA);
+          trobat = false;
+        }
+        for (i = 0; i < arrB.length; i++) {
+          (j = 0), (elB = arrB[i]);
+          while (j < arrA.length && trobat == false) {
+            elA = arrA[j];
+            if (elA == elB) trobat = true;
+            j++;
+          }
+          if (trobat == false) newArr.push(elB);
+          trobat = false;
+        }
+        console.log(trobat);
+        console.log(newArr);
+        return newArr;
+      }
+      diffArray([1, 2, 3, 12, 5], [1, 2, 3, 4, 5, 7]);
+
+      const diff = (a, b) => a.filter((item) => b.indexOf(item) === -1);
+      const diffArray2 = (arr1, arr2) => [
+        ...diff(arr1, arr2),
+        ...diff(arr2, arr1),
+      ];
+      console.log(diffArray2([1, 2, 3, 12, 5], [1, 2, 3, 4, 5, 7]));
+
+      /* function destroyer(...arr) {
+                    console.log(arr);
+                    console.log(arr[0]);
+                    console.log(arr[1]);
+                    console.log(arr.length);
+                    let arg = 0;
+                    const result = arr[0].filter((element, index) => {
+                      console.log(arr[0]);
+                      console.log(element);
+                      for (let i = 1; i < arr.length; i++) {
+                        arg = arr[i];
+                        if (element == arg) arr[0].splice(index, 1);
+                      }
+                      return arr[0];
+                    });
+                    console.log(result);
+                    return result;
+                  }
+                  destroyer([1, 2, 3, 1, 2, 3], 2, 3); */
+
+      function destroyer2(...arr) {
+        let arr0 = [...arr[0]];
+        let arg = 0;
+        for (let i = 1; i < arr.length; i++) {
+          arg = arr[i];
+          for (let j = 0; j < arr[0].length; j++) {
+            if (arr[0][j] == arg) {
+              let index = arr0.indexOf(arg);
+              arr0.splice(index, 1);
+            }
+          }
+        }
+        return arr0;
+      }
+      console.log(destroyer2([3, 5, 1, 2, 2], 2, 3, 5));
+
+      function destroyer3(arr, ...valsToRemove) {
+        console.log(arr);
+        console.log(...valsToRemove);
+        return arr.filter((elem) => !valsToRemove.includes(elem));
+      }
+      console.log(destroyer3([3, 5, 1, 2, 2], 2, 3, 5));
+
+      function whatIsInAName(collection, source) {
+        let arr = [];
+        const cSource = Object.entries(source);
+        console.log(cSource);
+
+        for (let i = 0; i < collection.length; i++) {
+          let cCollectioni = Object.entries(collection[i]);
+          for (let j = 0; j < cCollectioni.length; j++) {
+            if (cSource[j] === cCollectioni[j]) arr.push(collection[i]);
+            console.log(cCollectioni[j]);
+            console.log(cSource[0]);
+          }
+        }
+
+        console.log(arr);
+        return arr;
+      }
+
+      whatIsInAName(
+        [
+          { first: "Romeo", last: "Montague" },
+          { first: "Mercutio", last: null },
+          { first: "Tybalt", last: "Capulet" },
+        ],
+        { last: "Capulet" },
+      );
+
+      /* function whatIsInAName2(collection, source) {
+                    const sourceKeys = Object.keys(source);
+
+                    return collection.filter((obj) => {
+                      for (let i = 0; i < sourceKeys.length; i++) {
+                        if (
+                          !obj.hasOwnProperty(sourceKeys[i]) ||
+                          obj[sourceKeys[i]] !== source[sourceKeys[i]]
+                        ) {
+                          return false;
+                        }
+                      }
+                      return true;
+                    });
+                  }
+                  console.log(whatIsInAName2(
+                    [
+                      { first: "Romeo", last: "Montague" },
+                      { first: "Mercutio", last: null },
+                      { first: "Tybalt", last: "Capulet" },
+                    ],
+                    { last: "Capulet" },
+                  )); */
+
+      const compare = () => {
+        if ([1] === 1) return true;
+      };
+      console.log(compare());
+
+      function spinalCase(str) {
+        return str
+          .split(/\s|_|(?=[A-Z])/)
+          .join("-")
+          .toLowerCase();
+      }
+      console.log(spinalCase("AllThe-small Things"));
+
+      function translatePigLatin(str) {
+        const regExpCons = /^[^aeiou]+/;
+
+        if (regExpCons.test(str)) {
+          let regExp = str.match(regExpCons);
+          console.log(regExp);
+          let cas1inici = str.substring(0, regExp[0].length);
+          console.log(cas1inici);
+          let cas1final = str.substring(regExp[0].length);
+          console.log(cas1final);
+          str = cas1final + cas1inici + "ay";
+        } else {
+          str = str + "way";
+        }
+        console.log(str);
+        return str;
+      }
+      translatePigLatin("schwartz");
+
+      const minim = (a) => (a == 0 ? true : false);
+      console.log(minim(2));
+
+      function myReplace(str, before, after) {
+        const testBefore = /^[A-Z]/.test(before);
+        const testAfter = /^[A-Z]/.test(after);
+        console.log(testAfter, testBefore);
+        const find = str.split(" ").find((element) => element == before);
+        console.log(find);
+
+        let afterFiltrat = after;
+        if (testAfter == true) {
+          afterFiltrat = after.replace(after[0], after[0].toLowerCase());
+          console.log(afterFiltrat);
+        }
+        if (testBefore == true) {
+          if (before == find) {
+            afterFiltrat = after.replace(after[0], after[0].toUpperCase());
+            before = before.replace(before[0], before[0].toUpperCase());
+            console.log(afterFiltrat);
+          } else {
+            afterFiltrat = after.replace(after[0], after[0].toUpperCase());
+            before = before.replace(before[0], before[0].toLowerCase());
+            console.log(afterFiltrat);
+          }
+        }
+
+        const regExp = new RegExp(before, "gi");
+        console.log(regExp);
+        let str2 = str.replace(regExp, afterFiltrat);
+        console.log(str2);
+        return str2;
+      }
+      myReplace("He is Sleeping on the couch", "sleeping", "sitting");
+
+      function myReplace2(str, before, after) {
+        const strArr = str.split(" ");
+        const wordToReplace = strArr.filter((item) => item === before);
+        console.log(wordToReplace);
+        const replacement =
+          wordToReplace[0] === wordToReplace[0].toUpperCase()
+            ? after[0].toUpperCase() + after.slice(1)
+            : after[0].toLowerCase() + after.slice(1);
+        return strArr
+          .map((item) => (item === before ? replacement : item))
+          .join(" ");
+      }
+
+      console.log(
+        myReplace2(
+          "A quick brown fox jumped over the lazy dog",
+          "jumped",
+          "leaped",
+        ),
+      );
+
+      const pairElement = (str) =>
+        str.split("").map((element) => {
+          switch (element) {
+            case "G":
+              return (element = ["G", "C"]);
+              break;
+            case "C":
+              return (element = ["C", "G"]);
+              break;
+            case "A":
+              return (element = ["A", "C"]);
+              break;
+            case "T":
+              return (element = ["T", "A"]);
+              break;
+          }
+        });
+      console.log(pairElement("GCAT"));
+
+      const fearNotLetter = (str) => {
+        let missing = "";
+        const result = str.split("").filter((element, index, array) => {
+          const ABECEDARI = [..."abcdefghijklmnopqrstuvwxyz"];
+          let indexs = ABECEDARI.indexOf(str[0]);
+          console.log(indexs);
+          if (element == ABECEDARI[index + indexs]) {
+            console.log("1", element);
+            missing = undefined;
+            return true;
+          } else if (missing == undefined) {
+            console.log("2", element);
+            missing = ABECEDARI[index + indexs];
+            return true;
+          } else return true;
+        });
+        console.log(result, missing);
+        return missing;
+      };
+      fearNotLetter("stvwx");
+
+      function fearNotLetter2(str) {
+        let currCharCode = str.charCodeAt(0);
+        let missing = undefined;
+
+        str.split("").forEach((element) => {
+          if (element.charCodeAt(0) === currCharCode) {
+            currCharCode++;
+          } else {
+            missing = String.fromCharCode(currCharCode);
+          }
+        });
+        console.log(missing);
+        return missing;
+      }
+      fearNotLetter2("stvwx");
+
+      const text = "Holae nois, Hola, holah nois, Holax nois, patata";
+      console.log(text.match(/[patata][Hola. nois]/gi));
+
+      
 
     </script>
-</body>
+  </body>
 </html>

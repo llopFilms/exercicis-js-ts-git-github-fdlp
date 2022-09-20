@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function canDrink(person) {
+        if (person?.age != null) {
+          if (person.agr < 18) {
+            console.log("Nope");
+          } else if (persona.age < 21) {
+            console.log("Not in the US");
+          } else {
+            console.log("Yes");
+          }
+        } else {
+          console.log("You are not a person");
+        }
+      }
+
+      const pepito = {
+        age: 17,
+      };
+
+      function canDrinkBetter(person) {
+        if (person.age == null)
+          return console.log("canDrinkBetter: You are not a person");
+        if (person.age < 18) return console.log("canDrinkBetter: Nope");
+        if (person.age < 21)
+          return console.log("canDrinkBetter: Not in the US");
+        return console.log("canDrinkBetter: Yes");
+      }
+      canDrinkBetter(pepito);
+
+      function canDrinkBetter2(person) {
+        let result = "Yes";
+        if (person.age == null) result = "You are not a person";
+        else if (person.age < 18) result = "Nope";
+        else if (person.age < 21) result = "Not in the US";
+        return console.log("canDrinkBetter2:", result);
+      }
+      canDrinkBetter2(pepito);
+
+      function canDrinkResponse(age) {
+        if (age == null) return "You are not a person";
+        if (age < 18) return "Nope";
+        if (age < 21) return "Not in the US";
+        return "Yes";
+      }
+      const result2 = canDrinkResponse(pepito.age);
+      console.log("canDrinkRepsonse:", result2);
+
+      function calculatePrice(price, taxes, description) {
+        taxes = taxes ?? 0.05;
+        description = description ?? "no description available";
+        const total = price * (1 + taxes);
+        console.log(
+          `%c${description}. Price with Tax: %c$${total}`,
+          "font-weight: bold; color: #7d8851",
+          "color: orange; font-size: 1.2rem",
+        );
+      }
+      calculatePrice(100, 0.07, "USB Hub");
+      calculatePrice(100, 0, "USB Hub without taxes");
+      calculatePrice(100, 0, "USB Hub with 0 taxes");
+      calculatePrice(100, undefined, "USB Hub with default tax");
+      calculatePrice(100, undefined, undefined);
+      calculatePrice(101, undefined, "");
+
+      class Person {
+        constructor(name, address, hobbies) {
+          this.name = name;
+          this.address = address;
+          this.hobbies = hobbies;
+        }
+
+        print() {
+          console.log(this);
+        }
+      }
+
+      function printPersonStreet(person) {
+        console.log(person?.address?.street);
+      }
+
+      const kyle = new Person(
+        "Kyle",
+        { street: "Av. Vallarca, 25", city: "Castelldefels" },
+        ["bolet", "gralla"],
+      );
+
+      kyle.print();
+      console.log(kyle);
+      printPersonStreet(kyle);
+
+      const pepa = new Person(
+        "Pepa",
+        undefined,
+        null
+      );
+
+      pepa.print();
+      printPersonStreet(pepa);
+
+      kyle.printName?.();
+      kyle.print?.();
+      console.log(pepa.hobbies?.[2]);
+
+      const name = "Kyle";
+      const favouriteFood = "Rice";
+
+      const pepe = {
+        name,
+        favouriteFood,
+      }
+      console.log(pepe);
+
+      
+    </script>
+  </body>
+</html>

@@ -411,14 +411,14 @@
       mutation3(["hello", "hey"]);
 
       /*   function mutation4(arr) {
-                          const model = arr[1].toLowerCase();
-                          const mira = arr[0].toLowerCase();
-                          console.log(model, mira);
+                                const model = arr[1].toLowerCase();
+                                const mira = arr[0].toLowerCase();
+                                console.log(model, mira);
 
-                          const resultat = mira.filter((element) => element == model.element);
-                          console.log(resultat);
-                        }
-                        mutation4(["hello", "hey"]); */
+                                const resultat = mira.filter((element) => element == model.element);
+                                console.log(resultat);
+                              }
+                              mutation4(["hello", "hey"]); */
 
       function chunkArrayInGroups(arr, size) {
         let vegades = parseInt(arr.length / size);
@@ -795,24 +795,24 @@
       console.log(diffArray2([1, 2, 3, 12, 5], [1, 2, 3, 4, 5, 7]));
 
       /* function destroyer(...arr) {
-                    console.log(arr);
-                    console.log(arr[0]);
-                    console.log(arr[1]);
-                    console.log(arr.length);
-                    let arg = 0;
-                    const result = arr[0].filter((element, index) => {
-                      console.log(arr[0]);
-                      console.log(element);
-                      for (let i = 1; i < arr.length; i++) {
-                        arg = arr[i];
-                        if (element == arg) arr[0].splice(index, 1);
-                      }
-                      return arr[0];
-                    });
-                    console.log(result);
-                    return result;
-                  }
-                  destroyer([1, 2, 3, 1, 2, 3], 2, 3); */
+                          console.log(arr);
+                          console.log(arr[0]);
+                          console.log(arr[1]);
+                          console.log(arr.length);
+                          let arg = 0;
+                          const result = arr[0].filter((element, index) => {
+                            console.log(arr[0]);
+                            console.log(element);
+                            for (let i = 1; i < arr.length; i++) {
+                              arg = arr[i];
+                              if (element == arg) arr[0].splice(index, 1);
+                            }
+                            return arr[0];
+                          });
+                          console.log(result);
+                          return result;
+                        }
+                        destroyer([1, 2, 3, 1, 2, 3], 2, 3); */
 
       function destroyer2(...arr) {
         let arr0 = [...arr[0]];
@@ -865,28 +865,28 @@
       );
 
       /* function whatIsInAName2(collection, source) {
-                    const sourceKeys = Object.keys(source);
+                          const sourceKeys = Object.keys(source);
 
-                    return collection.filter((obj) => {
-                      for (let i = 0; i < sourceKeys.length; i++) {
-                        if (
-                          !obj.hasOwnProperty(sourceKeys[i]) ||
-                          obj[sourceKeys[i]] !== source[sourceKeys[i]]
-                        ) {
-                          return false;
+                          return collection.filter((obj) => {
+                            for (let i = 0; i < sourceKeys.length; i++) {
+                              if (
+                                !obj.hasOwnProperty(sourceKeys[i]) ||
+                                obj[sourceKeys[i]] !== source[sourceKeys[i]]
+                              ) {
+                                return false;
+                              }
+                            }
+                            return true;
+                          });
                         }
-                      }
-                      return true;
-                    });
-                  }
-                  console.log(whatIsInAName2(
-                    [
-                      { first: "Romeo", last: "Montague" },
-                      { first: "Mercutio", last: null },
-                      { first: "Tybalt", last: "Capulet" },
-                    ],
-                    { last: "Capulet" },
-                  )); */
+                        console.log(whatIsInAName2(
+                          [
+                            { first: "Romeo", last: "Montague" },
+                            { first: "Mercutio", last: null },
+                            { first: "Tybalt", last: "Capulet" },
+                          ],
+                          { last: "Capulet" },
+                        )); */
 
       const compare = () => {
         if ([1] === 1) return true;
@@ -1035,8 +1035,54 @@
       const text = "Holae nois, Hola, holah nois, Holax nois, patata";
       console.log(text.match(/[patata][Hola. nois]/gi));
 
-      
+      let customersArray = [
+        "Custy Stomer",
+        "C. Oostomar",
+        "C.U.S. Tomer",
+        3432434,
+        "Custo Mer",
+        "Custopher Ustomer",
+        3432435,
+        "Kasti Yastimeur",
+      ];
 
+      //Write Your Code here:
+      customersArray.forEach((element) => {
+        if (typeof element != "string")
+          console.log(`Type error: ${element} should be a string!`);
+      });
+
+      const stringPush = (val) => {
+        if (typeof val != "string") String(val);
+        val = `${val} - Element ok as a string`;
+        return val;
+      };
+
+      const checkCustomersArrayFiltered = customersArray.map((element) =>
+        stringPush(element),
+      );
+      console.log(checkCustomersArrayFiltered);
+
+      function smush(firstString, ...otherStrings) {
+        let output = firstString;
+        for (let i = 0; i < otherStrings.length; i++) {
+          output = output.concat(otherStrings[i]);
+        }
+        return output;
+      }
+      console.log(smush("Ei,", " com esteu,", " com va,", " i com ho porteu?"));
+
+      function smush2(firstString, ...otherStrings) {
+        let output = firstString, outputR = "";
+        for (let i = 0; i < otherStrings.length; i++) {
+          output = output.concat(otherStrings[i]);
+          outputR += output;
+          output = firstString;
+        }
+        return outputR;
+      }
+      console.log(smush2("A", "h!, ", "h? ", "h..."));
+      console.log(smush2("Ei,", " com esteu. ", " com va. ", " i com ho porteu?"));
     </script>
   </body>
 </html>

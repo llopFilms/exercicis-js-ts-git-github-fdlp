@@ -1,4 +1,4 @@
-# Exercicis curs FDLP de la IT Academy Barcelona Activa
+# Exercicis curs FDLP de la IT Academy (Barcelona Activa)
 
 - Programació en Js
 - Maquetació en:

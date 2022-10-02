@@ -45,8 +45,8 @@
             [3, 13, 26],
             [19, 3, 9],
           ],
-          3,
-        ),
+          3
+        )
       );
 
       function filteredArray2(arr, elem) {
@@ -67,8 +67,8 @@
             [3, 13, 26],
             [19, 3, 9],
           ],
-          3,
-        ),
+          3
+        )
       );
 
       function filteredArray3(arr, elem) {
@@ -93,8 +93,8 @@
             [3, 13, 26],
             [19, 3, 9],
           ],
-          9,
-        ),
+          9
+        )
       );
 
       function filteredArray4(arr, elem) {
@@ -112,8 +112,8 @@
             [3, 13, 26],
             [19, 3, 9],
           ],
-          9,
-        ),
+          9
+        )
       );
 
       const users = {
@@ -148,14 +148,14 @@
         return elementLlarg;
       }
       console.log(
-        findLongestWordLength("The quick brown fox jumped over the lazy dog"),
+        findLongestWordLength("The quick brown fox jumped over the lazy dog")
       );
 
       function findLongestWordLength2(str) {
         return Math.max(...str.split(" ").map((element) => element.length));
       }
       console.log(
-        findLongestWordLength2("The quick brown fox jumped over the lazy dog"),
+        findLongestWordLength2("The quick brown fox jumped over the lazy dog")
       );
 
       function findLongestWordLength3(s) {
@@ -164,12 +164,12 @@
           .reduce((longest, word) => Math.max(longest, word.length), 0);
       }
       console.log(
-        findLongestWordLength3("The quick brown fox jumped over the lazy dog"),
+        findLongestWordLength3("The quick brown fox jumped over the lazy dog")
       );
 
       function largestOfFour(arr) {
         const result = arr.map((element) =>
-          element.reduce((previ, actual) => Math.max(previ, actual)),
+          element.reduce((previ, actual) => Math.max(previ, actual))
         );
         console.log(result);
         return result;
@@ -184,7 +184,7 @@
 
       function largestOfFour2(arr) {
         const result = arr.map(
-          (element) => element.sort((previ, actual) => previ < actual)[0],
+          (element) => element.sort((previ, actual) => previ < actual)[0]
         );
         console.log(result);
         return result;
@@ -199,7 +199,7 @@
 
       function largestOfFour3(arr) {
         const result = arr.map((group) =>
-          group.reduce((prev, current) => (current > prev ? current : prev)),
+          group.reduce((prev, current) => (current > prev ? current : prev))
         );
         console.log(result);
       }
@@ -260,8 +260,7 @@
           .split(" ")
           .map(
             (str) =>
-              str.substring(0, 1).toUpperCase() +
-              str.substring(1).toLowerCase(),
+              str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase()
           )
           .join(" ");
       }
@@ -401,8 +400,8 @@
           .map((element) =>
             mira.reduce(
               (previ, actual) => (previ += actual == element ? 1 : 0),
-              0,
-            ),
+              0
+            )
           )
           .every((element) => element != 0);
         console.log(result);
@@ -621,7 +620,7 @@
             .map((element) => Number(element.imdbRating))
             .reduce((previ, actual) => previ + actual) /
           watchList.filter(
-            (element) => element.Director === "Christopher Nolan",
+            (element) => element.Director === "Christopher Nolan"
           ).length;
 
         return averageRating;
@@ -861,7 +860,7 @@
           { first: "Mercutio", last: null },
           { first: "Tybalt", last: "Capulet" },
         ],
-        { last: "Capulet" },
+        { last: "Capulet" }
       );
 
       /* function whatIsInAName2(collection, source) {
@@ -972,8 +971,8 @@
         myReplace2(
           "A quick brown fox jumped over the lazy dog",
           "jumped",
-          "leaped",
-        ),
+          "leaped"
+        )
       );
 
       const pairElement = (str) =>
@@ -1059,7 +1058,7 @@
       };
 
       const checkCustomersArrayFiltered = customersArray.map((element) =>
-        stringPush(element),
+        stringPush(element)
       );
       console.log(checkCustomersArrayFiltered);
 
@@ -1073,7 +1072,8 @@
       console.log(smush("Ei,", " com esteu,", " com va,", " i com ho porteu?"));
 
       function smush2(firstString, ...otherStrings) {
-        let output = firstString, outputR = "";
+        let output = firstString,
+          outputR = "";
         for (let i = 0; i < otherStrings.length; i++) {
           output = output.concat(otherStrings[i]);
           outputR += output;
@@ -1082,7 +1082,312 @@
         return outputR;
       }
       console.log(smush2("A", "h!, ", "h? ", "h..."));
-      console.log(smush2("Ei,", " com esteu. ", " com va. ", " i com ho porteu?"));
+      console.log(
+        smush2("Ei,", " com esteu. ", " com va. ", " i com ho porteu?")
+      );
+
+      function uniteUnique(...arr) {
+        const arr2 = arr.reduce((previ, actual) => [...previ, ...actual]);
+
+        let result = [arr2[0]];
+        let i, j, arri, arrj;
+        let trobat = false;
+        for (i = 1; i < arr2.length; i++) {
+          j = 0;
+          while (j < result.length && trobat == false) {
+            arri = arr2[i];
+            arrj = result[j];
+            if (arri == arrj) trobat = true;
+            j++;
+          }
+          if (trobat == false) result.push(arri);
+          trobat = false;
+        }
+
+        console.log(result);
+        return result;
+      }
+      uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+      function uniteUnique2(...arr) {
+        let result = [...new Set(arr.flat())];
+
+        console.log(result);
+        return result;
+      }
+      uniteUnique2([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+      function uniteUnique3(...arr) {
+        let result = arr
+          .flat()
+          .filter((element, index, array) => array.indexOf(element) === index);
+        console.log(result);
+        return result;
+      }
+      uniteUnique3([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+      function convertHTML(str) {
+        const char = ["&", "<", ">", '"', "'"];
+        const html = ["&amp;", "&lt;", "&gt;", "&quot;", "&apos;"];
+        let result = str
+          .split("")
+          .map((element) => {
+            if (element == char[0]) return html[0];
+            else if (element == char[1]) return html[1];
+            else if (element == char[2]) return html[2];
+            else if (element == char[3]) return html[3];
+            else if (element == char[4]) return html[4];
+            else return element;
+          })
+
+          .join("");
+        console.log(result);
+        return result;
+      }
+      convertHTML("Dolce & Gabbana");
+
+      function convertHTML2(str) {
+        const char = ["&", "<", ">", '"', "'"];
+        const html = ["&amp;", "&lt;", "&gt;", "&quot;", "&apos;"];
+        let result = str
+          .split("")
+          .map((element) => {
+            switch (element) {
+              case char[0]:
+                return html[0];
+              case char[1]:
+                return html[1];
+              case char[2]:
+                return html[2];
+              case char[3]:
+                return html[3];
+              case char[4]:
+                return html[4];
+              default:
+                return element;
+            }
+          })
+          .join("");
+        console.log(result);
+        return result;
+      }
+      convertHTML2("Dolce & Gabbana");
+
+      function sumFibs(num) {
+        let result = [1, 1]
+          .map((element, index, array) => {
+            if (index == 0) {
+              for (let i = 2; i < num; i++) {
+                element = array[i - 2] + array[i - 1];
+                element <= num ? array.push(element) : (i = num);
+              }
+              return array;
+            }
+          })[0]
+          .filter((element) => element % 2 != 0)
+          .reduce((previ, actual) => previ + actual);
+        console.log(result);
+        return result;
+      }
+      sumFibs(75025);
+
+      function sumFibs2(num) {
+        let result = [1, 1]
+          .map((element, index, array) => {
+            console.log(array);
+            let i = 2,
+              elemento = array[array.length - 1];
+            console.log(elemento);
+            if (index == 0) {
+              while (elemento <= num) {
+                elemento = array[i - 2] + array[i - 1];
+                array.push(elemento);
+                i++;
+              }
+              return array.slice(0, -1);
+            }
+          })[0]
+          .filter((element) => element % 2 != 0)
+          .reduce((previ, actual) => previ + actual);
+        console.log(result);
+        return result;
+      }
+      sumFibs2(75025);
+
+      function sumPrimes(num) {
+        let primes = [];
+        for (let i = 2; i <= num; i++) {
+          if (primes.every((prime) => i % prime != 0)) primes.push(i);
+        }
+        console.log(primes);
+        return primes.reduce((sum, prime) => sum + prime, 0);
+      }
+      console.log(sumPrimes(10));
+
+      function sumPrimes2(num) {
+        let result = [2, 3]
+          .map((element, index, array) => {
+            if (index == 0) {
+              for (let i = 4; i <= num; i++) {
+                if (array.every((element) => i % element != 0)) array.push(i);
+              }
+              return array;
+            }
+          })[0]
+          .reduce((acc, curr) => acc + curr, 0);
+        console.log(result);
+        return result;
+      }
+      sumPrimes2(10);
+
+      const dropElements = (arr, func) =>
+        arr.slice(arr.findIndex(func) >= 0 ? arr.findIndex(func) : arr.length);
+
+      console.log(dropElements([0, 1, 0, 1], (n) => n === 1));
+
+      function dropElements2(arr, func) {
+        let indexs = [];
+        const result = arr.map((element, index, array) => {
+          let array2 = [];
+          if (func(element)) {
+            array2 = array.slice(index);
+            indexs.push(index);
+          }
+          console.log(indexs);
+          return array2;
+        })[indexs.length == 0 ? [0] : indexs[0]];
+        console.log(result);
+        return result;
+      }
+      dropElements2([1, 2, 3, 4, 5, 6, 10, 15, 22], function (n) {
+        return n > 5;
+      });
+
+      function steamrollArray(arr) {
+        return arr.flat(Infinity);
+      }
+      console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+      function binaryAgent(str) {
+        const result = String.fromCharCode(
+          ...str.split(" ").map((element) => parseInt(element, 2))
+        );
+
+        console.log(result);
+        return result;
+      }
+      binaryAgent(
+        "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
+      );
+
+      function truthCheck(collection, pre) {
+        let result = collection.every(
+          (element) => pre in element && element[pre]
+        );
+        console.log(result);
+        return result;
+      }
+
+      truthCheck(
+        [
+          { name: "Quincy", role: "Founder", isBot: false },
+          { name: "Naomi", role: "", isBot: false },
+          { name: "Camperbot", role: "Bot", isBot: true },
+        ],
+        "name"
+      );
+
+      const Person = function (firstAndLast) {
+        // Only change code below this line
+        // Complete the method below and implement the others similarly
+        let fullName = firstAndLast;
+
+        this.getFullName = function () {
+          return fullName;
+        };
+
+        this.getFirstName = function () {
+          return fullName.split(" ")[0];
+        };
+
+        this.getLastName = function () {
+          return fullName.split(" ")[1];
+        };
+
+        this.setFirstName = function (name) {
+          fullName = name + " " + fullName.split(" ")[1];
+        };
+
+        this.setLastName = function (surname) {
+          fullName = fullName.split(" ")[0] + " " + surname;
+        };
+
+        this.setFullName = function (fullName2) {
+          fullName = fullName2;
+        };
+      };
+
+      const bob = new Person("Bob Ross");
+      console.log(bob.getFullName());
+      console.log(bob.getFirstName());
+      console.log(bob.getLastName());
+      bob.setFirstName("Ramon");
+      bob.setLastName("Garcia");
+      console.log(bob.getFullName());
+      bob.setFullName("Pepito palotes");
+      console.log(bob.getFirstName());
+      console.log(bob.getLastName());
+
+      class Person2 {
+        constructor(name, surname) {
+          this.name = name;
+          this.surname = surname;
+        }
+
+        get fullName() {
+          return `${this.name} ${this.surname}`;
+        }
+        get firstName() {
+          return this.name;
+        }
+        get lastName() {
+          return this.surname;
+        }
+
+        set fullName(fullName) {
+          this.name = fullName.split(" ")[0];
+          this.surname = fullName.split(" ")[1];
+        }
+        set firstName(name) {
+          this.name = name;
+        }
+        set lastName(surname) {
+          this.surname = surname;
+        }
+      }
+
+      const bob2 = new Person2("Bob2", "Ross2");
+      console.log(bob2.fullName);
+      console.log(bob2.firstName);
+      console.log(bob2.lastName);
+      bob2.firstName = "Ramon2";
+      bob2.lastName = "Garcia2";
+      console.log(bob2.fullName);
+      bob2.fullName = "Pepito2 palotes2";
+      console.log(bob2.firstName);
+      console.log(bob2.lastName);
+
+      if ((del = 2)) {
+      }
+
+      const fer = () => {};
+      i = 0;
+      const Ramon=2
+      const Ramon2=2;
+      const Ramonf2=2;
+
+      
+
     </script>
   </body>
 </html>

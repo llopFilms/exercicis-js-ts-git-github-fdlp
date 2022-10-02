@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Botons i funcions</h2>
+
+    <p><button onClick="menu(1)">Opció 1</button></p>
+    <p>
+      Introdueix 5 números entre ',' <input type="text" id="array2" /><br />
+      Introdueix un dels 5 números anteriors
+      <input type="number" size="4" id="numarray2" /><br />
+      <button onClick="menu(2)">Opció 2</button>
+    </p>
+    <p>
+      Introdueix una frase <input type="text" id="frase3" /><br />
+      <button onClick="menu(3)">Opció 3</button>
+    </p>
+    <p>
+      Introdueix un array de strings entre ','
+      <input type="text" size="50" id="array4" /><br />
+      Introdueix un string contingut en l'array
+      <input type="text" id="paraulaArray4" /><br />
+      <button onClick="menu(4)">Opció 4</button>
+    </p>
+
+    <p id="resultat"></p>
+
+    <script>
+      let temps = [];
+
+      function opcio1() {
+        const dataiHora = new Date();
+        temps.push(dataiHora);
+        return temps;
+      }
+
+      function opcio2(array, num) {
+        console.log(array,num)
+        let index = array.indexOf(num);
+        return index;
+      }
+
+      function opcio3(string) {
+        let stringMin = string.toLowerCase();
+        let stringNet = stringMin.replace(/\s/g, "");
+        return stringNet;
+      }
+
+      function opcio4(array, string) {
+        let arrayReturn = [];
+        for (let element of array) {
+          if (element.includes(string)) arrayReturn.push(element);
+        }
+        return arrayReturn;
+      }
+
+      function menu(opcio) {
+        let string2 = document.getElementById("array2").value;
+        let array2 = string2.split(",");
+        let array2num = [];
+        for (let element of array2) {
+          array2num.push(Number(element));
+        }
+        let numArray2 = Number(document.getElementById("numarray2").value);
+
+        let frase3 = document.getElementById("frase3").value;
+
+        let array4 = document.getElementById("array4").value;
+        let array4Strings = array4.split(",");
+        let paraulaArray4 = document.getElementById("paraulaArray4").value;
+
+        let resultat = `Resultat botó ${opcio}: `;
+        switch (opcio) {
+          case 1:
+            resultat += opcio1();
+            break;
+          case 2:
+            resultat += opcio2(array2num, numArray2);
+            break;
+          case 3:
+            resultat += opcio3(frase3);
+            break;
+          case 4:
+            resultat += opcio4(array4Strings, paraulaArray4);
+            break;
+        }
+        document.getElementById("resultat").innerHTML = resultat;
+      }
+    </script>
+  </body>
+</html>

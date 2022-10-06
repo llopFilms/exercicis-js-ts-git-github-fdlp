@@ -369,7 +369,7 @@
         },
       };
       console.log(
-        car.start() + car.goTo("el carrer Mallorca") + car.fuel("qasolina"),
+        car.start() + car.goTo("el carrer Mallorca") + car.fuel("qasolina")
       );
 
       const me = `{ "name": "Flavio", "age": 35 }`;
@@ -407,7 +407,7 @@
       const registrat = amics.find((element) => element.nom === "Ramon");
       console.log("amics.find: ", registrat);
       const registrats = amics.find(
-        (element) => element.nom === "Andreu" || element.nom === "Pere",
+        (element) => element.nom === "Andreu" || element.nom === "Pere"
       );
       console.log("amics.find2: ", registrats);
 
@@ -422,7 +422,7 @@
       const noms = amics.map((element) => element.nom);
       console.log("amics.map: ", noms);
       const millorsAmics2 = amics.map(
-        (element) => element.nom === "Ramon" || element.nom === "Pere",
+        (element) => element.nom === "Ramon" || element.nom === "Pere"
       );
       console.log("amics.map2: ", millorsAmics2);
 
@@ -430,7 +430,7 @@
       const majorsEdat = amics.filter((element) => element.edat > 18);
       console.log("amics.filter: ", majorsEdat);
       const millorsAmics = amics.filter(
-        (element) => element.nom === "Ramon" || element.nom === "Pere",
+        (element) => element.nom === "Ramon" || element.nom === "Pere"
       );
       console.log("amics.filter2: ", millorsAmics);
 
@@ -483,7 +483,7 @@
         } catch (err) {
           console.log(err.message);
         }
-      }
+      };
       rebreAcudit();
     </script>
   </body>

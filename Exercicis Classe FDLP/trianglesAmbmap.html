@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinagles</title>
+  </head>
+
+  <body>
+    <!-- Crea un programa que identifiqui si un triangle és isòsceles o equilàter.
+Hem de preguntar la mida dels seus tres costats.
+Triangle isòsceles: Si només dos costats del triangle són iguals.
+Triangle equilàter: Si els tres costats del triangle són iguals.
+Si no és cap dels anteriors ho hem de dir. -->
+    <h2>Triangles</h2>
+    <p>Introdueix la mida del costat 1:
+      <input type="number" size="6" id="costat1" /></p>
+    <p>Introdueix la mida del costat 2:
+      <input type="number" size="6" id="costat2" /></p>
+    <p>Introdueix la mida del costat 3:
+      <input type="number" size="6" id="costat3" /></p>
+    <button onClick="triangles()">Clica aquí</button>
+    <p id="resposta"></p>
+
+    <script>
+      function triangles() {
+        const costats = [
+          ...document.querySelectorAll("input[type='number']"),
+        ].map((element) => +element.value);
+        console.log(costats);
+
+        let resultat = "El trinagle és: ";
+
+        if (costats[0] == costats[1] && costats[1] == costats[2])
+          resultat += "<b>equilàter</b>";
+        else if (
+          (costats[0] != costats[1] && costats[1] == costats[2]) ||
+          (costats[0] != costats[2] && costats[0] == costats[1]) ||
+          (costats[1] != costats[2] && costats[0] == costats[2])
+        )
+          resultat += "<b>isòsceles</b>";
+        else resultat += "no és <b>equilàter</b> ni <b>isòsceles</b>";
+
+        document.getElementById("resposta").innerHTML = resultat;
+      }
+    </script>
+  </body>
+
+</html>

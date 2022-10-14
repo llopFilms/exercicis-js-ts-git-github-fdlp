@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lletres</title>
+  </head>
+  <body>
+    <!-- Crea un programa que a partir d'una variable que contingui un caràcter
+digui si aquest caràcter és en majúscules o minúscules. -->
+
+    <input type="text" id="lletra" />
+    <button onClick="lletra()">Clica!</button>
+    <p id="resposta"></p>
+
+    <script>
+      function lletra() {
+        const lletra = document.getElementById("lletra").value;
+        const codi = lletra.charCodeAt();
+
+        let resultat = "La lletra és una ";
+
+        if (codi >= 65 && codi <= 90) resultat += "<b>Majúscula</b>";
+        else if (codi >= 97 && codi <= 122) resultat += "<b>Minúscula</b>";
+        else resultat += "<b>Ni Majúscula ni minúscula</b>";
+
+        document.getElementById("resposta").innerHTML = resultat;
+      }
+    </script>
+  </body>
+</html>

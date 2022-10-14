@@ -1,0 +1,221 @@
+{
+  "editor.wordWrap": "on",
+  "workbench.editor.enablePreview": false,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.javascript.autoAttachFilter": "disabled",
+  "tabnine.experimentalAutoImports": true,
+  "workbench.startupEditor": "none",
+  "gitlens.views.remotes.pullRequests.showForBranches": false,
+  "gitlens.views.remotes.pullRequests.enabled": false,
+  "liveServer.settings.donotVerifyTags": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  "go.toolsManagement.autoUpdate": true,
+  "json.schemas": [],
+  "editor.codeActionsOnSave": {},
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "node"
+  },
+  "liveServer.settings.mount": [],
+  "go.delveConfig": {},
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.parameterHints.enabled": false,
+  "trailing-spaces.backgroundColor": "rgba(255,0,0,0.2)",
+  "trailing-spaces.borderColor": "rgba(255,100,100,0.2)",
+  "trailing-spaces.liveMatching": false,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "simpleBrowser.focusLockIndicator.enabled": false,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "less.format.spaceAroundSelectorSeparator": true,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "emmet.showSuggestionsAsSnippets": true,
+
+  "liveSassCompile.settings.autoprefix": [],
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "liveServer.settings.port": 0,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css"
+    }
+  ],
+  "liveSassCompile.settings.includeItems": [],
+  "[dockercompose]": {
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+  "html-to-css-autocompletion.folderNamesToBeExcluded": ["node_modules"],
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "workbench.editor.wrapTabs": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.editor.titleScrollbarSizing": "large",
+  "emmet.triggerExpansionOnTab": true,
+  "zenMode.hideTabs": false,
+  "trailing-spaces.trimOnSave": true,
+  "trailing-spaces.highlightCurrentLine": false,
+  "trailing-spaces.includeEmptyLines": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
+  "indentRainbow.tabmixColor": "rgba(128,32,96,0.8)",
+  "git.autofetch": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.linkedEditing": true,
+  "sass.andStared": ["active", "focus", "hover", "nth-child"],
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorBlinking": "phase",
+  "github-enterprise.uri": "https://github.com/llopFilms",
+  "git-graph.commitDetailsView.fileView.fileTree.compactFolders": false,
+  "explorer.compactFolders": false,
+  "beautify.config": "",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "git.ignoreRebaseWarning": true,
+  "git.confirmSync": false,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.letterSpacing": 1,
+  "terminal.integrated.minimumContrastRatio": 1,
+  "terminal.integrated.cursorWidth": 2,
+  "files.associations": {
+    "*.css": "css",
+    "*.js": "javascriptreact"
+  },
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.autoTriggerNextSuggestion": true,
+  "path-intellisense.extensionOnImport": true,
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command",
+    "switch:command",
+    "push:command"
+  ],
+  "better-comments.highlightPlainText": true,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "html-to-css-autocompletion.autocompletionFilesScope": "linked-files",
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.1)",
+    "rgba(127,255,127,0.1)",
+    "rgba(255,127,255,0.1)",
+    "rgba(79,236,236,0.1)"
+  ],
+  "editor.lineHeight": 1.7,
+  "editor.guides.indentation": false,
+  "editor.detectIndentation": false,
+  "errorLens.messageBackgroundMode": "none",
+  "errorLens.light": {},
+  "errorLens.fontStyleItalic": true,
+  "errorLens.margin": "3ch",
+  "workbench.colorCustomizations": {
+    "errorLens.errorForeground": "#db5959",
+    "tab.activeBorder": "#db5959",
+    "tab.activeBackground": "#3d3d3d"
+  },
+  "workbench.colorTheme": "Default Dark+",
+  "template-string-converter.addBracketsToProps": true,
+  "template-string-converter.autoRemoveTemplateString": true,
+  "template-string-converter.convertWithinTemplateString": false,
+  "terminal.integrated.cursorBlinking": true,
+  "prettier.bracketSameLine": true,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "terminal.integrated.tabs.defaultIcon": "device-desktop",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.tabs.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.syntaxProfiles": {
+    "javascript": "html"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "editor.mouseWheelZoom": true,
+  "editor.multiCursorModifier": "alt",
+  "workbench.tree.indent": 12,
+  "workbench.tree.renderIndentGuides": "always",
+  "material-icon-theme.files.associations": {
+    "*.js": "javascript"
+  },
+  "material-icon-theme.languages.associations": {},
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.saturation": 0.9,
+  "material-icon-theme.activeIconPack": "react",
+  "json.format.enable": false,
+  "liveServer.settings.NoBrowser": true,
+  "editor.formatOnType": true
+}

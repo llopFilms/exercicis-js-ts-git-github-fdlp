@@ -29,6 +29,14 @@ function App() {
       <Component.ColorPickerArray />
       <Component.PhoneNumber />
       <Component.QuestionIndex />
+      <Component.PersonalPizza />
+      <Component.GroceryCart />
+      <Component.Login />
+      <Component.EditProfile />
+      <Component.PageTitle />
+      <Component.Counter />
+      <Component.CounterEvent />
+      <Component.Timer />
     </div>
   );
 }

@@ -29,6 +29,8 @@ function App() {
       <Component.ColorPickerArray />
       <Component.PhoneNumber />
       <Component.QuestionIndex />
+      <Component.PersonalPizza />
+      <Component.GroceryCart />
     </div>
   );
 }

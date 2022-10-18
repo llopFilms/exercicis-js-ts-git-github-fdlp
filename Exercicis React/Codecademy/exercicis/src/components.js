@@ -18,6 +18,8 @@ import ColorPicker from "./components/colorPicker";
 import ColorPickerArray from "./components/colorPickerArray";
 import PhoneNumber from "./components/phoneNumber";
 import QuestionIndex from "./components/questionIndex";
+import PersonalPizza from "./components/personalPizza";
+import GroceryCart from "./components/groceryCart";
 
 export {
   Comp1,
@@ -40,4 +42,6 @@ export {
   ColorPickerArray,
   PhoneNumber,
   QuestionIndex,
+  PersonalPizza,
+  GroceryCart,
 };

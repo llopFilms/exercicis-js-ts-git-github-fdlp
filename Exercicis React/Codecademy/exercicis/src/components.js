@@ -49,12 +49,4 @@ export {
   ColorPickerArray,
   PhoneNumber,
   QuestionIndex,
-  PersonalPizza,
-  GroceryCart,
-  Login,
-  EditProfile,
-  PageTitle,
-  Counter,
-  CounterEvent,
-  Timer,
 };

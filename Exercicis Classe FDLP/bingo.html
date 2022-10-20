@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="numBoto()">Nou número</button>
+    <p id="paragraf"></p>
+    <script>
+      /* const min = 1;
+      const max = 90;
+      let bingoCardNumbers = [[], [], []];
+      function generatNumbersGrid() {
+        for (let i = 0; i < bingoCardNumbers.length; i++) {
+          while (bingoCardNumbers[i].length < 5) {
+            const num = Math.floor(Math.random() * (max - min) + min);
+            if (!bingoCardNumbers[i].includes(num)) {
+              bingoCardNumbers[i].push(num);
+            }
+          }
+          bingoCardNumbers[i].sort((a, b) => a - b);
+        }
+        console.log(bingoCardNumbers.join("<br>"));
+      }
+      generatNumbersGrid(); */
+
+      /*   function getCartoon() {
+        const min = 1;
+        const max = 90;
+        let cartoon = [];
+        let i = 0;
+        let num;
+        let cartoonSpliced;
+        while (cartoon.length < 15) {
+          num = Math.floor(Math.random() * (max - min) + min);
+          if (!cartoon.includes(num)) {
+            cartoon.push(num);
+          }
+          cartoon.sort((a, b) => a - b);
+        }
+        cartoon.splice(5, 0, "<br>");
+        cartoon.splice(11, 0, "<br>");
+        //document.getElementById("boardResult").innerHTML =
+        cartoonSpliced = "| " + cartoon.join(" | ") + " |";
+        console.log(cartoonSpliced, cartoon.length);
+        return cartoonSpliced;
+      }
+      getCartoon(); */
+      let numRandomJaFets = [];
+
+      function numBoto() {
+        let numRandom = Math.floor(Math.random() * (90 - 1) + 1);
+
+        while (numRandomJaFets.includes(numRandom)) {
+          numRandom = Math.floor(Math.random() * (90 - 1) + 1);
+        }
+
+        numRandomJaFets.push(numRandom);
+        console.log(numRandom);
+        console.log(numRandomJaFets);
+        document.getElementById("paragraf").innerHTML += "<br>" + numRandom;
+        return numRandom;
+      }
+      numBoto();
+    </script>
+  </body>
+</html>

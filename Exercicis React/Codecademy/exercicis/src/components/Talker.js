@@ -1,5 +1,5 @@
 import React from "react";
-import Boto from "./boto";
+import Boto from "./Boto";
 import { useState } from "react";
 
 const Talker = () => {

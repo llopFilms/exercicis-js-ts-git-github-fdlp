@@ -1,33 +1,33 @@
-import Comp1 from "./components/comp1";
-import RedPanda from "./components/redPanda";
-import Random from "./components/random";
-import Friends from "./components/friends";
-import TodaysPlan from "./components/todaysPlan";
-import IceCream from "./components/iceCream.js";
-import VeureProps from "./components/veureProps";
-import Greeting from "./components/greeting";
-import Talker from "./components/talker";
-import Llistes from "./components/llistes";
-import Estat from "./components/estat";
-import Mood from "./components/mood";
-import ToggleColor from "./components/toggleColor";
-import Clock from "./components/clock";
-import Question from "./components/question";
-import ToggleOnOff from "./components/toggleOnOff";
-import ColorPicker from "./components/colorPicker";
-import ColorPickerArray from "./components/colorPickerArray";
-import PhoneNumber from "./components/phoneNumber";
-import QuestionIndex from "./components/questionIndex";
-import PersonalPizza from "./components/personalPizza";
-import GroceryCart from "./components/groceryCart";
-import Login from "./components/login";
-import EditProfile from "./components/editProfile";
-import PageTitle from "./components/pageTitle";
-import Counter from "./components/counter";
-import CounterEvent from "./components/counterEvent";
-import Timer from "./components/timer";
-import Forecast from "./components/forecast";
-
+import Comp1 from "./components/Comp1";
+import RedPanda from "./components/RedPanda";
+import Random from "./components/Random";
+import Friends from "./components/Friends";
+import TodaysPlan from "./components/TodaysPlan";
+import IceCream from "./components/IceCream.js";
+import VeureProps from "./components/VeureProps";
+import Greeting from "./components/Greeting";
+import Talker from "./components/Talker";
+import Llistes from "./components/Llistes";
+import Estat from "./components/Estat";
+import Mood from "./components/Mood";
+import ToggleColor from "./components/ToggleColor";
+import Clock from "./components/Clock";
+import Question from "./components/Question";
+import ToggleOnOff from "./components/ToggleOnOff";
+import ColorPicker from "./components/ColorPicker";
+import ColorPickerArray from "./components/ColorPickerArray";
+import PhoneNumber from "./components/PhoneNumber";
+import QuestionIndex from "./components/QuestionIndex";
+import PersonalPizza from "./components/PersonalPizza";
+import GroceryCart from "./components/GroceryCart";
+import Login from "./components/Login";
+import EditProfile from "./components/EditProfile";
+import PageTitle from "./components/PageTitle";
+import Counter from "./components/Counter";
+import CounterEvent from "./components/CounterEvent";
+import Timer from "./components/Timer";
+import Forecast from "./components/Forecast";
+import CanviNom from "./components/CanviNom";
 
 export {
   Comp1,
@@ -59,4 +59,5 @@ export {
   CounterEvent,
   Timer,
   Forecast,
+  CanviNom,
 };

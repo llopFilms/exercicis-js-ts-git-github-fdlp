@@ -1,5 +1,5 @@
 import React from "react";
-import Llista from "./llista";
+import Llista from "./Llista";
 
 const Llistes = () => (
   <div>

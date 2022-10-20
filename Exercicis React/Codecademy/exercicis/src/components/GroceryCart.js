@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ItemList from "./itemsList";
-import { produce, pantryItems } from "../data/groceryItemsList";
+import ItemList from "./ItemsList";
+import { produce, pantryItems } from "../lib/data/groceryItemsList";
 
 export default function GroceryCart() {
   const [cart, setCart] = useState([]);

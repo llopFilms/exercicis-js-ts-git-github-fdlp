@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ToggleOnOff = () => {
   const [toggle, setToggle] = useState(true);
-  console.log(toggle);
+  
   return (
     <div>
       <button onClick={() => setToggle(!toggle)}>

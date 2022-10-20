@@ -8,10 +8,12 @@ const Timer = () => {
       setTime((previ) => previ + 1);
     }, 1000);
     return () => clearInterval(intervaliId);
-  },[]);
+  },[time]);
 
   const [name, setName] = useState("");
   const changeHandler = ({ target }) => setName(target.value);
+  /* console.log(name);
+  console.log(time); */
 
   return (
     <div>

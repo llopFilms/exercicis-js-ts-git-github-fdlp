@@ -37,6 +37,7 @@ function App() {
       <Component.Counter />
       <Component.CounterEvent />
       <Component.Timer />
+      <Component.Forecast />
     </div>
   );
 }

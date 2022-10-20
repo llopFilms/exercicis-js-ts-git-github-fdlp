@@ -10,7 +10,7 @@ export default function Login() {
       [name]: value
     }));
   }  
-    console.log(formState);
+  console.log(formState);
   
   return (
     <div>

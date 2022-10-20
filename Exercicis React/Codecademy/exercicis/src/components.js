@@ -26,6 +26,7 @@ import PageTitle from "./components/pageTitle";
 import Counter from "./components/counter";
 import CounterEvent from "./components/counterEvent";
 import Timer from "./components/timer";
+import Forecast from "./components/forecast";
 
 
 export {
@@ -57,4 +58,5 @@ export {
   Counter,
   CounterEvent,
   Timer,
+  Forecast,
 };

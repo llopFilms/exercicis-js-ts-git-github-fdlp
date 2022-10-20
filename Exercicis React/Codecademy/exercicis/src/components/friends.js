@@ -16,15 +16,17 @@ const friends = [
 ];
 
 const Friends = () => (
-  <ul>
-    <li>Hola</li>
-    {friends.map((friend, index) => (
-      <>
-        <li key={index}>{friend.title}</li>
-        <img width="200px" alt="" src={friend.src} />
-      </>
-    ))}
-  </ul>
+  <div>
+      <h2>Hola</h2>
+    <ul>
+      {friends.map((friend, index) => (
+        <div key={index}>
+          <li>{friend.title}</li>
+          <img width="200px" alt="" src={friend.src} />
+        </div>
+      ))}
+    </ul>
+  </div>
 );
 
 export default Friends;

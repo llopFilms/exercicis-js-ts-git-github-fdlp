@@ -24,8 +24,8 @@ const ColorPickerArray = () => {
   return (
     <div style={divStyle}>
       <h3>Color Seleccionat: {color}</h3>
-      {colorNames.map(colorName => (
-        <button onClick={() => setColor(colorName)}>{colorName}</button>
+      {colorNames.map((colorName, index) => (
+        <button key={index}  onClick={() => setColor(colorName)}>{colorName}</button>
       ) )}
     </div>
   )

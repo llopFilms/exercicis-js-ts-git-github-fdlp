@@ -18,6 +18,16 @@ import ColorPicker from "./components/colorPicker";
 import ColorPickerArray from "./components/colorPickerArray";
 import PhoneNumber from "./components/phoneNumber";
 import QuestionIndex from "./components/questionIndex";
+import PersonalPizza from "./components/personalPizza";
+import GroceryCart from "./components/groceryCart";
+import Login from "./components/login";
+import EditProfile from "./components/editProfile";
+import PageTitle from "./components/pageTitle";
+import Counter from "./components/counter";
+import CounterEvent from "./components/counterEvent";
+import Timer from "./components/timer";
+import Forecast from "./components/forecast";
+
 
 export {
   Comp1,
@@ -40,4 +50,13 @@ export {
   ColorPickerArray,
   PhoneNumber,
   QuestionIndex,
+  PersonalPizza,
+  GroceryCart,
+  Login,
+  EditProfile,
+  PageTitle,
+  Counter,
+  CounterEvent,
+  Timer,
+  Forecast,
 };

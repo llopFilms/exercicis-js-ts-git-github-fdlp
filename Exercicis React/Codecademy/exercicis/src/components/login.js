@@ -10,7 +10,11 @@ export default function Login() {
       [name]: value
     }));
   }  
+<<<<<<< HEAD
     console.log(formState);
+=======
+  console.log(formState);
+>>>>>>> 435c288a6354791ca9d525494a446f10be8efacc
   
   return (
     <div>

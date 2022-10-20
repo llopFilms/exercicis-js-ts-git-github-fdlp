@@ -13,7 +13,10 @@ export default function EditProfile() {
     console.log(JSON.stringify(profile, "", 2));
   };
 
+<<<<<<< HEAD
   console.log(profile);
+=======
+>>>>>>> 435c288a6354791ca9d525494a446f10be8efacc
   return (
     <div>
       <h4>Edit Profile</h4>

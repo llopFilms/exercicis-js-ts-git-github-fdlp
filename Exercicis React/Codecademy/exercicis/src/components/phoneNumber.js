@@ -13,7 +13,7 @@ const PhoneNumber = () => {
 
   return (
     <div>
-      <label for="phone-input">Phone: </label>
+      <label name="phone-input">Phone: </label>
       <input
         type="number"
         id="phone-input"

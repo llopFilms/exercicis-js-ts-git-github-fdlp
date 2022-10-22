@@ -9,8 +9,7 @@ export default function Login() {
       ...prev,
       [name]: value
     }));
-  }  
-  console.log(formState);
+  }
   
   return (
     <div>

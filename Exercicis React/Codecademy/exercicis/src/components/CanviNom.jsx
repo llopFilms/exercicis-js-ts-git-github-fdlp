@@ -5,10 +5,9 @@ const CanviNom = () => {
   const [name, setName] = useState({ nameIni: "Frarthur" });
   const canviaNom = (nouNom) => setName({ nameIni: nouNom });
 
-  console.log(name);
   return (
     <div>
-      <Select nom={name.nameIni} siCanvia={canviaNom} />
+      <Select nom={name.nameIni} siCanvia={canviaNom} />      
     </div>
   );
 };

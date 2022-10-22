@@ -3,7 +3,7 @@ import RedPanda from "./components/RedPanda";
 import Random from "./components/Random";
 import Friends from "./components/Friends";
 import TodaysPlan from "./components/TodaysPlan";
-import IceCream from "./components/IceCream.js";
+import IceCream from "./components/IceCream";
 import VeureProps from "./components/VeureProps";
 import Greeting from "./components/Greeting";
 import Talker from "./components/Talker";
@@ -28,6 +28,13 @@ import CounterEvent from "./components/CounterEvent";
 import Timer from "./components/Timer";
 import Forecast from "./components/Forecast";
 import CanviNom from "./components/CanviNom";
+import CanviNom2 from "./components/CanviNom2";
+import EstilInlineVariable from "./components/EstilInlineVariable";
+import Frase from "./components/FraseEstil";
+import Pigs from "./components/Pigs/Container/Pigs"
+import Runner from './components/Runner';
+import BookList from './components/BookList';
+import FormControlat from './components/FormControlat';
 
 export {
   Comp1,
@@ -60,4 +67,11 @@ export {
   Timer,
   Forecast,
   CanviNom,
+  CanviNom2,
+  EstilInlineVariable,
+  Frase,
+  Pigs,
+  Runner,
+  BookList,
+  FormControlat,
 };

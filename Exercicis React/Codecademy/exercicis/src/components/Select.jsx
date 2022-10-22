@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Select = ({ nom, siCanvia }) => {
 
-  console.log(nom);
-  const handleChange = ({target}) => {
+  const handleChange = ({ target }) => {
     const newNameS = target.value;
-    console.log(newNameS);
     siCanvia(newNameS);
-    return newNameS;
-}
+  };
 
   return (
     <div>
@@ -22,6 +19,6 @@ const Select = ({ nom, siCanvia }) => {
       </select>
     </div>
   );
-}
+};
 
 export default Select;

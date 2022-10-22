@@ -5,7 +5,7 @@ import * as Component from "./components";
 function App() {
   return (
     <div className="App">
-      {/* <Component.Comp1 />
+      <Component.Comp1 />
       <Component.Random />
       <Component.RedPanda />
       <Component.Friends />
@@ -36,9 +36,16 @@ function App() {
       <Component.PageTitle />
       <Component.Counter />
       <Component.CounterEvent />
-      <Component.Timer /> */}
+      <Component.Timer />
       <Component.Forecast />
       <Component.CanviNom />
+      <Component.CanviNom2 />
+      <Component.EstilInlineVariable />
+      <Component.Frase />
+      <Component.Pigs />
+      <Component.Runner />
+      <Component.BookList />
+      <Component.FormControlat />
     </div>
   );
 }

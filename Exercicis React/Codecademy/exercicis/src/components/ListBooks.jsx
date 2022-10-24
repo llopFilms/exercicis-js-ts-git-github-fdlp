@@ -7,12 +7,12 @@ const estil = {
 
 const ListBooks = ({ books }) => (
   <ol style={estil}>
-    {books.map((book, index) => (
-      <li key={`ol+ ${index}`}>
-        <ul key={`ul+ ${index}`}>
-          <li key={`Title book ${index}`}>Title: {book.title}</li>
-          <li key={`Author book ${index}`}>Author: {book.author}</li>
-          <li key={`Weeks book ${index}`}>Weeks: {book.weeksOnList}</li>
+    {books.map((book) => (
+      <li key={book.id}>
+        <ul>
+          <li>Title: {book.title}</li>
+          <li>Author: {book.author}</li>
+          <li>Weeks: {book.weeksOnList}</li>
           <br></br>
         </ul>
       </li>

@@ -33,6 +33,8 @@
   "less.format.spaceAroundSelectorSeparator": true,
   "scss.format.spaceAroundSelectorSeparator": true,
   "emmet.showSuggestionsAsSnippets": true,
+  "editor.tabCompletion": true,
+  
 
   "liveSassCompile.settings.autoprefix": [],
   "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],

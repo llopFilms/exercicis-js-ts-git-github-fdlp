@@ -16,31 +16,73 @@
   // 	"description": "Log output to console"
   // }
 
-  "impr": {
-    "scope": "javascriptreact",
-    "prefix": "impr",
-    "body": ["import React from 'react';", "$1"],
-    "description": "import React"
-  },
-
-  "impc": {
-    "scope": "javascriptreact",
-    "prefix": "impc",
-    "body": ["import { $1 } from './$2';", "$0"],
-    "description": "import component React"
-  },
-
-  "expd": {
-    "scope": "javascriptreact",
-    "prefix": "expd",
-    "body": "export default $1;",
-    "description": "export component React"
-  },
-
   "console.log": {
     "scope": "",
     "prefix": "clg",
     "body": "console.log($1);",
     "description": "Log output to console"
+  },
+
+  "console.table": {
+    "scope": "",
+    "prefix": "clt",
+    "body": "console.table($1);",
+    "description": "Log output table to console"
+  },
+
+  "impr": {
+    "scope": "javascriptreact",
+    "prefix": "impr",
+    "body": ["import React from 'react';", "$0"],
+    "description": "import de React"
+  },
+
+  "impruse": {
+    "scope": "javascriptreact",
+    "prefix": "impruse",
+    "body": ["import React, { useState } from 'react';", "$0"],
+    "description": "import React + useState de React"
+  },
+
+  "imprusef": {
+    "scope": "javascriptreact",
+    "prefix": "imprusef",
+    "body": ["import React, { useState, useEffect } from 'react';", "$0"],
+    "description": "import React + useState + useEffect de React"
+  },
+
+  "imprc": {
+    "scope": "javascriptreact",
+    "prefix": "imprc",
+    "body": ["import React, { $1 } from 'react';", "$0"],
+    "description": "import React + component React"
+  },
+
+  "impc": {
+    "scope": "javascriptreact",
+    "prefix": "impc",
+    "body": ["import $1 from './$2';", "$0"],
+    "description": "import component React"
+  },
+
+  "imppt": {
+    "scope": "javascriptreact",
+    "prefix": "imppt",
+    "body": ["import PropTypes from 'prop-types';", "$0"],
+    "description": "import prop-types React"
+  },
+
+  "expd": {
+    "scope": "javascriptreact",
+    "prefix": "expd",
+    "body": ["export default $1;", "$0"],
+    "description": "export default component React"
+  },
+
+  "uses": {
+    "scope": "javascriptreact",
+    "prefix": "uses",
+    "body": ["const [valor, setValor] = useState($1);", "$0"],
+    "description": "useState Valor React"
   }
 }

@@ -7,17 +7,15 @@ export async function getTotsCoets() {
     return dades;
   } catch (error) {
     console.log("Error!", error);
-    return null;
   }
 }
 
 export async function getCoetsPerNumero(numeroCohet) {
   try {
-    const response = await fetch(`${API_URL}/launches/${numeroCohet}`);
+    const resposta = await fetch(`${API_URL}/launches/${numeroCohet}`);
     const dades = await resposta.json();
     return dades;
   } catch (error) {
-    console.log(error);
-    return null;
+    console.log("Error!", error);
   }
 }

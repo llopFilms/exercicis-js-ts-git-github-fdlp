@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const NormalizeModernGS = createGlobalStyle`
+export const NormalizeModernG = createGlobalStyle`
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 

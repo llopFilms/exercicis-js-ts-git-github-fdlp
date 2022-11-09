@@ -23,31 +23,16 @@ const useWeather = () => {
 };
 
 const fetchData = async (setData, setError, signal) => {
-  try {const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?${KEYS.apiLatLon}&appid=${KEYS.apiKey}&lang=${KEYS.apiLang}&units=${KEYS.apiUnit}`,
-    { signal }
-  );
-  const data = await response.json();
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?${KEYS.apiLatLon}&appid=${KEYS.apiKey}&lang=${KEYS.apiLang}&units=${KEYS.apiUnit}`,
+      { signal }
+    );
+    const data = await response.json();
     setData(data);
-  }
-  catch (err) {
+  } catch (err) {
     setError(err.message);
-  }    
+  }
 };
-
-/* const fetchData = (setData, setError, signal) => {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?${KEYS.apiLatLon}&appid=${KEYS.apiKey}&lang=${KEYS.apiLang}&units=${KEYS.apiUnit}`,
-    { signal }
-  )
-    .then((resposta) => resposta.json())
-    .then((dades) => {
-      console.log(dades);
-      setData(dades);
-    })
-    .catch((err) => {
-      setError(err.message);
-    });
-}; */
 
 export default useWeather;

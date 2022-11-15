@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.1 - Exercici 7</title>
+  </head>
+  <body>
+    <!--Fer un programa on l’usuari introdueix per pantalla un caràcter i un número. El programa imprimeix per pantalla un quadrat amb la mida i el caràcter introduïts per l’usuari.
+
+	Exemple:
+
+	% % % % %
+
+	% % % % %
+
+	% % % % %
+
+	% % % % %
+
+	% % % % %.-->
+
+    <h2>Quadrat màgic fet amb un caràcter</h2>
+    <br />
+
+    <!--Aportació de dades-->
+    <p>Introdueix el caràcter que vols utilitzar:</p>
+    <input type="text" id="caixaChar" maxlength="1" size="1" />
+    <p>Introdueix la mida:</p>
+    <input type="text" id="caixaNum" maxlength="2" size="2" />
+    <br /><br />
+    <input type="button" onClick="impressora()" value="Aquí ho tens" />
+    <br />
+    <p id="impressió"></p>
+
+    <script>
+      function impressora() {
+        //Recepció de dades d'ids d'HTML
+        let char = document.getElementById("caixaChar").value;
+        let num = Number(document.getElementById("caixaNum").value);
+
+        //Declaració de variables
+        let i,
+          j,
+          quadMag = "";
+
+        //'Impressió' de línies horitzontals
+        for (i = 0; i < num; i++) {
+          for (j = 0; j < num; j++) {
+            quadMag += char;
+          }
+          quadMag += "<br>";
+        }
+
+
+        //Sortida de dades cap a id d'HTML
+        document.getElementById("impressió").innerHTML = quadMag;
+      }
+    </script>
+  </body>
+</html>

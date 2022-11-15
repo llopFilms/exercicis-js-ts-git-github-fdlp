@@ -46,8 +46,7 @@ export const Inici = () => {
                   className="item-llista"
                   key={coet.flight_number}
                   {...coet}
-                />
-              )
+                />             )
           )}
         </Llista>
       </section>

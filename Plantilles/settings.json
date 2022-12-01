@@ -34,7 +34,6 @@
   "scss.format.spaceAroundSelectorSeparator": true,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.tabCompletion": true,
-  
 
   "liveSassCompile.settings.autoprefix": [],
   "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
@@ -201,7 +200,7 @@
   "terminal.integrated.tabs.enabled": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.syntaxProfiles": {
-    "javascript": "html"
+    "html": {"inline_break": true}
   },
   "emmet.includeLanguages": {
     "javascript": "html"

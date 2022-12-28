@@ -34,7 +34,7 @@ h1 {
 	font-size: 24px;
 }
 
-.contenedor {
+.container {
 	color: #f2f2f2;
 	font-size: 18px;
 	line-height: 30px;
@@ -44,11 +44,11 @@ h1 {
 	text-align: justify;
 }
 
-.contenedor p {
+.container p {
 	margin-bottom: 40px;
 }
 
-.contenedor img {
+.container img {
 	width: 100%;
 	height: 500px;
 	overflow: hidden;

@@ -2,9 +2,11 @@ const img1 = document.getElementById("img1");
 const img2 = document.getElementById("img2");
 
 const carregarImatge = (entrades, observador) => {
+  console.log(entrades, observador);
   entrades.forEach((entrada) => {
     if (entrada.isIntersecting) entrada.target.classList.add("visible");
-    else entrada.target.classList.remove("visible"); });
+    else entrada.target.classList.remove("visible");
+  });
 };
 
 const observador = new IntersectionObserver(carregarImatge, {

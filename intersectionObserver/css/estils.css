@@ -7,7 +7,7 @@
 body {
 	background: #f2f2f2;
 	font-family: 'Roboto', sans-serif;
-	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgb(4, 1, 14) 75%), url('../img/bg.jpg');
+	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgb(4, 1, 14) 65%), url('../img/bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -61,11 +61,11 @@ h1 {
 }
 
 .contenidor img.dreta {
-  transform: translateX(300px); 
+  transform: translateX(200px); 
 }
 
 .contenidor img.esquerra {
-  transform: translateX(-300px);
+  transform: translateX(-200px);
 }
 
 .contenidor img.visible{

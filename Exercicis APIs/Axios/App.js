@@ -2,10 +2,10 @@ const getNom = (idPost) => {
   fetch(`https://jsonplaceholder.typicode.com/posts/${idPost}`)
     .then((response) => response.json())
     .then((post) => {
-      console.log(post.userId);
+      console.log("fetch tot junt -->",post.userId);
       fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
         .then((response) => response.json())
-        .then((user) => console.log(user.name));
+        .then((user) => console.log("fetch tot junt -->",user.name));
     });
 };
 getNom(80);
@@ -16,15 +16,15 @@ const getNomAsync = async (idPost) => {
       `https://jsonplaceholder.typicode.com/posts/${idPost}`
     );
     const post = await resPost.json();
-    console.log(post.userId);
+    console.log("fetchAsync -->",post.userId);
 
     const resUser = await fetch(
       `https://jsonplaceholder.typicode.com/users/${post.userId}`
     );
     const user = await resUser.json();
-    console.log(user.name);
+    console.log("fetchAsync -->",user.name);
   } catch (err) {
-    console.log(err.message);
+    console.log("fetchAsync -->",err.message);
   }
 };
 getNomAsync(80);
@@ -35,12 +35,12 @@ const getNomAsync2 = async (idPost) => {
       .then((response) => response.json())
       .then((resPost) => {
         const post = resPost;
-        console.log(post.userId);
+        console.log("fecthAsync tot junt -->",post.userId);
         fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
           .then((response) => response.json())
           .then((resUser) => {
             const user = resUser;
-            console.log(user.name);
+            console.log("fetchAsync tot junt -->", user.name);
           });
       });
   } catch (err) {
@@ -54,12 +54,12 @@ const getNomAxios = async (idPost) => {
     const resPost = await axios(
       `https://jsonplaceholder.typicode.com/posts/${idPost}`
     );
-    console.log(resPost.data.userId);
+    console.log("axios -->",resPost.data.userId);
 
     const resUser = await axios(
       `https://jsonplaceholder.typicode.com/users/${resPost.data.userId}`
     );
-    console.log(resUser.data.name);
+    console.log("axios -->",resUser.data.name);
   } catch (err) {
     console.log(err.message);
   }

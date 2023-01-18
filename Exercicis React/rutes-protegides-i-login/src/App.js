@@ -24,11 +24,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home/>}/>
-          <Route path="protegit" element={<Protegit />}/>
+          <Route path="desProtegit" element={<DesProtegit />}/>
           <Route
-            path="desprotegit"
+            path="protegit"
             element={
-              isAuth ? <Desprotegit /> : <Navigate to="/"/>
+              isAuth ? <Protegit /> : <Navigate to="/"/>
             }
           />
         </Routes>

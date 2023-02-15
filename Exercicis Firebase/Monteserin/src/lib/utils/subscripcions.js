@@ -1,5 +1,3 @@
-import {onAuthStateChanged} from 'firebase/auth';
-
 export const snapshot = (snapshot) => {
 	const dades = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 	console.log(dades);

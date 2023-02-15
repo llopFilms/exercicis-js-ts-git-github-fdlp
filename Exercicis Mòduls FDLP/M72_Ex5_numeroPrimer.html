@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mòdul 7.2 - Exercici 5</title>
-</head>
-<body>
-    <!--L’usuari introdueix un nombre per teclat i el programa crida a un mètode que indiqui si el número és primer o no. -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mòdul 7.2 - Exercici 5</title>
+	</head>
+	<body>
+		<!--L’usuari introdueix un nombre per teclat i el programa crida a un mètode que indiqui si el número és primer o no. -->
 
-<h3>Número primer: exclusivament que n/n = 1 i n/1 = n. </h3>
-<h2></h2>
-<br/><br/>
+		<h3>Número primer: exclusivament que n/n = 1 i n/1 = n. </h3>
+		<h2></h2>
+		<br /><br />
 
-<label for="num" >Introdueix un número per veure si és primer o no: </label>
-<input type="number" id="num" maxlength= "4" size="8" />
+		<label for="num">Introdueix un número per veure si és primer o no: </label>
+		<input type="number" id="num" maxlength="4" size="8" />
 
-<input type="button" onClick="validacio()" value="Clica i calculem..."/>
-<br/><br/>
-<p id="resultat"><p></p>
-    <script>
-        "use strict";
+		<input type="button" onClick="validacio()" value="Clica i calculem..." />
+		<br /><br />
+		<p id="resultat"></p><p></p>
+		<script>
+			"use strict";
 
-        //Funció auxiliar
-        function calcPrimer(num){
+			//Funció auxiliar
+			function calcPrimer(num) {
+				let i = 2,
+				primer = true;
 
-            let i=2, primer = true;
+				while (primer == true && i < num) {
+					if (num % i == 0) primer = false;
+					i++;
+				}
 
-            while (primer == true && i < num) {
-                if (num % i == 0)
-                primer = false;
-                i++;
-            }
+				return primer;
+			}
 
-            return primer;
-        }    
+			//Funció principal
+			function main(num) {
+				//Sortida de dades
+				let resultat = calcPrimer(num);
 
-        //Funció principal
-        function main(num){
-            
-            //Sortida de dades
-            let resultat = calcPrimer(num);
+				if (resultat) {
+					document.getElementById("resultat").innerHTML =
+						"El número introduït, que és el <strong>" +
+						num +
+						"</strong>, <strong> SÍ </strong> és primer.";
+				} else {
+					document.getElementById("resultat").innerHTML =
+						"El número introduït, que és el <strong>" +
+						num +
+						"</strong>, <strong> NO </strong> és primer.";
+				}
+			}
 
-            if (resultat){
-                document.getElementById("resultat").innerHTML = "El número introduït, que és el <strong>" +num+ "</strong>, <strong> SÍ </strong> és primer.";
+			//Funció validació
+			function validacio() {
+				let validacio = true;
+				let msgError =
+					"Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau.";
 
-            }else{
-                document.getElementById("resultat").innerHTML = "El número introduït, que és el <strong>" +num+ "</strong>, <strong> NO </strong> és primer.";  
+				let num = Number(document.getElementById("num").value);
 
-            }
+				if (isNaN(num) || num == "" || num <= 0) {
+					validacio = false;
+					document.getElementById("num").value = "";
+				}
 
-        }
-
-        //Funció validació
-        function validacio(){
-            
-            let validacio = true;
-            let msgError = "Introdueix les dades correctament. \nClica 'D'acord' i torna-les a introduir, sisplau."
-
-            let num = Number(document.getElementById("num").value);
-
-            if (isNaN(num) || num =="" || num <=0) {
-                validacio = false;
-                document.getElementById("num").value = "";
-
-            }
-
-            if (validacio) {
-                main(num);
-
-            } else {
-                alert(msgError); 
-
-            }
-
-        }
-    </script>
-
+				if (validacio) {
+					main(num);
+				} else {
+					alert(msgError);
+				}
+			}
+		</script>
+	</body></html
+>

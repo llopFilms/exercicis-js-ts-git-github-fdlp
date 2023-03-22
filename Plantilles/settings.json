@@ -94,7 +94,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "git.ignoreRebaseWarning": true,
   "git.confirmSync": false,
   "terminal.integrated.copyOnSelection": true,

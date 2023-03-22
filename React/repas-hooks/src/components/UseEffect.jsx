@@ -2,32 +2,54 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UseEffect = () => {
-  const [dades, setDades] = useState("");
-  const [comptador, setComptador] = useState(0);
-  //console.log("dades:",dades);
+	const [dades, setDades] = useState([]);
+	const [comptador, setComptador] = useState(1);
+	const [nom, setNom] = useState("");
+	const [amplada, setAmplada] = useState(0);
 
-  const handleComptador = (e) => {
-    //console.log(comptador);
-    if (comptador === 9) setComptador(0);
-    else setComptador(comptador + 1);
-  };
+	const handleComptador = () => {
+		if (comptador === 10) setComptador(1);
+		else setComptador(comptador + 1);
+	};
 
-  useEffect(() => {
-    //console.log("renders!");
-    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
-      //console.log("Api ha respost:",response.data[comptador].name);
-      setDades(response.data[comptador].name);
-    });
-  }, [comptador]);
-  return (
-    <div>
-      <h2>useEffect</h2>
-      <hr />
-      <p>{dades}</p>
-      <button onClick={handleComptador}>Comptador</button>
-      <span>{comptador+1}</span>
-    </div>
-  );
+	useEffect(() => {
+		//console.log("1");
+		axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+			const resposta = response.data;
+			setDades(resposta);
+			if (resposta.length > 0) setNom(resposta[comptador - 1].name);
+		});
+	}, []);
+
+	useEffect(() => {
+		//console.log("2");
+		if (dades.length > 0) {
+			setNom(dades[comptador - 1].name);
+		}
+	}, [comptador]);
+
+	useEffect(() => {
+		const actualitzarAmplada = () => {
+			const ampladaFinestra = document.body.clientWidth;
+			setAmplada(ampladaFinestra);
+		};
+		actualitzarAmplada();
+		window.addEventListener("resize", actualitzarAmplada);
+		return () => removeEventListener("resize", actualitzarAmplada);
+	}, []);
+
+	return (
+		<div>
+			<h2>useEffect</h2>
+			<hr />
+			<p>{nom}</p>
+			<button onClick={handleComptador}>Comptador</button>
+			<span>{comptador}</span>
+			<p>
+				Amplada de la finestra: <span>{amplada} píxels</span>
+			</p>
+		</div>
+	);
 };
 
 export default UseEffect;

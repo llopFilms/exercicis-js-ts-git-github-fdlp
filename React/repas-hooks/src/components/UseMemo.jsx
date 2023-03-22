@@ -3,7 +3,8 @@ import { useEffect, useState, useMemo } from "react";
 
 const UseMemo = () => {
   const [data, setData] = useState(null);
-  const [commuta, setCommuta] = useState(false);
+	const [commuta, setCommuta] = useState(false);
+	//console.log(data);
 
   useEffect(() => {
     axios

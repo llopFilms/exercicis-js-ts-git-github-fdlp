@@ -1,12 +1,10 @@
 import { forwardRef, useImperativeHandle } from "react";
 import { useState } from "react";
 
-const Botofill = forwardRef((props, ref) => {
+const Botofill = forwardRef((props, botoRef) => {
   const [commuta, setCommuta] = useState(false);
-  useImperativeHandle(ref, () => ({
-    canviCommuta() {
-      setCommuta(!commuta);
-    }
+  useImperativeHandle(botoRef, () => ({
+    canviCommuta: () => setCommuta(!commuta)
   }))
   return (
     <>
@@ -15,4 +13,5 @@ const Botofill = forwardRef((props, ref) => {
     </>
   );
 });
+
 export default Botofill;

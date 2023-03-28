@@ -315,9 +315,8 @@ console.log(Number.isFinite(num5));
 console.log(Number.isInteger(num5));
 
 const anyTitol = any2023.map(
-	(posts) => (`${posts.titol}, publicat l'any ${anyActual}`)
-)
-	;
+	(posts) => `${posts.titol}, publicat l'any ${anyActual}`
+);
 console.log(anyTitol);
 
 const text = "El meu últim";
@@ -369,15 +368,18 @@ const dades = [
 	},
 ];
 
-/* const rebreDades = () => dades;
-console.log(rebreDades()); */
+const rebreDades2 = () => dades;
+console.log(rebreDades2());
 
-/* const rebreDades = () => setTimeout (() => console.log("2s més tard...",dades), 2000);
-console.log(rebreDades()); */
+const rebreDades3 = () =>
+	setTimeout(() => {
+		console.log("2s més tard...", dades);
+	}, 2000);
+console.log(rebreDades3());
 
 const error = "Cagada pastoret!...";
 
-const rebreDades = () => {
+const rebreDades4 = () => {
 	return new Promise((resolve, reject) => {
 		if (dades.length == 0) {
 			reject(new Error(error));
@@ -389,19 +391,24 @@ const rebreDades = () => {
 	});
 };
 
-/* rebreDades()
-.then((dades) => console.log("2s més tard...",dades))
-.catch((err) => console.log(err.message)); */
+rebreDades4()
+	.then((dades) => {
+		console.log("2s més tard...", dades);
+	})
+	.catch((err) => {
+		console.log(err.message);
+	});
+console.log(rebreDades4());
 
 async function demanaDades() {
 	try {
-		const demana = await rebreDades();
+		const demana = await rebreDades4();
 		console.log("2s més tard...", demana);
 	} catch (err) {
 		console.log(err.message);
 	}
 }
-demanaDades();
+console.log(demanaDades());
 
 const fetched = true;
 const result2 = "Promise was fulfilled";
@@ -415,9 +422,13 @@ const myPromise = new Promise((resolve, reject) => {
 	}
 });
 
-/* myPromise
-  .then(() => { console.log(dades, result2) })
-  .catch((error2) => { console.log(error2.message) }); */
+myPromise
+	.then(() => {
+		console.log(dades, result2);
+	})
+	.catch((error2) => {
+		console.log(error2.message);
+	});
 
 async function exerciciPromise() {
 	try {
@@ -427,7 +438,47 @@ async function exerciciPromise() {
 		console.log(error2.message);
 	}
 }
-exerciciPromise();
+console.log(exerciciPromise());
+
+const url = "https://pokeapi.co/api/v2/encounter-condition/1/";
+fetch(url)
+	.then((response) => response.json())
+	.then((pokemon) => {
+		console.log(pokemon);
+	})
+	.catch((err) => console.error(err));
+
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data);
+	})
+	.catch((err) => console.error(err));
+console.log("línia 2");
+
+async function carregarDades() {
+	const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+	const data = await response.json();
+	console.log(data);
+}
+console.log(carregarDades());
+
+const rebreAcudit = async () => {
+	try {
+		const resposta = await fetch("https://icanhazdadjoke.com/", { headers: { Accept: "application/json" } });
+		const dades = await resposta.json();
+		console.log(dades);
+	} catch (err) {
+		console.log(err.message)
+	} finally {
+		console.log("Promesa acabada")
+	};
+}
+console.log(rebreAcudit());
+
+
 
 const numbers3 = [2, 4, 6];
 //const newNumbers = numbers.map((n) => n / 2);
@@ -461,4 +512,3 @@ miduWithNewInfo.experience.years = 19;
 // hacemos un console.log del objeto inicial
 console.log(midu);
 console.log(miduWithNewInfo);
-

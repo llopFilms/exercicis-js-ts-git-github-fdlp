@@ -67,27 +67,43 @@ img {
 }
 
 .profile {
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  margin-top: 35px;
-  padding: 25px;
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	margin-top: 35px;
+	padding: 25px;
 }
 
 .day {
-  background: #fff;
-  color: #222;
+	background: #fff;
+	color: #222;
 }
 
 .night {
-  background: #222;
-  color: #fff;
+	background: #222;
+	color: #fff;
 }
 
 .panel {
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  margin-top: 20px;
-  padding: 10px;
-  width: 200px;
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	margin-top: 20px;
+	padding: 10px;
+	width: 200px;
 }
 
+img {
+	width: 120px;
+	height: 120px;
+}
+
+button {
+	display: inline;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+label,
+textarea {
+	display: block;
+	margin-bottom: 10px;
+}

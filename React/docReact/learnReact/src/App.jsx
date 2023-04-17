@@ -1,15 +1,16 @@
 import "./App.css";
 import ComponentsiPropsiChildren from "./ComponentsiPropsiChildren/ComponentsiPropsiChildren";
 import CondicionalsiLlistes from "./CondicionalsiLlistes/CondicionalsiLlistes";
-import Interaccio from "./Interaccio/Interaccio";
-
+import Interaccio from "./InteraccioiEstat/InteraccioiEstat";
+import Maneig from "./ManeigEstat/ManeigEstat";
 
 const App = () => (
-		<div >
+	<div>
 		{/* <ComponentsiPropsiChildren /> */}
 		{/* <CondicionalsiLlistes/> */}
-		<Interaccio/>
-		</div>
-	);
+		{/* <Interaccio/> */}
+		<Maneig />
+	</div>
+);
 
 export default App;

@@ -14,10 +14,12 @@ import Artists from "./components/Artists";
 import CirclesDown from "./components/CirclesDown";
 import Counters from "./components/Counters";
 import BucketList from "./components/BucketList";
+import ShoppingCart from "./components/ShoppingCart";
+import Todo from "./components/Todo";
 
 const Interaccio = () => (
 	<div>
-		{/* <Toolbar
+		<Toolbar
 			onPlayMovie={() => alert("playing!")}
 			onUploadImage={() => alert("uploading!")}
 		/>
@@ -32,25 +34,29 @@ const Interaccio = () => (
 		<hr />
 		<RequestTracker />
 		<hr />
-		<Testos/>
+		<Testos />
 		<hr />
 		<MovingDot />
 		<hr />
 		<Form2 />
 		<hr />
 		<Form3 />
-		<hr /> */}
+		<hr /> */
 		<Scoreboard />
 		<hr />
 		<Canvas />
 		<hr />
-		<Artists/>
+		<Artists />
 		<hr />
 		<CirclesDown />
 		<hr />
-		<Counters/>
+		<Counters />
 		<hr />
 		<BucketList />
+		<hr />
+		<ShoppingCart />
+		<hr />
+		<Todo />
 		<hr />
 	</div>
 );

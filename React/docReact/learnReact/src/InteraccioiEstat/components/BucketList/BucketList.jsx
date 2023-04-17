@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useImmer } from "use-immer";
 import ItemList from "../ItemList";
 
 const initialList = [
@@ -20,11 +21,12 @@ const initialList = [
 ];
 
 const BucketList = () => {
-	const [myList, setMyList] = useState(initialList);
-	const [yourList, setYourList] = useState(initialList);
-	console.log(myList, yourList);
+	//const [myList, setMyList] = useState(initialList);
+	//const [yourList, setYourList] = useState(initialList);
+	const [myList, updateMyList] = useImmer(initialList);
+	const [yourList, updateYourList] = useImmer(initialList);
 
-	const handleToggleMyList = (idItem, checked) => {
+	/* const handleToggleMyList = (idItem, checked) => {
 		setMyList((prev) => prev.map((item) => idItem === item.id ? { ...item, seen: checked } : item));
 	};
 
@@ -33,6 +35,20 @@ const BucketList = () => {
 			return prev.map((item) => {
 				return idItem === item.id ? { ...item, seen: checked } : item;
 			});
+		});
+	}; */
+
+	const handleToggleMyList = (idItem, checked) => {
+		updateMyList((draft) => {
+			draft.map((item) => {
+				if (idItem === item.id) item.seen = checked;
+			});
+		});
+	};
+
+	const handleToggleYourList = (idItem, checked) => {
+		updateYourList((draft) => {
+			draft.find((item) => idItem === item.id).seen = checked;
 		});
 	};
 

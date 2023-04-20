@@ -16,7 +16,10 @@ const CityQuiz = () => {
 		} catch (error) {
 			setError(error);
 		}
-		setStatus(null);
+		setTimeout(() => {
+			setAnswer("");
+			setStatus(null)
+		}, 3000);
 	};
 
 	if (status === "success") return <h2>That's right!</h2>;
@@ -25,7 +28,7 @@ const CityQuiz = () => {
 		<>
 			<h2>City Quiz</h2>
 			<p>
-				INn which city is there a billboard that turns air into drinkable water
+				In which city is there a billboard that turns air into drinkable water
 			</p>
 			<form onSubmit={handleSubmit}>
 				<textarea
@@ -47,8 +50,9 @@ const CityQuiz = () => {
 						setAnswer("");
 						setStatus(null);
 						setError(null);
-					}}>
-					Retry
+					}}
+					disabled={status === "submitting"}
+					> Retry
 				</button>
 				{status === "typing" && answer.length !== 0 && <p>Typing...</p>}
 				{status === "submitting" && <p>Submitting...</p>}

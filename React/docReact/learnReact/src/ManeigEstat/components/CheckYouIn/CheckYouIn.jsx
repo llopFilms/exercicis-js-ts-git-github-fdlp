@@ -2,9 +2,7 @@ import { useState } from "react";
 
 const CheckYouIn = () => {
 	const [fullName, setFullName] = useState({ firstName: "", lastName: "" });
-	const { firstName, lastName } = fullName;
-	console.log(fullName);
-	
+	const { firstName, lastName } = fullName;	
 
 	return (
 		<div>

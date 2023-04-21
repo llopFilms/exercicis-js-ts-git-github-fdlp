@@ -5,11 +5,13 @@ import Messenger from "./components/Messenger";
 import TaskApp from "./components/TaskApp/TaskApp";
 import MessengerReducer from "./components/MessengerReducer";
 import PageContext from "./components/PageContext";
+import ProfileContext from "./components/ProfileContext";
+import LargeImages from "./components/LargeImages";
 
 
 const Maneig = () => (
 	<div>
-		<CityQuiz />
+		{/* <CityQuiz />
 		<hr />
 		<CheckYouIn/>
 		<hr />
@@ -18,10 +20,14 @@ const Maneig = () => (
 		<Messenger />
 		<hr />
 		<TaskApp/>
-		<hr />
+		<hr /> */}
 		<MessengerReducer />
 		<hr />
 		<PageContext />
+		<hr />
+		<ProfileContext/>
+		<hr />
+		<LargeImages/>	
 		<hr />
 	</div>
 );

@@ -1,16 +1,20 @@
-import { LevelContext } from "../PageContext/PageContext";
+import { createContext, useContext } from "react";
 
-const SectionContext = ({ level, children }) => (
-	<section
-		style={{
-			border: "1px solid black",
-			padding: "1rem",
-			borderRadius: "10px",
-		}}>
-		<LevelContext.Provider value={level}>
-			{children}
-		</LevelContext.Provider>
-	</section>
-);
+export const LevelContext = createContext(0);
 
+const SectionContext = ({ children }) => {
+	const level = useContext(LevelContext);
+	return (
+		<section
+			style={{
+				border: "1px solid black",
+				padding: "1rem",
+				borderRadius: "10px",
+			}}>
+			<LevelContext.Provider value={level + 1}>
+				{children}
+			</LevelContext.Provider>
+		</section>
+	);
+};
 export default SectionContext;

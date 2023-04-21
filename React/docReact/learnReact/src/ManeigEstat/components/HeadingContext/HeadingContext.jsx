@@ -1,9 +1,12 @@
 import { useContext } from "react";
-import { LevelContext } from "../PageContext/PageContext";
+import { LevelContext } from "../SectionContext/SectionContext";
 
 const HeadingContext = ({ children }) => {
-	const level = useContext(LevelContext);	
+	const level = useContext(LevelContext);
+
 	switch (level) {
+		case 0:
+			throw Error("HeadingContext: Invalid level" + level);
 		case 1:
 			return <h1>{children}</h1>;
 		case 2:

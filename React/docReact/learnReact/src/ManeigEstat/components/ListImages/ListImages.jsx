@@ -1,11 +1,11 @@
 import Place from "../Place";
 
 
-const ListImages = ({ imageSize, places }) => (
+const ListImages = ({ places }) => (
 	<div>
 		{places.map(({ id, ...place }) => (
 			<div key={id}>
-				<Place imageSize={imageSize} {...place} />
+				<Place {...place} />
 			</div>
 		))}
 	</div>

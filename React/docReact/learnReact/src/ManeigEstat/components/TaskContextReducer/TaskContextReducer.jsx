@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Task = ({ task, handleChangeTask, handleDeleteTask }) => {
+const TaskContextReducer = ({ task, handleChangeTask, handleDeleteTask }) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const { id, text, done } = task;
 
@@ -10,10 +10,10 @@ const Task = ({ task, handleChangeTask, handleDeleteTask }) => {
 				<input
 					type="checkbox"
 					checked={done}
-					onChange={(e) =>
+					onChange={({ target: { checked } }) =>
 						handleChangeTask({
 							...task,
-							done: e.target.checked,
+							done: checked,
 						})
 					}
 				/>
@@ -22,10 +22,10 @@ const Task = ({ task, handleChangeTask, handleDeleteTask }) => {
 						<input
 							type="text"
 							value={text}
-							onChange={(e) =>
+							onChange={({ target: { value } }) =>
 								handleChangeTask({
 									...task,
-									text: e.target.value,
+									text: value,
 								})
 							}
 						/>
@@ -43,4 +43,4 @@ const Task = ({ task, handleChangeTask, handleDeleteTask }) => {
 	);
 };
 
-export default Task;
+export default TaskContextReducer;

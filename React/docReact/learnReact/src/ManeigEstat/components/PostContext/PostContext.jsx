@@ -2,9 +2,7 @@ import { useContext } from "react";
 import { DashedContext } from "../ProfileContext/ProfileContext";
 
 const PostContext = ({ post: { title, body } }) => {
-	console.log(title, body);
 	const border = useContext(DashedContext);
-	console.log(border);
 
 	return (
 		<div className={border ? "dashed" : "solid"}>

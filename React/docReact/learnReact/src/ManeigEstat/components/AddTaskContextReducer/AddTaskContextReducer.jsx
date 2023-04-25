@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddTask = ({ handleAddTask }) => {
+const AddTaskContextReducer = ({ handleAddTask }) => {
 	const [text, setText] = useState("");
 
 	return (
@@ -13,13 +13,13 @@ const AddTask = ({ handleAddTask }) => {
 			/>
 			<button
 				onClick={() => {
-					handleAddTask(text);
 					setText("");
+					handleAddTask(text);
 				}}>
-				Add
+				Add Task
 			</button>
 		</div>
 	);
 };
 
-export default AddTask;
+export default AddTaskContextReducer;

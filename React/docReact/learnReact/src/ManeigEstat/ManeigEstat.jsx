@@ -7,6 +7,7 @@ import MessengerReducer from "./components/MessengerReducer";
 import PageContext from "./components/PageContext";
 import ProfileContext from "./components/ProfileContext";
 import LargeImages from "./components/LargeImages";
+import TaskAppContextReducer from "./components/TaskAppContextReducer";
 
 
 const Maneig = () => (
@@ -17,17 +18,19 @@ const Maneig = () => (
 		<hr />
 		<Accordion />
 		<hr />
-		<Messenger />
+		<Messenger />*/}
 		<hr />
-		<TaskApp/>
-		<hr /> */}
+		<TaskApp />
+		<hr />
 		<MessengerReducer />
 		<hr />
 		<PageContext />
 		<hr />
-		<ProfileContext/>
+		<ProfileContext />
 		<hr />
-		<LargeImages/>	
+		<LargeImages />
+		<hr />
+		<TaskAppContextReducer />
 		<hr />
 	</div>
 );

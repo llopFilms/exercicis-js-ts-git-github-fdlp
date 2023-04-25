@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import ListImages from "../ListImages";
 
 export const places = [
@@ -53,13 +53,14 @@ export const places = [
 	},
 ];
 
+export const ImageSizeContext = createContext();
+
 const LargeImages = () => {
 	const [isLarge, setIsLarge] = useState(false);
 	const imageSize = isLarge ? "150px" : "100px";
-	console.log(imageSize);
 
 	return (
-		<div>
+		<ImageSizeContext.Provider value={{imageSize, isLarge}}>
 			<label htmlFor="checkbox">
 				<input
 					type="checkbox"
@@ -68,9 +69,9 @@ const LargeImages = () => {
 				/>
 				Use large images
 			</label>
-			<ListImages imageSize={imageSize} places={places} 
+			<ListImages places={places} 
 			/>
-		</div>
+		</ImageSizeContext.Provider>
 	);
 };
 

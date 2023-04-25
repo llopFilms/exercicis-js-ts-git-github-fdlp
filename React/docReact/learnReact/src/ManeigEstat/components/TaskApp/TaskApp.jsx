@@ -29,7 +29,6 @@ const tasksReducer = (tasks, action) => {
 	// action.id
 	// action.text
 	// action.task.id ...
-	console.log(action);
 	const { type } = action;
 
 	switch (type) {
@@ -97,7 +96,8 @@ const TaskApp = () => {
 
 	return (
 		<div>
-			<h3>Prague Itinerary</h3>
+			<h3>Task App Reducer</h3>
+			<h4>Prague Itinerary</h4>
 			<AddTask handleAddTask={handleAddTask} />
 			<TaskLists
 				tasks={tasks}

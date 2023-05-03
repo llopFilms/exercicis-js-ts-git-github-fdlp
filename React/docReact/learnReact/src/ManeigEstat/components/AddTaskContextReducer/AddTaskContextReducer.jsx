@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TaskDisptachContext } from "../TasksAppProvider/TasksAppProvider";
 
-const AddTaskContextReducer = ({ handleAddTask }) => {
+const AddTaskContextReducer = () => {
 	const [text, setText] = useState("");
+	const { handleAddTask } = useContext(TaskDisptachContext);
 
 	return (
 		<div>

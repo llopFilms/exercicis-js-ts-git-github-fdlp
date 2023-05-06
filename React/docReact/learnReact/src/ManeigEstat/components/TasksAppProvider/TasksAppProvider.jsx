@@ -8,7 +8,7 @@ const initialTasks = [
 ];
 
 export const TaskContext = createContext(null);
-export const TaskDisptachContext = createContext(null);
+export const TaskDispatchContext = createContext(null);
 
 const tasksReducer = (tasks, action) => {
 	const { type } = action;
@@ -65,10 +65,10 @@ const TasksAppProvider = ({ children }) => {
 
 	return (
 		<TaskContext.Provider value={tasks}>
-			<TaskDisptachContext.Provider
+			<TaskDispatchContext.Provider
 				value={{ handleAddTask, handleChangeTask, handleDeleteTask }}>
 				{children}
-			</TaskDisptachContext.Provider>
+			</TaskDispatchContext.Provider>
 		</TaskContext.Provider>
 	);
 };

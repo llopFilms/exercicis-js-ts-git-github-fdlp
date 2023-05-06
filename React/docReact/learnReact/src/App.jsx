@@ -1,15 +1,17 @@
 import "./App.css";
 import ComponentsiPropsiChildren from "./ComponentsiPropsiChildren/ComponentsiPropsiChildren";
 import CondicionalsiLlistes from "./CondicionalsiLlistes/CondicionalsiLlistes";
+import GestioSenseEstat from "./GestioSenseEstat/GestioSenseEstat";
 import Interaccio from "./InteraccioiEstat/InteraccioiEstat";
-import Maneig from "./ManeigEstat/ManeigEstat";
+import ManeigEstat from "./ManeigEstat/ManeigEstat";
 
 const App = () => (
 	<div>
 		{/* <ComponentsiPropsiChildren /> */}
 		{/* <CondicionalsiLlistes/> */}
 		{/* <Interaccio/> */}
-		<Maneig />
+		{/* <ManeigEstat /> */}
+		<GestioSenseEstat/>
 	</div>
 );
 

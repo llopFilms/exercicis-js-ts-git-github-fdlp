@@ -17,6 +17,7 @@ import {
   Paragraf,
   /* Password, */ Paragrafs,
 } from "./components/componentsStyle";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Paragraf />
         {/* <Password /> */}
         <Paragrafs />
+        <Home/>
             </div>
       </div>
   );

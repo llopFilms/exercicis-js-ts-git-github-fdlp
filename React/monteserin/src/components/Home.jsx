@@ -43,7 +43,7 @@ const Home = () => {
 						onClick={(e) => handleSemaforo(e.target.id)}
 						id="red"
 						className={`btn bg-danger rounded-circle col-6 mb-1 $`}
-						style={{ border: rojo ? selected : "none" }}></li>
+						style={{ border: rojo ? "3px solid white" : "none" }}></li>
 					<li
 						onClick={(e) => handleSemaforo(e.target.id)}
 						id="yellow"

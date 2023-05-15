@@ -6,7 +6,6 @@ const ChatRoomSelect = () => {
 	const [roomId, setRoomId] = useState(null);
 	const [ésFosc, setÉsFosc] = useState(false);
 	const [missatgeInput, setMissatgeInput] = useState(null);
-	console.log(roomId, ésFosc, missatgeInput);
 
 	const serverUrl = "https://localhost:1234";
 
@@ -24,8 +23,6 @@ const ChatRoomSelect = () => {
 	};
 
 	const notifica = (missatge, ésFosc) => {
-		console.log(missatge);
-		
 		Toastify({
 			text: missatge,
 			duration: 2000,
@@ -47,7 +44,7 @@ const ChatRoomSelect = () => {
 				notifica(missatge = missatgeInput ?? "Connectat!", ésFosc);
 			} else {
 				sessio.desconnecta();
-				notifica(missatge = missatgeInput ?? "Desconnectat!", ésFosc);
+				notifica(missatge = "Desconnectat!", ésFosc);
 			}
 		}
 	}, [roomId]);

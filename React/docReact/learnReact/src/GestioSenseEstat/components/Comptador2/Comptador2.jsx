@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 
 const Comptador2 = () => {
 	const [valor, setValor] = useState(0);
-	console.log(valor);
 
 	useEffect(() => {
-		valor !== 0 && alert("Actuando useEffect...");
+		//valor !== 0 && alert("Actuando useEffect... "+ valor);
 	}, [valor]);
 
 	useEffect(() => {
+	  //alert("Muntant Component...")
 		return () => {
-			alert("Desmontando...");
+			//alert("Desmontando...");
 			setValor(0);
 		};
 	}, []);

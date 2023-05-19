@@ -57,6 +57,7 @@ const VideoComp = () => {
 
 	return (
 		<div>
+			<h3>VideoComp useReducer</h3>
 			<button onClick={handlePlayPause}>{play ? "Pause" : "Play"}</button>
 			<button onClick={() => dispatch({ type: "STOP" })}>Stop</button>
 			<div>

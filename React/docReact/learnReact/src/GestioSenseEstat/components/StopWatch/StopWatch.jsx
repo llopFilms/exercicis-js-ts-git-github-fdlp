@@ -28,7 +28,7 @@ const StopWatch = () => {
 
 	let secondsPassed =
 		startTime !== null && nowTime !== null ? (nowTime - startTime) / 1000 : 0;
-	console.log(secondsPassed, "start", startTime, "now", nowTime);
+	//console.log(secondsPassed, "start", startTime, "now", nowTime);
 
 	return (
 		<div>

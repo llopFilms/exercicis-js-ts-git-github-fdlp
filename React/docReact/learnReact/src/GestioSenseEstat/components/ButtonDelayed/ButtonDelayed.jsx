@@ -4,7 +4,6 @@ const ButtonDelayed = ({ message, children }) => {
 	//const spanRef = useRef(null);
 	const [text, setText] = useState(null);
 	const timeoutIDRef = useRef(null);
-	console.log(text);
 
 	const handleClick = () => {
 		clearTimeout(timeoutIDRef.current);

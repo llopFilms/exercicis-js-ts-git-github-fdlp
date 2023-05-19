@@ -12,11 +12,11 @@ const Dashboard = () => {
 
 	const handleClickDelay = ({ id, value }) => {
 		setState(false);
-		console.log(id, value, state);
+		//console.log(id, value, state);
 		const message = messages
 			.filter((message) => message.toLowerCase().includes(value.toLowerCase()))
 			.join(" ");
-		console.log(message);
+		//console.log(message);
 
 		switch (id) {
 			case "btn1":
@@ -44,7 +44,7 @@ const Dashboard = () => {
 				break;
 		}
 	};
-	console.log(state, span1.current, span2.current, span3.current);
+	//console.log(state, span1.current, span2.current, span3.current);
 
 	return (
 		<div>

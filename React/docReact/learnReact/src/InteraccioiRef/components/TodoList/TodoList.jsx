@@ -20,8 +20,8 @@ const TodoList = () => {
 		const newTodo = { id: id, text: `Task ${id + 1}` };
 		flushSync(() => {
 			setTodos((prev) => [...prev, newTodo]);
-			setId(id + 1);
 		});
+		setId(id + 1);
 		//console.log("id2", id);
 		
 		listRef.current.lastChild.scrollIntoView({

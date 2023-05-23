@@ -8,14 +8,12 @@ import PageContext from "./components/PageContext";
 import ProfileContext from "./components/ProfileContext";
 import LargeImages from "./components/LargeImages";
 import TaskAppContextReducer from "./components/TaskAppContextReducer";
-import Comptador from "../GestioSenseEstat/components/Comptador";
-
 
 const Maneig = () => (
 	<div>
 		<CityQuiz />
 		<hr />
-		<CheckYouIn/>
+		<CheckYouIn />
 		<hr />
 		<Accordion />
 		<hr />
@@ -30,7 +28,8 @@ const Maneig = () => (
 		<ProfileContext />
 		<hr />
 		<LargeImages />
-		<hr />*/
+		<hr />
+		*/
 		<TaskAppContextReducer />
 		<hr />
 	</div>

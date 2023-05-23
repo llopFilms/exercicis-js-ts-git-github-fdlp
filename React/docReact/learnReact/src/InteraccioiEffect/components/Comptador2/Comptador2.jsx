@@ -17,6 +17,7 @@ const Comptador2 = () => {
 
 	return (
 		<div>
+			<h3>Comptador 2</h3>
 			<button onClick={() => setValor((prev) => prev + 1)}>Clica +1</button>
 			<p>Valor: {valor}</p>
 		</div>

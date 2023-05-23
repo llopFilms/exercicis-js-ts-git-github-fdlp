@@ -1,9 +1,10 @@
 import "./App.css";
 import ComponentsiPropsiChildren from "./ComponentsiPropsiChildren/ComponentsiPropsiChildren";
 import CondicionalsiLlistes from "./CondicionalsiLlistes/CondicionalsiLlistes";
-import GestioSenseEstat from "./GestioSenseEstat/GestioSenseEstat";
+import InteraccioiRef from "./InteraccioiRef/InteraccioiRef";
 import Interaccio from "./InteraccioiEstat/InteraccioiEstat";
 import ManeigEstat from "./ManeigEstat/ManeigEstat";
+import InteraccioiEffect from "./InteraccioiEffect/InteraccioiEffect";
 
 const App = () => (
 	<div>
@@ -11,7 +12,9 @@ const App = () => (
 		{/* <CondicionalsiLlistes/> */}
 		{/* <Interaccio/> */}
 		{/* <ManeigEstat /> */}
-		<GestioSenseEstat/>
+		{/* <InteraccioiRef /> */}
+		<InteraccioiEffect/>
+
 	</div>
 );
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
@@ -6,6 +6,8 @@ const ChatRoomSelect = () => {
 	const [roomId, setRoomId] = useState(null);
 	const [ésFosc, setÉsFosc] = useState(false);
 	const [missatgeInput, setMissatgeInput] = useState(null);
+	//const [previ, setPrevi] = useState(null);
+	const previRef = useRef();
 
 	const serverUrl = "https://localhost:1234";
 
@@ -14,7 +16,8 @@ const ChatRoomSelect = () => {
 			console.log(`✅ Connexió a sala ${roomId} a través de ${serverUrl}`);
 		};
 		const desconnecta = () => {
-			console.log(`❌ Desconnexió a sala ${roomId}`);
+			let previ = previRef.current;
+			console.log(`❌ Desconnexió a sala ${previ}`);
 		};
 		return {
 			connecta,
@@ -41,19 +44,19 @@ const ChatRoomSelect = () => {
 			let missatge;
 			if (roomId !== "sortir") {
 				sessio.connecta();
-				notifica(missatge = missatgeInput ?? "Connectat!", ésFosc);
+				notifica((missatge = missatgeInput ?? "Connectat!"), ésFosc);
 			} else {
 				sessio.desconnecta();
-				notifica(missatge = "Desconnectat!", ésFosc);
+				notifica((missatge = "Desconnectat!"), ésFosc);
 			}
 		}
 	}, [roomId]);
 
 	useEffect(() => {
-		return () => {			
+		return () => {
 			setRoomId(null);
 			setÉsFosc(false);
-			sessio.desconnecta();
+			return () => sessio.desconnecta();
 		};
 	}, []);
 
@@ -66,7 +69,9 @@ const ChatRoomSelect = () => {
 					type="text"
 					id="missatgeInput"
 					value={missatgeInput ?? ""}
-					onChange={({ target: { value } }) => setMissatgeInput((value === "") ? null : value)}
+					onChange={({ target: { value } }) =>
+						setMissatgeInput(value === "" ? null : value)
+					}
 				/>
 			</label>
 			<label htmlFor="escullSala">
@@ -75,7 +80,12 @@ const ChatRoomSelect = () => {
 					name="escullSala"
 					id="escullSala"
 					value={roomId ?? ""}
-					onChange={(e) => setRoomId(e.target.value)}>
+					onChange={(e) =>
+						setRoomId((prev) => {
+							previRef.current= prev;
+							return e.target.value;
+						})
+					}>
 					<optgroup label="Escull una sala">
 						<option value=""></option>
 						<option value="general">General</option>

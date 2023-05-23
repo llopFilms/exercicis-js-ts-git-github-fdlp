@@ -3,16 +3,16 @@ import { useEffect, useRef, useState } from "react";
 const VideoComp = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [text, setText] = useState("");
-	console.log(text);	
+	//console.log(text);	
 	const videoRef = useRef(null);
 
 	useEffect(() => {
 		if (isPlaying) {
 			videoRef.current.play();
-			console.log("Video playing!");
+			//console.log("Video playing!");
 		} else {
 			videoRef.current.pause();
-			console.log("Video paused!");
+			//console.log("Video paused!");
 		}
 	}, [isPlaying]);
 
@@ -26,7 +26,7 @@ const VideoComp = () => {
 				</button>
 			</div>
 			<video
-				width="250"
+				width="200"
 				ref={videoRef}
 				loop
 				playsInline

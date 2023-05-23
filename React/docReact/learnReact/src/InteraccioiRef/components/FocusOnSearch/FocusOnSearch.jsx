@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useState } from "react";
 
 const ButtonForwardRef = ({ handleRef }) => (
-	<button onClick={handleRef}>FocusOnSearch</button>
+	<button onClick={handleRef}>FocusOnSearch forwardRef</button>
 );
 
 const InputForwardRef = forwardRef(({ text, setText, ...props }, inputRef) => {

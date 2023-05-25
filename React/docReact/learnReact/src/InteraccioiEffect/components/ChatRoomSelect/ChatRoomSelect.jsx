@@ -5,19 +5,21 @@ import "toastify-js/src/toastify.css";
 const ChatRoomSelect = () => {
 	const [roomId, setRoomId] = useState(null);
 	const [ésFosc, setÉsFosc] = useState(false);
+	const [ÉsEncriptat, setÉsEncriptat] = useState(false);
 	const [missatgeInput, setMissatgeInput] = useState(null);
 	//const [previ, setPrevi] = useState(null);
 	const previRef = useRef();
-
+	let previ = previRef.current;
 	const serverUrl = "https://localhost:1234";
+	let missatgeEncriptat = ÉsEncriptat ? "encriptada" : "no encriptada";
+	console.log("roomId", roomId);
 
-	const connexio = (serverUrl, roomId) => {
-		const connecta = () => {
-			console.log(`✅ Connexió a sala ${roomId} a través de ${serverUrl}`);
+	const connexio = () => {
+		const connecta = (missatgeLog) => {
+			console.log(missatgeLog);
 		};
-		const desconnecta = () => {
-			let previ = previRef.current;
-			console.log(`❌ Desconnexió a sala ${previ}`);
+		const desconnecta = (missatgeLog) => {
+			console.log(missatgeLog);
 		};
 		return {
 			connecta,
@@ -40,23 +42,35 @@ const ChatRoomSelect = () => {
 
 	const sessio = connexio(serverUrl, roomId);
 	useEffect(() => {
+		console.log("refresca");
 		if (!!roomId) {
 			let missatge;
 			if (roomId !== "sortir") {
-				sessio.connecta();
-				notifica((missatge = missatgeInput ?? "Connectat!"), ésFosc);
+				sessio.connecta(
+					`✅ Connexió ${missatgeEncriptat} a sala ${roomId} a través de ${serverUrl}`
+				);
+				notifica(
+					(missatge =
+						missatgeInput ?? `Connectat amb connexió ${missatgeEncriptat}!`),
+					ésFosc
+				);
 			} else {
-				sessio.desconnecta();
-				notifica((missatge = "Desconnectat!"), ésFosc);
+				sessio.desconnecta(
+					`❌ Desconnexió ${missatgeEncriptat} de la sala ${previ}`
+				);
+				notifica(
+					(missatge = `Desconnectat de la connexio ${missatgeEncriptat}!`),
+					ésFosc
+				);
 			}
 		}
-	}, [roomId]);
+	}, [roomId, ÉsEncriptat]);
 
 	useEffect(() => {
 		return () => {
 			setRoomId(null);
 			setÉsFosc(false);
-			return () => sessio.desconnecta();
+			sessio.desconnecta();
 		};
 	}, []);
 
@@ -82,12 +96,12 @@ const ChatRoomSelect = () => {
 					value={roomId ?? ""}
 					onChange={(e) =>
 						setRoomId((prev) => {
-							previRef.current= prev;
+							previRef.current = prev;
 							return e.target.value;
 						})
 					}>
 					<optgroup label="Escull una sala">
-						<option value=""></option>
+						<option disabled></option>
 						<option value="general">General</option>
 						<option value="de viatges">Viatges</option>
 						<option value="de musica">Música</option>
@@ -104,7 +118,22 @@ const ChatRoomSelect = () => {
 				/>
 				Tria el tema fosc{" "}
 			</label>
-			{roomId && <p>Benvingut a la sala {roomId}!</p>}
+			<label htmlFor="checkboxEncriptacio">
+				<input
+					id="checkboxEncriptacio"
+					type="checkbox"
+					value={ÉsEncriptat}
+					onChange={(e) => setÉsEncriptat(e.target.checked)}
+				/>
+				Connexió encriptada{" "}
+			</label>
+			<div style={{height: "20px"}}>
+				{roomId === "sortir" ? (
+					<p>Sortir de la sala {previ}</p>
+				) : (
+					!!roomId && <p>Benvingut a la sala {roomId}!</p>
+				)}
+			</div>
 		</div>
 	);
 };

@@ -12,11 +12,11 @@ const fecthBio = (person) => {
 const LoadingInfo = () => {
 	const [person, setPerson] = useState("");
 	const [bio, setBio] = useState(null);
-	console.log("person", person, "bio", bio);
+	//console.log("person", person, "bio", bio);
 
 	useEffect(() => {
 		let ignore = false;
-		console.log(1, ignore);
+		//console.log(1, ignore);
 		setBio(null);
 		!!person &&
 			fecthBio(person).then((result) => {
@@ -24,13 +24,13 @@ const LoadingInfo = () => {
 			});
 		return () => {
 			ignore = true;
-			console.log(2, ignore);
+			//console.log(2, ignore);
 		};
 	}, [person]);
 
 	return (
 		<div>
-			<h3>Loading info</h3>
+			<h3>Loading info (fetch)</h3>
 			<select
 				name="person"
 				id="person"

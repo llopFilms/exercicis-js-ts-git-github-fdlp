@@ -7,6 +7,8 @@ import Comptador2 from "./components/Comptador2";
 import ContactManager from "./components/ContactManager";
 import LoadingInfo from "./components/LoadingInfo";
 import PilotetesCheck from "./components/PilotetesCheck";
+import Planets from "./components/Planets";
+import PlanetsFetch from "./components/PlanetsFetch";
 import TodoSenseEffect from "./components/TodoSenseEffect";
 import VideoComp from "./components/VideoComp";
 import VideoComp2 from "./components/VideoComp2";
@@ -14,11 +16,11 @@ import WhatToLog from "./components/WhatToLog";
 
 const InteraccioiEffect = () => (
 	<div>
-		<ChatRoom />
+		{/*<ChatRoom />
 		<hr />
 		<ChatRoomSelect />
 		<hr />
-		{/*<ChatUseEffect />
+		<ChatUseEffect />
 		<hr />
 		<Comptador />
 		<hr />
@@ -38,7 +40,11 @@ const InteraccioiEffect = () => (
 		<hr />
 		<ChatForm />
 		<hr />
-		<PilotetesCheck /> */}
+		<PilotetesCheck />
+		<hr />
+		<Planets />*/}
+		<hr />
+		<PlanetsFetch />
 		<hr />
 	</div>
 );

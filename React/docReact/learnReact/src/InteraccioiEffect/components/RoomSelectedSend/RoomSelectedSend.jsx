@@ -21,22 +21,32 @@ const connexio = (urlServer, roomId, isDark, prevRef) => {
 	} la sala ${
 		roomId !== "sortir" ? roomId : prevRef.current
 	} a través de ${urlServer}`;
+	let timeoutId, timeoutId2;
 
 	const connecta = () => {
-		console.log(missatgeLog);
-		showNotification(missatgeLog, isDark);
+		timeoutId2 = setTimeout(() => {
+			console.log(missatgeLog);
+		}, 1500);
+		timeoutId = setTimeout(() => {
+			showNotification(missatgeLog, isDark);
+		}, 2000);
+		return [timeoutId, timeoutId2];
 	};
 	const desconnecta = () => {
-		console.log(missatgeLog);
-		showNotification(missatgeLog, isDark);
+		timeoutId2 = setTimeout(() => {
+			console.log(missatgeLog);
+		}, 1500);
+		timeoutId = setTimeout(() => {
+			showNotification(missatgeLog, isDark);
+		}, 2000);
+		return [timeoutId, timeoutId2];
 	};
 
 	return { connecta, desconnecta };
 };
 
 const RoomSelectedSend = ({ roomId, isDark, prevRef }) => {
-	console.log("roomId", roomId, "isDark", isDark);
-	
+	//console.log("roomId", roomId, "isDark", isDark);
 	const urlServer = "https://servidor1234.com";
 	const { connecta, desconnecta } = connexio(
 		urlServer,
@@ -46,14 +56,26 @@ const RoomSelectedSend = ({ roomId, isDark, prevRef }) => {
 	);
 
 	useEffect(() => {
-		if (roomId === "") return;
-		roomId !== "sortir" && connecta();
-		roomId === "sortir" && desconnecta();
+		let timeoutId, timeoutId2;
+		if (roomId) {
+			if (roomId !== "sortir") {
+				[timeoutId, timeoutId2] = connecta();
+				//console.log("connecta", timeoutId, timeoutId2);
+			}
+			if (roomId === "sortir") {
+				[timeoutId, timeoutId2] = desconnecta();
+				//console.log("desconnecta", timeoutId, timeoutId2);
+			}
+		}
+		return () => {
+			clearTimeout(timeoutId);
+			clearTimeout(timeoutId2);
+			//console.log("reconnecta", timeoutId, timeoutId2);
+		};
 	}, [roomId]);
 
 	useEffect(() => {
 		return () => {
-			console.log("hola effect");
 			desconnecta();
 		};
 	}, []);

@@ -7,14 +7,14 @@ import ManeigEstat from "./ManeigEstat/ManeigEstat";
 import InteraccioiEffect from "./InteraccioiEffect/InteraccioiEffect";
 
 const App = () => (
+	
 	<div>
 		{/* <ComponentsiPropsiChildren /> */}
 		{/* <CondicionalsiLlistes/> */}
 		{/* <Interaccio/> */}
 		{/* <ManeigEstat /> */}
 		{/* <InteraccioiRef /> */}
-		<InteraccioiEffect/>
-
+		<InteraccioiEffect />
 	</div>
 );
 

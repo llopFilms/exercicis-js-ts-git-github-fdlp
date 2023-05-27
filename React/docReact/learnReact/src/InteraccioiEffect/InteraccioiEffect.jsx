@@ -1,6 +1,7 @@
 import ChatForm from "./components/ChatForm";
 import ChatRoom from "./components/ChatRoom";
 import ChatRoomSelect from "./components/ChatRoomSelect";
+import ChatRoomSelectSend from "./components/ChatRoomSelectSend";
 import ChatUseEffect from "./components/ChatUseEffect";
 import Comptador from "./components/Comptador";
 import Comptador2 from "./components/Comptador2";
@@ -9,6 +10,7 @@ import LoadingInfo from "./components/LoadingInfo";
 import PilotetesCheck from "./components/PilotetesCheck";
 import Planets from "./components/Planets";
 import PlanetsFetch from "./components/PlanetsFetch";
+import TimerIncrement from "./components/TimerIncrement";
 import TodoSenseEffect from "./components/TodoSenseEffect";
 import VideoComp from "./components/VideoComp";
 import VideoComp2 from "./components/VideoComp2";
@@ -42,9 +44,13 @@ const InteraccioiEffect = () => (
 		<hr />
 		<PilotetesCheck />
 		<hr />
-		<Planets />*/}
+		<Planets />
 		<hr />
-		<PlanetsFetch />
+		<PlanetsFetch />*/}
+		<hr />
+		<ChatRoomSelectSend />
+		<hr />
+		<TimerIncrement />
 		<hr />
 	</div>
 );

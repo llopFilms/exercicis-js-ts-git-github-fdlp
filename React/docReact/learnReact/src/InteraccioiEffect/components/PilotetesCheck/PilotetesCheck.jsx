@@ -8,7 +8,6 @@ const PilotetesCheck = () => {
 	const { position, movement } = performance;
 	//console.log(movement);
 	
-
 	useEffect(() => {
 		const handleMove = (e) => {
 			setPerformance({
@@ -16,7 +15,6 @@ const PilotetesCheck = () => {
 				position: { x: e.offsetX, y: e.offsetY },
 			});
 		};
-
 		movement && window.addEventListener("mousemove", handleMove);
 		return () => {
 			window.removeEventListener("mousemove", handleMove);

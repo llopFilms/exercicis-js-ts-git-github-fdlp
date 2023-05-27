@@ -42,7 +42,7 @@ const ChatRoomSelect = () => {
 
 	const sessio = connexio(serverUrl, roomId);
 	useEffect(() => {
-		console.log("refresca");
+		//console.log("refresca");
 		if (!!roomId) {
 			let missatge;
 			if (roomId !== "sortir") {

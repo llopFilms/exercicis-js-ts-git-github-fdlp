@@ -145,7 +145,7 @@ useEffect(() => {
 	
 	return (
 		<div>
-			<h3>Planets map en Select</h3>
+			<h3>Planets map en Select + fetch</h3>
 			<PlanetSelect
 				id="planets"
 				label="Planets"

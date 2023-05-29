@@ -1,3 +1,6 @@
+import AnimationWelcome from "./components/AnimationWelcome";
+import ChatCanviFons from "./components/ChatCanviFons";
+import ChatDarkEncrypted from "./components/ChatDarkEncrypted";
 import ChatForm from "./components/ChatForm";
 import ChatRoom from "./components/ChatRoom";
 import ChatRoomSelect from "./components/ChatRoomSelect";
@@ -11,6 +14,7 @@ import PilotetesCheck from "./components/PilotetesCheck";
 import Planets from "./components/Planets";
 import PlanetsFetch from "./components/PlanetsFetch";
 import TimerIncrement from "./components/TimerIncrement";
+import TimerIncrement2 from "./components/TimerIncrement2";
 import TodoSenseEffect from "./components/TodoSenseEffect";
 import VideoComp from "./components/VideoComp";
 import VideoComp2 from "./components/VideoComp2";
@@ -51,6 +55,14 @@ const InteraccioiEffect = () => (
 		<ChatRoomSelectSend />
 		<hr />
 		<TimerIncrement />
+		<hr />
+		<TimerIncrement2 />
+		<hr />
+		<AnimationWelcome />
+		<hr />
+		<ChatCanviFons />
+		<hr />
+		<ChatDarkEncrypted />
 		<hr />
 	</div>
 );

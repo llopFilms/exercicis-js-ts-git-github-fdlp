@@ -5,16 +5,17 @@ import InteraccioiRef from "./InteraccioiRef/InteraccioiRef";
 import Interaccio from "./InteraccioiEstat/InteraccioiEstat";
 import ManeigEstat from "./ManeigEstat/ManeigEstat";
 import InteraccioiEffect from "./InteraccioiEffect/InteraccioiEffect";
+import CustomHooks from "./CustomHooks/CustomHooks";
 
 const App = () => (
-	
 	<div>
 		{/* <ComponentsiPropsiChildren /> */}
 		{/* <CondicionalsiLlistes/> */}
 		{/* <Interaccio/> */}
 		{/* <ManeigEstat /> */}
 		{/* <InteraccioiRef /> */}
-		<InteraccioiEffect />
+		{/* <InteraccioiEffect />	*/}
+		<CustomHooks /> 
 	</div>
 );
 

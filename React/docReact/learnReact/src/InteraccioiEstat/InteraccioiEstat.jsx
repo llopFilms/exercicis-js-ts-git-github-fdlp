@@ -1,4 +1,4 @@
-import Counter from "./components/Counter/Counter";
+import Counter from "./components/Counter";
 import Carrousel from "./components/Carrousel";
 import Form from "./components/Form";
 import Toolbar from "./components/Toolbar";

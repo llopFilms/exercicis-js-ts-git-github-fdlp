@@ -22,7 +22,7 @@ import WhatToLog from "./components/WhatToLog";
 
 const InteraccioiEffect = () => (
 	<div>
-		{/*<ChatRoom />
+		<ChatRoom />
 		<hr />
 		<ChatRoomSelect />
 		<hr />
@@ -50,7 +50,7 @@ const InteraccioiEffect = () => (
 		<hr />
 		<Planets />
 		<hr />
-		<PlanetsFetch />*/}
+		<PlanetsFetch />
 		<hr />
 		<ChatRoomSelectSend />
 		<hr />

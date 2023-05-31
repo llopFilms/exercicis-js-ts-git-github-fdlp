@@ -1,4 +1,6 @@
+import CounterWithHook from "./components/CounterWithHook";
 import FormHook from "./components/FormHook";
+import PilotetesHook from "./components/PilotetesHook";
 import SaveButton from "./components/SaveButton";
 import StatusBar from "./components/StatusBar";
 import WelcomeCSS from "./components/WelcomeCSS";
@@ -15,6 +17,10 @@ const CustomHooks = () => (
 		<WelcomeRefactor />
 		<hr />
 		<WelcomeCSS />
+		<hr />
+		<CounterWithHook />
+		<hr />
+		<PilotetesHook />
 		<hr />
 	</div>
 );

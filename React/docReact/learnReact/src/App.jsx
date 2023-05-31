@@ -15,7 +15,7 @@ const App = () => (
 		{/* <ManeigEstat /> */}
 		{/* <InteraccioiRef /> */}
 		{/* <InteraccioiEffect />	*/}
-		<CustomHooks /> 
+		<CustomHooks />
 	</div>
 );
 

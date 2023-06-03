@@ -5,6 +5,8 @@ const Chemists = ({ people }) => {
 		.filter(({ profession }) => profession === "chemist")
 		.map((person) => {
 			const { id, name, profession, accomplishment } = person;
+			console.log("map", id, name, profession, accomplishment);
+			
 			return (
 				<ul key={id}>
 					<li>Name:</li>

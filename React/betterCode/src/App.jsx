@@ -1,5 +1,7 @@
 import "./App.css";
 import Comptador from "./components/Comptador";
+import Form from "./components/Form";
+import FullName from "./components/FullName";
 import Todos from "./components/Todos";
 import User from "./components/User";
 
@@ -29,6 +31,10 @@ const App = () => {
       <User age={45} />
       <hr />
       <Todos initialTodos={initialTodos} />
+      <hr />
+      <FullName />
+      <hr />
+      <Form />
       <hr />
     </>
   );

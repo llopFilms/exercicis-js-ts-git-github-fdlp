@@ -8,7 +8,7 @@ const Todos = ({ initialTodos }) => {
   const [selectedTodoId, setSelectedTodoId] = useState(null);
   const selectedToDoRef = useRef(null);
   selectedToDoRef.current = todos.find((todo) => todo.id === selectedTodoId);
-  console.log("selectedToDoRef", selectedToDoRef.current);  
+  // console.log("selectedToDoRef", selectedToDoRef.current);  
   
   const handleCompleted = (id) => {
     setTodos((todos) => {

@@ -1,9 +1,8 @@
 import "./App.css";
-import Comptador from "./components/Comptador";
-import Form from "./components/Form";
-import FullName from "./components/FullName";
-import Todos from "./components/Todos";
-import User from "./components/User";
+import { Comptador, Fetch, Form, FullName, Metodes3, Todos, User } from "./components";
+import PintaArray from "./components/PintaArray";
+import TocarArray from "./components/TocarArray";
+
 
 const App = () => {
   const initialTodos = [
@@ -28,14 +27,23 @@ const App = () => {
     <>
       <Comptador initialCount={27} />
       <hr />
-      <User age={45} />
+      <User
+        age={45} />
       <hr />
       <Todos initialTodos={initialTodos} />
       <hr />
       <FullName />
       <hr />
       <Form />
+      <hr /> 
+      <Fetch />
       <hr />
+      <Metodes3 />
+      <hr />
+      <PintaArray />
+      <hr />
+      <TocarArray />
+      
     </>
   );
 };

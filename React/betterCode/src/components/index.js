@@ -1,0 +1,11 @@
+export { default as Comptador } from "./Comptador";
+export { useFetch } from "./fetch";
+export { default as Fetch } from "./Fetch";
+export { default as Form } from "./Form";
+export { default as FullName } from "./FullName";
+export { default as Metodes3 } from "./Metodes3";
+export { default as PintaArray } from "./PintaArray";
+export { default as TocarArray } from "./TocarArray";
+export { default as Todo } from "./Todo";
+export { default as Todos } from "./Todos";
+export { default as User } from "./User";

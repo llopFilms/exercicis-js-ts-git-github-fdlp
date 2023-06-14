@@ -1,5 +1,7 @@
 export { default as Comptador } from "./Comptador";
 export { default as ComptadorUseEffect } from "./ComptadorUseEffect";
+export { default as ControlProductes } from "./ControlProductes";
+export { default as EstatIndefinit } from "./EstatIndefinit";
 export { useFetch } from "./fetch";
 export { default as Fetch } from "./Fetch";
 export { default as FetchDataUseEffect } from "./FetchDataUseEffect";

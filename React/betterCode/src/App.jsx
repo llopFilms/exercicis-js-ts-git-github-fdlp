@@ -15,7 +15,9 @@ import {
   FetchDataUseEffect,
   FetchUsuaris,
   FetchUsuarisAxios,
-  Usuaris
+  Usuaris,
+  EstatIndefinit,
+  ControlProductes
 } from "./components";
 
 const App = () => {
@@ -39,6 +41,8 @@ const App = () => {
 
   return (
     <>
+      <EstatIndefinit />
+      <hr />
       <Comptador initialCount={27} />
       <hr />
       <ComptadorUseEffect />
@@ -46,6 +50,8 @@ const App = () => {
       <User age={45} />
       <hr />
       <Todos initialTodos={initialTodos} />
+      <hr />
+      <ControlProductes />
       <hr />
       <FullName />
       <hr />

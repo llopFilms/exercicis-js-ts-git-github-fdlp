@@ -5,7 +5,7 @@ const Form = () => {
   const [person, setPerson] = useState({});
   const { edat, nom } = person;
   const [darkMode, setDarkMode] = useState(false);
-  console.log(darkMode);
+  // console.log(darkMode);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -13,18 +13,18 @@ const Form = () => {
   };
 
   const edicioDades = useMemo(() => {
-    console.log("useMemo");
+    // console.log("useMemo");
     const edatDades = edat + " anys";
     const nomDades = "Hola " + nom;
     return { edatDades, nomDades };
   }, [edat, nom]);
 
   const { edatDades, nomDades } = edicioDades;
-  console.log(edicioDades);
+  // console.log(edicioDades);
   
 
   useEffect(() => {
-    console.log("person", person);
+   // console.log("person", person);
   }, [person]);
 
   const flex = {

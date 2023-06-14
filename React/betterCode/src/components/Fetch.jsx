@@ -5,12 +5,12 @@ const Fetch = () => {
   const { loading, data, error } = useFetch(
     "https://jsonplaceholder.typicode.com/todos"
   );
-  console.log("loading", loading, "data", data, "error", error);
+  // console.log("loading", loading, "data", data, "error", error);
   const shortData = useMemo(
     () => (data && data.length > 5 ? data.slice(0, 5) : data),
     [data]
   );
-  console.log(shortData);
+  // console.log(shortData);
 
   return (
     <div>

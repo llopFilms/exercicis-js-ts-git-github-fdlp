@@ -1,8 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Comptador, Fetch, Form, FullName, Metodes3, Todos, User } from "./components";
-import PintaArray from "./components/PintaArray";
-import TocarArray from "./components/TocarArray";
-
+import {
+  Comptador,
+  ComptadorUseEffect,
+  Fetch,
+  Form,
+  FullName,
+  IntervalEffect,
+  Metodes3,
+  PintaArray,
+  TocarArray,
+  Todos,
+  User,
+  FetchDataUseEffect,
+  FetchUsuaris,
+  FetchUsuarisAxios,
+  Usuaris
+} from "./components";
 
 const App = () => {
   const initialTodos = [
@@ -27,15 +41,16 @@ const App = () => {
     <>
       <Comptador initialCount={27} />
       <hr />
-      <User
-        age={45} />
+      <ComptadorUseEffect />
+      <hr />
+      <User age={45} />
       <hr />
       <Todos initialTodos={initialTodos} />
       <hr />
       <FullName />
       <hr />
       <Form />
-      <hr /> 
+      <hr />
       <Fetch />
       <hr />
       <Metodes3 />
@@ -43,7 +58,21 @@ const App = () => {
       <PintaArray />
       <hr />
       <TocarArray />
-      
+      <hr />
+      <IntervalEffect />
+      <hr />
+      <FetchDataUseEffect/>
+      <hr />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Usuaris />} />
+          <Route path="/fetch" element={<FetchUsuaris />} />
+          <Route path="/users/:id" element={<FetchUsuaris />} />
+          <Route path="/axios" element={<FetchUsuarisAxios />} />
+          <Route path="/users/:ida" element={<FetchUsuarisAxios />} />
+          </Routes>
+      </BrowserRouter>
+      <hr />
     </>
   );
 };

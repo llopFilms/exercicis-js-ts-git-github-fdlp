@@ -3,7 +3,7 @@ import { useState } from "react";
 const TocarArray = () => {
   const initialArray = [1, 2, 3, 4, 5];
 	const [array, setArray] = useState(initialArray);
-	console.log(array);
+	// console.log(array);
 	
 
   const afegirDavant = () => {

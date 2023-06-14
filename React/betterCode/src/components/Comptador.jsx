@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 
 const Comptador = ({ initialCount }) => {
   const [count, setCount] = useState(initialCount);
-  // console.log("count al principi", count);
+  // console.count("count al principi", count);
 
   const increment = () => {
     setCount((prev) => prev + 1);
@@ -18,7 +18,7 @@ const Comptador = ({ initialCount }) => {
   };
 
   useEffect(() => {
-    // console.log("count a useEffect", count);
+   // console.count("count a useEffect", count);
   }, [count]);
 
   return (

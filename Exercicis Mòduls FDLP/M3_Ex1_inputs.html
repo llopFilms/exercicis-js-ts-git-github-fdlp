@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mòdul 3 - Exercici 1</title>
-	
-</head>
-<body>
-	<!-- Fer un programa que li demani a l’usuari mitjançant el prompt: El nom, el cognom i l’edat de l’usuari. Un cop l’usuari hagi acabat d’introduir les dades, aquestes s’han de mostrar per consola, amb un popup i mitjançant getElementById().-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 3 - Exercici 1</title>
+  </head>
+  <body>
+    <!-- Fer un programa que li demani a l’usuari mitjançant el prompt: El nom, el cognom i l’edat de l’usuari. Un cop l’usuari hagi acabat d’introduir les dades, aquestes s’han de mostrar per consola, amb un popup i mitjançant getElementById().-->
 
-	<h2>Introducció de dades usuari:</h2>
+    <h2>Introducció de dades usuari:</h2>
 
-	<!-- Recepció de dades de js a HTML-->
-	<p id= "Nom_usuari"></p>
-	<p id= "Cognom_usuari"></p>
-	<p id= "Edat_usuari"></p>
+    <!-- Recepció de dades de js a HTML-->
+    <p id="Nom_usuari"></p>
+    <p id="Cognom_usuari"></p>
+    <p id="Edat_usuari"></p>
 
-	
-		<script>	
+    <p>
+      Hola<br />
+      bon dia!
+    </p>
 
-			// Sol.licutud de dades a l'usuari
-			let nom = prompt ("Nom usuari:","Escriu aquí el teu nom");
-			let cognom = prompt ("Cognom usuari:","Escriu aquí el teu cognom");
-			let edat = Number(prompt ("Edat usuari:","Escriu aquí la teva edat"));
+    <script>
+      // Sol.licutud de dades a l'usuari
+      let nom = prompt("Nom usuari:", "Escriu aquí el teu nom");
+      let cognom = prompt("Cognom usuari:", "Escriu aquí el teu cognom");
+      let edat = Number(prompt("Edat usuari:", "Escriu aquí la teva edat"));
 
-			// Control del valor de les variables per cònsola
-			console.log ("Nom Usuari: " + nom);
-			console.log ("Cognom Usuari: " + cognom);
-			console.log ("Edat Usuari: " + edat);
+      // Control del valor de les variables per cònsola
+      console.log("Nom Usuari: " + nom);
+      console.log("Cognom Usuari: " + cognom);
+      console.log("Edat Usuari: " + edat);
 
-			// Popup anunciant el valor de les dades introduïdes
-			window.alert ("Nom Usuari: " + nom +"\n\nCognom Usuari: " + cognom + "\n\nEdat Usuari: " + edat);
+      // Popup anunciant el valor de les dades introduïdes
+      window.alert(
+        "Nom Usuari: " +
+          nom +
+          "\n\nCognom Usuari: " +
+          cognom +
+          "\n\nEdat Usuari: " +
+          edat
+      );
 
-			// Enviament dels valors de les dades als id's d'HTML
-			document.getElementById("Nom_usuari").innerHTML = "El teu nom és: " + nom;
-			document.getElementById("Cognom_usuari").innerHTML = "El teu cognom és: " + cognom;
-			document.getElementById("Edat_usuari").innerHTML = "La teva edat és: " + edat + " anys";
-
-		</script>
-	</body>
+      // Enviament dels valors de les dades als id's d'HTML
+      document.getElementById("Nom_usuari").innerHTML = "El teu nom és: " + nom;
+      document.getElementById("Cognom_usuari").innerHTML =
+        "El teu cognom és: " + cognom;
+      document.getElementById("Edat_usuari").innerHTML =
+        "La teva edat és: " + edat + " anys";
+    </script>
+  </body>
 </html>

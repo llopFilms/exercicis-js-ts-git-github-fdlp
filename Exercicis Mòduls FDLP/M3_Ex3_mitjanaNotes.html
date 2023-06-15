@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
-	<title>Mòdul 3 - Exercici 3</title>
-</head>
-<body>
-	<!--El programa demana a l'usuari que introdueixi 3 notes i el programa mostra la mitjana de les 3 notes per pantalla.-->
-	<h2>Càlcul de mitjana de 3 notes</h2>
-	<br/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
+    <title>Mòdul 3 - Exercici 3</title>
+  </head>
+  <body>
+    <!--El programa demana a l'usuari que introdueixi 3 notes i el programa mostra la mitjana de les 3 notes per pantalla.-->
+    <h2>Càlcul de mitjana de 3 notes</h2>
+    <br />
 
-	<!--Limitem l'entrada de la nota entre 1 i 10-->
-	<input type="number" min=0 max=10 id="caixaTextNota1" placeholder="Escriu aquí la primera nota..."/><br/><br/>
-	<input type="number" min=0 max=10 id="caixaTextNota2" placeholder="Aquí la segona..."/><br/><br/>
-	<input type="number" min=0 max=10 id="caixaTextNota3" placeholder="I aquí la tercera, ok?"/><br/><br/>
-	<input type='button' onClick='fer_mitjana()' Value='Càlcul mitjana'/>
-	<br/>
-	<p id="mitjana"></p>
+    <!--Limitem l'entrada de la nota entre 1 i 10-->
+    <input
+      type="number"
+      min="0"
+      max="10"
+      id="caixaTextNota1"
+      placeholder="Escriu aquí la primera nota..." /><br /><br />
+    <input
+      type="number"
+      min="0"
+      max="10"
+      id="caixaTextNota2"
+      placeholder="Aquí la segona..." /><br /><br />
+    <input
+      type="number"
+      min="0"
+      max="10"
+      id="caixaTextNota3"
+      placeholder="I aquí la tercera, ok?" /><br /><br />
+    <input type="button" onClick="fer_mitjana()" value="Càlcul mitjana" />
+    <br />
+    <p id="mitjana"></p>
 
-	<script>
+    <script>
+      function fer_mitjana() {
+        //Entrada de dades i conversió a Number
+        let nota1 = document.getElementById("caixaTextNota1").value;
+        let nota2 = document.getElementById("caixaTextNota2").value;
+        let nota3 = document.getElementById("caixaTextNota3").value;
 
-		function fer_mitjana(){
+        nota1 = Number(nota1);
+        nota2 = Number(nota2);
+        nota3 = Number(nota3);
 
-			//Entrada de dades i conversió a Number
-			let nota1 = document.getElementById("caixaTextNota1").value;
-			let nota2 = document.getElementById("caixaTextNota2").value;
-			let nota3 = document.getElementById("caixaTextNota3").value;
-		
-			nota1 = Number (nota1);
-			nota2 = Number (nota2);
-			nota3 = Number (nota3);	
+        //Popup que apareix si esciuen amb el teclat una nota de més de 10
+        if (nota1 > 10 || nota2 > 10 || nota3 > 10) {
+          alert("La nota no pot ser més de 10, jefe!");
+        }
 
-			//Popup que apareix si esciuen amb el teclat una nota de més de 10
-			if (nota1 > 10 || nota2 > 10 || nota3 > 10){
-				alert ("La nota no pot ser més de 10, jefe!");
-			} 
+        //Càlcul de la mitjana, reducció a 2 decimals i sortida de resultat a la id d'HTML
+        let mitjana = Number(((nota1 + nota2 + nota3) / 3).toFixed(2));
+				console.log("mitjana", typeof mitjana);
+				let notaCorte = 2 + mitjana;
+				console.log(notaCorte);
+				console.log("notaCorte", typeof notaCorte);				
 
-			//Càlcul de la mitjana, reducció a 2 decimals i sortida de resultat a la id d'HTML
-			let mitjana = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+        document.getElementById("mitjana").innerHTML =
+          "El resultat de la mitjana és: <b>" + mitjana;
+      }
 			
-			document.getElementById("mitjana").innerHTML = "El resultat de la mitjana és: <b>"+ mitjana;
-
-		}
-		
-	</script>
-
-
-</body>
+    </script>
+  </body>
 </html>

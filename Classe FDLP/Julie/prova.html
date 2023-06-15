@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercici Prova</title>
+  </head>
+
+  <body>
+    <h2>Prova exercici 1</h2>
+
+    <label for="inputNom"
+      >Escriu el teu nom
+      <input type="text" id="inputNom" />
+    </label>
+
+    <!-- Sintaxi botons HMTL equivalent -->
+    <button onClick="preguntar()">Click 1</button>
+    <!-- <input type="button" onClick="preguntar()" value="Click 2"> -->
+
+    <p>
+      La resposta és:<br />
+      <span id="resposta">???</span>
+    </p>
+
+    <script>
+      console.log("Hola exercici 12");
+
+      function preguntar() {
+        let valorInput = document.getElementById("inputNom").value;
+        let valorPrompt = prompt("Passa'm una altra dada", "de les Filipines");
+
+        console.log(
+          "Aquest és el valor del'input de l'usuari per input",
+          valorInput
+        );
+        console.log(
+          "Aquest és el valor del'input de l'usuari que ver prompt",
+          valorPrompt
+        );
+
+        let muntgatgeResposta = valorInput + " de color blau " + valorPrompt;
+
+        document.getElementById("resposta").innerHTML = muntgatgeResposta;
+
+        alert(
+          "Ja hem acabat la feina. \nI la resposta és " +
+            muntgatgeResposta +
+            "\nBon dia!"
+        );
+      }
+    </script>
+  </body>
+</html>

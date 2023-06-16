@@ -14,7 +14,7 @@ const Fetch = () => {
 
   return (
     <div>
-      <h3>Fetch</h3>
+      <h3>Fetch </h3>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {shortData &&

@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState, useRef } from "react";
 const Form = () => {
+  const [person, setPerson] = useState({});
   const edatRef = useRef(null);
   const nomRef = useRef(null);
-  const [person, setPerson] = useState({});
   const { edat, nom } = person;
   const [darkMode, setDarkMode] = useState(false);
   // console.log(darkMode);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setPerson({ edat: edatRef.current.value, nom: nomRef.current?.value });
+    setPerson({ edat: edatRef.current.value, nom: nomRef.current.value });
   };
 
   const edicioDades = useMemo(() => {
@@ -20,7 +20,7 @@ const Form = () => {
   }, [edat, nom]);
 
   const { edatDades, nomDades } = edicioDades;
-  // console.log(edicioDades);
+  console.log(edicioDades);
   
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const Form = () => {
         background: darkMode ? "gainsBoro" : "gray",
         color: !darkMode ? "white" : "black",
       }}>
-      <h3>Full Name</h3>
+      <h3>Full Name mode fosc</h3>
       <div style={flex}>
         <label htmlFor="nomInput">
           Edat <input type="number" id="nomInput" ref={edatRef} />
@@ -51,11 +51,13 @@ const Form = () => {
         </label>
         <button>Clicar</button>
       </div>
-      {edicioDades && (
-        <p>
-          {nomDades}, que tens {edatDades}
-        </p>
-      )}
+      <div style={{ height: "30px" }}>
+        {edat && nom && (
+          <p style={{margin: 0}}>
+            {nomDades}, que tens {edatDades}
+          </p>
+        )}
+      </div>
       <label htmlFor="darkMode">
         Dark Mode{" "}
         <input

@@ -17,7 +17,8 @@ import {
   FetchUsuarisAxios,
   Usuaris,
   EstatIndefinit,
-  ControlProductes
+  ControlProductes,
+  ColorText
 } from "./components";
 
 const App = () => {
@@ -49,6 +50,8 @@ const App = () => {
       <hr />
       <User age={45} />
       <hr />
+      <ColorText />
+      <hr />
       <Todos initialTodos={initialTodos} />
       <hr />
       <ControlProductes />
@@ -57,8 +60,6 @@ const App = () => {
       <hr />
       <Form />
       <hr />
-      <Fetch />
-      <hr />
       <Metodes3 />
       <hr />
       <PintaArray />
@@ -66,6 +67,8 @@ const App = () => {
       <TocarArray />
       <hr />
       <IntervalEffect />
+      <hr />
+      <Fetch />
       <hr />
       <FetchDataUseEffect/>
       <hr />

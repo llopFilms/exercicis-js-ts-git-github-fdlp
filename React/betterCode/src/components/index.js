@@ -1,3 +1,4 @@
+export { default as ColorText } from "./ColorText";
 export { default as Comptador } from "./Comptador";
 export { default as ComptadorUseEffect } from "./ComptadorUseEffect";
 export { default as ControlProductes } from "./ControlProductes";

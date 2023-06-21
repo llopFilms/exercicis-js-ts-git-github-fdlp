@@ -18,6 +18,7 @@ import {
   /* Password, */ Paragrafs,
 } from "./components/componentsStyle";
 import Home from "./components/Home";
+import Parent from "./components/UseCallback";
 
 function App() {
   return (
@@ -47,7 +48,9 @@ function App() {
         <Paragraf />
         {/* <Password /> */}
         <Paragrafs />
-        <Home/>
+        <Home />
+        <Parent />
+        
             </div>
       </div>
   );

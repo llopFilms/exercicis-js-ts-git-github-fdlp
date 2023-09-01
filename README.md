@@ -1,8 +1,7 @@
 # Exercicis curs FDLP de la IT Academy (Barcelona Activa)
 
-- Programació en Js
+- Programació en Js i Ts
 - ES6, Api Rest
-- Programació en React
 - Maquetació en:
   - CSS
   - Flex i Grid

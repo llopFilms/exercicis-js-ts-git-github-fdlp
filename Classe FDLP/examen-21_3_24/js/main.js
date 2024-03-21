@@ -1,5 +1,6 @@
 console.log('Càrrega main');
-console.table(pacients);
+omplirPacients();
+pintarPacients();
 
 function generarNumeros() {
   let numsAleatoris = [];
@@ -61,19 +62,13 @@ function mostraPacient() {
     return;
   } else {
     let pacient = pacients[indexPacient];
-    if (pacient instanceof Home) {
-      alert(`
-        Les dades el pacient són:
-        ${pacient.toString()}
+    alert(`
+        Les dades ${
+          pacient instanceof Home ? `del` : `de la`
+        } pacient són: ${pacient.toString()}
+
         Cliqueu 'Dacord' per tornar al menú principal
       `);
-    } else {
-      alert(`
-        Les dades el pacient són:
-        ${pacient.toString()}
-        Cliqueu 'Dacord' per tornar al menú principal
-      `);
-    }
   }
 }
 
@@ -95,18 +90,17 @@ function mostraImc_CatPes() {
     return;
   } else {
     let pacient = pacients[indexPacient];
-    let imcPacient = calcIMC(pacient.pes, pacient.estatura);
-    let imcrrodonit = arrodonirNum(imcPacient);
+    let imcPacient = pacient.getIMC();
 
     let catPes;
-    if (imcrrodonit < 18.5) catPes = 'Pes insuficient';
-    else if (imcrrodonit >= 18.5 && imcrrodonit <= 24.09) catPes = 'Pes normal';
-    else if (imcrrodonit >= 25 && imcrrodonit <= 29.9) catPes = 'Sobrepès';
+    if (imcPacient < 18.5) catPes = 'Pes insuficient';
+    else if (imcPacient >= 18.5 && imcPacient <= 24.09) catPes = 'Pes normal';
+    else if (imcPacient >= 25 && imcPacient <= 29.9) catPes = 'Sobrepès';
     else catPes = 'Obesitat';
 
     alert(`
-      L'IMC del pacient ${pacient.nomComplet} és: ${imcrrodonit}
-      La seva categoría de pes es: ${catPes}
+      ${pacient instanceof Home ? `El` : `La`} pacient ${pacient.getNomComplet()} té un IMC de ${imcPacient}
+      La seva categoria de pes és: ${catPes}.
       
       Cliqueu 'Dacord' per tornar al menú principal
     `);
@@ -122,15 +116,12 @@ function mostraIndexGreix() {
     return;
   } else {
     let pacient = pacients[indexPacient];
-    let incHome = (pacient instanceof Home) ? 0 : -5.4;
-    let ig =
-      1.2 * calcIMC(pacient.pes, pacient.estatura + 0.23 * pacient.edat) +
-      incHome;
+    let ig = `${(pacient instanceof Home) ? pacient.getIGHome() : pacient.getIG()}%`; 
 
     alert(`
-      L'Índex de Greix del pacient ${pacient.nomComplet} és: ${arrodonirNum(ig)}
-
-      Cliqueu 'Dacord' per tornar al menú principal.
+      ${pacient instanceof Home ? `El` : `La`} pacient ${pacient.getNomComplet()} té un índex de greix del ${ig}
+      
+      Cliqueu 'Dacord' per tornar al menú principal
     `);
   }
 }
@@ -144,10 +135,15 @@ function mostraRCC() {
     return;
   } else {
     let pacient = pacients[indexPacient];
-    let rcc = pacient.cintura / pacient.maluc;
+    let rcc = pacient.getRCC();
+    console.log("rcc -->",rcc);    
+    let rs = (pacient instanceof Home) ? pacient.getRSHome(rcc) : pacient.getRSDona(rcc);
+    console.log("rs -->",rs);
+    
 
     alert(`
-      L'Índex de RCC del pacient ${pacient.nomComplet} és: ${arrodonirNum(rcc)}
+      L'Índex de RCC del pacient ${pacient.getNomComplet()} és: ${rcc}
+      L'índex ${rs}
 
       Cliqueu 'Dacord' per tornar al menú principal.
     `);

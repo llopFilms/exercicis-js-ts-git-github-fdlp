@@ -12,23 +12,32 @@ class Pacient {
   getDni() {
     return this.dni;
   }
+
   getNomComplet() {
     return this.nomComplet;
   }
-  getEdat() {
-    return this.edat;
+
+  getRoundNum(num) {
+    return Math.round(num * 100) / 100;
   }
-  getPes() {
-    return this.pes;
+
+  getIMC() {
+    let imc = this.pes / (this.estatura / 100) ** 2;
+    return this.getRoundNum(imc);
   }
-  getEstatura() {
-    return this.estatura;
+
+  getIG() {
+    let ig = 1.2 * this.getIMC() + 0.23 * this.edat;
+    return this.getRoundNum(ig);
   }
-  getCintura() {
-    return this.cintura;
+
+  getRCC() {
+    let rcc = this.cintura / this.maluc;
+    return this.getRoundNum(rcc);
   }
-  getMaluc() {
-    return this.maluc;
+  
+  getRS(condicio) {
+    return (condicio) ? 'implica un risc per la salut' : 'és correcte';
   }
 
   toString() {

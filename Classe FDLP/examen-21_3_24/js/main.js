@@ -24,7 +24,7 @@ function generarNumeros() {
       rang1++;
     } else if (numAleatori >= 21 && numAleatori <= 40) {
       rang2++;
-    } else if (numAleatori >= 41 && numAleatori <= 60) {
+    } else {
       rang3++;
     }
   }
@@ -33,9 +33,9 @@ function generarNumeros() {
   let midaArray = numsAleatoris.length;
   console.log('midaArray -->', midaArray);
 
-  let percRang1 = rang1 / midaArray;
-  let percRang2 = rang2 / midaArray;
-  let percRang3 = rang3 / midaArray;
+  let percRang1 = +(rang1 / midaArray * 100).toFixed(2);
+  let percRang2 = +(rang2 / midaArray * 100).toFixed(2);
+  let percRang3 = +(rang3 / midaArray * 100).toFixed(2);
 
   document.getElementById('resposta').innerHTML = ` 
   <ul>
@@ -59,26 +59,17 @@ function mostraPacient() {
 
   if (indexPacient == -1) {
     alert('Pacient no trobat');
-    return;
   } else {
     let pacient = pacients[indexPacient];
     alert(`
         Les dades ${
           pacient instanceof Home ? `del` : `de la`
-        } pacient són: ${pacient.toString()}
+        } pacient són:
+        ${pacient.toString()}
 
         Cliqueu 'Dacord' per tornar al menú principal
       `);
   }
-}
-
-function arrodonirNum(num) {
-  return Math.round(num * 100) / 100;
-}
-
-function calcIMC(pes, estatura) {
-  let imc = pes / (estatura / 100) ** 2;
-  return imc;
 }
 
 function mostraImc_CatPes() {

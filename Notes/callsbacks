@@ -1,0 +1,103 @@
+Concatenacions:
+
+Antic
+"L'edat és " +edat
+
+Nou / template strings:
+`L'edat és ${edat}`
+
+
+Funcions fletxa:
+
+1 línia a dins:
+
+function suma(a, b) {
+	return a + b;	
+}
+
+const suma = (a, b) => a + b;
+
+function saludar(nom) {
+	return "Hola" + nom;	
+}
+
+const saludar = nom => "Hola " + nom;
+
++d'1 línia a dins:
+
+function suma(a, b) {
+	let calcul = a + b;
+	let resultat = "La suma és" + calcul
+	return resultat;
+}
+
+const suma = (a, b) => {
+	let calcul = a + b;
+	let resultat = "La suma és" + calcul
+	return resultat;
+}
+
+Callbacks
+Iterar un array per analitzar-lo i fer alguna cosa amb ell:
+- Retornar un array nou manipulat
+- Retornar un booleà
+- Retornar un valor
+
+Sintaxi:
+
+En el cas que el callback faci una manipulació (executa funció --> callback) per cada element / retorni un valor
+let resultat = nomArray.metode(element => (element = element * 2);
+let edats = [2, 3, 4, 5]
+
+* map - retorna un array nou igual de mida que l'original amb la manipulació que li demanes a cada element
+let doblaEdats = edats.map(edat => edat * 2)
+doblaEdats --> [4, 6, 8, 10]
+
+* forEach - no retorna res i executa un callback per cada element (manipula array original)
+edats.forEach(edat => console.log (`L'edat és ${edat}`);
+edats.
+
+* reduce - retorna un valor (no un array) de la manipulació de cada element (per exemple una suma de tots els elements de l'array)
+let sumaEdats = edats.reduce((acc, prev) => acc + prev, 0); --> 14
+let persones = persones.reduce((acc, prev) => acc + prev.edat, 0);
+
+
+
+En el cas que el callback treballi amb booleans
+let resultat = nomArray.metode(element => (element.propietat == XX);
+
+* find - retorna el primer objecte que compleix una condició, sinó retorna 'undefined'
+let objecteTrobat = nomArray.find(element => element.nom == nomPrompt); --> objecte que compleix / undefined
+
+* findIndex - retorna l'índex del primer objecte que compleix la condició, sinó retorna -1
+let indexTrobat = nomArray.findIndex(element => element.nom == nomPrompt); --> index que compleix / -1
+
+* every - retorna true si tots els elements de l'array compleixen la condició
+let totsMajorsEdat = personas.every(persona => persona.edat > 18); --> true / false
+
+* some - ídem porò si algun...
+let algunMajorEdat = persona.some(persona => persona.edat > 18); --> true / false
+
+
+function buscarPersona() {
+	let dameDni = prompt....
+	let personaEncontradaObj = persones.find(persona => persona.dni == dameDni);
+	console.log(personaEncontradaObj); --> { nom: Ramon, edat: 24; dni: 123456789A } / undefined
+	if (personaEncontradaObj != undefined)
+		alert(ok)
+	else
+		Alert(KO)
+	
+}
+	
+
+
+
+
+}
+
+
+
+
+
+

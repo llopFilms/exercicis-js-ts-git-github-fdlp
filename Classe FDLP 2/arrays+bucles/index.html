@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays + Bucles</title>
+    <link rel="stylesheet" href="css/estils.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="titol">
+        <h1>Arrays + Bucles</h1>
+        <hr />
+      </div>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 1</legend>
+        <p>
+          Fer un bucle que ompli un array del 0 al 50, sense incloure el 50, en
+          ordre creixent i un altre en ordre decreixent. Treure-ho tot en dues
+          llistes de 50 línies que indiqui "El número ... de la llista és ..."
+          fins arribar al final.
+        </p>
+        <button onClick="resoldreEx1()">Resolució Exercici 1</button>
+        <div class="resposta1">
+          <ul class="llista0a50" id="llista0a50"></ul>
+          <ul class="llista50a0" id="llista50a0"></ul>
+        </div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 2</legend>
+        <p>
+          A partir d'aquests dos arrays, fer un bucle a on recorri els dos
+          arrays a la vegada i sumi entre si cada element de cadascun dels
+          arrays mentre els recorre, per aconseguir un 3er array [50,50, 50,
+          ....]. Comptar el número d'elements que té l'array resultant
+          recorrent-lo amb un for of i que doni igual que el propi array.length.
+          Desmostrar que és així.
+        </p>
+        <button onClick="resoldreEx2()">Resolució Exercici 2</button>
+        <div class="resposta2"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 3</legend>
+        <p>
+          Agafar el primer array creixent del principi i crear-ne un altre només
+          amb els múltiples de 3, però que pari just quan trobi l'últim múltiple
+          (sene arribar al final), i indiqui quin és aquest ultim múltiple i en
+          quina posició de l'array era.
+        </p>
+        <button>Resolució Exercici 3</button>
+        <div class="resposta3"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 4</legend>
+        <p>
+          Recórrer un array que sigui una llista de noms que comencin per A, D,
+          F, i X, amb 12 noms en total, i crear 4 arrays separats amb els noms
+          agrupats segons si comencen per A, D, F i X. Indicar en un alert o per
+          pantalla quants noms i quins són a cada array, fent servir mètodes com
+          includes(), join(), startsWith()...
+        </p>
+        <div class="grid-botons">
+          <label for="nom1">Nom 1<input type="text" id="nom1" /></label>
+          <label for="nom2">Nom 2<input type="text" id="nom2" /></label>
+          <label for="nom3">Nom 3<input type="text" id="nom3" /></label>
+          <label for="nom4">Nom 4<input type="text" id="nom4" /></label>
+          <label for="nom5">Nom 5<input type="text" id="nom5" /></label>
+          <label for="nom6">Nom 6<input type="text" id="nom6" /></label>
+          <label for="nom7">Nom 7<input type="text" id="nom7" /></label>
+          <label for="nom8">Nom 8<input type="text" id="nom8" /></label>
+          <label for="nom9">Nom 9<input type="text" id="nom9" /></label>
+          <label for="nom10">Nom 10<input type="text" id="nom10" /></label>
+          <label for="nom11">Nom 11<input type="text" id="nom11" /></label>
+          <label for="nom12">Nom 12<input type="text" id="nom12" /></label>
+        </div>
+        <button>Resolució Exercici 4</button>
+        <div class="resposta4"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 5</legend>
+        <p>
+          De l'array dels noms que comencen per A, treure una llista que indiqui
+          quantes lletres té cada nom del pal "El nom .... té .... lletres A". I
+          que compti tan majúscules com minúscules, com à i á. També en un alert
+          o en una llista per pantalla, fent servir charAt() o similar. S'hi val
+          fer servir expressions regulars si es vol o es pot.
+        </p>
+        <button>Resolució Exercici 5</button>
+        <div class="resposta5"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 6</legend>
+        <p>
+          Agafar l'array dels noms que comencen per A de referència, i escriure
+          en un altre array nou d'objectes on cada objecte a més del nom hi té
+          l'edat, el cognom i la professió. Recórrer aquest nou array d'objectes
+          treient un alert o per pantalla, amb una descripció dels elements 2on
+          i 4rt de l'array, per exemple, on s'indiqui del tirón nom, cognom,
+          edat i professió, pintat en una llista d'HTML.
+        </p>
+        <button>Resolució Exercici 6</button>
+        <div class="resposta6"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 7</legend>
+        <p>
+          Separar l'array d'objectes del noms que comencen per A en dos,
+          separant els que tenen edat parell i imparell. Sumar les edats i
+          indicar la suma de les edats resultants a cadascuna dels arrays.
+          Agafar l'array dels múltiples de 3 d'abans i treure un array nou a on
+          sumi el total de les edats imparells, a les posicions parells de
+          l'array dels múltiples de 3, i treure'l en una llista.
+        </p>
+        <button>Resolució Exercici 7</button>
+        <div class="resposta7"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 8</legend>
+        <p>
+          Agafar l'array decreixent del punt 1, localitzar els 4 primers números
+          primers que hi hagi, sense arribar al final si no fa falta,
+          guardar-los en un nou array, sumar 7 a cada número i indicar si algun
+          dels primers es converteix en un múltiple de 2, en una llista, donat
+          el cas i dir que no succeeix si es dona el contrari.
+        </p>
+        <button>Resolució Exercici 8</button>
+        <div class="resposta8"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 9</legend>
+        <p>
+          Fer un palíndrom que accepti tant majúscules com minúscules fent
+          servir expressions regulars (investigació...) o no...
+        </p>
+        <button>Resolució Exercici 9</button>
+        <div class="resposta9"></div>
+      </fieldset>
+
+      <fieldset class="exercici">
+        <legend class="titol-exercici">Exercici 10</legend>
+        <p>
+          Manipular la frase "Santa RitA, Rita, lO que se da no sE quIta!!"
+          canviant les vocals per números per fer un súper password: A --> 1 , E
+          --> 2, I --> 3, O --> 4, U --> 5, i el que no siguin lletres --> 6.
+          Tan en majúscules com en minúscules i canviant el 2on, el 4rt i el 6è
+          espai per ?. Treure el súper password per pantalla o alert.
+        </p>
+        <button>Resolució Exercici 10</button>
+        <div class="resposta10"></div>
+      </fieldset>
+    </div>
+
+    <script>
+      'use strict';
+    </script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

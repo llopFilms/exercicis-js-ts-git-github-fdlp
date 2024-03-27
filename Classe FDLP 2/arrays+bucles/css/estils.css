@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ubuntu, sans-serif;
+  background-color: khaki;
+  padding: 2rem;
+  color: darkslategrey;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  .titol {
+    padding: 1rem 0 2rem;
+
+    h1 {
+      text-align: center;
+      padding: 0.5rem;
+    }
+    hr {
+      color: darkslategrey;
+    }
+  }
+
+  .exercici {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 3px solid darkslategrey;
+    border-radius: 1rem;
+
+    .titol-exercici {
+      padding: 0 0.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    p {
+      padding: 1rem 0.5rem;
+      line-height: 1.4;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0.5rem;
+      font-weight: bold;
+    }
+
+    input {
+      background-color: khaki;
+      margin: 0.5rem 0.5rem;
+      padding: 0.35rem;
+      border: 1px solid darkslategrey;
+      border-radius: 0.35rem;
+    }
+
+    button {
+      display: block;
+      margin-left: auto;
+      padding: 0.5rem 1rem;
+      background-color: darkslategrey;
+      color: khaki;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: khaki;
+        outline: 2px solid darkslategrey;
+        color: darkslategrey;
+        transition: 0.5s;
+      }
+    }
+
+    div {
+      margin-top: 3rem;
+    }
+
+    .resposta1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+
+      .llista50a0,
+      .llista0a50 {
+        font-size: 75%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(26, auto);
+        grid-auto-flow: column;
+        grid-gap: .5rem 1.5rem;
+        list-style: none;
+      }
+    }
+
+    .grid-botons {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 0.5rem;
+      justify-items: end;
+
+      label {
+        padding: 0;
+      }
+    }
+  }
+}

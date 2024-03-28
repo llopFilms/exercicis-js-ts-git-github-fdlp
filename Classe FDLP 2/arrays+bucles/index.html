@@ -23,8 +23,8 @@
         </p>
         <button onClick="resoldreEx1()">Resolució Exercici 1</button>
         <div class="resposta1">
-          <ul class="llista0a50" id="llista0a50"></ul>
-          <ul class="llista50a0" id="llista50a0"></ul>
+          <div id="llista0a50"></div>
+          <div id="llista50a0"></div>
         </div>
       </fieldset>
 
@@ -39,19 +39,16 @@
           Desmostrar que és així.
         </p>
         <button onClick="resoldreEx2()">Resolució Exercici 2</button>
-        <div class="resposta2"></div>
+        <div class="resposta2" id="resposta2"></div>
       </fieldset>
 
       <fieldset class="exercici">
         <legend class="titol-exercici">Exercici 3</legend>
         <p>
-          Agafar el primer array creixent del principi i crear-ne un altre només
-          amb els múltiples de 3, però que pari just quan trobi l'últim múltiple
-          (sene arribar al final), i indiqui quin és aquest ultim múltiple i en
-          quina posició de l'array era.
+          Agafar el segon array decreixent del principi i crear-ne un altre només amb els múltiples de 3 (excloent el 6 i el 9), i indiqui quin és l'antepenúltim múltiple i en quina posició de l'array era. Indicar el primer múltiple de 4, parant de buscar de seguida que el trobi. Si no en troba, que digui que no n'hi ha.
         </p>
-        <button>Resolució Exercici 3</button>
-        <div class="resposta3"></div>
+        <button onClick="resoldreEx3()">Resolució Exercici 3</button>
+        <div class="resposta3" id="resposta3"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -61,24 +58,25 @@
           F, i X, amb 12 noms en total, i crear 4 arrays separats amb els noms
           agrupats segons si comencen per A, D, F i X. Indicar en un alert o per
           pantalla quants noms i quins són a cada array, fent servir mètodes com
-          includes(), join(), startsWith()...
+          includes(), test(), match(),join(), startsWith()... S'hi val
+          fer servir expressions regulars si es vol o es pot.
         </p>
         <div class="grid-botons">
-          <label for="nom1">Nom 1<input type="text" id="nom1" /></label>
-          <label for="nom2">Nom 2<input type="text" id="nom2" /></label>
-          <label for="nom3">Nom 3<input type="text" id="nom3" /></label>
-          <label for="nom4">Nom 4<input type="text" id="nom4" /></label>
-          <label for="nom5">Nom 5<input type="text" id="nom5" /></label>
-          <label for="nom6">Nom 6<input type="text" id="nom6" /></label>
-          <label for="nom7">Nom 7<input type="text" id="nom7" /></label>
-          <label for="nom8">Nom 8<input type="text" id="nom8" /></label>
-          <label for="nom9">Nom 9<input type="text" id="nom9" /></label>
-          <label for="nom10">Nom 10<input type="text" id="nom10" /></label>
-          <label for="nom11">Nom 11<input type="text" id="nom11" /></label>
-          <label for="nom12">Nom 12<input type="text" id="nom12" /></label>
+          <label for="nom1">Nom 1<input type="text" id="nom1" value="Àlex"/></label>
+          <label for="nom2">Nom 2<input type="text" id="nom2" value="Fancesc"/></label>
+          <label for="nom3">Nom 3<input type="text" id="nom3" value="Ferran"/></label>
+          <label for="nom4">Nom 4<input type="text" id="nom4" value="Dídac"/></label>
+          <label for="nom5">Nom 5<input type="text" id="nom5" value="Dolors"/></label>
+          <label for="nom6">Nom 6<input type="text" id="nom6" value="Xavier"/></label>
+          <label for="nom7">Nom 7<input type="text" id="nom7" value="Ferran"/></label>
+          <label for="nom8">Nom 8<input type="text" id="nom8" value="Adrià"/></label>
+          <label for="nom9">Nom 9<input type="text" id="nom9" value="Xènia"/></label>
+          <label for="nom10">Nom 10<input type="text" id="nom10" value="Àngels"/></label>
+          <label for="nom11">Nom 11<input type="text" id="nom11" value="Daniel"/></label>
+          <label for="nom12">Nom 12<input type="text" id="nom12" value="David"/></label>
         </div>
-        <button>Resolució Exercici 4</button>
-        <div class="resposta4"></div>
+        <button onClick="resoldreEx4()">Resolució Exercici 4</button>
+        <div class="resposta4" id="resposta4"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -90,8 +88,8 @@
           o en una llista per pantalla, fent servir charAt() o similar. S'hi val
           fer servir expressions regulars si es vol o es pot.
         </p>
-        <button>Resolució Exercici 5</button>
-        <div class="resposta5"></div>
+        <button onClick="resoldreEx5()">Resolució Exercici 5</button>
+        <div class="resposta5" id="resposta5"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -104,8 +102,8 @@
           i 4rt de l'array, per exemple, on s'indiqui del tirón nom, cognom,
           edat i professió, pintat en una llista d'HTML.
         </p>
-        <button>Resolució Exercici 6</button>
-        <div class="resposta6"></div>
+        <button onClick="resoldreEx6()">Resolució Exercici 6</button>
+        <div class="resposta6" id="resposta6"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -118,8 +116,8 @@
           sumi el total de les edats imparells, a les posicions parells de
           l'array dels múltiples de 3, i treure'l en una llista.
         </p>
-        <button>Resolució Exercici 7</button>
-        <div class="resposta7"></div>
+        <button onCLick="resoldreEx7()">Resolució Exercici 7</button>
+        <div class="resposta7" id="resposta7"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -131,8 +129,8 @@
           dels primers es converteix en un múltiple de 2, en una llista, donat
           el cas i dir que no succeeix si es dona el contrari.
         </p>
-        <button>Resolució Exercici 8</button>
-        <div class="resposta8"></div>
+        <button onCLick="resoldreEx8()">Resolució Exercici 8</button>
+        <div class="resposta8" id="resposta8"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -141,8 +139,8 @@
           Fer un palíndrom que accepti tant majúscules com minúscules fent
           servir expressions regulars (investigació...) o no...
         </p>
-        <button>Resolució Exercici 9</button>
-        <div class="resposta9"></div>
+        <button onCLick="resoldreEx9()">Resolució Exercici 9</button>
+        <div class="resposta9" id="resposta9"></div>
       </fieldset>
 
       <fieldset class="exercici">
@@ -154,8 +152,8 @@
           Tan en majúscules com en minúscules i canviant el 2on, el 4rt i el 6è
           espai per ?. Treure el súper password per pantalla o alert.
         </p>
-        <button>Resolució Exercici 10</button>
-        <div class="resposta10"></div>
+        <button onCLick="resoldreEx10()">Resolució Exercici 10</button>
+        <div class="resposta10" id="resposta10"></div>
       </fieldset>
     </div>
 

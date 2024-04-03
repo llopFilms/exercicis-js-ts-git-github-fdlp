@@ -1,4 +1,4 @@
-console.log('Entorn de proves');
+console.log('---------------- main1.js -----------------');
 //consola ------------------------------
 console.log('consola ------------------------------');
 
@@ -25,7 +25,7 @@ console.log('strings ------------------------------');
 let correuElectronic = 'jordi@prova.cat';
 console.log('correuElectronic -->', correuElectronic);
 
-//concatenació de srtings
+//concatenació de strings
 let nom = 'Pep';
 let cognom = 'Perez';
 //let nomComplet = nom + ' ' + cognom;

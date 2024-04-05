@@ -3,19 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cap.2</title>
+    <title>Net Ninja Modern Js</title>
+    <style>
+      .avis {
+        color:darkred;
+        padding: 10px;
+        border: 1px solid darkred;
+      }
+      .be {
+        color: darkolivegreen;
+        padding: 10px;
+        border: 1px solid darkolivegreen;
+      }
+      .siError {
+        color: darkred;
+        text-decoration: underline;
+      }
+      .noError {
+        color: darkolivegreen;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <h1>Video #2</h1>
-    <p id="respostaHtml"></p>
+    <h1 id="titol-de-pagina" style="color:orange">Net Ninja Modern Js</h1>
+    <div class="contingut"></div>
+    <div>
+      <p >Hola a totom.</p>
+      <p>
+        Ab molta impaciència per bé que fós. Los cavallers animosos volgueren
+        morir en les batalles ans. De Sant Onofre e de Santa Maria Egipcíaca.
+        Virtuosa doctrina de nostra vida segons recita aquell gran. E expedient
+        deduir en escrit les gestes e històries. Qui en sa viril joventut havia
+        experimentada. Propasà de retraure's de les. Dels grecs troians e de. La
+        sua partida En la fèrtil. Pel mig restant cascuna part. Los regnes e
+        ciutats no es porien sostenir en. Generós qui vol rebre l'orde de
+        cavalleria;. Del qual en lo món molt triümfava.
+      </p>
+      <p class="error" required>Aquest és un missatge d'error.</p>
+    </div>
+    <div class="error">Aquest és un altre missatge d'error.</div>
+    <br><a href="lorem.cat">Accés a Lorem.cat</a>
+    <br><br>
+    <div>
+      <button onCLick="canviarColor()">Boto aprició text</button>
+      <br><br>
+      <div id="missatge" class="classeMissatge"></div>
+    </div>
+    <br>
+    <div id="ipsums">
+      <button onCLick="canviarIpsums()">Boto canvi ipsums</button>
+      <button onCLick="invertirIpsums()">Boto revertr ipsums</button>
+      <button onCLick="revertirIpsums()">Boto revertr ipsums</button>
+      <br><br>
+      <div>Lorem siError ipsum</div>
+      <div>Lorem noError ipsum</div>
+      <div>Lorem ipsum lorem</div>
+      <div>Lorem ipsum noError</div>
+      <div>siError lorem ipsum</div>
+      <div>Lorem ipsum lorem</div>
+      <div>Lorem ipsum siError</div>
+      <div>noError ipsum lorem</div>
+    </div>
+
     <script>
       'use strict';
     </script>
     <!-- Syntax Basics & Types + Control Flow -->
-    <!-- <script src="./js/main1.js"></script> -->
+    <script src="./js/main1.js"></script>
     <!-- Functions -->
-    <!-- <script src="./js/main2.js"></script> -->
+    <script src="./js/main2.js"></script>
     <!-- Objects -->
     <script src="./js/main3.js"></script>
+    <!-- DOM -->
+    <script src="./js/main4.js"></script>
   </body>
 </html>

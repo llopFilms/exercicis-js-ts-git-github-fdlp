@@ -55,12 +55,12 @@ const totalFactura = factura([10, 20, 30], 21);
 console.log('Total factura --> ', totalFactura);
 
 //fucions fletxa
-const calcVolum = (radi, altura) => {
+const calcVolumFletxa = (radi, altura) => {
   let volum = pi * radi ** 2 * altura;
   let volum2dec = Math.round(volum * 100) / 100;
   return volum2dec;
 };
-const volumCalculat = calcVolum(10, 14);
+const volumCalculat = calcVolumFletxa(10, 14);
 console.log('Volum calculat --> ', volumCalculat);
 
 const totalFacturaFLetxa = (productes, iva) => {
@@ -90,7 +90,7 @@ const saludar2 = (nom) => `Saludo a en ${nom}`;
 const saludarPepet = saludar2('Pepet');
 console.log('saludarPepet -->', saludarPepet);
 
-//mètode --> fucions aplicades a un objecte o a un tipus de data (nadiu de JS)
+//mètode --> fucions aplicades a un objecte o a un tipus de dada (nadiu de JS)
 const nom = 'Pepet';
 const nomMaj = nom.toUpperCase();
 console.log('nomMaj -->', nomMaj);

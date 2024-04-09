@@ -53,13 +53,13 @@ let ultimIndex = correuElectronic.lastIndexOf('a');
 console.log('ultimIndex -->', ultimIndex);
 
 //slice
-let nomCorreu = correuElectronic.slice(0, 5);
+let nomCorreu = correuElectronic.slice(0, 5); // del principi fins a index 5
 console.log('nomCorreu -->', nomCorreu);
-let restaCorreu = correuElectronic.slice(5); // a partir de index 5
+let restaCorreu = correuElectronic.slice(5); // a partir de index 5 fins al final
 console.log('restaCorreu -->', restaCorreu);
 
 //substring
-let substring = correuElectronic.substring(0, 9); // a partir de index 0, 5 posicions
+let substring = correuElectronic.substring(4, 9); // a partir de index 0, 5 posicions
 console.log('substring -->', substring);
 
 //replace
@@ -89,7 +89,7 @@ console.log('divisio -->', divisio);
 let modul = 11 % 3;
 console.log('modul -->', modul);
 
-/* ordre operadors --> BIDMAS
+/* ordre operadors --> PIDMMAS
 ordre:
 1. PARENTESIS (parenteses)
 2. EXPONENT (index)
@@ -179,7 +179,7 @@ console.log('barrufets2 -->', barrufets2);
 let conteRondinaire = barrufets2.includes('rondinaire');
 console.log('conteRondinaire -->', conteRondinaire);
 
-//oprados de comparació
+//operados de comparació
 const edatAmic = 45;
 console.log('edatAmic == 45 -->', edatAmic == 45); //true
 console.log('edatAmic == 50 -->', edatAmic == 50); //false
@@ -211,26 +211,31 @@ console.log("edatAmic no és '45' (strict) -->", edatAmic !== '45'); //true
 //Number()
 let puntuacio = 100;
 console.log('puntuació + 1 -->', puntuacio + 1); //101 type number
+
 let puntuacioString = '100';
 console.log(
   'puntuacioString + 1 -->',
   puntuacioString + 1,
   typeof puntuacioString
 ); //1001 type string
+
 let conversioPuntuacio = Number(puntuacioString);
 console.log(
   'conversioPuntuacio + 1 -->',
   conversioPuntuacio + 1,
   typeof conversioPuntuacio
 ); //101 type number
+
 let varNoDefinida;
 console.log(
   'varNoDefinida + 1 -->',
   Number(varNoDefinida),
   typeof Number(varNoDefinida)
 ); //NaN type number
+
 let varNula = null;
 console.log('varNula + 1 -->', Number(varNula), typeof Number(varNula)); //0 type number
+
 let varCert = true;
 console.log('varCert -->', Number(varCert), typeof Number(varCert)); //1 type number
 let varFals = false;
@@ -243,41 +248,41 @@ console.log('puntuacio2 -->', String(puntuacio2), typeof String(puntuacio2)); //
 //Boolean()
 let nomNou = 'Joan';
 console.log('nomNou "Joan" -->', Boolean(nomNou), typeof Boolean(nomNou)); //true type boolean
+
 let puntuacio3 = 300;
 console.log(
   'puntuacio3 300 -->',
   Boolean(puntuacio3),
   typeof Boolean(puntuacio3)
-);
-//true type boolean
+); //true type boolean
+
 let puntuacio4 = 0;
 console.log(
   'puntuacio4 0 -->',
   Boolean(puntuacio4),
   typeof Boolean(puntuacio4)
-);
-//false type boolean
+); //false type boolean
+
 let puntuacio5 = '';
 console.log(
   'puntuacio5 "" -->',
   Boolean(puntuacio5),
   typeof Boolean(puntuacio5)
-);
-//false type boolean
+); //false type boolean
+
 let puntuacio6;
 console.log(
   'puntuacio6 undefined -->',
   Boolean(puntuacio6),
   typeof Boolean(puntuacio6)
-);
-//false type boolean
+);//false type boolean
+
 let puntuacio7 = null;
 console.log(
   'puntuacio7 null -->',
   Boolean(puntuacio7),
   typeof Boolean(puntuacio7)
-);
-//false type boolean
+);//false type boolean
 
 //arrays -----------------------------
 console.log('arrays ------------------------------');
@@ -292,16 +297,16 @@ console.log('midaBarrufets -->', midaBarrufets);
 //veure un element
 console.log('barrufet 1 -->', barrufets[1]);
 
-//canviar un element
+//canviar valor d'un element
 barrufets[2] = 'pintor';
 console.log('barrufet 2 -->', barrufets[2]);
 console.log('barrufets -->', barrufets);
 
-//mostrar un array
+//mostrar un array, en string i entre ', '
 let mostrar = barrufets.join(', ');
 console.log('mostrar -->', mostrar);
 
-//buscar element dins l'array
+//buscar index d'un element dins l'array
 const indexPintor = barrufets.indexOf('pintor');
 console.log('indexPintor -->', indexPintor);
 
@@ -326,8 +331,8 @@ let barrufetPop = barrufetsSpreadOp.pop(); //retorna element extret
 console.log('barrufetPop -->', barrufetPop);
 console.log('barrufetsSpreadOp -->', barrufetsSpreadOp);
 
-//esborrar un element determinat --> splice(index inici, quantitat)
-let barrufetsSplicetEsborrats = barrufetsSpreadOp.splice(2, 2); //retorna array dels elements eliminats
+//esborrar un element determinat --> splice(inici, quantitat a esborrar)
+let barrufetsSplicetEsborrats = barrufetsSpreadOp.splice(2, 2); //retorna array dels elements eliminats amb (2, 2)
 console.log('barrufetsSplicetEsborrats -->', barrufetsSplicetEsborrats);
 console.log('barrufetsSpreadOp -->', barrufetsSpreadOp);
 
@@ -338,12 +343,12 @@ let barrufetsSpliceSubstituïts = barrufetsSpreadOp.splice(
   'pallasso',
   'poeta',
   'escriptor'
-); //retorna array amb elements eliminats
+); //retorna array amb elements substituïts
 console.log('barrufetsSpliceSubstituïts -->', barrufetsSpliceSubstituïts);
 console.log('barrufetsSpreadOp -->', barrufetsSpreadOp);
 
 //inserir un element --> splice(index inici, quantitat a esborrar, element/s a afegir)
-let barrufetsSpliceInserits = barrufetsSpreadOp.splice(4, 0, 'científic'); //retorna array amb elements eliminats
+let barrufetsSpliceInserits = barrufetsSpreadOp.splice(4, 0, 'científic'); //retorna array amb elements eliminats --> []
 console.log('barrufetsSpliceInserits -->', barrufetsSpliceInserits);
 console.log('barrufetsSpreadOp -->', barrufetsSpreadOp);
 

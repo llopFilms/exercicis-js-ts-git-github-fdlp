@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "text": "Learn JavaScript",
+    "completat": false,
+    "hores dedicades": 23
+  },
+  {
+    "id": 2,
+    "text": "Learn TypeScript",
+    "completat": true,
+    "hores dedicades": 46
+  },
+  {
+    "id": 3,
+    "text": "Learn Vue",
+    "completat": false,
+    "hores dedicades": 30
+  }
+]

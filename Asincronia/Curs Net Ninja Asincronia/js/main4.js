@@ -43,6 +43,7 @@ setTimeout(() => {
 }, 150);
 
 // Múltiple petició asíncrona amb async/await amb gestió d'errors
+let dadesUsuaris = [];
 setTimeout(() => {
   console.log('------- async/await múltiple -------');
   const rebreUsuaris = async () => {
@@ -77,16 +78,13 @@ setTimeout(() => {
         error.message
       );
     } finally {
-      console.log('Promesa finalitzada amb async/await');
+      console.log('Promesa mútliple finalitzada amb async/await');
     }
   };
   console.log(rebreUsuaris); // retorna una promesa
-  rebreUsuaris();
-  
-  const dadesr = async () => {
-    const dades = await rebreUsuaris();
-    return dades;
-  };
-  const dadesUsuaris = dadesr();
+  rebreUsuaris().then((dades) => (dadesUsuaris = dades));
+}, 300);
+
+setTimeout(() => {
   console.log('dadesUsuaris -->', dadesUsuaris);
-}, 250);
+}, 450);

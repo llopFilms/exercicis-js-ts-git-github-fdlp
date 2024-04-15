@@ -71,9 +71,9 @@ setTimeout(() => {
         dadesRebudesUsuari2,
         dadesRebudesUsuari3,
       ];
-      console.log("dadesUsuaris dins la async/await -->",dadesUsuaris);
-      
+      console.log("dadesUsuaris dins la async/await -->",dadesUsuaris);      
       return dadesUsuaris;
+
     } catch (error) {
       console.log(
         'Promesa rebutjada amb error de rebreUsuaris() amb async/await -->',
@@ -84,7 +84,9 @@ setTimeout(() => {
     }
   };
   console.log(rebreUsuaris); // retorna una promesa
-  rebreUsuaris().then((dades) => (dadesUsuaris = dades));
+  rebreUsuaris().then((dades => { dadesUsuaris = dades }));
+  /* const omplirArray = async () => dadesUsuaris = await rebreUsuaris();
+  omplirArray(); */
 }, 300);
 
 setTimeout(() => {

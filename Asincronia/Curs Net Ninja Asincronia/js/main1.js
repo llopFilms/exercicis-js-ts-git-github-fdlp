@@ -8,13 +8,15 @@ setTimeout(() => {
 console.log(3);
 console.log(4);
 
+console.log('--------- Crida fetch bàsica --------');
 fetch('https://jsonplaceholder.typicode.com/todos/1')
   .then((response) => response.json())
   .then((todo1) => console.log('Resposta Fecth -->', todo1));
 
-const rebreToDos = (callback, id) => {
-  // Poso un setTimeout perquè sinó es fa això abans que el fecth
-  setTimeout(() => {
+setTimeout(() => {
+  console.log('-------- Crida rebreToDos(callback, 2) --------');
+  const rebreToDos = (callback, id) => {
+    // Poso un setTimeout perquè sinó es fa això abans que el fecth
     // HTTP request
     const peticio = new XMLHttpRequest();
     // Estats de la peticio: 0, 1, 2, 3, 4 --> readystate
@@ -70,24 +72,24 @@ const rebreToDos = (callback, id) => {
        */
       }
     };
-  }, 1000);
-};
+  };
 
-rebreToDos((error, dades) => {
-  console.log('Callback cridat');
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(dades);
-  }
-}, 1);
+  /*  rebreToDos((error, dades) => {
+    console.log('Callback cridat');
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(dades);
+    }
+  }, 1); */
 
-const callback = (error, dades) => {
-  console.log('Callback cridat');
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(dades);
-  }
-};
-rebreToDos(callback, 2);
+  const callback = (error, dades) => {
+    console.log('Callback cridat');
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(dades);
+    }
+  };
+  rebreToDos(callback, 2);
+}, 1000);

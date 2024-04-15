@@ -41,7 +41,7 @@ const rebreToDos = (callback, id) => {
     // petició finalitzada
     if (peticio.status === 200 && peticio.readyState === 4) {
       const resposta = JSON.parse(peticio.response);
-      console.log('reposta -->', resposta);
+      console.log('resposta de onload()-->', resposta);
       callback(undefined, resposta);
       /*
         console.log('status -->', peticio.status, 'Tenim recollides les dades');
@@ -57,28 +57,32 @@ const rebreToDos = (callback, id) => {
   };
 };
 
-rebreToDos((error, dades) => {
+/* rebreToDos((error, dades) => {
   console.log('Callback cridat');
   error ? console.log(error) : console.log('dades -->', dades);
-}, 1);
+}, 1); */
 
 const callback = (error, dades) => {
   console.log('Callback cridat');
   if (error) {
-    console.log(error);
+    console.log('error de callback()-->', error);
   } else {
-    console.log(dades);
+    console.log('dades de callback()-->', dades);
   }
 };
+console.log('-------- Crida a rebreToDos(callback, 2) -------');
 rebreToDos(callback, 2);
 
-const rebreToDosLocal = () => {
-  fetch('todos.json')
-    .then((response) => response.json()) // separa la part JSON de la resposta
-    .then((dades) => {
-      console.log('Resposta Fetch -->', dades);
-      const dadesAJSON = JSON.stringify(dades);
-      console.log('dadesAJSON -->', dadesAJSON);
-    });
-};
-rebreToDosLocal();
+setTimeout(() => {
+  const rebreToDosLocal = () => {
+    console.log('-------- Crida a rebreToDosLocal() -------');
+    fetch('json/todos.json')
+      .then((response) => response.json()) // separa la part JSON de la resposta
+      .then((dades) => {
+        console.log('Resposta Fetch todos.json local -->', dades);
+        const dadesAJSON = JSON.stringify(dades);
+        console.log('dadesAJSON -->', dadesAJSON);
+      });
+  };
+  rebreToDosLocal();
+}, 250);

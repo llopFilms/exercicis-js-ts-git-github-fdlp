@@ -1,0 +1,15 @@
+{
+  "nom": "Maria",
+  "cognoms": "Gómez",
+  "edat": 30,
+  "adreça": {
+    "carrer": "Carrer del Poble",
+    "numero": 10,
+    "pis": 1,
+    "porta": 2,
+    "ciutat": "Madrid",
+    "codiPostal": "28001"
+  },
+  "telefon": 987654321,
+  "disponibilitat": false
+}

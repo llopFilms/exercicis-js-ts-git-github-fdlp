@@ -1,0 +1,15 @@
+{
+  "nom": "Anna",
+  "cognoms": "Martínez",
+  "edat": 28,
+  "adreça": {
+    "carrer": "Avinguda de la Platja",
+    "numero": 5,
+    "pis": 3,
+    "porta": 1,
+    "ciutat": "València",
+    "codiPostal": "46001"
+  },
+  "telefon": 555555555,
+  "disponibilitat": true
+}

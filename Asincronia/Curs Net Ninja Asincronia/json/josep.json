@@ -1,0 +1,15 @@
+  {
+    "nom": "Josep",
+    "cognoms": "Perez",
+    "edat": 25,
+    "adreça": {
+      "carrer": "Carrer de la ciutat",
+      "numero": 1,
+      "pis": 2,
+      "porta": 3,
+      "ciutat": "Barcelona",
+      "codiPostal": "08001"
+    },
+    "telefon": 123456789,
+    "disponibilitat": true
+  }

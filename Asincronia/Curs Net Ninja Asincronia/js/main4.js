@@ -71,6 +71,8 @@ setTimeout(() => {
         dadesRebudesUsuari2,
         dadesRebudesUsuari3,
       ];
+      console.log("dadesUsuaris dins la async/await -->",dadesUsuaris);
+      
       return dadesUsuaris;
     } catch (error) {
       console.log(
@@ -86,5 +88,5 @@ setTimeout(() => {
 }, 300);
 
 setTimeout(() => {
-  console.log('dadesUsuaris -->', dadesUsuaris);
+  console.log('dadesUsuaris final -->', dadesUsuaris);
 }, 450);

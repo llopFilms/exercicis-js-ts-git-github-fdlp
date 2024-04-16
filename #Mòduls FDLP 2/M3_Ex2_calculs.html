@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
+	<title>Mòdul 3 - Exercici 2</title>
+</head>
+<body>
+	<!--Fer un programa que li demani dos números enters a l’usuari. Al final, el programa imprimeix per pantalla el següent missatge: 
+
+	El resultat de la suma és: “valor”
+
+	El resultat de la resta és: “valor”
+
+	El resultat de la multiplicació és: “valor”
+
+	El resultat de la divisió és: “valor”.-->
+
+	<h2>Introdueix 2 números enters i fem càlculs:</h2>
+	<br/>
+
+	<input type="number" id="caixaTextNum1" placeholder="Escriu aquí el primer número"/><br/><br/>
+	<input type="number" id="caixaTextNum2" placeholder="Escriu aquí el segon número"/><br/><br/>
+	<input type='button' onClick='calcular()' Value='Clica i...'/>
+	
+	<!-- <br/>
+	<p> Els <b>números escollits</b> són: <span id="missatgeEnters"></span></p>
+	<br/>
+	<p> El resultat de la <b>suma</b> és: <span id="suma"></span></p>
+	<p> El resultat de la <b>resta</b> és: <span id="resta"></span></p>
+	<p> El resultat de la <b>multiplicació</b> és: <span id="multiplicacio"></span></p>
+	<p> El resultat de la <b>divisió</b> és: <span id="divisio"></span></p> -->
+	<br><br>
+	<table border>
+		<caption><b>Resultats pels números: </b><span id="missatgeEnters"></span></caption>
+		<thead>
+			<tr>
+				<th>Suma</th>
+				<th>Resta</th>
+				<th>Multiplicació</span></th>
+				<th>Divisió</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span id="suma"></span></td>
+				<td><span id="resta"></span></td>
+				<td><span id="multiplicacio"></span></td>
+				<td><span id="divisio"></span></td>
+			</tr>
+		</tbody>
+	</table>
+
+ 
+	<script>
+	
+			document.getElementById("suma").innerHTML = 0;
+			document.getElementById("resta").innerHTML = 0;
+			document.getElementById("multiplicacio").innerHTML = 0;
+			document.getElementById("divisio").innerHTML = 0;
+
+		function calcular(){
+
+			// Entrada de dades
+			let num1 = document.getElementById("caixaTextNum1").value;
+			let num2 = document.getElementById("caixaTextNum2").value;
+			
+			// Conversió String a Enters
+			num1 = Number(num1);
+			num2 = Number(num2);
+
+			// Operacions
+			let suma = num1 + num2;
+			let resta = num1 - num2;
+			let multi = num1 * num2;
+			let divi = num1 / num2;
+
+			// Info dels números enters abans de la operació
+			document.getElementById("missatgeEnters").innerHTML = "<b>" +num1+ "</b> i <b>" +num2+ "</b>";
+
+			// Sortida de resultats cap a id's d'HTML
+			document.getElementById("suma").innerHTML = suma;
+			document.getElementById("resta").innerHTML = resta;
+			document.getElementById("multiplicacio").innerHTML = multi;
+			document.getElementById("divisio").innerHTML = divi;
+						
+		}		
+
+	</script>
+	
+</body>
+</html>

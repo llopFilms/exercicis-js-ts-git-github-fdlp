@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAraules boniques</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Els estudis lingüístics moderns diuen que les paraules més boniques del diccionari són aquelles que contenen 9 lletres i comencen per la lletra 'H', o bé, contenen 5 lletres i comencen per la lletra 'P'.
+		Fes un programa que demani una paraula i determini si és bonica o no (segons el patró explicat prèviament).
+		El mètode charAt() segur que et pot ajudar en aquest exercici. -->
+    <h2>Paraules boniques</h2>
+    <label for="paraulaU"
+      >Introdueix una paraula bonica (o no...):
+      <input type="text" id="paraula" /></label
+    ><br /><br />
+    <button onClick="comprovarParaula()">Comprova</button>
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+      function comprovarParaula() {
+        let paraula = document.getElementById('paraula').value;
+        let resultat;
+
+        if (paraula.length === 9 && paraula.charAt(0) === 'H') {
+          resultat = `La paraula ${paraula} és bonica`;
+        } else if (paraula.length === 5 && paraula.charAt(0) === 'P') {
+          resultat = `La paraula ${paraula} és bonica`;
+        } else {
+          resultat = `La paraula ${paraula} no és bonica`;
+        }
+
+        document.getElementById('resposta').innerHTML = resultat;
+      }
+    </script>
+  </body>
+</html>

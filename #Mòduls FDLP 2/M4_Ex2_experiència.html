@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curs Escolar</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Crea un programa que sol·liciti a l’usuari/ària que introdueixi el seu nom i el nombre d’anys que porta treballant en una empresa. Després mostra per pantalla el seu nivell d’experiència, segons la següent taula:
+    • Menys de 2 anys: Nivell principiant.
+    • Entre 2 i 4 anys: Nivell intermedi.
+    • Més de 4 i fins a 7 anys: Nivell avançat.
+    • Més de 7 i fins a 10 anys: Nivell expert.
+    • Més de 10 anys: Nivell Gurú. -->
+
+    <h2>Nivell d’experiència</h2>
+    <input
+      type="text"
+      id="nom"
+      placeholder="Escriu aquí el teu nom" /><br /><br />
+    <input
+      type="number"
+      id="experiencia"
+      placeholder="Escriu aquí la teva experiencia" /><br /><br />
+
+    <input type="button" onClick="calcularExp()" value="Calcula experiència" />
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+
+      function calcularExp() {
+        let nom = document.getElementById('nom').value;
+        let experiencia = document.getElementById('experiencia').value;
+        let resposta;
+
+        if (experiencia < 2) {
+          resposta = 'Nivell principiant';
+        } else if (experiencia >= 2 && experiencia <= 4) {
+          resposta = 'Nivell intermedi';
+        } else if (experiencia >= 5 && experiencia <= 7) {
+          resposta = 'Nivell avançat';
+        } else if (experiencia >= 8 && experiencia <= 10) {
+          resposta = 'Nivell expert';
+        } else {
+          resposta = 'Nivell Gurú';
+        }
+
+        document.getElementById('resposta').innerHTML =
+          'El teu nivell d’experiència és: <b>' + resposta + '</b>.';
+      }
+			
+    </script>
+  </body>
+</html>

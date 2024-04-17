@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 4 - Exercici 5</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Fer un programa que demani dos números i un operador(+,-,*,/).
+	Al final, el programa ha d'imprimir per pantalla el resultat de fer l’operació que contingui la variable operador. -->
+
+    <h2>Operacions aritmètiques</h2>
+    <p>Introdueix dos números i una operació:</p>
+
+    <label for="num1U"><input type="number" id="num1U" /></label>
+    <br /><br />
+    <label for="num2U"><input type="number" id="num2U" /></label>
+    <br /><br />
+
+    <select name="operacions" id="operacions">
+      <option value="" selected>Selecciona</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <br /><br />
+
+    <button onclick="calcular()">Selecciona operació</button>
+    <br /><br />
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+
+      function calcular() {
+        let num1 = Number(document.getElementById('num1U').value);
+        let num2 = Number(document.getElementById('num2U').value);
+        let operacio = document.getElementById('operacions').value;
+        let resultat, operand, missatge;
+
+        if (num2 === 0 && operacio === '/') {
+          alert('No es pot dividir per 0. Torneu a començar');
+        } else {
+          switch (operacio) {
+            case '+':
+              operand = 'suma';
+              resultat = num1 + num2;
+              break;
+            case '-':
+              operand = 'resta';
+              resultat = num1 - num2;
+              break;
+            case '*':
+              operand = 'multiplicació';
+              resultat = num1 * num2;
+              break;
+            case '/':
+              operand = 'divisio';
+              resultat = num1 / num2;
+              break;
+          }
+
+          missatge = `L'operació selecciona és <b>${operand}</b> i el resultat és <b>${resultat}<b>.`;
+          document.getElementById('resposta').innerHTML = missatge;
+        }
+      }
+    </script>
+  </body>
+</html>

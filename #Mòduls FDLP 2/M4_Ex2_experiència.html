@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curs Escolar</title>
+    <title>Mòdul 4 - Exercici 2</title>
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -15,14 +15,17 @@
     • Més de 10 anys: Nivell Gurú. -->
 
     <h2>Nivell d’experiència</h2>
-    <input
-      type="text"
-      id="nom"
-      placeholder="Escriu aquí el teu nom" /><br /><br />
-    <input
-      type="number"
-      id="experiencia"
-      placeholder="Escriu aquí la teva experiencia" /><br /><br />
+    <p>Introdueix les dades necessàries:</p>
+
+    <label for="nom">Nom: <input type="text" id="nom" placeholder="Escriu aquí el teu nom" /></label>
+    <br /><br />
+    <label for="experiencia">Experiència: 
+      <input
+        type="number"
+        id="experiencia"
+        placeholder="Escriu aquí la teva experiencia" />
+    </label>
+    <br /><br />
 
     <input type="button" onClick="calcularExp()" value="Calcula experiència" />
     <p id="resposta"></p>
@@ -50,7 +53,6 @@
         document.getElementById('resposta').innerHTML =
           'El teu nivell d’experiència és: <b>' + resposta + '</b>.';
       }
-			
     </script>
   </body>
 </html>

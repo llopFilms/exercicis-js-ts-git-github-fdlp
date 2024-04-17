@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nombres Enters</title>
+    <title>Mòdul 4 - Exercici 1</title>
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <!-- Crea un programa que sol·liciti a l'usuari/ària que introdueixi dos nombres enters per teclat i mostri per pantalla el major dels dos. -->
 
     <h2>El número més gran</h2>
+    <p>Introdueix dos números</p>
 
-    <input type="number" id="numU" /><br /><br />
-    <input type="number" id="numD" /><br /><br />
+    <input type="number" id="numU" />
+    <br /><br />
+    <input type="number" id="numD" />
+    <br /><br />
 
     <input type="button" value="Calcular" onclick="comparar()" />
     <p id="resposta"></p>
@@ -32,7 +35,6 @@
         document.getElementById('resposta').innerHTML =
           'El número més gran és el <b>' + mesGran + '</b>.';
       }
-			
     </script>
   </body>
 </html>

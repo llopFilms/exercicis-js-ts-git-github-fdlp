@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 4 - Exercici 6</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Crea un programa per a un restaurant on tenen tres plats (carn, pasta "amb gluten" i risotto "amb lactosa").
+El programa ha de demanar el plat que vol l'usuari/ària, però també ha de demanar si aquest/a té cap preferència o intolerància (vegà, intolerància al gluten o intolerància a la lactosa).
+Si la persona demana un plat "que pot menjar" mostrarem per consola el missatge "perfecte, comanda correcta", si no, es mostrarà el missatge "vostè no pot menjar aquest plat". -->
+
+    <h2>Comanda correcta</h2>
+
+    <select name="plat" id="plats">
+      <option value="" selected>Selecciona un plat</option>
+      <option value="carn">Carn</option>
+      <option value="pasta amb gluten">Pasta</option>
+      <option value="risotto amb lactosa">Risotto</option>
+    </select>
+
+    <select name="pereferencies_intolerancies" id="pereferencies_intolerancies">
+      <option value="" selected>Selecciona una opció</option>
+      <option value="opció vegana">Opció vegana</option>
+      <option value="intolerancia al gluten">Intolerància al gluten</option>
+      <option value="intolerancia a la lactosa">
+        Intolerància a la lactosa
+      </option>
+    </select>
+    <br /><br />
+
+    <button onclick="ferComanda()" class="boto">Feu la comanda</button>
+    <p id="resposta"></p>
+    <script>
+      'use strict';
+
+      function ferComanda() {
+        let plat = document.getElementById('plats').value;
+        let pereferencies_intolerancies = document.getElementById(
+          'pereferencies_intolerancies'
+        ).value;
+        let missatge;
+        let correcte = 'Perfecte, comanda correcta';
+        let incorrecte = 'Vostè no pot menjar aquest plat';
+
+        switch (plat) {
+          case 'carn':
+            missatge =
+              pereferencies_intolerancies != 'opció vegana'
+                ? correcte
+                : incorrecte;
+            break;
+          case 'pasta amb gluten':
+            missatge =
+              pereferencies_intolerancies != 'intolerancia al gluten'
+                ? correcte
+                : incorrecte;
+            break;
+          case 'risotto amb lactosa':
+            missatge =
+              pereferencies_intolerancies != 'intolerancia a la lactosa'
+                ? correcte
+                : incorrecte;
+            break;
+        }
+
+        document.getElementById('resposta').innerHTML = missatge;
+      }
+    </script>
+  </body>
+</html>

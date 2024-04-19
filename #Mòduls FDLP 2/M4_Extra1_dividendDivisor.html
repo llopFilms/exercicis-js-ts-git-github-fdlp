@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 4 - Exercici Extra 1</title>
+  </head>
+  <body>
+    <!--Fes un programa que pregunti a l'usuari dos nombres enters al qual anomenaràs dividend i divisor respectivament. El divisor haurà d'estar comprès entre 2 i 7. En cas contrari, el programa haurà de mostrar un missatge d'error. Si el divisor és correcte (2-7) mostra en pantalla si el dividend és múltiple del divisor, o no.-->
+
+    <h2>Dividend i Divisor</h2>
+    <br />
+    <p>Pots introduir dos números enters?</p>
+
+    <!--Entrada de deades en number i amb min=1 per no dividir per 0-->
+    <input
+      type="number"
+      min="1"
+      id="CaixaTextDividend"
+      placeholder="número dividend" /><br /><br />
+    <input
+      type="number"
+      min="1"
+      id="CaixaTextDivisor"
+      placeholder="número divisor" /><br /><br />
+
+    <input
+      type="button"
+      onClick="càlculdivisió()"
+      value="Clica aquí per continuar" />
+    <br />
+    <p id="càlcul_divisió"></p>
+
+    <script>
+      function càlculdivisió() {
+        //Captació de dades i conversió a integerb (per si entren dedimals)
+        let dividend = parseInt(
+          document.getElementById('CaixaTextDividend').value
+        );
+        let divisor = parseInt(
+          document.getElementById('CaixaTextDivisor').value
+        );
+
+        //if que alerta si el divisor ha de ser entre 2 i 7
+        if (divisor < 2 || divisor > 7) {
+          alert('Sisplau que el divisor estigui comprès entre 2 i 7, gràcies');
+
+          //if que calcula que el dividend sigui divisible, i per tant múltiple del divisor. Cal que el residu sigui 0 (%)
+        } else if (dividend % divisor == 0) {
+          document.getElementById('càlcul_divisió').innerHTML =
+            '<strong>Molt bé!.</strong> El dividend és múltiple del divisor. Felcitats! =)';
+
+          //L'alternativa només pot ser que no són múltiples
+        } else {
+          document.getElementById('càlcul_divisió').innerHTML =
+            '<strong>Oh vaja...</strong>El dividend <strong>NO</strong> és múltiple del divisor. Ho sentim :(';
+        }
+      }
+    </script>
+  </body>
+</html>

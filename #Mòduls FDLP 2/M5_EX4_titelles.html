@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Títol document</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Fes un programa que demani quants nens i nenes volem introduir per fer una reserva d'una actuació de titelles. Un cop sabem el nombre de nens i nenes, has de demanar les seves edats. Les edats només poden estar compreses entre 5 i 12 anys, per tant, en demanar una edat, l'usuari introdueix una edat que no està en el rang, l'has de tornar a demanar (fins que n'introdueixi una de correcta).
+      Finalment, has de mostrar per pantalla la mitjana d'edat dels nens. -->
+
+    <h2>Titelles</h2>
+    <label for="numNensU"
+      >Introdueix el número de nens per veure la funció
+      <input type="text" id="numNensU"
+    /></label>
+
+    <p><button onclick="calcularTitelles()">Calcula Mitjana edats</button></p>
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+
+      function calcularTitelles() {
+        let nens = document.getElementById('numNensU').value;
+        let sumaedats = 0,
+          mitjana,
+          edat;
+
+        for (let i = 0; i < nens; i++) {
+          edat = Number(
+            prompt('Introdueix la edat del nen ' + (i + 1) + ' de ' + nens)
+          );
+          while (edat < 5 || edat > 12) {
+            edat = Number(
+              prompt(
+                'La edat ha de estar entre 5 i 12 anys. Introdueix la edat del nens ' +
+                  (i + 1) +
+                  ' de ' +
+                  nens
+              )
+            );
+          }
+          sumaedats += edat;
+        }
+
+        mitjana = (sumaedats / nens).toFixed(2);
+        document.getElementById('resposta').innerHTML =
+          "La mitjana d'edat de <b>" + nens + '</b> nens es: <b>' + mitjana + '</b>';
+      }
+    </script>
+  </body>
+</html>

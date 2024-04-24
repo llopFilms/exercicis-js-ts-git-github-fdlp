@@ -14,28 +14,29 @@
 	
 	<p>Introdueix un número entre l'<strong>1</strong> i el <strong>10</strong>. </p>
 	
-    <input type="text" id="num" size="4" onchange="endevina()"/>
-	<!-- <input type='button' onClick='endevina()' Value='Clica aquí'/> -->
+	<input type='button' onClick='endevina()' Value='Clica aquí'/>
 	<br/>
 	<p id="resultat"></p>
 
 	<script>
-		let numAleatori = Math.ceil((Math.random() * 10));
-		console.log (numAleatori);
-					
+			
 	function endevina(){
 
 		//Introducció de dades
-		let num = Number(document.getElementById("num").value);
-		//Condicional
-		if (num != numAleatori){
-			//Sortida de dades quan no encerta	
-            num = Number(document.getElementById("num").value);
-			alert ("No l'has encertat. Torna-ho a intentar.");
-		}else{
-			//Sortida dades
-			document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>!";
-		}
+		let num = "";
+		let numAleatori = Math.ceil((Math.random() * 10));
+					
+		console.log (numAleatori);
+		//Loop
+		do {
+			num = Number(prompt ("Introdueix un número."));
+
+			if (num != numAleatori){
+			alert ("No l'has encertat :(  Torna-ho a intentar...");
+			}
+		} while (num != numAleatori)
+		//Sortida dades
+		document.getElementById("resultat").innerHTML = "L'has encertat! És el número <strong>" + num +"</strong>!";
 	}
 	
 

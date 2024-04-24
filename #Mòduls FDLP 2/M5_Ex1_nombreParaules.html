@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 5 - Exercici 1</title>
+  </head>
+  <body>
+    <!--Fer un programa que pregunti a l'usuari pel nombre de paraules que es volen introduir en un array. Un cop l'usuari respongui, el programa haurà de preguntar per tantes paraules com el nombre de paraules que ha dit l'usuari que volia introduir. Les paraules s'aniran guardant a l'array, i un cop han sigut totes introduïdes, es mostren per pantalla.-->
+
+    <h2>Nombre de paraules</h2>
+    <br />
+    <p>Introdueix el número de paraules:</p>
+    <input type="number" id="caixaText" size="6" /><br /><br />
+
+    <input type="button" onClick="ferArray()" value="Clica aquí" />
+    <br /><br />
+
+    <ul type="square" id="arrayFinal"></ul>
+    <script>
+      function ferArray() {
+        //Introducció del número de paraules
+        let numero_par = Math.abs(document.getElementById('caixaText').value);
+
+        //Definició de variables
+        let paraules = [];
+        let llista = '';
+        let paraula;
+        let i;
+
+        //Loop
+        /* for (i=0; i<numero_par; i++){
+
+			paraula = prompt ("Escriu la paraula " + (i+1) +"/"+ numero_par);
+			paraules.push(paraula);
+		};
+ */
+        for (i = 0; i < numero_par; i++) {
+          paraula = prompt('Escriu la paraula ' + (i + 1) + '/' + numero_par);
+          paraules.push(paraula);
+          llista += '<li>' + paraules[i] + '</li>';
+        }
+        //Sortida array a id d'HTML
+        document.getElementById('arrayFinal').innerHTML =
+          '<b>Paraules introduïdes en array:</b> ' +
+          paraules.join(', ') +
+          '<br><br><b>Paraules introduïdes en llista: </b><br>' +
+          llista;
+      }
+    </script>
+  </body>
+</html>

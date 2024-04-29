@@ -26,13 +26,25 @@
     <script>
       'use strict';
 
+      function calculaMultiples(num1, num2) {
+        let multiples;
+
+        if (num1 % num2 === 0) {
+          multiples = true;
+        } else {
+          multiples =  false;
+        }
+        return multiples;
+      }
+
       function comprovarMultiples() {
         let num1 = Number(document.getElementById('num1U').value);
         let num2 = Number(document.getElementById('num2U').value);
+        let multiplesCheck = calculaMultiples(num1, num2);
 
-        document.getElementById('resposta').innerHTML = (num1 % num2 === 0)
-          ? 'El primer número és múltiple del segon.'
-          : 'El primer número no és múltiple del segon.';
+        document.getElementById('resposta').innerHTML = (multiplesCheck)
+          ? 'El primer número <b>SÍ</b> que és múltiple del segon.'
+          : 'El primer número <b>NO</b> és múltiple del segon.';
       }
       
     </script>

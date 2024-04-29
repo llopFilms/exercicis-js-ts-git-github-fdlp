@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mòdul 5 - Exercici Extra 2</title>
+	</head>
+	<body>
+		<!--Realitza un programa que pinti la lletra L per pantalla feta amb asteriscs. El programa demanarà l'altura. El pal horitzontal de la L tindrà una longitud de la meitat (divisió entera entre 2) de l'altura més un.
+
+    Exemple:
+    Introduïu l'alçada de la L : 5
+    La base serà la part entera de la divisió del nombre entre 2 : (5 / 2) + 1 = 3
+
+*
+
+*
+
+*
+
+*
+
+* * *.-->
+
+		<h2>"L" feta amb un caràcter</h2>
+		<br />
+
+		<!--Aportació de dades-->
+		<p>Introdueix l'alçada que vols que tingui la "L":</p>
+		<input type="text" id="caixaAlçada" maxlength="3" size="1" />
+
+		<input type="button" onClick="impressora()" value="Aquí ho tens" />
+		<br />
+		<p id="impressió"></p>
+
+		<script>
+			function impressora() {
+				//Recepció de dades d'ids d'HTML
+				let alçada = document.getElementById("caixaAlçada").value;
+
+				//Declaració de variables
+				let i,
+					laL = (string_L = "*");
+				base_L = "* ";
+				let base = parseInt(alçada / 2) + 1;
+
+				//For pal de la "L"
+				for (i = 0; i<alçada-2; i++) {
+					laL += "<br/>" + string_L;
+				}
+
+				//For base de la"L"
+				for (i = 0; i < base-1; i++) {
+					base_L += string_L + " ";
+				}
+
+				//Construcció de la "L" i sortida de dades cap a id d'HTML
+				laL += "<br/>" + base_L;
+				document.getElementById("impressió").innerHTML = laL;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mòdul 5 - Exercici 5</title>
+	</head>
+	<body>
+		<!--Has de modificar el programa de les beques (ara el programa només ha de poder donar 5 beques).
+
+	El programa anirà demanant les dades dels alumnes fins que es donin aquestes 5 beques. Un cop el programa hagi assignat les 5 beques s’ha de mostrar per pantalla els noms dels 5 alumnes que tenen beca.-->
+
+		
+        <div id="formulari">
+            <h2>Concessió de beques</h2>
+
+            <h3>Dades usuari optant a beca</h3>
+            <p>Nom: <input type="text" id="nom"/></p>
+            <p>Cognom: <input type="text" id="cognom"/></p>
+            <p>Edat: <input type="number" id="edat"/></p>
+
+            <p>Tens títol universitari?
+            <select name="titol" id="titol">
+                <option disabled selected value>Selecciona</option>
+                <option value="Sí">SÍ</option>
+                <option value="No">No</option>
+            </select></p>
+
+            <p>Estàs inscrit a l'atur?
+            <select name="atur" id="atur">
+                <option disabled selected value>Selecciona</option>
+                <option value="Sí">SÍ</option>
+                <option value="No">No</option>
+            </select></p>
+
+            <br/><br/>
+            <button onclick="main()">Envia dades</button>
+        </div>
+		
+
+		<p id="disponibilitat"></p>
+		<p id="selecció"></p>
+		<p id="avis"></p>
+
+		<script>
+
+
+			let becats = [];
+			let comptador = 5;
+            document.getElementById("disponibilitat").innerHTML = "Beques disponibles: <b>" +comptador+ "</b>";
+
+            function reset(){
+
+                document.getElementById("nom").value = "";
+                document.getElementById("cognom").value = "";
+                document.getElementById("edat").value = "";
+                document.getElementById("titol").value = "reset";
+                document.getElementById("atur").value = "reset";
+            }
+
+			function main() {
+
+				let llista, i;
+
+				let nom = document.getElementById("nom").value;
+				let cognom = document.getElementById("cognom").value;
+				let edat = Number(document.getElementById("edat").value);
+				let titol = document.getElementById("titol").value;
+				let atur = document.getElementById("atur").value;
+
+				if (nom =="" || cognom =="" || edat <1 || edat =="" || titol =="" || atur ==""){ 
+
+                alert("Introduïu les dades correctament i seleccioneu les opcions");
+
+                }else{
+
+                    if (edat >= 18 && titol == "Sí") {
+
+                        document.getElementById("avis").innerHTML = "Compleixes els requisits per accedir a una beca donat que ets major d'edat i tens titulació universitària. <b>elicitats!</b>";
+                        becats.push(("<b>" +nom + " " + cognom + "</b>,<b> " +edat+ " </b>anys. Títol Universitari: <b>" +titol+ "</b>. Atur: <b>" +atur+ "</b>."));
+                        comptador--;
+                        document.getElementById("disponibilitat").innerHTML = "Beques disponibles: <b>" +comptador+ "</b>";
+                        
+                    } else if (atur == "Sí") {
+
+                        document.getElementById("avis").innerHTML = "Compleixes els requisits per accedir a una beca donat que estàs en situació d'atur. <b>Felicitats!</b>";
+                        becats.push("<b>" +nom + " " + cognom + "</b>,<b> " +edat+ " </b>anys. Títol Universitari: <b>" +titol+ "</b>. Atur: <b>" +atur+ "</b>.");
+                        comptador--;
+                        document.getElementById("disponibilitat").innerHTML = "Beques disponibles: <b>" +comptador+ "</b>";
+                                            
+                    } else {
+                        document.getElementById("avis").innerHTML = "Ho sentim però no compleixes els requisits per accedir a una beca.";
+                        
+                    }
+
+                    llista = "<ul>";
+                    for (i = 0; i < becats.length; i++) {
+                        llista += "<li>" + becats[i]+ "</li>";
+                    }
+                    llista += "</ul>";
+
+                    if (!becats[4]) {
+                        document.getElementById("selecció").innerHTML = "Llista de becats:" + llista;
+                    } else {
+
+                        formulari.style.display = "none";
+                        document.getElementById("avis").innerHTML = "Ho sentim però <b>totes les beques estan adjudicades.</b>";
+                        document.getElementById("selecció").innerHTML = "Llista de becats:" + llista;
+
+                    }
+                    reset();
+                }
+			}
+		</script>
+	</body>
+</html>

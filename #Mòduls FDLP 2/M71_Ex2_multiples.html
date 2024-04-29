@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.1 - Exercici 2</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Crec un programa que determini si un número és múltiple d'un altre. Per fer-ho, crea una funció que ha de rebre dos números per paràmetre, i ha de retornar true si el primer és multiple del segon, i false si no ho és. -->
+
+    <h2>Múltiples</h2>
+    <p>Introdueix dos números</p>
+
+    <label for="num1U">Primer número <input type="number" id="num1U" /></label>
+    <br /><br />
+    <label for="num2U">Segon número <input type="number" id="num2U" /></label>
+    <br /><br />
+
+    <input
+      type="button"
+      value="Comprovar múltiples"
+      onclick="comprovarMultiples()" />
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+
+      function comprovarMultiples() {
+        let num1 = Number(document.getElementById('num1U').value);
+        let num2 = Number(document.getElementById('num2U').value);
+
+        document.getElementById('resposta').innerHTML = (num1 % num2 === 0)
+          ? 'El primer número és múltiple del segon.'
+          : 'El primer número no és múltiple del segon.';
+      }
+      
+    </script>
+  </body>
+</html>

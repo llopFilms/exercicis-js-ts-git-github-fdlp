@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.1 - Exercici 1</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!--  Crea un programa que sol·liciti a l'usuari que introdueixi 3 números enters, i mostri per pantalla el major dels 3, el menor dels 3 o si hi ha dos números iguals. -->
+
+    <h2>Nombres iguals</h2>
+    <p>Introdueix tres números</p>
+
+    <label for="num1U">Primer número <input type="number" id="num1U" /></label>
+    <br /><br />
+    <label for="num2U">Segon número <input type="number" id="num2U" /></label>
+    <br /><br />
+    <label for="num3U">Tercer número <input type="number" id="num3U" /></label>
+    <br /><br />
+
+    <input type="button" value="Comparar" onclick="comparar()" />
+    <p id="resposta"></p>
+
+    <script>
+      'use strict';
+
+      function comparar() {
+        let num1 = Number(document.getElementById('num1U').value);
+        let num2 = Number(document.getElementById('num2U').value);
+        let num3 = Number(document.getElementById('num3U').value);
+        let max, min, resposta;
+
+        if (num1 != num2 && num1 != num3 && num2 != num3) {
+          max = Math.max(num1, num2, num3);
+          min = Math.min(num1, num2, num3);
+          resposta = `El major és ${max} i el menor és ${min}.`;
+        } else {
+          resposta = `Hi ha dos números iguals.`;
+        }
+
+        document.getElementById('resposta').innerHTML = resposta;
+      }
+    </script>
+  </body>
+</html>

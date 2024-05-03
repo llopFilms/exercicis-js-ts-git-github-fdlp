@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 6 - Exercici 2</title>
+  </head>
+  <body>
+    <!--Aquest programa calcula l'edat mitjana d'un número de persones introduït per teclat. S'ha de crear una funció que s'encarregui de demanar les edats a l'usuari i de calcular l'edat mitjana.
+    
+        · La funció rebrà per paràmetre el nº de persones a qui ha de demanar l'edat.
+        · L'edat de les persones només serà vàlida si està compresa entre 0 i 120 anys.
+        · La mitjana de les edats introduïdes s'ha de retornar per la funció (return).-->
+
+    <h3>Mitjana d'edat de x persones</h3>
+    <p>
+      <label for="quantitatEdats"
+        >De quantes persones vols calcular la mitjana d'edat?</label
+      >
+      <input type="number" id="quantitatEdats" maxlength="6" size="6" />
+      <br /><br />
+      <input
+        type="button"
+        onClick="mitjana('quantitatEdats')"
+        value="Clica aquí per començar" />
+    </p>
+
+    <p id="resultat"></p>
+    <script>
+      'use strict';
+
+      //Funció que rep el número de persones per paràmetre, limita l'edat, calcula la mitjana i retorna el resultat
+      function calculMitjana(numPerson) {
+        let i,
+          sumaEdats = 0,
+          edatIndividual = 0;
+
+        for (i = 0; i < numPerson; i++) {
+          edatIndividual = Number(
+            prompt('Edat a introduir ' + (i + 1) + ' de ' + numPerson)
+          );
+
+          while (
+            isNaN(edatIndividual) ||
+            edatIndividual == '' ||
+            edatIndividual < 0 ||
+            edatIndividual > 120
+          ) {
+            edatIndividual = Number(
+              prompt(
+                "Torna a introduïr l'edat. Ha de ser entre 0 i 120 anys. " +
+                  (i + 1) +
+                  ' de ' +
+                  numPerson
+              )
+            );
+          }
+
+          sumaEdats += edatIndividual;
+        }
+        let mitja = (sumaEdats / numPerson).toFixed(1);
+        return mitja;
+      }
+
+      //Funció que recull número de persones, validant que no sigui <0, ho envia a l'altra funció i recull el resultat per treure-ho per HTML
+      function mitjana(numPersones) {
+        let numP = Number(document.getElementById(numPersones).value);
+
+        while (isNaN(numP) || numP == '' || numP < 0) {
+          numP = Number(
+            prompt(
+              'El nombre de persones ha de ser més gran de 0. Torna a introduïr-lo, sisplau'
+            )
+          );
+          document.getElementById(numPersones).value = numP;
+        }
+
+        let resultat = calculMitjana(numP);
+        document.getElementById('resultat').innerHTML =
+          `La mitjana d'edat del grup de <strong>${numP}</strong> persones és de <strong>${resultat}</strong> anys.`;
+      }
+    </script>
+  </body>
+</html>

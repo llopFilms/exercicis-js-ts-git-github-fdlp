@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 6 - Exercici 1</title>
+  </head>
+  <body>
+    <!--Fer un programa que demani dos números i un operador(+,-,*,/).
+	Al final, el programa ha d'imprimir per pantalla el resultat de fer l’operació que contingui la variable operador.-->
+
+    <h2>Calculadora</h2>
+    <p>Introdueix 2 números:</p>
+
+    <!--Fem 2 entrades de number-->
+    <input
+      type="number"
+      id="caixaNum1"
+      placeholder="Escriu un primer número" /><br /><br />
+    <input
+      type="number"
+      id="caixaNum2"
+      placeholder="Escriu un segon número" /><br /><br />
+
+    <!--Fem un selector d'operacions amb un radio, la selecció dóna valor del text a 'value'-->
+
+    <fieldset>
+      <legend><b>Selector d'operacions</b></legend>
+      <br />
+      <label for="selecció operacions">Selecciona una operació: </label>
+      <select name="calculadora" id="seleccioOperacions">
+        <option value="">Selecciona</option>
+        <option value="suma">+ Suma</option>
+        <option value="resta">- Resta</option>
+        <option value="multiplicació">* Multiplicació</option>
+        <option value="divisió">/ Divisió</option>
+        <option value="residu">% Residu</option>
+      </select>
+      <br /><br />
+      <input type="button" onClick="calcular()" value="Go Calculator!" />
+      <br />
+      <p id="resultatCàlcul"></p>
+    </fieldset>
+
+    <script>
+      //Funcions operacions
+      function suma(num1, num2) {
+        return num1 + num2;
+      }
+
+      function resta(num1, num2) {
+        return num1 - num2;
+      }
+
+      function multiplicació(num1, num2) {
+        return num1 * num2;
+      }
+
+      function divisió(num1, num2) {
+        return num1 / num2;
+      }
+
+      function residu(num1, num2) {
+        return num1 % num2;
+      }
+
+      //Funció 'main'
+      function calcular() {
+        //Captació de variables de d'HTML i conversió a number
+        let num1 = Number(document.getElementById('caixaNum1').value);
+        let num2 = Number(document.getElementById('caixaNum2').value);
+
+        while (isNaN(num1) || num1 == '' || num1 <= 0) {
+          num1 = Number(
+            prompt(
+              'Has deixat sense introduïr el número primer. Torna a introduïr-lo, sisplau'
+            )
+          );
+          document.getElementById('caixaNum1').value = num1;
+        }
+
+        while (isNaN(num2) || num2 == '' || num2 <= 0) {
+          num2 = Number(
+            prompt(
+              'Has deixat sense introduïr el número segon. Torna a introduïr-lo, sisplau'
+            )
+          );
+          document.getElementById('caixaNum2').value = num2;
+        }
+
+        let operacio = document.getElementById('seleccioOperacions').value;
+        let resultat;
+
+        //Switch de selecció i sortida de resultats
+        switch (operacio) {
+          case 'suma':
+            resultat = suma(num1, num2);
+            break;
+          case 'resta':
+            resultat = resta(num1, num2);
+            break;
+          case 'multiplicació':
+            resultat = multiplicació(num1, num2);
+            break;
+          case 'divisió':
+            resultat = divisió(num1, num2);
+            break;
+          case 'residu':
+            resultat = residu(num1, num2);
+            break;
+        }
+
+        //Sortida de resultat a id d'HTML
+        document.getElementById(
+          'resultatCàlcul'
+        ).innerHTML = `El resultat de l'operació  de <strong>${operacio}</strong> entre <strong>${num1}</strong> i <strong>${num2}</strong>, és <strong>${resultat}</strong>.`;
+      }
+    </script>
+  </body>
+</html>

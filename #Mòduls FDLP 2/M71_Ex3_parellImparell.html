@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.1 - Exercici 3</title>
+  </head>
+  <body>
+    <!--L’usuari ha d'introduir un número i el programa ha de mostrar per pantalla si el número és parell o imparell.-->
+
+    <h2>Parell o imparell?</h2>
+    <p>Introdueix un número:</p>
+
+    <!--Entrada de dades-->
+    <input type="number" id="caixaNum" />
+    <br /><br />
+    <input
+      type="button"
+      onClick="veureParellImparell()"
+      value="Clica per saber-ho..." />
+    <br />
+    <p id="resultat"></p>
+
+    <script>
+      function veureParellImparell() {
+        //Definició de dades i recepció des d'id d'HTML
+        let num = Number(document.getElementById('caixaNum').value);
+
+        //Correció si entra el número 0 i sol·lictud de reintroducció
+        while (isNaN(num) || num == 0 || num == '') {
+          num = Number(prompt('Escriviu un número correctament'));
+          document.getElementById('caixaNum').value = num;
+        }
+
+        //if ternari amb condició de parell o imparell a través del càlcul del residu de la dividió entre 2, i enviament de dades a id's d'HTML segons valor final
+        document.getElementById(
+          'resultat'
+        ).innerHTML = `El número <strong>${num}</strong> introduït, és <b>${
+          (num % 2 != 0 )? 'imparell' : 'parell'
+        }</b>.`;
+      }
+    </script>
+  </body>
+</html>

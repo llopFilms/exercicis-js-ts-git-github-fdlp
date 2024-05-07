@@ -10,7 +10,6 @@
     <!--Crea un programa on l’usuari introdueix tres notes i el programa calculi la mitja. Si la mitja és inferior a 5 ha de mostrar el següent missatge per pantalla: “No has superat el curs. Has de recuperar”, si la mitja està entre 5 i 7 ha de mostrar: “Enhorabona! Has aprovat però hauries de seguir practicant”, si la mitja és superior a 7 ha de mostrar: ”Enhorabona! Has superat el curs! Passa ja al següent nivell!-->
 
     <h2>Notes i la seva mitjana</h2>
-    <br />
     <p>Introdueix les 3 notes:</p>
 
     <!--Definició de type number amb rang entre 1 i 10 i recepció de dades d'id's d'HTML-->
@@ -36,50 +35,12 @@
 
     <input
       type="button"
-      onClick="notes()"
+      onClick="calcularNotes()"
       value="Clica per consultar la teva mitjana final" />
     <br />
     <p id="notaFinal"></p>
 
     <script>
-      function notes() {
-        //Introducció de variables i recepció de dades (es permeten dedcimals)
-        let nota1 = Number(document.getElementById('caixaNota1').value);
-        let nota2 = Number(document.getElementById('caixaNota2').value);
-        let nota3 = Number(document.getElementById('caixaNota3').value);
-
-        //Condicional per delimitar l'entrada per teclat entre 0 i 10 i demanar la correcció. També torna els valors nous a l'id corresponent
-        if (nota1 < 0 || nota1 > 10) {
-          nota1 = Number(
-            prompt(
-              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 1 sisplau"
-            )
-          );
-          document.getElementById('caixaNota1').value = nota1;
-        }
-        if (nota2 < 0 || nota2 > 10) {
-          nota2 = Number(
-            prompt(
-              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 2 sisplau"
-            )
-          );
-          document.getElementById('caixaNota2').value = nota2;
-        }
-        if (nota3 < 0 || nota3 > 10) {
-          nota3 = Number(
-            prompt(
-              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 3 sisplau"
-            )
-          );
-          document.getElementById('caixaNota3').value = nota3;
-        }
-
-        let mitjana = calculMitjana(nota1, nota2, nota3);
-        let missatge = ferMissatge(mitjana);
-
-        document.getElementById('notaFinal').innerHTML =
-          'La teva mitjana és: <b>' + mitjana + '.</b> ' + missatge;
-      }
       //Operacions amb les dades i limitació del resultat a 2 decimals
       const calculMitjana = (n1, n2, n3) =>
         (calcmitja = ((n1 + n2 + n3) / 3).toFixed(2));
@@ -95,6 +56,45 @@
           msj = 'Enhorabona! Has superat el curs! Passa ja al següent nivell!.';
 
         return msj;
+      }
+
+      function calcularNotes() {
+        //Introducció de variables i recepció de dades (es permeten dedcimals)
+        let nota1 = Number(document.getElementById('caixaNota1').value);
+        let nota2 = Number(document.getElementById('caixaNota2').value);
+        let nota3 = Number(document.getElementById('caixaNota3').value);
+
+        //Condicional per delimitar l'entrada per teclat entre 0 i 10 i demanar la correcció. També torna els valors nous a l'id corresponent
+        while (nota1 < 0 || nota1 > 10 || isNaN(nota1)) {
+          nota1 = Number(
+            prompt(
+              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 1 sisplau"
+            )
+          );
+          document.getElementById('caixaNota1').value = nota1;
+        }
+        while (nota2 < 0 || nota2 > 10 || isNaN(nota2)) {
+          nota2 = Number(
+            prompt(
+              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 2 sisplau"
+            )
+          );
+          document.getElementById('caixaNota2').value = nota2;
+        }
+        while (nota3 < 0 || nota3 > 10 || isNaN(nota3)) {
+          nota3 = Number(
+            prompt(
+              "Les notes han d'estar entre 1 i 10. Torna a introduïr la nota 3 sisplau"
+            )
+          );
+          document.getElementById('caixaNota3').value = nota3;
+        }
+
+        let mitjana = calculMitjana(nota1, nota2, nota3);
+        let missatge = ferMissatge(mitjana);
+
+        document.getElementById('notaFinal').innerHTML =
+          'La teva mitjana és: <b>' + mitjana + '.</b> ' + missatge;
       }
     </script>
   </body>

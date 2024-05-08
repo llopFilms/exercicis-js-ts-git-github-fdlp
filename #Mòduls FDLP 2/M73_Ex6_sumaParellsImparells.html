@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Mòdul 7.3 - Exercici 6</title>
+</head>
+<body>
+     <!--Donat un array de números, el programa ha de mostrar la suma de tots els números parells i la suma de tots els números imparells.-->
+
+     <h2>Sumes en array de números:</h2>
+     <br/>
+     <label for="serie"><strong>Introdueix una sèrie de números enters separats per comes:</strong></label>
+     <input type="text" id="serie"  size="60">
+     <br/><br/><br/>
+
+     <input type="radio" id="parells" name="selector">
+     <label for="selector">Suma dels números parells dins de l'array:</label> 
+     <input type="text" id="sumParells" size="8">
+     <br/><br/>
+     <input type="radio" id="imparells" name="selector">
+     <label for="selector">Suma dels números imparells dins de l'array:</label> 
+     <input type="text" id="sumImparells" size="8">
+     <br/><br/><br/>
+     <input type="button" onClick="validacio()" value="Clica aquí"/>
+     <br/><br/>
+
+     <p id="avís" ></p>
+
+
+     <script>
+     "use Strict"
+
+     //Funcions auxiliarsLlibreria
+
+     //Funció llegeix dada
+     function llegeixDada(id){
+
+          let dada = document.getElementById(id).value;
+          return dada;
+     }
+     
+     //Funció escriu dada valor
+     function escriuDadaValue(id,dada){        
+
+          document.getElementById(id).value = dada;
+     }
+
+     //Funció escriu dada en HMTL
+     function escriuDada(id,dada){        
+
+          document.getElementById(id).innerHTML = dada;
+     }
+
+     //Funció dada bona
+     function dadaBona(id){
+
+          document.getElementById(id).style.background = "white";
+     }
+
+     //Funció dada dolenta
+     function dadaDolenta(id){
+
+          document.getElementById(id).style.background = "#E6B0AA";
+     }
+
+
+     //Programa
+
+     //Funció de suma dels parells
+     function sumaParells(array){
+
+          let i, element = "", sumaPar = 0;
+
+          for (i=0; i<=array.length-1; i++) {
+
+               element = Number(array[i]);
+
+               if (element % 2 == 0){
+               sumaPar += element;
+               }
+          }
+          return sumaPar;
+     }
+
+     //Funció de suma dels imparells
+     function sumaImparells(array){
+
+          let i, element = "", sumaImp = 0;
+
+          for (i=0; i<=array.length-1; i++) {
+
+               element = Number(array[i]);
+
+               if (element % 2 !== 0){
+               sumaImp += element;
+               }
+          }
+          return sumaImp;
+     }
+
+
+     //Funció principal
+     function main(serie){
+
+
+          //Creació array
+          let array = serie.split(",");
+     
+          //Gestió amb funcions
+          let parells = document.getElementById("parells").checked;
+          let resultat;
+
+          (parells == true) ? resultat = sumaParells(array) : resultat = sumaImparells(array);
+
+          //Sortida de resultats
+          //Resultat final
+          if (parells == true ){
+               escriuDadaValue("sumParells", resultat);
+               escriuDadaValue("sumImparells", "");
+
+          }else{
+               escriuDadaValue("sumParells", "");
+               escriuDadaValue("sumImparells", resultat);
+          } 
+     }      
+
+     //Funció Validació
+     function validacio(){
+
+          //Esborra pantalla
+          escriuDada("avís","");
+
+          //Entrada dada
+          let serie = llegeixDada("serie");
+
+          //Validació
+          let validacio;
+
+          if (serie =="") {
+               validacio = false;
+               dadaDolenta ("serie");
+               escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
+
+          }else{
+               validacio = true;
+               dadaBona ("serie");
+               main(serie);
+          }
+
+     }
+
+     </script>
+</body>
+</html>

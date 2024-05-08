@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mòdul 7.3 - Exercici 3</title>
+</head>
+<body>
+    <!--L’usuari ha d’introduir una frase i el programa ha de dir si la frase és un palíndrom-->
+
+    <h2>Palíndroms!</h3>
+    <br/><br/>
+
+    <label for="frase">Introdueix una frase:</label>
+    <input type="text" id="frase" maxlength="100">
+    <br/><br/>
+    <input type="button" onClick="validacio()" value="Clica aquí"/>
+    <br/><br/><br/>
+    <p id="resultat"></p>
+    <p id="avís"></p>
+    
+    <script>
+    "use Strict"
+
+        
+        //Funcions auxiliarsLlibreria
+
+        //Funció llegeix dada
+        function llegeixDada(id){
+
+            let dada = document.getElementById(id).value;
+            return dada;
+        }
+
+        //Funció escriu dada valor
+        function escriuDadaValue(id,dada){        
+
+            document.getElementById(id).value = dada;
+        }
+
+        //Funció escriu dada en HMTL
+        function escriuDada(id,dada){        
+
+            document.getElementById(id).innerHTML = dada;
+        }
+
+        //Funció dada bona
+        function dadaBona(id){
+
+            document.getElementById(id).style.background = "white";
+        }
+
+        //Funció dada dolenta
+        function dadaDolenta(id){
+
+            document.getElementById(id).style.background = "#E6B0AA";
+        }
+
+        //Programa
+
+        //Funció que neteja de la frase. Frase a Minúscula i treu accents, puntuació i espais
+        function filtre(fraseAFiltrar){
+            
+            let fraseNeta = fraseAFiltrar;
+            fraseNeta = fraseNeta.toLowerCase();
+            
+            fraseNeta = fraseNeta.replace(/à/g, "a");
+            fraseNeta = fraseNeta.replace(/á/g, "a");
+            fraseNeta = fraseNeta.replace(/è/g, "e");
+            fraseNeta = fraseNeta.replace(/é/g, "e");
+            fraseNeta = fraseNeta.replace(/í/g, "i");
+            fraseNeta = fraseNeta.replace(/ï/g, "i");
+            fraseNeta = fraseNeta.replace(/ò/g, "o");
+            fraseNeta = fraseNeta.replace(/ó/g, "o");
+            fraseNeta = fraseNeta.replace(/ú/g, "u");
+            fraseNeta = fraseNeta.replace(/ü/g, "u");
+            fraseNeta = fraseNeta.replace(/ /g, "");
+            fraseNeta = fraseNeta.replace(/,/g, "");
+            fraseNeta = fraseNeta.replace
+						, "");
+            fraseNeta = fraseNeta.replace(/'/g, "");
+            fraseNeta = fraseNeta.replace(/`/g, "");
+            fraseNeta = fraseNeta.replace(/·/g, "");
+            
+            return fraseNeta;
+        }   
+
+        //Funció que gira el text i el compara amb l'original
+        function compara(fraseAComparar){
+
+            let fraseComp = filtre(fraseAComparar);
+            let i, fraseCompRev = "", compara;
+            
+            for (i=fraseComp.length-1; i>=0; i--) {
+
+                fraseCompRev += fraseComp[i];
+            }
+
+            (fraseComp == fraseCompRev) ? compara = true : compara = false;
+            return compara;
+
+        }
+
+        //Funció principal
+        function main(fraseValida){
+
+            //Gestió amb funcions
+            let fraseCompara = compara(fraseValida);
+
+            //Resultat final
+            let resultatok = "La frase '<strong>"+fraseValida+"'</strong>, <strong> SÍ</strong> que és un palíndrom.";
+            let resultatko = "La frase '<strong>"+fraseValida+"'</strong>, <strong> NO</strong> que és un palíndrom.";
+
+            if (fraseCompara == true){
+                escriuDada("resultat",resultatok);
+                escriuDada("frase", fraseValida);
+
+            }else{
+                escriuDada("resultat", resultatko);
+                escriuDada("frase", fraseValida)
+                
+            }
+        }
+    
+        //Funció Validació
+        function validacio(){
+
+            //Buidar pantalla
+            escriuDada("resultat","");
+            escriuDada("avís","");
+
+            //Entrada de dades
+            let frase = llegeixDada("frase");
+                        
+            //Validació
+            let validacio = false;
+                                
+            if (frase =="" || !isNaN(frase)) {
+                validacio;
+                dadaDolenta("frase"); 
+                escriuDadaValue("frase","");
+                escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
+
+            }else{
+                validacio = true;
+                dadaBona("frase");
+                main(frase);
+            }
+
+        } 
+
+    </script>
+</body>
+</html>

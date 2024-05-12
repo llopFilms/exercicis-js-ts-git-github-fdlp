@@ -1,16 +1,46 @@
-  <!DOCTYPE html>
-    <html lang='ca'>
-    <head>
-      <meta charset='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Mòdul 6 - Exercici 2</title>
-      <link rel='icon' href='../../favicon.ico' type='image/x-icon' />
-    </head>
-    <body>
-      <!--Fer-ho amb funcions:
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 6 - Exercici 2</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!--Fer-ho amb funcions:
         Fer un programa que pregunti a l'usuari pel nombre de paraules que es volen introduir en un array. Un cop l'usuari respongui, el programa haurà de preguntar per tantes paraules com el nombre de paraules que ha dit l'usuari que volia introduir. Les paraules s'aniran guardant a l'array, i un cop han sigut totes introduïdes, es mostren per pantalla.-->
-      <script>
-        'use strict';
-      </script>
-    </body>
-  </html>
+
+    <h2>Nombre de paraules</h2>
+    <label
+      >Introdueix el nombre de paraules:
+      <input type="number" id="caixaText" size="6"
+    /></label>
+    <br /><br />
+    <button onclick="mostrarParaules()">Clica</button>
+    <p id='resposta'></p>
+    <script>
+      'use strict';
+
+      function crearArrayParaules(numero_par) {
+        let paraules = [];
+        let paraula;
+        for (let i = 0; i < numero_par; i++) {
+          paraula = prompt('Escriu la paraula ' + (i + 1) + '/' + numero_par);
+          paraules.push(`<b>${paraula}</b>`);
+        }
+        return paraules;
+      }
+
+      function mostrarArrayParaules(arrParaules) {
+        let text = "L'array de paraules és: ";
+        document.getElementById('resposta').innerHTML = text + arrParaules.join(', ');
+      }
+
+      function mostrarParaules() {
+        let numero_par = document.getElementById('caixaText').value;
+        let arrParaules = crearArrayParaules(numero_par);
+        mostrarArrayParaules(arrParaules);
+      }
+    </script>
+  </body>
+</html>

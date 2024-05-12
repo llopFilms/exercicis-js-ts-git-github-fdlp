@@ -14,7 +14,7 @@
     <br />
     <!--Entrada de dades-->
     <p>Introdueix de quin número vols la taula de multiplicar:</p>
-    <input type="number" id="caixaNum" placeholder="Taula del..." />
+    <input type="number" id="caixaNum" placeholder="Taula del..." size="6" />
     <input type="button" onClick="ferTaulaMulti()" value="Aquí ho tens" />
     <br />
     <p id="taulaDel" type="none"></p>
@@ -26,30 +26,29 @@
           taula = [];
         let num = Number(document.getElementById('caixaNum').value);
 
-      /*Versió amb un array
-			//Loop per omplir l'array de dades
-			for (i=0; i<=10; i++){
-			
-				let resultat = num * i;
-				taula.push(resultat);
-				
-			}
-
+        /* Versió amb un array
+			// Loop per omplir l'array de dades
+        for (i=0; i<=10; i++){			
+          let resultat = num * i;
+          taula.push(resultat);				
+        }   
 			//Generació de llista de text amb elements HMTL, utilitzant els valors de l'array i extracció de dades a id d'HTML
 			let llista = "<dt>";
 			
 			for (i=0; i<=10; i++) {
-				llista = llista + "<dd>" + num + " x " + i + " = " + taula[i];
-			}*/
+				llista = llista + '<dd>'' + num + " x " + i + " = " + taula[i];
+			}
+      */
 
         //Versió concatenada
-        let llista = '';
-
+        let llista = '<dt>';
         for (i = 0; i <= 10; i++) {
-          llista += num + ' x ' + i + ' = ' + num * i + '<br>';
+          llista += `<dd>${num} x ${i} = ${num * i}</dd>`;
         }
-        document.getElementById('taulaDel').innerHTML =
-          `<br/><b>Taula del: ${num}</b><br/><br/>${llista}`;
+        llista += '</dt>';
+        document.getElementById(
+          'taulaDel'
+        ).innerHTML = `<br/><b>Taula del: ${num}</b><br/><br/>${llista}`;
       }
     </script>
   </body>

@@ -10,7 +10,6 @@
     <!--Fer un programa que pregunti a l'usuari pel nombre de paraules que es volen introduir en un array. Un cop l'usuari respongui, el programa haurà de preguntar per tantes paraules com el nombre de paraules que ha dit l'usuari que volia introduir. Les paraules s'aniran guardant a l'array, i un cop han sigut totes introduïdes, es mostren per pantalla.-->
 
     <h2>Nombre de paraules</h2>
-    <br />
     <p>Introdueix el número de paraules:</p>
     <input type="number" id="caixaText" size="6" /><br /><br />
 
@@ -29,13 +28,6 @@
         let paraula;
         let i;
 
-        //Loop
-        /* for (i=0; i<numero_par; i++){
-
-			paraula = prompt ("Escriu la paraula " + (i+1) +"/"+ numero_par);
-			paraules.push(paraula);
-		};
- */
         for (i = 0; i < numero_par; i++) {
           paraula = prompt('Escriu la paraula ' + (i + 1) + '/' + numero_par);
           paraules.push(paraula);

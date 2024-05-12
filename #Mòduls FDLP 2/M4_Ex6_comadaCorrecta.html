@@ -40,31 +40,40 @@ Si la persona demana un plat "que pot menjar" mostrarem per consola el missatge 
         let pereferencies_intolerancies = document.getElementById(
           'pereferencies_intolerancies'
         ).value;
+        console.log('plat -->', plat);
+        console.log(
+          'pereferencies_intolerancies -->',
+          pereferencies_intolerancies
+        );
+
         let missatge;
         let correcte = 'Perfecte, comanda correcta';
         let incorrecte = 'Vostè no pot menjar aquest plat';
 
-        switch (plat) {
-          case 'carn':
-            missatge =
-              pereferencies_intolerancies != 'opció vegana'
-                ? correcte
-                : incorrecte;
-            break;
-          case 'pasta amb gluten':
-            missatge =
-              pereferencies_intolerancies != 'intolerancia al gluten'
-                ? correcte
-                : incorrecte;
-            break;
-          case 'risotto amb lactosa':
-            missatge =
-              pereferencies_intolerancies != 'intolerancia a la lactosa'
-                ? correcte
-                : incorrecte;
-            break;
+        if (plat === '' || pereferencies_intolerancies === '') {
+          missatge = 'Tots els camps son obligatoris';
+        } else {
+          switch (plat) {
+            case 'carn':
+              missatge =
+                pereferencies_intolerancies != 'opció vegana'
+                  ? correcte
+                  : incorrecte;
+              break;
+            case 'pasta amb gluten':
+              missatge =
+                pereferencies_intolerancies != 'intolerancia al gluten'
+                  ? correcte
+                  : incorrecte;
+              break;
+            case 'risotto amb lactosa':
+              missatge =
+                pereferencies_intolerancies != 'intolerancia a la lactosa'
+                  ? correcte
+                  : incorrecte;
+              break;
+          }
         }
-
         document.getElementById('resposta').innerHTML = missatge;
       }
     </script>

@@ -1,15 +1,29 @@
-  <!DOCTYPE html>
-    <html lang='ca'>
-    <head>
-      <meta charset='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Mòdul 5 - Exercici 5</title>
-      <link rel='icon' href='../../favicon.ico' type='image/x-icon' />
-    </head>
-    <body>
-      <!-- Has de demanar paraules fins que tinguis tres boniques. Has d'anar guardant les paraules boniques en un array i quan tinguis les tres, imprimir-les. -->
-      <script>
-        'use strict';
-      </script>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 5 - Exercici 5</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Has de demanar paraules fins que tinguis tres boniques. Has d'anar guardant les paraules boniques en un array i quan tinguis les tres, imprimir-les. -->
+    <h2>3 paraules boniques</h2>
+    <button onClick="demanaParaules()">Demana paraules</button>
+    <p id="resposta"></p>
+    <script>
+      'use strict';
+      function demanaParaules() {
+        let arrayParaules = [];
+
+        for (let i = 0; i < 3; i++) {
+          let paraula = prompt(`Introdueix una paraula ${i + 1} de 3`);
+          arrayParaules.push(paraula);
+        }
+
+        document.getElementById('resposta').innerHTML =
+          'Les paraules boniques són: <b>'+ arrayParaules.join(', ') +'</b>';
+      }
+    </script>
+  </body>
+</html>

@@ -1,81 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mòdul 5 - Exercici 2</title>
-</head>
-<body>
-	
-	<!--El programa demana dos números enters positius i llavors calcula la suma dels valors compresos entre els dos números, inclosos.
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 5 - Exercici 2</title>
+  </head>
+  <body>
+    <!--El programa demana dos números enters positius i llavors calcula la suma dels valors compresos entre els dos números, inclosos.
 	Exemple: 4 i 6, resultat = 4 + 5 + 6 = 15-->
 
-	<h2>Suma de valors</h2>
-	<br/>
-	<p>Introdueix dos números enters entre 1 i 20:</p>
-	<br/>
+    <h2>Suma de valors</h2>
+    <br />
+    <p>Introdueix dos números enters entre 1 i 20:</p>
+    <br />
 
-	<input type="number" id="caixaNum1" placeholder=""/><br/><br/>
-	<input type="number" id="caixaNum2" placeholder=""/><br/><br/>
+    <input type="number" id="caixaNum1" placeholder="" /><br /><br />
+    <input type="number" id="caixaNum2" placeholder="" /><br /><br />
 
-	<input type='button' onClick='ferSuma()' Value='Clica aquí'/>
-	<!--<button onClick="ferSuma()">ClicaAquí</button>-->
-	<br/>
-	<p id="concatena_suma"></p>
+    <input type="button" onClick="ferSuma()" value="Clica aquí" />
+    <!--<button onClick="ferSuma()">ClicaAquí</button>-->
+    <br />
+    <p id="concatena_suma"></p>
 
-	<script>
+    <script>
+      'use strict'; // Obliguem a definir les variables
+      function ferSuma() {
+        //Introducció del número de paraules
+        let num1 = Number(document.getElementById('caixaNum1').value);
+        let num2 = Number(document.getElementById('caixaNum2').value);
 
-	function ferSuma(){
+        let numValid =
+          num1 < 1 || num1 > 20 || num2 < 1 || num2 > 20 || num1 == num2
+            ? false
+            : true;
 
-		"use strict"; // Obliguem a definir les variables
+        console.log(numValid);
 
-		//Introducció del número de paraules
-		let num1 = Number(document.getElementById("caixaNum1").value);
-		let num2 = Number(document.getElementById("caixaNum2").value);
-		
-		let numValid = (num1 < 1 || num1 > 20 || num2 < 1 || num2 > 20 || num1 == num2) ? false : true;
+        if (numValid == false) {
+          alert('Escriviu números ente 1 i 20 i que siguin diferents');
+        } else {
+          let min = num1 < num2 ? num1 : num2;
+          let max = num1 < num2 ? num2 : num1;
+          let llista = min;
+          let suma = min;
 
-		console.log(numValid);
+          //Loop: es comença des del 1er número + 1 (perquè no es repeteixi) i fins a = el 2on, perquè l'agafi i pari el loop. Contingut serveix per fer la llista i suma per afegir el total al final
+          for (let i = min + 1; i <= max; i++) {
+            llista += ' + ' + i;
+            suma += i;
+          }
+          //Ajuntem: contingut = contingut + " = " + suma;
+          llista += ' = ' + suma;
+          //Sortida array a id d'HTML
+          document.getElementById('concatena_suma').innerHTML = '<b>' + llista;
 
-		if (numValid == false) {
-
-			alert ("Escriviu números vàlids");
-
-		} else {
-
-			let min = (num1 < num2) ? num1 : num2;
-			let max = (num1 < num2) ? num2 : num1;
-
-			let llista = min;
-			let suma = min;
-			let i;
-
-			//Loop: es comença des del 1er número + 1 (perquè no es repeteixi) i fins a = el 2on, perquè l'agafi i pari el loop. Contingut serveix per fer la llista i suma per afegir el total al final
-			for (i=min+1; i<=max; i++){
-
-				llista += " + " +i;
-				suma += i;
-			}
-			//Ajuntem: contingut = contingut + " = " + suma;
-			llista += " = " + suma;
-			//Sortida array a id d'HTML
-			document.getElementById("concatena_suma").innerHTML = "<b>" + llista;
-
-			/* //auxiliar per fer max i min
-				let aux;
-
-			if (num1 > num2){
-
-				aux = num2;
-				num2 = num1;
-				num1 = aux;
-			} */
-
-		}
-	}
-	</script>
-
-</body>
+          //auxiliar per fer max i min
+					/*
+					let aux;
+					if (num1 > num2){
+					aux = num2;
+					num2 = num1;
+					num1 = aux;
+					} */
+        }
+      }
+    </script>
+  </body>
 </html>
-

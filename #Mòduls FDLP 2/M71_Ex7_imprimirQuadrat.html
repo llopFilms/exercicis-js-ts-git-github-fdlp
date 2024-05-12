@@ -26,15 +26,23 @@
     <p>Introdueix la mida:</p>
     <input type="text" id="caixaNum" maxlength="2" size="2" />
     <br /><br />
-    <input type="button" onClick="impressora()" value="Aquí ho tens" />
+    <input type="button" onClick="imprimirQuadrat()" value="Aquí ho tens" />
     <br />
     <p id="impressió"></p>
 
     <script>
-      function impressora() {
+      function imprimirQuadrat() {
         //Recepció de dades d'ids d'HTML
         let char = document.getElementById('caixaChar').value;
+        while (char.length != 1 || char == ' ') {
+          char = prompt('Introdueix un caràcter vàlid, i només un caràcter:');
+          document.getElementById('caixaChar').value = char;
+        }
         let mida = document.getElementById('caixaNum').value;
+        while (isNaN(mida) || mida == '') {
+          mida = prompt('Introdueix una mida vàlida, i només un nombre:');
+          document.getElementById('caixaNum').value = mida;
+        }
 
         //Declaració de variables
         let i,

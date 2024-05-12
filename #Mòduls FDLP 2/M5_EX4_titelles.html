@@ -13,7 +13,7 @@
     <h2>Titelles</h2>
     <label for="numNensU"
       >Introdueix el número de nens per veure la funció
-      <input type="text" id="numNensU"
+      <input type="number" id="numNensU" size="6"
     /></label>
 
     <p><button onclick="calcularTitelles()">Calcula Mitjana edats</button></p>
@@ -21,7 +21,6 @@
 
     <script>
       'use strict';
-
       function calcularTitelles() {
         let nens = document.getElementById('numNensU').value;
         let sumaedats = 0,
@@ -30,24 +29,24 @@
 
         for (let i = 0; i < nens; i++) {
           edat = Number(
-            prompt('Introdueix la edat del nen ' + (i + 1) + ' de ' + nens)
+            prompt(`Introdueix la edat del nen ${i + 1} de ${nens}`)
           );
-          while (edat < 5 || edat > 12) {
+          while (edat < 5 || edat > 12 || isNaN(edat)) {
             edat = Number(
               prompt(
-                'La edat ha de estar entre 5 i 12 anys. Introdueix la edat del nens ' +
-                  (i + 1) +
-                  ' de ' +
-                  nens
+                `L'edat ha de estar entre 5 i 12 anys. Introdueix la edat del nen ${
+                  i + 1
+                } de ${nens}`
               )
             );
           }
           sumaedats += edat;
         }
 
-        mitjana = (sumaedats / nens).toFixed(2);
-        document.getElementById('resposta').innerHTML =
-          "La mitjana d'edat de <b>" + nens + '</b> nens es: <b>' + mitjana + '</b>';
+        mitjana = Math.round((sumaedats / nens) * 100) / 100;
+        document.getElementById(
+          'resposta'
+        ).innerHTML = `La mitjana d'edat de <b>${nens}</b> nens es: <b>${mitjana}</b>`;
       }
     </script>
   </body>

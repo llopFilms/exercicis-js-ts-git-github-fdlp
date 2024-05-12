@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
-	<title>Mòdul 3 - Exercici Extra 2</title>
-</head>
-<body>
-	<!--Escriu un programa JavaScript que calculi els litres de pintura necessaris per a pintar una paret rectangular. Un litre de pintura cobreix aproximadament, 12m2 en una sola mà. Crea una constant anomenada coberturaLitre per a guardar la dada de cobertura de la pintura (12m2).
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Millorable tota la part estètica d'HTML. No en sé prou encara-->
+    <title>Mòdul 3 - Exercici Extra 2</title>
+  </head>
+  <body>
+    <!--Escriu un programa JavaScript que calculi els litres de pintura necessaris per a pintar una paret rectangular. Un litre de pintura cobreix aproximadament, 12m2 en una sola mà. Crea una constant anomenada coberturaLitre per a guardar la dada de cobertura de la pintura (12m2).
 	Hauràs de demanar a l'usuari:
 		- L'alt i ample de la paret ( multiplicant sabràs l'àrea de la mateixa )
 		- El nombre de mans a aplicar
 	Mostra en pantalla els litres de pintura a utilitzar.-->
-	<h2>Càlcul de litres de pintura</h2>
-	<br/>
-	<p>Mides de la paret: amplada i alçada:</p>
-	<input type="number" id="caixaTextAmplada" placeholder="Escriu aquí l'amplada de la paret"/><br/><br/>
-	<input type="number" id="caixaTextAlçada" placeholder="Aquí l'alçada de la paret"/><br/><br/>
-	<p>Capes que vols aplicar:</p>
-	<input type="number" id="caixaTextCapes" placeholder="I aquí les capes que vols aplicar ok?"/><br/><br/>
-	<input type='button' onClick='saber_litres()' Value='Litres necessaris'/>
-	<br/>
-	<p id="litres"></p>
+    <h2>Càlcul de litres de pintura</h2>
+    <br />
+    <p>Mides de la paret: amplada i alçada:</p>
+    <input
+      type="number"
+      id="caixaTextAmplada"
+      placeholder="Escriu aquí l'amplada de la paret" /><br /><br />
+    <input
+      type="number"
+      id="caixaTextAlçada"
+      placeholder="Aquí l'alçada de la paret" /><br /><br />
+    <p>Capes que vols aplicar:</p>
+    <input
+      type="number"
+      id="caixaTextCapes"
+      placeholder="I aquí les capes que vols aplicar ok?" /><br /><br />
+    <input type="button" onClick="saber_litres()" value="Litres necessaris" />
+    <br />
+    <p id="litres"></p>
 
-	<script>
+    <script>
+      //Establim la const que demana l'enunciat i recollim dades de l'usuarii convertim a Number
+      const COBERTURA_LITRE = 12;
 
-			//Establim la const que demana l'enunciat i recollim dades de l'usuarii convertim a Number
-			const COBERTURA_LITRE = 12;
+      function saber_litres() {
+        let amplada = document.getElementById('caixaTextAmplada').value;
+        let alçada = document.getElementById('caixaTextAlçada').value;
+        let capes = document.getElementById('caixaTextCapes').value;
 
-		function saber_litres(){
+        alçada = Number(alçada);
+        amplada = Number(amplada);
+        capes = Number(capes);
 
-			let amplada = document.getElementById("caixaTextAmplada").value;
-			let alçada = document.getElementById("caixaTextAlçada").value;
-			let capes = document.getElementById("caixaTextCapes").value;
-		
-			alçada = Number(alçada);
-			amplada = Number(amplada);
-			capes = Number(capes);	
+        //Fem càlculs i establim el resultat amb màxim 2 decimals. Enviem el resultat a l'id d'HTML
+        let litres =
+          Math.round(((amplada * alçada) / COBERTURA_LITRE) * capes * 100) /
+          100;
+        console.log('litres -->', litres);
 
-			//Fem càlculs i establim el resultat amb màxim 2 decimals. Enviem el resultat a l'id d'HTML	
-			let litres = (amplada * alçada / COBERTURA_LITRE * capes).toFixed(2);
-			
-			document.getElementById("litres").innerHTML = "El litres que et faran falta per pintar a " +capes+ " mans la paret, que has indicat que fa " +alçada+ " metres per " +amplada+ " metres, és de <strong>" +litres+"</strong> litres. No et taquis!";
-
-			console.log(litres%1);
-
-		}
-
-	</script>
-</body>
+        document.getElementById(
+          'litres'
+        ).innerHTML = `El litres que et faran falta per pintar a ${capes} mans la paret, que has indicat que fa ${alçada} metres per ${amplada} metres, és de <b>${litres}</b> litres. No et taquis!`;
+      }
+    </script>
+  </body>
 </html>

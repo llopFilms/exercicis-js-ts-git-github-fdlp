@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mòdul 5 - Exercici extra 1</title>
-</head>
-<body>
-	
-	<!--Realitzar un joc per endevinar un nombre aleatori N, entre 1 i 500.
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 5 - Exercici extra 1</title>
+  </head>
+  <body>
+    <!--Realitzar un joc per endevinar un nombre aleatori N, entre 1 i 500.
 	Si la distància entre el nombre a endevinar i el de l'usuari és de 50 o més, el programa haurà de dir: “Fred, fred: el teu número és més gran “ o “Fred, fred: el teu número és més petit “
-
 	Si la distància entre el nombre a endevinar i el de l'usuari està entre 15 i 50, el programa haurà de dir: “Tebi, Tebi: el teu número és més gran “ o “Tebi, Tebi: el teu número és més petit “ 
-
 	I si la distància entre el nombre a endevinar i el de l'usuari i si la distància és menor a 15, el programa haurà de dir: “Calent, calent: el teu número és més gran “ o “Calent, calent: el teu número és més petit “
-
 	El procés acaba quan l'usuari encerta..-->
 
-	<h2>Endevina el número</h2>
+    <h2>Endevina el número</h2>
+    <button onclick="jugar()">Jugar</button>
+    <p id="comptadorIntents"></p>
+    <p id="numerosTriats"></p>
+    <p id="resultat"></p>
 
-	<p id="ComptadorIntents"></p>
-	<p id="NúmerosTriats"></p>
-	<p id="resultat"></p>
+    <script>
+      function jugar() {
+        //Delcaració de variables i generació número aleatori
+        let numAleatori = Math.floor(Math.random() * (500 - 1)) + 1;
+        let num = 0,
+          numsTriats = '',
+          numsTriats2,
+          intents = 0,
+          resultat = '';
+        console.log(numAleatori);
 
-	<script>
-	
-			//Delcaració de variables i generació número aleatori
-			let numAleatori = Math.floor(Math.random() * (500 - 1)) + 1;
-			let num = 0, numsTriats ="", numsTriats2, intents = 0, resultat = "";
-			console.log(numAleatori);
-			//Loop While
-			do {
+        //Loop While
+        do {
+          //Entrada número
+          num = parseInt(prompt('Introdueix un número entre 1 i 500'));
 
-				//Entrada número
-				num = parseInt(prompt("Introdueix un número entre 1 i 500"));
+          while (num > 500 || isNaN(num) || num < 1) {
+            num = parseInt(
+              prompt(
+                'Hem quedat que no més gran de 500... Introdueix un altre número:'
+              )
+            );
+          }
 
-                while (num > 500){ 
+          resultat = num - numAleatori;
+          // Sortida de dades comptador i números triats a id d'HTML
+          intents++;
+          numsTriats += num + ', ';
+          numsTriats2 = numsTriats.substring(0, numsTriats.length - 2);
+          console.log('intents -->', intents);
+          console.log('numsTriats -->', numsTriats);
+          console.log('numsTriats2 -->', numsTriats2);
 
-                    num = parseInt(prompt("Hem quedat que no més gran de 500... Introdueix un altre número:"));
-                }
+          //Selector else if de casos d'aproximació i avís de superació
+          if (resultat < -50) {
+            alert(
+              'Fred, fred: el teu número és almenys 50 números més més gran.'
+            );
+          } else if (resultat > 50) {
+            alert('Fred, fred: el teu número és 50 números més petit.');
+          } else if (resultat >= -50 && resultat <= -15) {
+            alert('Tebi, Tebi: el teu número és més gran, però no gaire.');
+          } else if (resultat <= 50 && resultat >= 15) {
+            alert('Tebi, Tebi: el teu número és més petit, però no gaire.');
+          } else if (resultat > -15 && resultat <= -1) {
+            alert(
+              'Calent, calent: el teu número és més gran, però estàs a prop.'
+            );
+          } else if (resultat < 15 && resultat >= 1) {
+            alert(
+              'Calent, calent: el teu número és més petit, però estàs a prop.'
+            );
+          } else {
+            document.getElementById('resultat').innerHTML =
+              "Molt bé! L'has encertat, era el <b>" + numAleatori + '</b>!!';
+            document.getElementById(
+              'comptadorIntents'
+            ).innerHTML = `El nombre d'intents ha estat de ${intents}`;
+            document.getElementById(
+              'numerosTriats'
+            ).innerHTML = `Els números triats han estat ${numsTriats2}`;
+          }
 
-				resultat = num - numAleatori;
-				// Sortida de dades comptador i números triats a id d'HTML
-				intents++;
-				numsTriats += num + ", ";
-				numsTriats2 = numsTriats.substring(0, numsTriats.length-2);
-				console.log(numsTriats, numsTriats2);
-				document.getElementById("ComptadorIntents").innerHTML = "Número d'intents = " +intents;
-				document.getElementById("NúmerosTriats").innerHTML = "Números triats = " +numsTriats2+ ".";
+          if (num != numAleatori) {
+            alert(
+              `Número d'intents --> ${intents} \nNumeros triats --> ${numsTriats2}`
+            );
+          }
+        } while (num != numAleatori);
 				
-    			//Selector else if de casos d'aproximació i avís de superació
-				if (resultat <-50){
-				alert("Fred, fred: el teu número és almenys 50 números més més gran.");
-					
-				}else if (resultat >50){
-				alert("Fred, fred: el teu número és 50 números més petit.");
-				
-				}else if (resultat >=-50 && resultat <=-15){
-				alert("Tebi, Tebi: el teu número és més gran, però no gaire.");
-				
-				}else if (resultat <=50 && resultat >=15){
-				alert("Tebi, Tebi: el teu número és més petit, però no gaire.");
-				
-				}else if (resultat >-15 && resultat <=-1){
-				alert("Calent, calent: el teu número és més gran, però estàs a prop.");
-				
-				}else if (resultat <15 && resultat >=1){
-				alert("Calent, calent: el teu número és més petit, però estàs a prop.");
-
-				}else   
-				document.getElementById("resultat").innerHTML = "Molt bé! L'has encertat, era el <b>" + numAleatori + "</b>!!";
-
-			} while (num != numAleatori)
-									
-	</script>
-	
-</body>
+      }
+    </script>
+  </body>
 </html>

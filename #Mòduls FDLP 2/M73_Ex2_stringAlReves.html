@@ -11,103 +11,63 @@
     <!--En aquest programa l’usuari ha d’introduir un string i, utilitzant un bucle for, el programa ha de mostrar l’string al revés-->
 
     <h2>Cadena de caràcters a l'inrevés:</h3>
-    <br/><br/>
-
+    <br/>
     <label for="cadena">Introdueix una frase:</label>
     <input type="text" id="cadena" maxlength="100">
     <br/><br/>
     <input type="button" onClick="validacio()" value="Clica aquí"/>
-    <br/><br/><br/>
+    <input type="button" onClick="netejarCamps()" value="Esborrar camps"/>
+    <br/>
     <p id="resultat"></p>
     <p id="avís"></p>
     
     <script>
     "use Strict"
-
-     //Funcions auxiliarsLlibreria
-
-     //Funció llegeix dada
-    function llegeixDada(id){
-
-        let dada = document.getElementById(id).value;
-        return dada;
-    }
-
-     //Funció escriu dada valor
-    function escriuDadaValue(id,dada){        
-
-        document.getElementById(id).value = dada;
-    }
-
-     //Funció escriu dada en HMTL
-    function escriuDada(id,dada){        
-
-        document.getElementById(id).innerHTML = dada;
-    }
-
-     //Funció dada bona
-    function dadaBona(id){
-
-        document.getElementById(id).style.background = "white";
-    }
-
-     //Funció dada dolenta
-    function dadaDolenta(id){
-
-        document.getElementById(id).style.background = "#E6B0AA";
-    }
-
-
-     //Programa
     //Funció que gira el text
     function giraCadena(cadena){
 
         let i, cadenaReves = "";
         for (i=cadena.length-1; i>=0; i--){
-
-            cadenaReves += cadena[i];
-        }
+            cadenaReves += cadena[i];        }
         return cadenaReves;
-
     }
 
     //Funció principal
     function main(cadena){
-
         //Gestió amb funcions
         let cadenaReves = giraCadena(cadena);
-
         //Resultat final
-        let resultat = "La cadena resultant a l'inrevés és: <strong>" +cadenaReves+ ".";
-        escriuDada("resultat",resultat); 
-        escriuDadaValue("cadena", cadena);
-            
+        let resultatCadena = `La cadena resultant a l'inrevés és: <b>${cadenaReves}</b>.`;
+        document.getElementById("resultat").innerHTML = resultatCadena;
+        document.getElementById("cadena").innerHTML = "";            
     }   
 
     //Funció Validació
-    function validacio(cadena){
-
+    function validacio(){
         //Esborra pantalla
-        escriuDada("resultat","");
-        escriuDada("avís","");
-
+        document.getElementById("resultat").innerHTML = "";
+        document.getElementById("avís").innerHTML = "";
         //Entrada de dades
-        cadena = llegeixDada("cadena");
-
-        let validacio = false;
-                            
+        let cadena = document.getElementById("cadena").value;
+        let validacio = false;                            
         if (cadena == "" || !isNaN(cadena)) {
                 validacio;
-                dadaDolenta("cadena");
-                dadaDolenta("cadena","");
-                escriuDada("avís","<strong>Escriviu les dades correctament</strong>");
-
+                document.getElementById("cadena").style.background = "#E6B0AA";
+                document.getElementById("cadena").value = "";
+                document.getElementById("avís").innerHTML = "<b>Escriviu les dades correctament</b>";
         }else{
                 validacio = true;
-                dadaBona("cadena");  
+                document.getElementById("cadena").style.background = "white";
                 main(cadena);          
         }
+    }
 
+    function netejarCamps() {
+      //Esborra pantalla
+        document.getElementById("cadena").value = "";
+        document.getElementById('cadena').style.background = 'white';
+        document.getElementById("resultat").innerHTML = "";
+        document.getElementById("avís").innerHTML = "";
     }
 
     </script>

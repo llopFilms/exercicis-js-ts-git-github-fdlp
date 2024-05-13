@@ -1,15 +1,45 @@
-  <!DOCTYPE html>
-    <html lang='ca'>
-    <head>
-      <meta charset='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Mòdul 7.3 - Exercici 5</title>
-      <link rel='icon' href='../../favicon.ico' type='image/x-icon' />
-    </head>
-    <body>
-      <!-- Donat un array de paraules introduïdes per l’usuari/ària. Digues el nombre de paraules que contenen la lletra ‘a’ i mostra-les per pantalla. -->
-      <script>
-        'use strict';
-      </script>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.3 - Exercici 5</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Donat un array de paraules introduïdes per l’usuari/ària. Digues el nombre de paraules que contenen la lletra ‘a’ i mostra-les per pantalla. -->
+    <h2>Paraules amb 'a'</h2>
+    <label for="inputParaules"
+      >Introduïu les paraules separades per espais
+      <input type="text" id="inputParaules"
+    /></label>
+    <br /><br />
+    <button onclick="comptarA()">Comptar les paraules amb 'a'</button>
+    <button onClick="netejarCamps()">Esborrar camps</button>
+    <p id="resposta"></p>
+    <script>
+      'use strict';
+
+      let paraules = [];
+      function comptarA() {
+        let paraulaString = document
+          .getElementById('inputParaules')
+          .value.toLowerCase();
+        paraules = paraulaString.split(' ');
+        let comptador = 0;
+        for (let i = 0; i < paraules.length; i++) {
+          if (paraules[i].includes('a')) {
+            comptador++;
+          }
+        }
+        document.getElementById('resposta').innerHTML = `Hi ha ${comptador} paraules amb 'a'.`;
+      }
+
+      function netejarCamps() {
+        //Esborra pantalla
+        document.getElementById('inputParaules').value = '';
+        document.getElementById('resposta').innerHTML = '';
+      }
+    </script>
+  </body>
+</html>

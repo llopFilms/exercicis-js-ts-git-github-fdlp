@@ -1,17 +1,73 @@
-  <!DOCTYPE html>
-    <html lang='ca'>
-    <head>
-      <meta charset='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Mòdul 7.3 - Exercici 1</title>
-      <link rel='icon' href='../../favicon.ico' type='image/x-icon' />
-    </head>
-    <body>
-      <!-- Crea un programa que tingui un menú:
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.3 - Exercici 1</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Crea un programa que tingui un menú:
       - Afegir tasca, mostrar totes les tasques i eliminar tasca, a més de l’opció de sortir de l’aplicació.
       - D’aquesta manera tindrem un programa amb un llistat de tasques per fer. Les tasques es podran afegir, mostrar i eliminar un cop fetes. -->
-      <script>
-        'use strict';
-      </script>
-    </body>
-  </html>
+
+    <h2>Tasques</h2>
+    <button onClick="afegirTasca()">Afegir tasca</button>
+    <button onClick="mostrarTasques()">Mostrar tasques</button>
+    <button onClick="eliminarTasca()">Eliminar tasca</button>
+    <p id="tasques"></p>
+    <script>
+      'use strict';
+
+      let tasques = [];
+
+      function afegirTasca() {
+        let textTasca = prompt('Introdueix el text de la tasca');
+        tasques.push(textTasca);
+
+        console.log("tasques -->",tasques);
+        console.table(tasques);       
+      }
+
+      function mostrarTasques() {
+        let llistaTasques = '<ol>';
+        for (let i = 0; i < tasques.length; i++) {
+          llistaTasques += `<li>${tasques[i]}</li>`;
+        }
+        llistaTasques += '</ol>';
+        document.getElementById('tasques').innerHTML = llistaTasques;
+
+        console.log("tasques -->",tasques);
+        console.table(tasques);
+      }
+
+      function eliminarTasca() {
+        let numTasca = prompt('Introdueix el número de la tasca a esborrar');
+        if (numTasca < 1 || numTasca > tasques.length) {
+          alert('Tasca no existeix');
+        } else {
+          let trobat = false;
+          let i = 0;
+          while (i < tasques.length && !trobat) {
+            if (numTasca - 1 === i) {
+              trobat = true;
+            }
+            i++;
+          }
+          if (!trobat) {
+            alert('Tasca no trobada');
+          } else {
+            let confirmaEsborrar = confirm(
+              `Segur que vols esborrar la tasca número ${numTasca} ?`
+            );
+            if (confirmaEsborrar) tasques.splice(i - 1, 1);
+            else alert('Tasca no esborrada');
+          }
+        }
+
+        console.log("tasques -->",tasques);
+        console.table(tasques);
+      }
+    </script>
+  </body>
+</html>

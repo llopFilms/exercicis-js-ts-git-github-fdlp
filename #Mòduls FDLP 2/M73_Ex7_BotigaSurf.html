@@ -1,13 +1,13 @@
-  <!DOCTYPE html>
-    <html lang='ca'>
-    <head>
-      <meta charset='UTF-8' />
-      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <title>Mòdul 7.3 - Exercici 3</title>
-      <link rel='icon' href='../../favicon.ico' type='image/x-icon' />
-    </head>
-    <body>
-      <!-- Escriu un programa per una botiga de surf on se li exposarà un menú als usuaris i usuàries amb les següents opcions:
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 7.3 - Exercici 3</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Escriu un programa per una botiga de surf on se li exposarà un menú als usuaris i usuàries amb les següents opcions:
       
         1. Calcular material taula (crida a una funció que rep un boolean que representi si la persona té experiència o no) si té, retornarà el missatge "taula de fibra", si no retornarà el missatge "taula d'espuma". (demanem per consola si l'usuari/ària si té experiència o no)
         2. Imprimir forecast (crida a una funció  que rep l'alçada de l'onada en metres). Si l'alçada és més de 2 metres, imprimirà "onades grans", si no imprimirà "onades petites". (Introduïm l'alçada de les onades per consola, simulant que les rebem d'una aplicació externa)
@@ -18,8 +18,88 @@
         4. Sortir del programa.
 
       Fins que la persona no escrigui un 4, el programa ha de continuar mostrant el menú i donar la possibilitat de fer accions. -->
-      <script>
-        'use strict';
-      </script>
-    </body>
-  </html>
+
+    <h2>Botiga Surf</h2>
+    <button onClick="mostrarMenu()">Menú botiga</button>
+    <script>
+      'use strict';
+
+      function materialTaula(experiencia) {
+        let tipusTaula;
+        if (experiencia) {
+          tipusTaula = 'fibra';
+          alert('Taula de fibra');
+        } else {
+          tipusTaula = 'espuma';
+          alert("Taula d'espuma");
+        }
+        return tipusTaula;
+      }
+
+      function prediccioMeteo(alssada) {
+        if (alssada > 2) {
+          alert('Onades grans');
+        } else {
+          alert('Onades petites');
+        }
+      }
+
+      function costReserva(minuts, tipusTaula) {
+        let cost;
+        if (tipusTaula === 'fibra') {
+          cost = Math.round((minuts / 60) * 35 * 100) / 100;
+          alert('Cost de la reserva: ' + cost + '€');
+        } else {
+          cost = Math.round( (minuts / 60) * 20 * 100) / 100;
+          alert('Cost de la reserva: ' + cost + '€');
+        }
+        return cost;
+      }
+
+      function mostrarMenu() {
+        let menu, tipusTaula, cost;
+        do {
+          menu = Number(
+            prompt(`
+            Botiga de Surf
+            - - - - - - - - - - - - - - - - - - - -
+            Sleccioneu una opció:
+
+            1. Seleccionar el material de la taula
+            2. Pronòstic alçada onades
+            3. Cost de la reserva
+            4. Sortir del programa
+            - - - - - - - - - - - - - - - - - - - -
+            `)
+          );
+          console.log('menu -->', menu);
+
+          switch (menu) {
+            case 1:
+              let experiencia = confirm('Tens experiència?');
+              tipusTaula = materialTaula(experiencia);
+              console.log('tipusTaula -->', tipusTaula);
+              break;
+            case 2:
+              let alssada = prompt('Introdueix la alçada de les onades');
+              prediccioMeteo(alssada);
+              break;
+            case 3:
+              console.log('tipusTaula -->', tipusTaula);
+              if (tipusTaula === undefined)
+                alert("Trieu primer l'opció 1 per saber el tipus de taula");
+              else {
+                let minuts = prompt('Introdueix els minuts de la reserva');
+                cost = costReserva(minuts, tipusTaula);
+                console.log('cost -->', cost);
+              }
+              break;
+            case 4:
+              alert('Gràcies per usar la botiga de surf');
+              break;
+          }
+        } while (menu > 0 && menu <= 3);
+      }
+    </script>
+  </body>
+</html>

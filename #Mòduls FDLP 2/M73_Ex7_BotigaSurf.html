@@ -76,7 +76,10 @@
 
           switch (menu) {
             case 1:
-              let experiencia = confirm('Tens experiència?');
+              let experiencia = prompt('Tens experiència? s/n');
+              experiencia = (experiencia === 's') ? true : false;
+              console.log("experiencia -->",experiencia);
+              
               tipusTaula = materialTaula(experiencia);
               console.log('tipusTaula -->', tipusTaula);
               break;

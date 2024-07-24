@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callbacks</title>
+  </head>
+  <body>
+    <h1>Callbacks Jorge</h1>
+
+    <label for="dniU">Introdueix DNI <input type="text" id="dniU" /></label
+    ><br /><br />
+
+    <label for="find"
+      >Buscar persona per DNI
+      <button onclick="trobarPerDNI()" id="find">Clica</button></label
+    ><br /><br />
+    <div id="personaFind"></div>
+
+    <label for="findIndex"
+      >Buscar índex de persona per DNI
+      <button onclick="trobarIndexPerDNI()" id="findIndex">Clica</button></label
+    ><br /><br />
+    <p id="personaFindIndex"></p>
+
+    <label for="aficioU"
+      >Introdueix afició <input type="text" id="aficioU" /> </label
+    ><br /><br />
+
+    <label for="filter"
+      >Buscar persones que tenen hobbie
+      <button onclick="trobarPersonesPerHobbie()" id="filter">
+        Clica
+      </button></label
+    ><br /><br />
+    <p id="personesFilterHobbie"></p>
+
+    <label for="reduce"
+      >Comptar total hobbies diferents
+      <button onclick="comptarTotalHobbies()" id="reduce">Clica</button></label
+    ><br /><br />
+    <p id="numeroReduceHobbies"></p>
+
+    <script>
+      'use strict';
+    </script>
+    <script src="./js/dades.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

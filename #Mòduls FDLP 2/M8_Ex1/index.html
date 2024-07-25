@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mòdul 8 - Exercici 1</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!--
+    Fes un programa que tingui una classe anomenada Client. Aquesta classe Client tindrà com a atributs el DNI, l'edat, la nacionalitat i nombre de vols agafats.
+
+    A més del constructor, la classe Client ha de disposar dels següents mètodes:
+    - Mètodes que permetin consultar i modificar cadascun dels atributs.
+    - Un mètode que calcula la petjada de carboni (multiplicant els viatges per 0,5 tones de CO₂).
+    - Un mètode que retornarà una descripció completa del client (toString()).
+    - Crea dos clients i comprova que els mètodes creats funcionen correctament. És a dir, crida a tots els mètodes dels dos clients.
+
+    Recordeu que cada classe s'ha de guardar en un fitxer diferent i enllaçar-se correctament a l'html.
+  -->
+    <h2>Clients</h2>
+    <label for="botoCrearClients"
+      >Clica per crear clients
+      <button id="botoCrearClients" onclick="crearClients()">Crear clients</button></label
+    >
+    <br /><br />
+    <fieldset>
+      <legend>Client 1</legend>
+      <label for="dniU1">DNI <input type="text" id="dniU1" /></label>
+      <button onclick="canviarValor('dni1')">Canviar DNI</button>
+      <br /><br />
+      <label for="edatU1">Edat <input type="number" id="edatU1" /></label>
+      <button onclick="canviarValor('edat1')">Canviar edat</button>
+      <br /><br />
+      <label for="nacionalitatU1"
+        >Nacionalitat <input type="text" id="nacionalitatU1"
+      /></label>
+      <button onclick="canviarValor('nacionalitat1')">Canviar nacionalitat</button>
+      <br /><br />
+      <label for="volsU1">Vols agafats <input type="number" id="volsU1" /></label>
+      <button onclick="canviarValor('vols1')">Canviar vols</button>
+      <br />
+      <p>Carboni client 1: <span id="carboniClientU1"></span></p>
+    </fieldset>
+    <br /><br />
+    <fieldset>
+      <legend>Client 2</legend>
+      <label for="dniU2">DNI <input type="text" id="dniU2" /></label>
+      <button onclick="canviarValor('dni2')">Canviar DNI</button>
+      <br /><br />
+      <label for="edatU2">Edat <input type="number" id="edatU2" /></label>
+      <button onclick="canviarValor('edat2')">Canviar edat</button>
+      <br /><br />
+      <label for="nacionalitatU2"
+        >Nacionalitat <input type="text" id="nacionalitatU2"
+      /></label>
+      <button onclick="canviarValor('nacionalitat2')">Canviar nacionalitat</button>
+      <br /><br />
+      <label for="volsU2">Vols agafats <input type="number" id="volsU2" /></label>
+      <button onclick="canviarValor('vols2')">Canviar vols</button>
+      <br />
+      <p>Carboni client 2: <span id="carboniClientU2"></span></p>
+    </fieldset>
+
+    <script>
+      'use strict';
+    </script>
+    <script src="js/classeClient.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

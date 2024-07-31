@@ -44,7 +44,7 @@ class Client {
   }
 
   petjadaCarboni() {
-    let petjada = this.nombreVols * 0.5 + " tones de CO²";
+    let petjada = this.distancia * 0.5 + " tones de CO²";
     return petjada;
   }
 }

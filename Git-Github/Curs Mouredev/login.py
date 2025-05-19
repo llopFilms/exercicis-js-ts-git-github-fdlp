@@ -1,1 +1,1 @@
-print ("Login versió 2")
+print ("Login versió 2 que anirà a main")
